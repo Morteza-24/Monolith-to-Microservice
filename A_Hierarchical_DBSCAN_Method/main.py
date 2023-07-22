@@ -10,6 +10,24 @@ subprocess.run(["java", "JavaParser/Parser", source_code_path])
 with open("JavaParser/classes.json", "rt") as classes_file:
     classes_info = json.load(classes_file)
 
+'''
+# words are the class name, variable names, method names, etc.
+
+classes_info = {
+    "classes": [
+        "class_1": {
+            "methods": ["method_1", "method_2", "method_3"],
+            "method_calls": ["method_5"] ,
+            "words": ["word_1", "word_2", "word_3"]
+        },
+        "class_2": {
+            "methods": ["method_4, "method_5", "method_6"],
+            "method_calls": ["method_1", "method_2"],
+            "words": ["word_2", "word_4", "word_5"]
+        }
+    ]
+}
+'''
 
 # get class similarity metric to feed to DBSCAN
 alpha = argv[2]
