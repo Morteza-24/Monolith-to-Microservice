@@ -1,4 +1,4 @@
-from similarity_analysis import class_similarity
+from SimilarityAnalysis import class_similarity
 from DBSCAN import DBSCAN
 from sys import argv
 import subprocess
@@ -31,9 +31,7 @@ classes_info = {
 
 # get class similarity metric to feed to DBSCAN
 alpha = argv[2]
-structrual_similarity_matrix = structrual_similarity(classes_info)
-semantic_similarity_matrix = semantic_similarity(classes_info)
-class_similarity_matrix = class_similarity(alpha, structural_similarity_matrix, semantic_similarity_matrix)
+class_similarity_matrix = class_similarity(alpha, classes_info)
 
 
 # hyperparameters

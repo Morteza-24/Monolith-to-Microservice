@@ -1,6 +1,6 @@
 '''
-def structural_similarity(classes_info) -> structural_similarity_matrix
-def semantic_similarity(classes_info) -> semantic_similarity_matrix
-def class_similarity(alpha, structural_similarity_matrix, semantic_similarity_matrix) -> class_similarity_matrix
+def structural_similarity(ci, cj, classes_info) -> sim_str(ci, cj)
+def semantic_similarity(ci, cj, classes_info) -> sim_sem(ci, cj)
+def class_similarity(alpha, classes_info) -> class_similarity_matrix
 '''
 
