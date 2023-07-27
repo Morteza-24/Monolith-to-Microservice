@@ -2,11 +2,12 @@ from SimilarityAnalysis import class_similarity
 from DBSCAN import DBSCAN
 from sys import argv
 import subprocess
+import json
 
 
 # parse the source code and get classes, methods, etc.
 source_code_path = argv[1]
-subprocess.run(["java", "JavaParser/Parser", source_code_path]) 
+subprocess.run(["java", "-cp", "JavaParser/javaparser-core-3.25.5-SNAPSHOT.jar", "JavaParser/Parser", source_code_path]) 
 with open("JavaParser/classes.json", "rt") as classes_file:
     classes_info = json.load(classes_file)
 
