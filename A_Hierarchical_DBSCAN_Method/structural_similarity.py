@@ -1,17 +1,29 @@
-def structural_similarity(ci, cj):
+def calls(ci, cj, classes_info):
 
-   if ci != 0 and cj != 0:
+    return len([_ for _ in classes_info[ci]["method_calls"] if _ in classes_info[cj]["methods"]])
 
-      return (1/2) * (calls(ci, cj) / callsin(cj) + calls(cj, ci) / callsin(ci))
 
-   elif callsin(ci) == 0 and callsin(cj) != 0:
 
-      return calls(ci, cj) / callsin(cj)
+def calls_in(ci, classes_info):
 
-   elif callsin(ci) != 0 and callsin(cj) == 0:
+    return sum([calls(cj, ci, classes_info) for cj in classes_info if cj != ci])
 
-      return calls(cj, ci) / callsin(ci)
 
-   else:
 
-      return 0
+def structural_similarity(ci, cj, classes_info):
+
+    if calls_in(ci, classes_info) != 0 and calls_in(cj, classes_info) != 0:
+
+        return (1/2) * (calls(ci, cj, classes_info)/calls_in(cj, classes_info) + calls(cj, ci, classes_info)/calls_in(ci, classes_info))
+
+    elif calls_in(ci, classes_info) == 0 and calls_in(cj, classes_info) != 0:
+
+        return calls(ci, cj, classes_info) / calls_in(cj, classes_info)
+
+    elif calls_in(ci, classes_info) != 0 and calls_in(cj, classes_info) == 0:
+
+        return calls(cj, ci, classes_info) / calls_in(ci, classes_info)
+
+    else:
+
+        return 0
