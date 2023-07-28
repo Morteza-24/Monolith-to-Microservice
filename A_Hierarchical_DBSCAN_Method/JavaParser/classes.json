@@ -1,14 +1,50 @@
 {
-    "classes": [
-        "class_1": {
-            "methods": [],
-            "method_calls": [],
-            "words": []
-        },
-        "class_2": {
-            "methods": [],
-            "method_calls": [],
-            "words": []
-        }
-    ]
+    "Class_1": {
+        "methods": [
+            "method_1",
+            "method_2",
+            "method_3",
+            "method_4"
+        ],
+        "method_calls": [
+            {
+                "method_name": "method_5",
+                "class_name": "Class_2"
+            },
+            {
+                "method_name": "method_6",
+                "class_name": "Class_2"
+            }
+        ],
+        "words": [
+            "word_1",
+            "word_2",
+            "word_3",
+            "word_4"
+        ]
+    },
+    "Class_2": {
+        "methods": [
+            "method_5",
+            "method_6",
+            "method_7"
+        ],
+        "method_calls": [
+            {
+                "method_name": "method_1",
+                "class_name": "Class_1"
+            },
+            {
+                "method_name": "pop",
+                "class_name": "numbers"
+            }
+        ],
+        "words": [
+            "word_5",
+            "word_6",
+            "word_7",
+            "word_8",
+            "word_9"
+        ]
+    }
 }
