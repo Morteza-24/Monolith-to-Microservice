@@ -60,32 +60,37 @@ class Parser {
 
 
 
-        List<ClassOrInterfaceDeclaration> classes = new ArrayList<>();
 
         VoidVisitor<List<ClassOrInterfaceDeclaration>> classNodeCollector = new ClassNodeCollector();
 
+        VoidVisitor<List<MethodDeclaration>> methodNodeCollector = new MethodNodeCollector();
+
+        List<ClassOrInterfaceDeclaration> classes = new ArrayList<>();
         classNodeCollector.visit(cu, classes);
 
-
-
-        classes.forEach(n -> System.out.println(n.getNameAsString()));
-
+        classes.forEach(cls -> {
+            System.out.println(cls.getNameAsString()+":");
+            List<MethodDeclaration> methods = new ArrayList<>();
+            methodNodeCollector.visit(cls, methods);
+            methods.forEach(method -> {
+                System.out.println("...  "+method.getNameAsString());
+            });
+        });
     }
-
-
 
     private static class ClassNodeCollector extends VoidVisitorAdapter<List<ClassOrInterfaceDeclaration>> {
-
         @Override
-
         public void visit(ClassOrInterfaceDeclaration cd, List<ClassOrInterfaceDeclaration> collector) {
-
             super.visit(cd, collector);
-
             collector.add(cd);
-
         }
-
     }
 
+    private static class MethodNodeCollector extends VoidVisitorAdapter<List<MethodDeclaration>> {
+        @Override
+        public void visit(MethodDeclaration md, List<MethodDeclaration> collector) {
+            super.visit(md, collector);
+            collector.add(md);
+        }
+    }
 }
