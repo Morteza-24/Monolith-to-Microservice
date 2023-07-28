@@ -18,6 +18,8 @@ import com.github.javaparser.ast.visitor.VoidVisitor;
 import com.github.javaparser.ast.visitor.VoidVisitorAdapter;
 import com.github.javaparser.ast.expr.MethodCallExpr;
 
+import org.json.JSONObject;
+
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
@@ -26,27 +28,38 @@ import java.util.HashMap;
 
 class Parser {
     public static void main(String[] args) throws Exception {
+        JSONObject jsonObject = new JSONObject();
         CompilationUnit cu = StaticJavaParser.parse(Files.newInputStream(Paths.get(args[0])));
 
         VoidVisitor<List<ClassOrInterfaceDeclaration>> classNodeCollector = new ClassNodeCollector();
         VoidVisitor<List<MethodDeclaration>> methodNodeCollector = new MethodNodeCollector();
-        VoidVisitor<List<String[]>> methodCallCollector = new MethodCallCollector();
+        VoidVisitor<List<JSONObject>> methodCallCollector = new MethodCallCollector();
 
         List<ClassOrInterfaceDeclaration> classes = new ArrayList<>();
         classNodeCollector.visit(cu, classes);
 
         classes.forEach(cls -> {
-            System.out.println(cls.getNameAsString() + ":");
-
             List<MethodDeclaration> methods = new ArrayList<>();
             methodNodeCollector.visit(cls, methods);
-            List<String[]> methodCalls = new ArrayList<>();
+            List<JSONObject> methodCalls = new ArrayList<>();
             methodCallCollector.visit(cls, methodCalls);
 
+            List<String> methodNames = new ArrayList<>();
             methods.forEach(method -> {
-                System.out.println("...  " + method.getNameAsString());
+                methodNames.add(method.getNameAsString());
             });
+
+            JSONObject classJson = new JSONObject();
+            classJson.put("methods", methodNames);
+            classJson.put("method_calls", methodCalls);
+            jsonObject.put(cls.getNameAsString(), classJson);
         });
+
+        try (FileWriter fileWriter = new FileWriter("JavaParser/classes.json")) {
+            fileWriter.write(jsonObject.toString(4));
+        } catch (IOException e) {
+            System.out.println("Error! " + e.getMessage());
+        }
     }
 
     private static class ClassNodeCollector extends VoidVisitorAdapter<List<ClassOrInterfaceDeclaration>> {
@@ -65,12 +78,13 @@ class Parser {
         }
     }
 
-    private static class MethodCallCollector extends VoidVisitorAdapter<List<String[]>> {
+    private static class MethodCallCollector extends VoidVisitorAdapter<List<JSONObject>> {
         @Override
-        public void visit(MethodCallExpr mc, List<String[]> collector) {
+        public void visit(MethodCallExpr mc, List<JSONObject> collector) {
             super.visit(mc, collector);
-            String[] methodCall = { mc.getScope().toString().replace("Optional[", "").replace("]", ""),
-                    mc.getNameAsString() };
+            JSONObject methodCall = new JSONObject();
+            methodCall.put("class_name", mc.getScope().toString().replace("Optional[", "").replace("]", ""));
+            methodCall.put("method_name", mc.getNameAsString());
             collector.add(methodCall);
         }
     }
