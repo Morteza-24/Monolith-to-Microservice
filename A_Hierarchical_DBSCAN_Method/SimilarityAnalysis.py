@@ -34,20 +34,17 @@ def structural_similarity(ci, cj, classes_info):
 
 
 def semantic_similarity(ci, cj, classes_info):
-    # Extract text from each class
     class_text = []
     for cls in [ci, cj]:
-        # text = cls.class_name + ' '
-        text += ' '.join(cls.methods)
-        text += ' '.join(cls.method_calls)
-        text += ' '.join(cls.words)
+        # text = cls['class_name'] + ' '
+        text += ' '.join(cls['methods'])
+        text += ' '.join(cls['method_calls'])
+        text += ' '.join(cls['words'])
         class_text.append(preprocess(text))
 
-    # Create TF-IDF vectors
     vectorizer = TfidfVectorizer()
     tf_idf_vectors = vectorizer.fit_transform(class_text)
 
-    # Calculate semantic similarity
     semantic_similarity = []
     for i in range(len(classes)):
         scores = cosine_similarity(tf_idf_vectors[i], tf_idf_vectors)
