@@ -1,5 +1,4 @@
 __pycache__/
 *.pyc
 .idea/
-classes.json
-
+A_Hierarchical_DBSCAN_Method/JavaParser/classes.json
