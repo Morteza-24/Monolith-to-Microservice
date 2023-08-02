@@ -1,41 +1,27 @@
 '''
 def camel_case_split(identifier) -> camelCase separated words
-def preprocess(text) -> tokens list
+def preprocess(text) -> processed text
 '''
 
-import nltk
+
+from nltk import word_tokenize
 from nltk.corpus import stopwords
-from nltk.stem import PorterStemmer
-from nltk.util import ngrams
-
-# Downloading nltk data
-# nltk.download('punkt')
-# nltk.download('stopwords')
-
-# test---
-# words = ["stemming", "stemmed", "stemmer", "stem", "stems"]
-# stemmer = nltk.stem.PorterStemmer()
-# stemmed_words = [stemmer.stem(word) for word in words]
-# print(stemmed_words)
-
-stemmer = nltk.stem.PorterStemmer()
-stopwords = set(nltk.corpus.stopwords.words('english'))
-
-
-def dummy(doc):
-    return doc
+from nltk.stem.snowball import SnowballStemmer
+from re import finditer
 
 
 def camel_case_split(identifier):
-    matches = re.findall(
+    matches = finditer(
         '.+?(?:(?<=[a-z])(?=[A-Z])|(?<=[A-Z])(?=[A-Z][a-z])|$)', identifier)
-    return [m.lower() for m in matches]
+    return [m.group(0) for m in matches]
 
 
 def preprocess(text):
-    tokens = nltk.word_tokenize(text)
+    tokens = word_tokenize(text)
     tokens = [
-        camel_case_split(w) if '_' not in w else w.lower() for w in tokens
+        word for w in tokens for word in camel_case_split(w)
     ]
-    tokens = [stemmer.stem(w) for w in tokens if w not in stopwords]
-    return tokens
+    stemmer = SnowballStemmer("english")
+    stop_words = stopwords.words('english')
+    tokens = [stemmer.stem(w) for w in tokens if w not in stop_words and any(c.isalpha() for c in w)]
+    return ' '.join(tokens)

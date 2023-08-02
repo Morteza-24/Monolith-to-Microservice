@@ -3,9 +3,12 @@ def structural_similarity(ci, cj, classes_info) -> sim_str(ci, cj)
 def semantic_similarity(ci, cj, classes_info) -> sim_sem(ci, cj)
 def class_similarity(alpha, classes_info) -> class_similarity_matrix
 '''
-from sklearn.feature_extraction.text import TfidfVectorizer, CountVectorizer
+
+
+from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
-from Preprocess import preprocess, dummy
+from numpy import zeros
+from Preprocess import preprocess
 
 
 def calls(ci, cj, classes_info):
@@ -34,23 +37,24 @@ def structural_similarity(ci, cj, classes_info):
 
 
 def semantic_similarity(ci, cj, classes_info):
-    class_text = []
-    for cls in [ci, cj]:
-        text = []
-        text.append(' '.join(cls['methods']))
-        text.append(' '.join(cls['method_calls']))
-        text.append(' '.join(cls['words']))
-        class_text.append(preprocess(' '.join(text)))
+    corpus = []
+    for clss in classes_info:
+        corpus.append(preprocess(' '.join(classes_info[clss]['words'])))
 
-    vectorizer = CountVectorizer(
-        tokenizer=dummy,
-        preprocessor=dummy,
-    )
-    tf_idf_vectors = vectorizer.fit_transform(class_text)
+    vectorizer = TfidfVectorizer()
+    tf_idf_vectors = vectorizer.fit_transform(corpus)
 
-    semantic_similarity = []
-    for i in range(len(classes_info['classes'].keys())):
-        scores = cosine_similarity(tf_idf_vectors[i], tf_idf_vectors)
-        semantic_similarity.append(scores)
+    ci = list(classes_info.keys()).index(ci)
+    cj = list(classes_info.keys()).index(cj)
 
-    return semantic_similarity
+    return cosine_similarity(tf_idf_vectors[ci], tf_idf_vectors[cj])[0][0]
+
+
+def class_similarity(alpha, classes_info):
+    class_similarity_matrix = zeros((len(classes_info), len(classes_info)))
+    for i in range(len(classes_info)):
+        for j in range(i+1,len(classes_info)):
+            ci = list(classes_info.keys())[i]
+            cj = list(classes_info.keys())[j]
+            class_similarity_matrix[i][j] = alpha*structural_similarity(ci, cj, classes_info) + (1-alpha)*semantic_similarity(ci, cj, classes_info)
+    return class_similarity_matrix + class_similarity_matrix.T
