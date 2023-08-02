@@ -1,50 +1,45 @@
 from SimilarityAnalysis import class_similarity
-from DBSCAN import DBSCAN
+from DBSCAN import dbscan
+from nltk import download
 from sys import argv
+from os import pathsep
 import subprocess
 import json
 
 
 # parse the source code and get classes, methods, etc.
 source_code_path = argv[1]
-subprocess.run(["java", "-cp", 'JavaParser/lib/"*"', "JavaParser/Parser.java", source_code_path]) 
+libs = "JavaParser/lib/javaparser-core-3.25.5-SNAPSHOT.jar"+pathsep+"JavaParser/lib/json-20230618.jar"
+subprocess.run(['java', '-cp', libs, 'JavaParser/Parser.java', source_code_path]) 
 with open("JavaParser/classes.json", "rt") as classes_file:
     classes_info = json.load(classes_file)
 
-'''
-# words are the class name, variable names, method names, etc.
 
-classes_info = {
-    "classes": {
-        "class_1": {
-            "methods": ["method_1", "method_2", "method_3"],
-            "method_calls": ["method_5"] ,
-            "words": ["word_1", "word_2", "word_3"]
-        },
-        "class_2": {
-            "methods": ["method_4", "method_5", "method_6"],
-            "method_calls": ["method_1", "method_2"],
-            "words": ["word_2", "word_4", "word_5"]
-        }
-    }
-}
-'''
+# necessary downloads for nltk
+download('punkt')
+download('stopwords')
+
 
 # get class similarity metric to feed to DBSCAN
-alpha = argv[2]
+alpha = float(argv[2])
 class_similarity_matrix = class_similarity(alpha, classes_info)
 
 
 # hyperparameters
-minimum_number_of_sample = argv[3]
-max_epsilon = argv[4]
+minimum_number_of_sample = int(argv[3])
+max_epsilon = float(argv[4])
+
+
+print("-"*50)
 
 
 # run DBSCAN with different epsilon values to create decomposition layers
-layers = []
-for epsilon in range(0, max_epsilon):
-    layers.append(DBSCAN(minimum_number_of_sample, epsilon, class_similarity_matrix))
+epsilon = 0.05
+while epsilon <= max_epsilon:
+    layer = dbscan(minimum_number_of_sample, epsilon, class_similarity_matrix)
+    print("epsilon:", epsilon, "--->", layer)
+    epsilon += 0.05
+    epsilon = round(epsilon, 2)
 
 
 # TODO: visualize layers
-
