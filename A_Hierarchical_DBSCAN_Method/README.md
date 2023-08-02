@@ -9,7 +9,19 @@ The method used in this paper consists of two major steps:
 ![a summary of the steps taken to extract the microservices](res/steps.png)
 
 
-# Current Status
+# How to Use
 
-- [ ] Creating a java source code parser using JavaParser with the aim of assisting in Similarity Analysis.
-
+1. Make sure you have Java installed and the `java` command is available.
+2. Make sure that the `numpy`, `nltk` and `scikit-learn` installed:
+```
+python -m pip install numpy nltk scikit-learn
+```
+3. Make sure you are in the _A_Hierarchical_DBSCAN_Method_ folder.
+4. Run `main.py` with python with the required arguemnts:
+```
+python main.py source_code_path alpha minimum_number_of_sample max_epsilon
+```
+for example:
+```
+python main.py ../Test_Projects/jpetstore/OneFileSource.java 0.5 1 0.6
+```
