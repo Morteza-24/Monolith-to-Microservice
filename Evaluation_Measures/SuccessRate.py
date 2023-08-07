@@ -1,37 +1,21 @@
-import numpy as np
-def SR (matching_matrix):
-    M = matching_matrix.shape[0]  # Get the number of rows in the matching matrix
-
-    Sigma = np.sum(matching_matrix)  # Calculate the sum of all elements in the matching matrix
-
-    SR = 1 / M * Sigma  # Calculate the SR value
-
-    return SR
-    import numpy as np
-
-    def create_matching_matrix(matrix):
-        size = len(matrix)
-
-    matching_matrix = np.zeros((size, size))
-
-    for i in range(size):
-        for j in range(size):
-            if matrix[i][j] > 0:
-            matching_matrix[i][j] = 1
-
-    return matching_matrix
-
-    def create_corresponding_matrix(matrix):
-        size = len(matrix)
-
-    corresponding_matrix = np.zeros((size, size))
-
-    for i in range(size):
-        for j in range(size):
-            if matrix[i][j] > 0:
-            corresponding_matrix[i][j] = matrix[i][j]
-
-    return corresponding_matrix
+def _corresponding(microservice_classes, true_microservices):
+    max_common_classes = 0
+    for i in set(true_microservices):
+        true_microservice_classes = {clss for clss, ms in enumerate(true_microservices) if ms == i}
+        if (m := len(true_microservice_classes.intersection(microservice_classes))) > max_common_classes:
+            max_common_classes = m
+            true_correspondence = true_microservice_classes
+    return true_correspondence
 
 
+def SR(microservices, true_microservices, k):
+    threshold = k/10
+    matches = 0
+    for microservice in set(microservices):
+        microservice_classes = {class_number for class_number, microservice_number in enumerate(microservices)
+                                if microservice_number == microservice}
+        matching = len(microservice_classes.intersection(_corresponding(microservice_classes, true_microservices))) / len(microservice_classes)
+        if matching >= threshold:
+            matches += 1
+    return matches / len(set(microservices))
 
