@@ -94,6 +94,7 @@ def _calls(classes_i, classes_j, classes_info):
     for class_i in classes_i:
         sum_calls += len([1 for call in classes_info[class_i]["method_calls"]
                           if call["class_name"] in classes_j])
+    return sum_calls
 
 
 def ICP(microservices, classes_info):
