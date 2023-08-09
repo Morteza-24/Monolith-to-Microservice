@@ -1,0 +1,32 @@
+---
+spring:
+  profiles: dev
+  redis:
+    host: localhost
+    port: 6379
+  jpa:
+    properties:
+      hibernate:
+        hbm2ddl:
+          auto: update
+    # disable open EntityManager in View
+    open-in-view: false
+  datasource:
+    url: jdbc:mysql://localhost:3306/time_store_account?useUnicode=true&characterEncoding=utf-8
+    username: time
+    password: 123456
+    driver-class-name: com.mysql.jdbc.Driver
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+# 提高延时设置 elevate timeout settings, 避免因为延时造成失败
+hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 60000
+ribbon:
+  ConnectTimeout: 3000
+  ReadTimeout: 60000

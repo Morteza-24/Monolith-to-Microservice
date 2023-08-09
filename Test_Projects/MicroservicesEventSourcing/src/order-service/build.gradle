@@ -1,0 +1,12 @@
+dependencies {
+    compile 'org.springframework.boot:spring-boot-starter-web'
+    compile 'org.springframework.boot:spring-boot-starter-hateoas'
+    compile 'org.springframework.boot:spring-boot-starter-data-mongodb'
+    compile 'org.springframework.boot:spring-boot-starter-data-rest'
+
+    compile 'org.springframework.cloud:spring-cloud-starter-hystrix'
+    compile 'org.springframework.cloud:spring-cloud-starter-oauth2'
+
+    compile 'org.projectlombok:lombok:1.16.6'
+    compile 'io.projectreactor:reactor-core:2.5.0.M2'
+}

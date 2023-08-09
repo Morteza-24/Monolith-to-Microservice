@@ -1,0 +1,44 @@
+<style>
+    @media (min-width: 768px) {
+        #header .navbar-nav {
+            float: right;
+        }
+    }
+    .navbar-item, .welcome {
+        display: inline-block;
+        color: #9d9d9d;
+        padding: 15px;
+    }
+
+    #header #navbar .navbar-nav li:last-child a {
+        padding-right: 0;
+    }
+</style>
+<nav id="header" class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="http://timeyang.com">timeyang.com</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse" ng-controller="UserCtrl">
+            <ul class="nav navbar-nav">
+                <li ng-if="user.id != undefined"><span class="welcome" ng-cloak>欢迎 {{user.firstName}} {{user.lastName}}</span></li>
+
+                <li ng-if="user.id != undefined" ui-sref-active="active">
+                    <a ui-sref=home><i class="fa fa-home"></i> 首页</a>
+                </li>
+                <li ng-if="user.id != undefined" ui-sref-active="active"><a ui-sref="orders">订单</a></li>
+                <li ng-if="user.id != undefined" ui-sref-active="active"><a ui-sref="cart"><i class="fa fa-shopping-cart"></i> 购物车</a></li>
+                <li ng-if="user.id != undefined" ui-sref-active="active"><a ui-sref="settings"><i class="fa fa-cog"></i> 设置</a></li>
+
+                <li ng-if="user.id == undefined"><a href="/login"><i class="fa fa-sign-in" aria-hidden="true"></i> 登录</a></li>
+                <li ng-if="user.id != undefined"><a ng-click="logout()" href="#"><i class="fa fa-sign-out" aria-hidden="true"></i> 退出</a></li>
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div>
+</nav>

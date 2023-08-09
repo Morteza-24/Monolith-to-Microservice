@@ -1,0 +1,32 @@
+spring:
+  profiles:
+    active: dev
+---
+spring:
+  profiles: dev
+  jpa:
+    properties:
+      hibernate:
+        hbm2ddl:
+          auto: update
+    # disable open EntityManager in View
+    open-in-view: false
+  datasource:
+    url: jdbc:mysql://localhost:3306/time_store_user?useUnicode=true&characterEncoding=utf-8
+    username: time
+    password: 123456
+    driver-class-name: com.mysql.jdbc.Driver
+  redis:
+      host: localhost
+      port: 6379
+server:
+  port: 8181
+  # The context path has to be explicit if you are running both the client and the auth server on localhost, otherwise the cookie paths clash and the two apps cannot agree on a session identifier.
+  contextPath: /auth
+security:
+  user:
+    password: password
+  enable-csrf: false
+  ignored: /assets/**
+logging.level.org.springframework.security: DEBUG
+
