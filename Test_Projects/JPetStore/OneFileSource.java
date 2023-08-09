@@ -1182,3 +1182,1378 @@ public class Sequence implements Serializable {
 
 }
 
+
+/*
+ *    Copyright 2010-2022 the original author or authors.
+ *
+ *    Licensed under the Apache License, Version 2.0 (the "License");
+ *    you may not use this file except in compliance with the License.
+ *    You may obtain a copy of the License at
+ *
+ *       https://www.apache.org/licenses/LICENSE-2.0
+ *
+ *    Unless required by applicable law or agreed to in writing, software
+ *    distributed under the License is distributed on an "AS IS" BASIS,
+ *    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *    See the License for the specific language governing permissions and
+ *    limitations under the License.
+ */
+package org.mybatis.jpetstore.mapper;
+
+import org.mybatis.jpetstore.domain.Account;
+
+/**
+ * The Interface AccountMapper.
+ *
+ * @author Eduardo Macarron
+ */
+public interface AccountMapper {
+
+  Account getAccountByUsername(String username);
+
+  Account getAccountByUsernameAndPassword(String username, String password);
+
+  void insertAccount(Account account);
+
+  void insertProfile(Account account);
+
+  void insertSignon(Account account);
+
+  void updateAccount(Account account);
+
+  void updateProfile(Account account);
+
+  void updateSignon(Account account);
+
+}
+
+/*
+ *    Copyright 2010-2022 the original author or authors.
+ *
+ *    Licensed under the Apache License, Version 2.0 (the "License");
+ *    you may not use this file except in compliance with the License.
+ *    You may obtain a copy of the License at
+ *
+ *       https://www.apache.org/licenses/LICENSE-2.0
+ *
+ *    Unless required by applicable law or agreed to in writing, software
+ *    distributed under the License is distributed on an "AS IS" BASIS,
+ *    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *    See the License for the specific language governing permissions and
+ *    limitations under the License.
+ */
+package org.mybatis.jpetstore.mapper;
+
+import java.util.List;
+
+import org.mybatis.jpetstore.domain.Category;
+
+/**
+ * The Interface CategoryMapper.
+ *
+ * @author Eduardo Macarron
+ */
+public interface CategoryMapper {
+
+  List<Category> getCategoryList();
+
+  Category getCategory(String categoryId);
+
+}
+
+/*
+ *    Copyright 2010-2022 the original author or authors.
+ *
+ *    Licensed under the Apache License, Version 2.0 (the "License");
+ *    you may not use this file except in compliance with the License.
+ *    You may obtain a copy of the License at
+ *
+ *       https://www.apache.org/licenses/LICENSE-2.0
+ *
+ *    Unless required by applicable law or agreed to in writing, software
+ *    distributed under the License is distributed on an "AS IS" BASIS,
+ *    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *    See the License for the specific language governing permissions and
+ *    limitations under the License.
+ */
+package org.mybatis.jpetstore.mapper;
+
+import java.util.List;
+import java.util.Map;
+
+import org.mybatis.jpetstore.domain.Item;
+
+/**
+ * The Interface ItemMapper.
+ *
+ * @author Eduardo Macarron
+ */
+public interface ItemMapper {
+
+  void updateInventoryQuantity(Map<String, Object> param);
+
+  int getInventoryQuantity(String itemId);
+
+  List<Item> getItemListByProduct(String productId);
+
+  Item getItem(String itemId);
+
+}
+
+/*
+ *    Copyright 2010-2022 the original author or authors.
+ *
+ *    Licensed under the Apache License, Version 2.0 (the "License");
+ *    you may not use this file except in compliance with the License.
+ *    You may obtain a copy of the License at
+ *
+ *       https://www.apache.org/licenses/LICENSE-2.0
+ *
+ *    Unless required by applicable law or agreed to in writing, software
+ *    distributed under the License is distributed on an "AS IS" BASIS,
+ *    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *    See the License for the specific language governing permissions and
+ *    limitations under the License.
+ */
+package org.mybatis.jpetstore.mapper;
+
+import java.util.List;
+
+import org.mybatis.jpetstore.domain.LineItem;
+
+/**
+ * The Interface LineItemMapper.
+ *
+ * @author Eduardo Macarron
+ */
+public interface LineItemMapper {
+
+  List<LineItem> getLineItemsByOrderId(int orderId);
+
+  void insertLineItem(LineItem lineItem);
+
+}
+
+/*
+ *    Copyright 2010-2022 the original author or authors.
+ *
+ *    Licensed under the Apache License, Version 2.0 (the "License");
+ *    you may not use this file except in compliance with the License.
+ *    You may obtain a copy of the License at
+ *
+ *       https://www.apache.org/licenses/LICENSE-2.0
+ *
+ *    Unless required by applicable law or agreed to in writing, software
+ *    distributed under the License is distributed on an "AS IS" BASIS,
+ *    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *    See the License for the specific language governing permissions and
+ *    limitations under the License.
+ */
+package org.mybatis.jpetstore.mapper;
+
+import java.util.List;
+
+import org.mybatis.jpetstore.domain.Order;
+
+/**
+ * The Interface OrderMapper.
+ *
+ * @author Eduardo Macarron
+ */
+public interface OrderMapper {
+
+  List<Order> getOrdersByUsername(String username);
+
+  Order getOrder(int orderId);
+
+  void insertOrder(Order order);
+
+  void insertOrderStatus(Order order);
+
+}
+
+/*
+ *    Copyright 2010-2022 the original author or authors.
+ *
+ *    Licensed under the Apache License, Version 2.0 (the "License");
+ *    you may not use this file except in compliance with the License.
+ *    You may obtain a copy of the License at
+ *
+ *       https://www.apache.org/licenses/LICENSE-2.0
+ *
+ *    Unless required by applicable law or agreed to in writing, software
+ *    distributed under the License is distributed on an "AS IS" BASIS,
+ *    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *    See the License for the specific language governing permissions and
+ *    limitations under the License.
+ */
+package org.mybatis.jpetstore.mapper;
+
+import java.util.List;
+
+import org.mybatis.jpetstore.domain.Product;
+
+/**
+ * The Interface ProductMapper.
+ *
+ * @author Eduardo Macarron
+ */
+public interface ProductMapper {
+
+  List<Product> getProductListByCategory(String categoryId);
+
+  Product getProduct(String productId);
+
+  List<Product> searchProductList(String keywords);
+
+}
+
+/*
+ *    Copyright 2010-2022 the original author or authors.
+ *
+ *    Licensed under the Apache License, Version 2.0 (the "License");
+ *    you may not use this file except in compliance with the License.
+ *    You may obtain a copy of the License at
+ *
+ *       https://www.apache.org/licenses/LICENSE-2.0
+ *
+ *    Unless required by applicable law or agreed to in writing, software
+ *    distributed under the License is distributed on an "AS IS" BASIS,
+ *    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *    See the License for the specific language governing permissions and
+ *    limitations under the License.
+ */
+package org.mybatis.jpetstore.mapper;
+
+import org.mybatis.jpetstore.domain.Sequence;
+
+/**
+ * The Interface SequenceMapper.
+ *
+ * @author Eduardo Macarron
+ */
+public interface SequenceMapper {
+
+  Sequence getSequence(Sequence sequence);
+
+  void updateSequence(Sequence sequence);
+}
+
+/*
+ *    Copyright 2010-2022 the original author or authors.
+ *
+ *    Licensed under the Apache License, Version 2.0 (the "License");
+ *    you may not use this file except in compliance with the License.
+ *    You may obtain a copy of the License at
+ *
+ *       https://www.apache.org/licenses/LICENSE-2.0
+ *
+ *    Unless required by applicable law or agreed to in writing, software
+ *    distributed under the License is distributed on an "AS IS" BASIS,
+ *    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *    See the License for the specific language governing permissions and
+ *    limitations under the License.
+ */
+package org.mybatis.jpetstore.service;
+
+import java.util.Optional;
+
+import org.mybatis.jpetstore.domain.Account;
+import org.mybatis.jpetstore.mapper.AccountMapper;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+/**
+ * The Class AccountService.
+ *
+ * @author Eduardo Macarron
+ */
+@Service
+public class AccountService {
+
+  private final AccountMapper accountMapper;
+
+  public AccountService(AccountMapper accountMapper) {
+    this.accountMapper = accountMapper;
+  }
+
+  public Account getAccount(String username) {
+    return accountMapper.getAccountByUsername(username);
+  }
+
+  public Account getAccount(String username, String password) {
+    return accountMapper.getAccountByUsernameAndPassword(username, password);
+  }
+
+  /**
+   * Insert account.
+   *
+   * @param account
+   *          the account
+   */
+  @Transactional
+  public void insertAccount(Account account) {
+    accountMapper.insertAccount(account);
+    accountMapper.insertProfile(account);
+    accountMapper.insertSignon(account);
+  }
+
+  /**
+   * Update account.
+   *
+   * @param account
+   *          the account
+   */
+  @Transactional
+  public void updateAccount(Account account) {
+    accountMapper.updateAccount(account);
+    accountMapper.updateProfile(account);
+
+    Optional.ofNullable(account.getPassword()).filter(password -> password.length() > 0)
+        .ifPresent(password -> accountMapper.updateSignon(account));
+  }
+
+}
+
+/*
+ *    Copyright 2010-2022 the original author or authors.
+ *
+ *    Licensed under the Apache License, Version 2.0 (the "License");
+ *    you may not use this file except in compliance with the License.
+ *    You may obtain a copy of the License at
+ *
+ *       https://www.apache.org/licenses/LICENSE-2.0
+ *
+ *    Unless required by applicable law or agreed to in writing, software
+ *    distributed under the License is distributed on an "AS IS" BASIS,
+ *    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *    See the License for the specific language governing permissions and
+ *    limitations under the License.
+ */
+package org.mybatis.jpetstore.service;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.mybatis.jpetstore.domain.Category;
+import org.mybatis.jpetstore.domain.Item;
+import org.mybatis.jpetstore.domain.Product;
+import org.mybatis.jpetstore.mapper.CategoryMapper;
+import org.mybatis.jpetstore.mapper.ItemMapper;
+import org.mybatis.jpetstore.mapper.ProductMapper;
+import org.springframework.stereotype.Service;
+
+/**
+ * The Class CatalogService.
+ *
+ * @author Eduardo Macarron
+ */
+@Service
+public class CatalogService {
+
+  private final CategoryMapper categoryMapper;
+  private final ItemMapper itemMapper;
+  private final ProductMapper productMapper;
+
+  public CatalogService(CategoryMapper categoryMapper, ItemMapper itemMapper, ProductMapper productMapper) {
+    this.categoryMapper = categoryMapper;
+    this.itemMapper = itemMapper;
+    this.productMapper = productMapper;
+  }
+
+  public List<Category> getCategoryList() {
+    return categoryMapper.getCategoryList();
+  }
+
+  public Category getCategory(String categoryId) {
+    return categoryMapper.getCategory(categoryId);
+  }
+
+  public Product getProduct(String productId) {
+    return productMapper.getProduct(productId);
+  }
+
+  public List<Product> getProductListByCategory(String categoryId) {
+    return productMapper.getProductListByCategory(categoryId);
+  }
+
+  /**
+   * Search product list.
+   *
+   * @param keywords
+   *          the keywords
+   *
+   * @return the list
+   */
+  public List<Product> searchProductList(String keywords) {
+    List<Product> products = new ArrayList<>();
+    for (String keyword : keywords.split("\\s+")) {
+      products.addAll(productMapper.searchProductList("%" + keyword.toLowerCase() + "%"));
+    }
+    return products;
+  }
+
+  public List<Item> getItemListByProduct(String productId) {
+    return itemMapper.getItemListByProduct(productId);
+  }
+
+  public Item getItem(String itemId) {
+    return itemMapper.getItem(itemId);
+  }
+
+  public boolean isItemInStock(String itemId) {
+    return itemMapper.getInventoryQuantity(itemId) > 0;
+  }
+}
+
+/*
+ *    Copyright 2010-2022 the original author or authors.
+ *
+ *    Licensed under the Apache License, Version 2.0 (the "License");
+ *    you may not use this file except in compliance with the License.
+ *    You may obtain a copy of the License at
+ *
+ *       https://www.apache.org/licenses/LICENSE-2.0
+ *
+ *    Unless required by applicable law or agreed to in writing, software
+ *    distributed under the License is distributed on an "AS IS" BASIS,
+ *    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *    See the License for the specific language governing permissions and
+ *    limitations under the License.
+ */
+package org.mybatis.jpetstore.service;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.mybatis.jpetstore.domain.Item;
+import org.mybatis.jpetstore.domain.Order;
+import org.mybatis.jpetstore.domain.Sequence;
+import org.mybatis.jpetstore.mapper.ItemMapper;
+import org.mybatis.jpetstore.mapper.LineItemMapper;
+import org.mybatis.jpetstore.mapper.OrderMapper;
+import org.mybatis.jpetstore.mapper.SequenceMapper;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+/**
+ * The Class OrderService.
+ *
+ * @author Eduardo Macarron
+ */
+@Service
+public class OrderService {
+
+  private final ItemMapper itemMapper;
+  private final OrderMapper orderMapper;
+  private final SequenceMapper sequenceMapper;
+  private final LineItemMapper lineItemMapper;
+
+  public OrderService(ItemMapper itemMapper, OrderMapper orderMapper, SequenceMapper sequenceMapper,
+      LineItemMapper lineItemMapper) {
+    this.itemMapper = itemMapper;
+    this.orderMapper = orderMapper;
+    this.sequenceMapper = sequenceMapper;
+    this.lineItemMapper = lineItemMapper;
+  }
+
+  /**
+   * Insert order.
+   *
+   * @param order
+   *          the order
+   */
+  @Transactional
+  public void insertOrder(Order order) {
+    order.setOrderId(getNextId("ordernum"));
+    order.getLineItems().forEach(lineItem -> {
+      String itemId = lineItem.getItemId();
+      Integer increment = lineItem.getQuantity();
+      Map<String, Object> param = new HashMap<>(2);
+      param.put("itemId", itemId);
+      param.put("increment", increment);
+      itemMapper.updateInventoryQuantity(param);
+    });
+
+    orderMapper.insertOrder(order);
+    orderMapper.insertOrderStatus(order);
+    order.getLineItems().forEach(lineItem -> {
+      lineItem.setOrderId(order.getOrderId());
+      lineItemMapper.insertLineItem(lineItem);
+    });
+  }
+
+  /**
+   * Gets the order.
+   *
+   * @param orderId
+   *          the order id
+   *
+   * @return the order
+   */
+  @Transactional
+  public Order getOrder(int orderId) {
+    Order order = orderMapper.getOrder(orderId);
+    order.setLineItems(lineItemMapper.getLineItemsByOrderId(orderId));
+
+    order.getLineItems().forEach(lineItem -> {
+      Item item = itemMapper.getItem(lineItem.getItemId());
+      item.setQuantity(itemMapper.getInventoryQuantity(lineItem.getItemId()));
+      lineItem.setItem(item);
+    });
+
+    return order;
+  }
+
+  /**
+   * Gets the orders by username.
+   *
+   * @param username
+   *          the username
+   *
+   * @return the orders by username
+   */
+  public List<Order> getOrdersByUsername(String username) {
+    return orderMapper.getOrdersByUsername(username);
+  }
+
+  /**
+   * Gets the next id.
+   *
+   * @param name
+   *          the name
+   *
+   * @return the next id
+   */
+  public int getNextId(String name) {
+    Sequence sequence = sequenceMapper.getSequence(new Sequence(name, -1));
+    if (sequence == null) {
+      throw new RuntimeException(
+          "Error: A null sequence was returned from the database (could not get next " + name + " sequence).");
+    }
+    Sequence parameterObject = new Sequence(name, sequence.getNextId() + 1);
+    sequenceMapper.updateSequence(parameterObject);
+    return sequence.getNextId();
+  }
+
+}
+
+/*
+ *    Copyright 2010-2022 the original author or authors.
+ *
+ *    Licensed under the Apache License, Version 2.0 (the "License");
+ *    you may not use this file except in compliance with the License.
+ *    You may obtain a copy of the License at
+ *
+ *       https://www.apache.org/licenses/LICENSE-2.0
+ *
+ *    Unless required by applicable law or agreed to in writing, software
+ *    distributed under the License is distributed on an "AS IS" BASIS,
+ *    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *    See the License for the specific language governing permissions and
+ *    limitations under the License.
+ */
+package org.mybatis.jpetstore.web.actions;
+
+import java.io.Serializable;
+
+import net.sourceforge.stripes.action.ActionBean;
+import net.sourceforge.stripes.action.ActionBeanContext;
+import net.sourceforge.stripes.action.SimpleMessage;
+
+/**
+ * The Class AbstractActionBean.
+ *
+ * @author Eduardo Macarron
+ */
+public abstract class AbstractActionBean implements ActionBean, Serializable {
+
+  private static final long serialVersionUID = -1767714708233127983L;
+
+  protected static final String ERROR = "/WEB-INF/jsp/common/Error.jsp";
+
+  protected transient ActionBeanContext context;
+
+  protected void setMessage(String value) {
+    context.getMessages().add(new SimpleMessage(value));
+  }
+
+  @Override
+  public ActionBeanContext getContext() {
+    return context;
+  }
+
+  @Override
+  public void setContext(ActionBeanContext context) {
+    this.context = context;
+  }
+
+}
+
+/*
+ *    Copyright 2010-2022 the original author or authors.
+ *
+ *    Licensed under the Apache License, Version 2.0 (the "License");
+ *    you may not use this file except in compliance with the License.
+ *    You may obtain a copy of the License at
+ *
+ *       https://www.apache.org/licenses/LICENSE-2.0
+ *
+ *    Unless required by applicable law or agreed to in writing, software
+ *    distributed under the License is distributed on an "AS IS" BASIS,
+ *    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *    See the License for the specific language governing permissions and
+ *    limitations under the License.
+ */
+package org.mybatis.jpetstore.web.actions;
+
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+
+import javax.servlet.http.HttpSession;
+
+import net.sourceforge.stripes.action.DefaultHandler;
+import net.sourceforge.stripes.action.ForwardResolution;
+import net.sourceforge.stripes.action.RedirectResolution;
+import net.sourceforge.stripes.action.Resolution;
+import net.sourceforge.stripes.action.SessionScope;
+import net.sourceforge.stripes.integration.spring.SpringBean;
+import net.sourceforge.stripes.validation.Validate;
+
+import org.mybatis.jpetstore.domain.Account;
+import org.mybatis.jpetstore.domain.Product;
+import org.mybatis.jpetstore.service.AccountService;
+import org.mybatis.jpetstore.service.CatalogService;
+
+/**
+ * The Class AccountActionBean.
+ *
+ * @author Eduardo Macarron
+ */
+@SessionScope
+public class AccountActionBean extends AbstractActionBean {
+
+  private static final long serialVersionUID = 5499663666155758178L;
+
+  private static final String NEW_ACCOUNT = "/WEB-INF/jsp/account/NewAccountForm.jsp";
+  private static final String EDIT_ACCOUNT = "/WEB-INF/jsp/account/EditAccountForm.jsp";
+  private static final String SIGNON = "/WEB-INF/jsp/account/SignonForm.jsp";
+
+  private static final List<String> LANGUAGE_LIST;
+  private static final List<String> CATEGORY_LIST;
+
+  @SpringBean
+  private transient AccountService accountService;
+  @SpringBean
+  private transient CatalogService catalogService;
+
+  private Account account = new Account();
+  private List<Product> myList;
+  private boolean authenticated;
+
+  static {
+    LANGUAGE_LIST = Collections.unmodifiableList(Arrays.asList("english", "japanese"));
+    CATEGORY_LIST = Collections.unmodifiableList(Arrays.asList("FISH", "DOGS", "REPTILES", "CATS", "BIRDS"));
+  }
+
+  public Account getAccount() {
+    return this.account;
+  }
+
+  public String getUsername() {
+    return account.getUsername();
+  }
+
+  @Validate(required = true, on = { "signon", "newAccount", "editAccount" })
+  public void setUsername(String username) {
+    account.setUsername(username);
+  }
+
+  public String getPassword() {
+    return account.getPassword();
+  }
+
+  @Validate(required = true, on = { "signon", "newAccount", "editAccount" })
+  public void setPassword(String password) {
+    account.setPassword(password);
+  }
+
+  public List<Product> getMyList() {
+    return myList;
+  }
+
+  public void setMyList(List<Product> myList) {
+    this.myList = myList;
+  }
+
+  public List<String> getLanguages() {
+    return LANGUAGE_LIST;
+  }
+
+  public List<String> getCategories() {
+    return CATEGORY_LIST;
+  }
+
+  public Resolution newAccountForm() {
+    return new ForwardResolution(NEW_ACCOUNT);
+  }
+
+  /**
+   * New account.
+   *
+   * @return the resolution
+   */
+  public Resolution newAccount() {
+    accountService.insertAccount(account);
+    account = accountService.getAccount(account.getUsername());
+    myList = catalogService.getProductListByCategory(account.getFavouriteCategoryId());
+    authenticated = true;
+    return new RedirectResolution(CatalogActionBean.class);
+  }
+
+  /**
+   * Edits the account form.
+   *
+   * @return the resolution
+   */
+  public Resolution editAccountForm() {
+    return new ForwardResolution(EDIT_ACCOUNT);
+  }
+
+  /**
+   * Edits the account.
+   *
+   * @return the resolution
+   */
+  public Resolution editAccount() {
+    accountService.updateAccount(account);
+    account = accountService.getAccount(account.getUsername());
+    myList = catalogService.getProductListByCategory(account.getFavouriteCategoryId());
+    return new RedirectResolution(CatalogActionBean.class);
+  }
+
+  /**
+   * Signon form.
+   *
+   * @return the resolution
+   */
+  @DefaultHandler
+  public Resolution signonForm() {
+    return new ForwardResolution(SIGNON);
+  }
+
+  /**
+   * Signon.
+   *
+   * @return the resolution
+   */
+  public Resolution signon() {
+
+    account = accountService.getAccount(getUsername(), getPassword());
+
+    if (account == null) {
+      String value = "Invalid username or password.  Signon failed.";
+      setMessage(value);
+      clear();
+      return new ForwardResolution(SIGNON);
+    } else {
+      account.setPassword(null);
+      myList = catalogService.getProductListByCategory(account.getFavouriteCategoryId());
+      authenticated = true;
+      HttpSession s = context.getRequest().getSession();
+      // this bean is already registered as /actions/Account.action
+      s.setAttribute("accountBean", this);
+      return new RedirectResolution(CatalogActionBean.class);
+    }
+  }
+
+  /**
+   * Signoff.
+   *
+   * @return the resolution
+   */
+  public Resolution signoff() {
+    context.getRequest().getSession().invalidate();
+    clear();
+    return new RedirectResolution(CatalogActionBean.class);
+  }
+
+  /**
+   * Checks if is authenticated.
+   *
+   * @return true, if is authenticated
+   */
+  public boolean isAuthenticated() {
+    return authenticated && account != null && account.getUsername() != null;
+  }
+
+  /**
+   * Clear.
+   */
+  public void clear() {
+    account = new Account();
+    myList = null;
+    authenticated = false;
+  }
+
+}
+
+/*
+ *    Copyright 2010-2022 the original author or authors.
+ *
+ *    Licensed under the Apache License, Version 2.0 (the "License");
+ *    you may not use this file except in compliance with the License.
+ *    You may obtain a copy of the License at
+ *
+ *       https://www.apache.org/licenses/LICENSE-2.0
+ *
+ *    Unless required by applicable law or agreed to in writing, software
+ *    distributed under the License is distributed on an "AS IS" BASIS,
+ *    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *    See the License for the specific language governing permissions and
+ *    limitations under the License.
+ */
+package org.mybatis.jpetstore.web.actions;
+
+import java.util.Iterator;
+
+import javax.servlet.http.HttpServletRequest;
+
+import net.sourceforge.stripes.action.ForwardResolution;
+import net.sourceforge.stripes.action.Resolution;
+import net.sourceforge.stripes.action.SessionScope;
+import net.sourceforge.stripes.integration.spring.SpringBean;
+
+import org.mybatis.jpetstore.domain.Cart;
+import org.mybatis.jpetstore.domain.CartItem;
+import org.mybatis.jpetstore.domain.Item;
+import org.mybatis.jpetstore.service.CatalogService;
+
+/**
+ * The Class CartActionBean.
+ *
+ * @author Eduardo Macarron
+ */
+@SessionScope
+public class CartActionBean extends AbstractActionBean {
+
+  private static final long serialVersionUID = -4038684592582714235L;
+
+  private static final String VIEW_CART = "/WEB-INF/jsp/cart/Cart.jsp";
+  private static final String CHECK_OUT = "/WEB-INF/jsp/cart/Checkout.jsp";
+
+  @SpringBean
+  private transient CatalogService catalogService;
+
+  private Cart cart = new Cart();
+  private String workingItemId;
+
+  public Cart getCart() {
+    return cart;
+  }
+
+  public void setCart(Cart cart) {
+    this.cart = cart;
+  }
+
+  public void setWorkingItemId(String workingItemId) {
+    this.workingItemId = workingItemId;
+  }
+
+  /**
+   * Adds the item to cart.
+   *
+   * @return the resolution
+   */
+  public Resolution addItemToCart() {
+    if (cart.containsItemId(workingItemId)) {
+      cart.incrementQuantityByItemId(workingItemId);
+    } else {
+      // isInStock is a "real-time" property that must be updated
+      // every time an item is added to the cart, even if other
+      // item details are cached.
+      boolean isInStock = catalogService.isItemInStock(workingItemId);
+      Item item = catalogService.getItem(workingItemId);
+      cart.addItem(item, isInStock);
+    }
+
+    return new ForwardResolution(VIEW_CART);
+  }
+
+  /**
+   * Removes the item from cart.
+   *
+   * @return the resolution
+   */
+  public Resolution removeItemFromCart() {
+
+    Item item = cart.removeItemById(workingItemId);
+
+    if (item == null) {
+      setMessage("Attempted to remove null CartItem from Cart.");
+      return new ForwardResolution(ERROR);
+    } else {
+      return new ForwardResolution(VIEW_CART);
+    }
+  }
+
+  /**
+   * Update cart quantities.
+   *
+   * @return the resolution
+   */
+  public Resolution updateCartQuantities() {
+    HttpServletRequest request = context.getRequest();
+
+    Iterator<CartItem> cartItems = getCart().getAllCartItems();
+    while (cartItems.hasNext()) {
+      CartItem cartItem = cartItems.next();
+      String itemId = cartItem.getItem().getItemId();
+      try {
+        int quantity = Integer.parseInt(request.getParameter(itemId));
+        getCart().setQuantityByItemId(itemId, quantity);
+        if (quantity < 1) {
+          cartItems.remove();
+        }
+      } catch (Exception e) {
+        // ignore parse exceptions on purpose
+      }
+    }
+
+    return new ForwardResolution(VIEW_CART);
+  }
+
+  public ForwardResolution viewCart() {
+    return new ForwardResolution(VIEW_CART);
+  }
+
+  public ForwardResolution checkOut() {
+    return new ForwardResolution(CHECK_OUT);
+  }
+
+  public void clear() {
+    cart = new Cart();
+    workingItemId = null;
+  }
+
+}
+
+/*
+ *    Copyright 2010-2022 the original author or authors.
+ *
+ *    Licensed under the Apache License, Version 2.0 (the "License");
+ *    you may not use this file except in compliance with the License.
+ *    You may obtain a copy of the License at
+ *
+ *       https://www.apache.org/licenses/LICENSE-2.0
+ *
+ *    Unless required by applicable law or agreed to in writing, software
+ *    distributed under the License is distributed on an "AS IS" BASIS,
+ *    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *    See the License for the specific language governing permissions and
+ *    limitations under the License.
+ */
+package org.mybatis.jpetstore.web.actions;
+
+import java.util.List;
+
+import net.sourceforge.stripes.action.DefaultHandler;
+import net.sourceforge.stripes.action.ForwardResolution;
+import net.sourceforge.stripes.action.SessionScope;
+import net.sourceforge.stripes.integration.spring.SpringBean;
+
+import org.mybatis.jpetstore.domain.Category;
+import org.mybatis.jpetstore.domain.Item;
+import org.mybatis.jpetstore.domain.Product;
+import org.mybatis.jpetstore.service.CatalogService;
+
+/**
+ * The Class CatalogActionBean.
+ *
+ * @author Eduardo Macarron
+ */
+@SessionScope
+public class CatalogActionBean extends AbstractActionBean {
+
+  private static final long serialVersionUID = 5849523372175050635L;
+
+  private static final String MAIN = "/WEB-INF/jsp/catalog/Main.jsp";
+  private static final String VIEW_CATEGORY = "/WEB-INF/jsp/catalog/Category.jsp";
+  private static final String VIEW_PRODUCT = "/WEB-INF/jsp/catalog/Product.jsp";
+  private static final String VIEW_ITEM = "/WEB-INF/jsp/catalog/Item.jsp";
+  private static final String SEARCH_PRODUCTS = "/WEB-INF/jsp/catalog/SearchProducts.jsp";
+
+  @SpringBean
+  private transient CatalogService catalogService;
+
+  private String keyword;
+
+  private String categoryId;
+  private Category category;
+  private List<Category> categoryList;
+
+  private String productId;
+  private Product product;
+  private List<Product> productList;
+
+  private String itemId;
+  private Item item;
+  private List<Item> itemList;
+
+  public String getKeyword() {
+    return keyword;
+  }
+
+  public void setKeyword(String keyword) {
+    this.keyword = keyword;
+  }
+
+  public String getCategoryId() {
+    return categoryId;
+  }
+
+  public void setCategoryId(String categoryId) {
+    this.categoryId = categoryId;
+  }
+
+  public String getProductId() {
+    return productId;
+  }
+
+  public void setProductId(String productId) {
+    this.productId = productId;
+  }
+
+  public String getItemId() {
+    return itemId;
+  }
+
+  public void setItemId(String itemId) {
+    this.itemId = itemId;
+  }
+
+  public Category getCategory() {
+    return category;
+  }
+
+  public void setCategory(Category category) {
+    this.category = category;
+  }
+
+  public Product getProduct() {
+    return product;
+  }
+
+  public void setProduct(Product product) {
+    this.product = product;
+  }
+
+  public Item getItem() {
+    return item;
+  }
+
+  public void setItem(Item item) {
+    this.item = item;
+  }
+
+  public List<Category> getCategoryList() {
+    return categoryList;
+  }
+
+  public void setCategoryList(List<Category> categoryList) {
+    this.categoryList = categoryList;
+  }
+
+  public List<Product> getProductList() {
+    return productList;
+  }
+
+  public void setProductList(List<Product> productList) {
+    this.productList = productList;
+  }
+
+  public List<Item> getItemList() {
+    return itemList;
+  }
+
+  public void setItemList(List<Item> itemList) {
+    this.itemList = itemList;
+  }
+
+  @DefaultHandler
+  public ForwardResolution viewMain() {
+    return new ForwardResolution(MAIN);
+  }
+
+  /**
+   * View category.
+   *
+   * @return the forward resolution
+   */
+  public ForwardResolution viewCategory() {
+    if (categoryId != null) {
+      productList = catalogService.getProductListByCategory(categoryId);
+      category = catalogService.getCategory(categoryId);
+    }
+    return new ForwardResolution(VIEW_CATEGORY);
+  }
+
+  /**
+   * View product.
+   *
+   * @return the forward resolution
+   */
+  public ForwardResolution viewProduct() {
+    if (productId != null) {
+      itemList = catalogService.getItemListByProduct(productId);
+      product = catalogService.getProduct(productId);
+    }
+    return new ForwardResolution(VIEW_PRODUCT);
+  }
+
+  /**
+   * View item.
+   *
+   * @return the forward resolution
+   */
+  public ForwardResolution viewItem() {
+    item = catalogService.getItem(itemId);
+    product = item.getProduct();
+    return new ForwardResolution(VIEW_ITEM);
+  }
+
+  /**
+   * Search products.
+   *
+   * @return the forward resolution
+   */
+  public ForwardResolution searchProducts() {
+    if (keyword == null || keyword.length() < 1) {
+      setMessage("Please enter a keyword to search for, then press the search button.");
+      return new ForwardResolution(ERROR);
+    } else {
+      productList = catalogService.searchProductList(keyword.toLowerCase());
+      return new ForwardResolution(SEARCH_PRODUCTS);
+    }
+  }
+
+  /**
+   * Clear.
+   */
+  public void clear() {
+    keyword = null;
+
+    categoryId = null;
+    category = null;
+    categoryList = null;
+
+    productId = null;
+    product = null;
+    productList = null;
+
+    itemId = null;
+    item = null;
+    itemList = null;
+  }
+
+}
+
+/*
+ *    Copyright 2010-2022 the original author or authors.
+ *
+ *    Licensed under the Apache License, Version 2.0 (the "License");
+ *    you may not use this file except in compliance with the License.
+ *    You may obtain a copy of the License at
+ *
+ *       https://www.apache.org/licenses/LICENSE-2.0
+ *
+ *    Unless required by applicable law or agreed to in writing, software
+ *    distributed under the License is distributed on an "AS IS" BASIS,
+ *    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *    See the License for the specific language governing permissions and
+ *    limitations under the License.
+ */
+package org.mybatis.jpetstore.web.actions;
+
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+
+import javax.servlet.http.HttpSession;
+
+import net.sourceforge.stripes.action.ForwardResolution;
+import net.sourceforge.stripes.action.Resolution;
+import net.sourceforge.stripes.action.SessionScope;
+import net.sourceforge.stripes.integration.spring.SpringBean;
+
+import org.mybatis.jpetstore.domain.Order;
+import org.mybatis.jpetstore.service.OrderService;
+
+/**
+ * The Class OrderActionBean.
+ *
+ * @author Eduardo Macarron
+ */
+@SessionScope
+public class OrderActionBean extends AbstractActionBean {
+
+  private static final long serialVersionUID = -6171288227470176272L;
+
+  private static final String CONFIRM_ORDER = "/WEB-INF/jsp/order/ConfirmOrder.jsp";
+  private static final String LIST_ORDERS = "/WEB-INF/jsp/order/ListOrders.jsp";
+  private static final String NEW_ORDER = "/WEB-INF/jsp/order/NewOrderForm.jsp";
+  private static final String SHIPPING = "/WEB-INF/jsp/order/ShippingForm.jsp";
+  private static final String VIEW_ORDER = "/WEB-INF/jsp/order/ViewOrder.jsp";
+
+  private static final List<String> CARD_TYPE_LIST;
+
+  @SpringBean
+  private transient OrderService orderService;
+
+  private Order order = new Order();
+  private boolean shippingAddressRequired;
+  private boolean confirmed;
+  private List<Order> orderList;
+
+  static {
+    CARD_TYPE_LIST = Collections.unmodifiableList(Arrays.asList("Visa", "MasterCard", "American Express"));
+  }
+
+  public int getOrderId() {
+    return order.getOrderId();
+  }
+
+  public void setOrderId(int orderId) {
+    order.setOrderId(orderId);
+  }
+
+  public Order getOrder() {
+    return order;
+  }
+
+  public void setOrder(Order order) {
+    this.order = order;
+  }
+
+  public boolean isShippingAddressRequired() {
+    return shippingAddressRequired;
+  }
+
+  public void setShippingAddressRequired(boolean shippingAddressRequired) {
+    this.shippingAddressRequired = shippingAddressRequired;
+  }
+
+  public boolean isConfirmed() {
+    return confirmed;
+  }
+
+  public void setConfirmed(boolean confirmed) {
+    this.confirmed = confirmed;
+  }
+
+  public List<String> getCreditCardTypes() {
+    return CARD_TYPE_LIST;
+  }
+
+  public List<Order> getOrderList() {
+    return orderList;
+  }
+
+  /**
+   * List orders.
+   *
+   * @return the resolution
+   */
+  public Resolution listOrders() {
+    HttpSession session = context.getRequest().getSession();
+    AccountActionBean accountBean = (AccountActionBean) session.getAttribute("/actions/Account.action");
+    orderList = orderService.getOrdersByUsername(accountBean.getAccount().getUsername());
+    return new ForwardResolution(LIST_ORDERS);
+  }
+
+  /**
+   * New order form.
+   *
+   * @return the resolution
+   */
+  public Resolution newOrderForm() {
+    HttpSession session = context.getRequest().getSession();
+    AccountActionBean accountBean = (AccountActionBean) session.getAttribute("/actions/Account.action");
+    CartActionBean cartBean = (CartActionBean) session.getAttribute("/actions/Cart.action");
+
+    clear();
+    if (accountBean == null || !accountBean.isAuthenticated()) {
+      setMessage("You must sign on before attempting to check out.  Please sign on and try checking out again.");
+      return new ForwardResolution(AccountActionBean.class);
+    } else if (cartBean != null) {
+      order.initOrder(accountBean.getAccount(), cartBean.getCart());
+      return new ForwardResolution(NEW_ORDER);
+    } else {
+      setMessage("An order could not be created because a cart could not be found.");
+      return new ForwardResolution(ERROR);
+    }
+  }
+
+  /**
+   * New order.
+   *
+   * @return the resolution
+   */
+  public Resolution newOrder() {
+    HttpSession session = context.getRequest().getSession();
+
+    if (shippingAddressRequired) {
+      shippingAddressRequired = false;
+      return new ForwardResolution(SHIPPING);
+    } else if (!isConfirmed()) {
+      return new ForwardResolution(CONFIRM_ORDER);
+    } else if (getOrder() != null) {
+
+      orderService.insertOrder(order);
+
+      CartActionBean cartBean = (CartActionBean) session.getAttribute("/actions/Cart.action");
+      cartBean.clear();
+
+      setMessage("Thank you, your order has been submitted.");
+
+      return new ForwardResolution(VIEW_ORDER);
+    } else {
+      setMessage("An error occurred processing your order (order was null).");
+      return new ForwardResolution(ERROR);
+    }
+  }
+
+  /**
+   * View order.
+   *
+   * @return the resolution
+   */
+  public Resolution viewOrder() {
+    HttpSession session = context.getRequest().getSession();
+
+    AccountActionBean accountBean = (AccountActionBean) session.getAttribute("accountBean");
+
+    order = orderService.getOrder(order.getOrderId());
+
+    if (accountBean.getAccount().getUsername().equals(order.getUsername())) {
+      return new ForwardResolution(VIEW_ORDER);
+    } else {
+      order = null;
+      setMessage("You may only view your own orders.");
+      return new ForwardResolution(ERROR);
+    }
+  }
+
+  /**
+   * Clear.
+   */
+  public void clear() {
+    order = new Order();
+    shippingAddressRequired = false;
+    confirmed = false;
+    orderList = null;
+  }
+
+}
