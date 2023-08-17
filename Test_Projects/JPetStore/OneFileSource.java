@@ -1198,7 +1198,6 @@ public class Sequence implements Serializable {
  *    See the License for the specific language governing permissions and
  *    limitations under the License.
  */
-package org.mybatis.jpetstore.mapper;
 
 import org.mybatis.jpetstore.domain.Account;
 
@@ -1242,7 +1241,6 @@ public interface AccountMapper {
  *    See the License for the specific language governing permissions and
  *    limitations under the License.
  */
-package org.mybatis.jpetstore.mapper;
 
 import java.util.List;
 
@@ -1276,7 +1274,6 @@ public interface CategoryMapper {
  *    See the License for the specific language governing permissions and
  *    limitations under the License.
  */
-package org.mybatis.jpetstore.mapper;
 
 import java.util.List;
 import java.util.Map;
@@ -1315,7 +1312,6 @@ public interface ItemMapper {
  *    See the License for the specific language governing permissions and
  *    limitations under the License.
  */
-package org.mybatis.jpetstore.mapper;
 
 import java.util.List;
 
@@ -1349,7 +1345,6 @@ public interface LineItemMapper {
  *    See the License for the specific language governing permissions and
  *    limitations under the License.
  */
-package org.mybatis.jpetstore.mapper;
 
 import java.util.List;
 
@@ -1387,7 +1382,6 @@ public interface OrderMapper {
  *    See the License for the specific language governing permissions and
  *    limitations under the License.
  */
-package org.mybatis.jpetstore.mapper;
 
 import java.util.List;
 
@@ -1423,7 +1417,6 @@ public interface ProductMapper {
  *    See the License for the specific language governing permissions and
  *    limitations under the License.
  */
-package org.mybatis.jpetstore.mapper;
 
 import org.mybatis.jpetstore.domain.Sequence;
 
@@ -1454,7 +1447,6 @@ public interface SequenceMapper {
  *    See the License for the specific language governing permissions and
  *    limitations under the License.
  */
-package org.mybatis.jpetstore.service;
 
 import java.util.Optional;
 
@@ -1530,7 +1522,6 @@ public class AccountService {
  *    See the License for the specific language governing permissions and
  *    limitations under the License.
  */
-package org.mybatis.jpetstore.service;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -1621,7 +1612,6 @@ public class CatalogService {
  *    See the License for the specific language governing permissions and
  *    limitations under the License.
  */
-package org.mybatis.jpetstore.service;
 
 import java.util.HashMap;
 import java.util.List;
@@ -1754,7 +1744,6 @@ public class OrderService {
  *    See the License for the specific language governing permissions and
  *    limitations under the License.
  */
-package org.mybatis.jpetstore.web.actions;
 
 import java.io.Serializable;
 
@@ -1806,7 +1795,6 @@ public abstract class AbstractActionBean implements ActionBean, Serializable {
  *    See the License for the specific language governing permissions and
  *    limitations under the License.
  */
-package org.mybatis.jpetstore.web.actions;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -2015,7 +2003,6 @@ public class AccountActionBean extends AbstractActionBean {
  *    See the License for the specific language governing permissions and
  *    limitations under the License.
  */
-package org.mybatis.jpetstore.web.actions;
 
 import java.util.Iterator;
 
@@ -2155,7 +2142,6 @@ public class CartActionBean extends AbstractActionBean {
  *    See the License for the specific language governing permissions and
  *    limitations under the License.
  */
-package org.mybatis.jpetstore.web.actions;
 
 import java.util.List;
 
@@ -2375,7 +2361,6 @@ public class CatalogActionBean extends AbstractActionBean {
  *    See the License for the specific language governing permissions and
  *    limitations under the License.
  */
-package org.mybatis.jpetstore.web.actions;
 
 import java.util.Arrays;
 import java.util.Collections;

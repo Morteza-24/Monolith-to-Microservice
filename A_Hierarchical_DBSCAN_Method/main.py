@@ -1,45 +1,36 @@
-from SimilarityAnalysis import class_similarity
-from DBSCAN import dbscan
 from nltk import download
-from sys import argv
-from os import pathsep
-import subprocess
-import json
+from os import path, pathsep
+from subprocess import run
+from json import load
+from A_Hierarchical_DBSCAN_Method.SimilarityAnalysis import class_similarity
+from A_Hierarchical_DBSCAN_Method.DBSCAN import dbscan
 
 
-# parse the source code and get classes, methods, etc.
-source_code_path = argv[1]
-libs = "JavaParser/lib/javaparser-core-3.25.5-SNAPSHOT.jar"+pathsep+"JavaParser/lib/json-20230618.jar"
-subprocess.run(['java', '-cp', libs, 'JavaParser/Parser.java', source_code_path]) 
-with open("JavaParser/classes.json", "rt") as classes_file:
-    classes_info = json.load(classes_file)
+def hierarchical_DBSCAN(source_code_path, alpha, minimum_number_of_sample, max_epsilon):
+    # parse the source code and get classes, methods, etc.
+    base_dir = path.dirname(path.realpath(__file__))
+    libs = path.join(base_dir, "JavaParser/lib/javaparser-core-3.25.5-SNAPSHOT.jar")+pathsep+path.join(base_dir, "JavaParser/lib/json-20230618.jar")
+    json_path = path.join(base_dir, "JavaParser/classes.json")
+    run(['java', '-cp', libs, path.join(base_dir, 'JavaParser/Parser.java'), source_code_path, json_path]) 
+    with open(json_path, "rt") as classes_file:
+        classes_info = load(classes_file)
 
+    # necessary downloads for nltk
+    download('punkt')
+    download('stopwords')
 
-# necessary downloads for nltk
-download('punkt')
-download('stopwords')
+    # get class similarity metric to feed to DBSCAN
+    class_similarity_matrix = class_similarity(alpha, classes_info)
 
+    # run DBSCAN with different epsilon values to create decomposition layers
+    layers = {}
+    epsilon = 0.05
+    while epsilon <= max_epsilon:
+        layer = dbscan(minimum_number_of_sample, epsilon, class_similarity_matrix)
+        layers[epsilon] = layer
+        epsilon += 0.05
+        epsilon = round(epsilon, 2)
 
-# get class similarity metric to feed to DBSCAN
-alpha = float(argv[2])
-class_similarity_matrix = class_similarity(alpha, classes_info)
+    # TODO: visualize layers
 
-
-# hyperparameters
-minimum_number_of_sample = int(argv[3])
-max_epsilon = float(argv[4])
-
-
-print("-"*50)
-
-
-# run DBSCAN with different epsilon values to create decomposition layers
-epsilon = 0.05
-while epsilon <= max_epsilon:
-    layer = dbscan(minimum_number_of_sample, epsilon, class_similarity_matrix)
-    print("epsilon:", epsilon, "--->", layer)
-    epsilon += 0.05
-    epsilon = round(epsilon, 2)
-
-
-# TODO: visualize layers
+    return layers, classes_info

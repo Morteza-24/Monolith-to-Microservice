@@ -66,7 +66,7 @@ class Parser {
             jsonObject.put(cls.getNameAsString(), classJson);
         });
 
-        try (FileWriter fileWriter = new FileWriter("JavaParser/classes.json")) {
+        try (FileWriter fileWriter = new FileWriter(args[1])) {
             fileWriter.write(jsonObject.toString(4));
         } catch (IOException e) {
             System.out.println("Error! " + e.getMessage());

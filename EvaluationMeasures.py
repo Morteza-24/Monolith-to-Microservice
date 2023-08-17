@@ -83,6 +83,7 @@ def IFN(microservices, classes_info):
 def NED(microservices):
     k = len(set(microservices))
     extreme = 0
+    microservices = list(microservices)
     for i in range(1, k+1):
         if 5 < microservices.count(i) < 20:
             extreme += 1
@@ -109,7 +110,16 @@ def ICP(microservices, classes_info):
                          if microservice_number == microservice_j}
 
             if microservice_i != microservice_j:
-                numerator += log(_calls(classes_i, classes_j, classes_info))+1
-            denominator += log(_calls(classes_i, classes_j, classes_info))+1
+                try:
+                    numerator += log(_calls(classes_i, classes_j, classes_info))+1
+                except ValueError:
+                    pass  # log domain erro, can be ignored
+            try:
+                denominator += log(_calls(classes_i, classes_j, classes_info))+1
+            except ValueError:
+                pass  # log domain erro, can be ignored
 
-    return numerator/denominator
+    try:
+        return numerator/denominator
+    except ZeroDivisionError:
+        return float("inf")
