@@ -57,4 +57,5 @@ def class_similarity(alpha, classes_info):
             ci = list(classes_info.keys())[i]
             cj = list(classes_info.keys())[j]
             class_similarity_matrix[i][j] = alpha*structural_similarity(ci, cj, classes_info) + (1-alpha)*semantic_similarity(ci, cj, classes_info)
+            print(".", end="", flush=True)
     return class_similarity_matrix + class_similarity_matrix.T

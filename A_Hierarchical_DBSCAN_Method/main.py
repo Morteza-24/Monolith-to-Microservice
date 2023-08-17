@@ -20,15 +20,17 @@ def hierarchical_DBSCAN(source_code_path, alpha, minimum_number_of_sample, max_e
     download('stopwords')
 
     # get class similarity metric to feed to DBSCAN
+    print("\n[hierarchical_DBSCAN] building class similarity matrix", end="", flush=True)
     class_similarity_matrix = class_similarity(alpha, classes_info)
+    print(" done!")
 
     # run DBSCAN with different epsilon values to create decomposition layers
     layers = {}
-    epsilon = 0.05
+    epsilon = 0.01
     while epsilon <= max_epsilon:
         layer = dbscan(minimum_number_of_sample, epsilon, class_similarity_matrix)
         layers[epsilon] = layer
-        epsilon += 0.05
+        epsilon += 0.01
         epsilon = round(epsilon, 2)
 
     # TODO: visualize layers
