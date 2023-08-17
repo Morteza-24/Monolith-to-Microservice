@@ -54,12 +54,21 @@ def SM(microservices, classes_info):
 
     SM1, SM2 = 0, 0
     for i in range(K):
-        SM1 += mu[i] / (m[i] ** 2)
+        try:
+            SM1 += mu[i] / (m[i] ** 2)
+        except ZeroDivisionError:
+            continue
         for j in range(K):
             if i != j:
-                SM2 += sigma[i][j] / (2 * m[i] * m[j])
-    structural_modularity = SM1 / K - SM2 / ((K*(K-1))/2)
-    return structural_modularity
+                try:
+                    SM2 += sigma[i][j] / (2 * m[i] * m[j])
+                except ZeroDivisionError:
+                    continue
+    try:
+        structural_modularity = SM1 / K - SM2 / ((K*(K-1))/2)
+        return structural_modularity
+    except ZeroDivisionError:
+        return 0
 
 
 def IFN(microservices, classes_info):

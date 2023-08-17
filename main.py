@@ -39,7 +39,7 @@ if args.evaluation_measure:
         exit()
 
 measures = {"Precision": Precision, "SR": SR,
-            "SM": SR, "IFN": IFN, "NED": NED, "ICP": ICP}
+            "SM": SM, "IFN": IFN, "NED": NED, "ICP": ICP}
 base_dir = path.dirname(path.realpath(__file__))
 
 
