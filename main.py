@@ -3,12 +3,12 @@ from EvaluationMeasures import *
 from argparse import ArgumentParser
 from json import load
 from subprocess import run
-from os import mkdir, walk, path, pathsep
+from os import makedirs, walk, path, pathsep
 
 parser = ArgumentParser(
     prog='python main.py',
     description='This program offers tools related to migrating from monolithic architectures to microservices.',
-    epilog='example usage: python main.py -f ./Test_Projects/JPetStore/OneFileSource.java -e NED ICP SR -k 7')
+    epilog='example usage: python main.py -p ./Test_Projects/PetClinic -e NED ICP SR -k 7')
 
 parser.add_argument("-f", "--file", dest="file_path",
                     help="path to the java source code file (use this option if your whole monolithic program is in one file)")
@@ -17,7 +17,7 @@ parser.add_argument("-p", "--project", dest="project_directory",
 parser.add_argument("-e", "--evaluation-measure", choices=["Precision", "SR", "SM", "IFN", "NED", "ICP"], nargs="*",
                     help="For the Precision and the SuccessRate (SR) measures, the ground truth microservices must be in different directories of your project's root directory.\
                         And for the SR measure you should also use the -k option to specify a threshold.")
-parser.add_argument("-k", 
+parser.add_argument("-k", type=int,
                     help="The k value for the SR measure (e.g. SR@7). This option can only be used if you are using the SR measure.")
 
 args = parser.parse_args()
@@ -65,7 +65,7 @@ if args.project_directory:
     true_ms_dirs = next(walk(args.project_directory))[1]
     true_ms_classnames = []
     libs = path.join(base_dir, "A_Hierarchical_DBSCAN_Method/JavaParser/lib/javaparser-core-3.25.5-SNAPSHOT.jar")+pathsep+path.join(base_dir, "A_Hierarchical_DBSCAN_Method/JavaParser/lib/json-20230618.jar")
-    mkdir(path.join(base_dir, f"data/{project_dir_name}"))
+    makedirs(path.join(base_dir, f"data/{project_dir_name}"), exist_ok=True)
     for directory in true_ms_dirs:
         if directory.endswith("/"):
             directory = directory[:-1]
