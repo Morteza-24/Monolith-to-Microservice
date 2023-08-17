@@ -28,7 +28,7 @@ if not (args.file_path or args.project_directory):
     exit()
 
 if args.evaluation_measure:
-    if bool(args.k) != "SR" in args.evaluation_measure:
+    if bool(args.k) != ("SR" in args.evaluation_measure):
         parser.print_help()
         print("\nerror: The SR evaluation measure and the -k flag should always be used together to specify the k value for the SR measure. (e.g. -e SR -k 7")
         exit()
@@ -58,7 +58,7 @@ def merge_java_files(src_dir, dest_file):
 
 
 if args.project_directory:
-    print("merging source files...", end="\t")
+    print("merging source files...", end="\t", flush=True)
     if args.project_directory.endswith("/"):
         args.project_directory = args.project_directory[:-1]
     project_dir_name = args.project_directory.split('/')[-1]
