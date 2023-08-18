@@ -1,0 +1,27 @@
+apply plugin: VerifyEventStoreEnvironmentPlugin
+apply plugin: EventuateDependencyPlugin
+
+apply plugin: 'spring-boot'
+
+dependencies {
+    compile project(":common-board")
+    compile project(":common-task")
+    compile project(":common-auth-controller")
+    compile project(":common-web")
+    compile project(":common-websocket")
+
+    compile "org.apache.httpcomponents:httpclient:4.5"
+    compile "org.apache.httpcomponents:fluent-hc:4.5.1"
+
+    compile "org.springframework.boot:spring-boot-starter-web:$springBootVersion"
+    compile "org.springframework.boot:spring-boot-starter-actuator:$springBootVersion"
+
+    testCompile "junit:junit:4.11"
+}
+
+task copyAngularJS(type: Copy) {
+    from "../../prebuilt-angularjs-client"
+    into "build/resources/main/static"
+}
+
+jar.dependsOn(copyAngularJS)
