@@ -2,7 +2,7 @@
 
 - [x] implementing `A Hierarchical DBSCAN Method for Extracting Microservices from Monolithic Applications`
 
-- [ ] implementing evaluation measures to test the the _Hierarchical DBSCAN Method_ on some _Test_Projects_
+- [x] implementing evaluation measures to test the the _Hierarchical DBSCAN Method_ on some _Test_Projects_
 
 
 # How to Use
@@ -29,9 +29,8 @@ options:
   -p PROJECT_DIRECTORY, --project PROJECT_DIRECTORY
                         path to the java project directory, (use this option if your monolithic program is in multiple files) this option overrides --file
   -e [{Precision,SR,SM,IFN,NED,ICP} ...], --evaluation-measure [{Precision,SR,SM,IFN,NED,ICP} ...]
-                        For the Precision and the SuccessRate (SR) measures, the ground truth microservices must be in different directories of your project's root directory. And for the SR measure you should also use the -k
-                        option to specify a threshold.
+                        For the Precision and the SuccessRate (SR) measures, the ground truth microservices must be in different directories of your project's root directory. And for the SR measure you should also use the -k option to specify a threshold.
   -k K                  The k value for the SR measure (e.g. SR@7). This option can only be used if you are using the SR measure.
 
-example usage: python main.py -f ./Test_Projects/JPetStore/OneFileSource.java -e NED ICP SR -k 7
+example usage: python main.py -p ./Test_Projects/PetClinic -e NED ICP SR -k 7
 ```
