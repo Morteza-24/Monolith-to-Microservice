@@ -36,7 +36,7 @@ def structural_similarity(ci, cj, classes_info):
         return 0
 
 
-def semantic_similarity(ci, cj, classes_info):
+def semantic_similarity_vectors(classes_info):
     corpus = []
     for clss in classes_info:
         corpus.append(preprocess(' '.join(classes_info[clss]['words'])))
@@ -44,18 +44,20 @@ def semantic_similarity(ci, cj, classes_info):
     vectorizer = TfidfVectorizer()
     tf_idf_vectors = vectorizer.fit_transform(corpus)
 
-    ci = list(classes_info.keys()).index(ci)
-    cj = list(classes_info.keys()).index(cj)
+    # ci = list(classes_info.keys()).index(ci)
+    # cj = list(classes_info.keys()).index(cj)
 
-    return cosine_similarity(tf_idf_vectors[ci], tf_idf_vectors[cj])[0][0]
+    # return cosine_similarity(tf_idf_vectors[ci], tf_idf_vectors[cj])[0][0]
+    return tf_idf_vectors
 
 
 def class_similarity(alpha, classes_info):
     class_similarity_matrix = zeros((len(classes_info), len(classes_info)))
+    tf_idf_vectors = semantic_similarity_vectors(classes_info)
     for i in range(len(classes_info)):
         for j in range(i+1,len(classes_info)):
             ci = list(classes_info.keys())[i]
             cj = list(classes_info.keys())[j]
-            class_similarity_matrix[i][j] = alpha*structural_similarity(ci, cj, classes_info) + (1-alpha)*semantic_similarity(ci, cj, classes_info)
-            print(".", end="", flush=True)
+            class_similarity_matrix[i][j] = 1 - (alpha*structural_similarity(ci, cj, classes_info) + (1-alpha)*cosine_similarity(tf_idf_vectors[i], tf_idf_vectors[j])[0][0])
+            print(class_similarity_matrix[i][j], end="|", flush=True)
     return class_similarity_matrix + class_similarity_matrix.T
