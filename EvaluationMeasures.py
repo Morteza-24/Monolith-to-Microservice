@@ -17,7 +17,7 @@ def Precision(microservices, true_microservices):
     for microservice in set(microservices):
         ms_classes = {clss for clss, ms in enumerate(microservices)
                       if ms == microservice}
-        precision_sum += len(microservice.intersection(_corresponding(ms_classes, true_microservices))) / len(ms_classes)
+        precision_sum += len(ms_classes.intersection(_corresponding(ms_classes, true_microservices))) / len(ms_classes)
     return precision_sum / len(set(microservices))
 
 
