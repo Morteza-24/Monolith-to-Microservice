@@ -14,7 +14,7 @@ from A_Hierarchical_DBSCAN_Method.Preprocess import preprocess
 def calls(ci, cj, classes_info):
     return len([
         _ for _ in classes_info[ci]["method_calls"]
-        if _ in classes_info[cj]["methods"]
+        if _["method_name"] in classes_info[cj]["methods"]
     ])
 
 
@@ -54,10 +54,14 @@ def semantic_similarity_vectors(classes_info):
 def class_similarity(alpha, classes_info):
     class_similarity_matrix = zeros((len(classes_info), len(classes_info)))
     tf_idf_vectors = semantic_similarity_vectors(classes_info)
-    for i in range(len(classes_info)):
-        for j in range(i+1,len(classes_info)):
+    len_classes_info = len(classes_info)
+    for i in range(len_classes_info):
+        for j in range(i+1,len_classes_info):
             ci = list(classes_info.keys())[i]
             cj = list(classes_info.keys())[j]
             class_similarity_matrix[i][j] = 1 - (alpha*structural_similarity(ci, cj, classes_info) + (1-alpha)*cosine_similarity(tf_idf_vectors[i], tf_idf_vectors[j])[0][0])
-            print(class_similarity_matrix[i][j], end="|", flush=True)
+            # print(class_similarity_matrix[i][j], end="|", flush=True)
+        print(f"\r[SimilarityAnalysis] {int(100*i/len_classes_info):02d}%", end="", flush=True)
+    print(f"\r[SimilarityAnalysis] 100%", flush=True)
+
     return class_similarity_matrix + class_similarity_matrix.T

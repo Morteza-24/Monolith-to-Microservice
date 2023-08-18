@@ -73,15 +73,16 @@ def SM(microservices, classes_info):
 
 def IFN(microservices, classes_info):
     num_microservices = max(microservices) + 1
-    interfaces_per_microservice = [[] for i in range(num_microservices)]
+    interfaces_per_microservice = [set() for i in range(num_microservices)]
 
     for class_index, class_name in enumerate(classes_info):
         microservice_i = microservices[class_index]
         for call in classes_info[class_name]["method_calls"]:
             if call['class_name'] in classes_info:
                 if microservices[list(classes_info).index(call["class_name"])] != microservice_i:
-                    interfaces_per_microservice[microservice_i].append(
+                    interfaces_per_microservice[microservice_i].add(
                         call['class_name'])
+                    break
 
     total_interfaces = sum([len(interfaces)
                            for interfaces in interfaces_per_microservice])

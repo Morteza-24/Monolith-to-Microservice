@@ -83,7 +83,6 @@ if args.file_path:
     alpha = float(input("alpha: "))
     min_samples = int(input("minimum number of sample: "))
     max_epsilon = float(input("max epsilon: "))
-    print()
     layers, classes_info = hierarchical_DBSCAN(
         args.file_path, alpha, min_samples, max_epsilon)
 
