@@ -17,7 +17,7 @@ parser.add_argument("-p", "--project", dest="project_directory",
 parser.add_argument("-e", "--evaluation-measure", choices=["Precision", "SR", "SM", "IFN", "NED", "ICP"], nargs="*",
                     help="For the Precision and the SuccessRate (SR) measures, the ground truth microservices must be in different directories of your project's root directory.\
                         And for the SR measure you should also use the -k option to specify a threshold.")
-parser.add_argument("-k", type=int,
+parser.add_argument("-k", type=int, nargs="*",
                     help="The k value for the SR measure (e.g. SR@7). This option can only be used if you are using the SR measure.")
 
 args = parser.parse_args()
@@ -88,10 +88,11 @@ if args.file_path:
 
     if args.project_directory:
         class_names = list(classes_info.keys())
-        true_microservice = [-1 for _ in classes_info]
+        true_microservices = [-1 for _ in classes_info]
         for i, ms in enumerate(true_ms_classnames):
             for clss in ms:
-                true_microservice[class_names.index(clss)] = i
+                true_microservices[class_names.index(clss)] = i
+    print("\nTrue Microservices:", true_microservices)
 
     print("\nClasses:")
     for class_number, class_name in enumerate(classes_info):
@@ -107,9 +108,10 @@ if args.file_path:
                     print(
                         f"{measure}: {measures[measure](layers[epsilon], classes_info)}")
                 elif measure == "Precision":
-                    print(f"{measure}: {measures[measure](layers[epsilon], true_microservice)}")
+                    print(f"{measure}: {measures[measure](layers[epsilon], true_microservices)}")
                 elif measure == "SR":
-                    print(f"{measure}: {measures[measure](layers[epsilon], true_microservice, args.k)}")
+                    for k in args.k:
+                        print(f"{measure}@{k}: {measures[measure](layers[epsilon], true_microservices, k)}")
                 else:
                     print(f"{measure}: {measures[measure](layers[epsilon])}")
         print()
