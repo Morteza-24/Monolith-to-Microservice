@@ -16,7 +16,7 @@ parser.add_argument("-p", "--project", dest="project_directory",
                     help="path to the java project directory, (use this option if your monolithic program is in multiple files) this option overrides --file")
 parser.add_argument("-e", "--evaluation-measure", choices=["Precision", "SR", "SM", "IFN", "NED", "ICP"], nargs="*",
                     help="For the Precision and the SuccessRate (SR) measures, the ground truth microservices must be in different directories of your project's root directory.\
-                        And for the SR measure you should also use the -k option to specify a threshold."                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             )
+                        And for the SR measure you should also use the -k option to specify a threshold.")
 parser.add_argument("-k", type=int, nargs="*",
                     help="The k value for the SR measure (e.g. SR@7). This option can only be used if you are using the SR measure.")
 
@@ -87,13 +87,12 @@ if args.file_path:
         args.file_path, alpha, min_samples, max_epsilon)
 
     class_names = list(classes_info.keys())
-    true_microservices = [-1 for _ in classes_info]
     if args.project_directory:
+        true_microservices = [-1 for _ in classes_info]
         for i, ms in enumerate(true_ms_classnames):
             for clss in ms:
                 true_microservices[class_names.index(clss)] = i
-                
-    print("\nTrue Microservices:", true_microservices)
+        print("\nTrue Microservices:", true_microservices)
 
     print("\nClasses:")
     for class_number, class_name in enumerate(classes_info):
