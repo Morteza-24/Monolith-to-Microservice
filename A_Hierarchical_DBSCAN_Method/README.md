@@ -22,7 +22,7 @@ python -m pip install numpy nltk scikit-learn
 
 from A_Hierarchical_DBSCAN_Method.main import hierarchical_DBSCAN
 
-source_file_path = "../test.java"
+source_file_path = "path/to/source.java"
 alpha = 0.5
 min_samples = 2
 max_epsilon = 0.7

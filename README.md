@@ -14,7 +14,7 @@ python -m pip install numpy nltk scikit-learn
 ```
 3.
 ```
-$ python main.py --help
+python main.py --help
 ```
 
 ```
