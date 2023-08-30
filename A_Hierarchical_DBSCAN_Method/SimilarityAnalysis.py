@@ -9,6 +9,8 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 from numpy import zeros
 from A_Hierarchical_DBSCAN_Method.Preprocess import preprocess
+from transformers import AutoTokenizer, AutoModel
+import torch
 
 
 def calls(ci, cj, classes_info):
@@ -37,18 +39,34 @@ def structural_similarity(ci, cj, classes_info):
 
 
 def semantic_similarity_vectors(classes_info):
-    corpus = []
+    tokenizer = AutoTokenizer.from_pretrained("microsoft/codebert-base")
+    model = AutoModel.from_pretrained("microsoft/codebert-base")
+
+    vectors = []
     for clss in classes_info:
-        corpus.append(preprocess(' '.join(classes_info[clss]['words'])))
+        text = preprocess(' '.join(classes_info[clss]['words']))
+        inputs = tokenizer(text, return_tensors="pt")
+        with torch.no_grad():
+            outputs = model(**inputs)
+        vectors.append(outputs.last_hidden_state[0].mean(dim=0).numpy())
 
-    vectorizer = TfidfVectorizer()
-    tf_idf_vectors = vectorizer.fit_transform(corpus)
+    similarity_matrix = cosine_similarity(vectors)
+    return similarity_matrix
 
-    # ci = list(classes_info.keys()).index(ci)
-    # cj = list(classes_info.keys()).index(cj)
 
-    # return cosine_similarity(tf_idf_vectors[ci], tf_idf_vectors[cj])[0][0]
-    return tf_idf_vectors
+# def semantic_similarity_vectors(classes_info):
+#     corpus = []
+#     for clss in classes_info:
+#         corpus.append(preprocess(' '.join(classes_info[clss]['words'])))
+
+#     vectorizer = TfidfVectorizer()
+#     tf_idf_vectors = vectorizer.fit_transform(corpus)
+
+#     # ci = list(classes_info.keys()).index(ci)
+#     # cj = list(classes_info.keys()).index(cj)
+
+#     # return cosine_similarity(tf_idf_vectors[ci], tf_idf_vectors[cj])[0][0]
+#     return tf_idf_vectors
 
 
 def class_similarity(alpha, classes_info):
