@@ -6,7 +6,7 @@ from MICROscope.SimilarityAnalysis import class_similarity
 from MICROscope.Clustering import fcm
 
 
-def MICROscope(source_code_path, alpha):
+def MICROscope(source_code_path, alpha, n_clusters):
     # parse the source code and get classes, methods, etc.
     print("\n[MICROscope] parsing the code...", end=" ", flush=True)
     base_dir = path.dirname(path.realpath(__file__))
@@ -32,6 +32,4 @@ def MICROscope(source_code_path, alpha):
     class_similarity_matrix = class_similarity(alpha, classes_info)
     print("[MICROscope] done!")
 
-    print(class_similarity_matrix)
-    return fcm(class_similarity_matrix)
-    # return layers, classes_info
+    return fcm(class_similarity_matrix, n_clusters)
