@@ -1,6 +1,6 @@
 from numpy import zeros
 from transformers import RobertaTokenizer, RobertaModel
-from torch import tensor, stack, no_grad, mean
+import torch
 from torch.nn import CosineSimilarity
 
 
@@ -37,24 +37,26 @@ def semantic_similarity(ci, cj, classes_info, tokenizer, model):
     tokens_j = tokenizer.encode(source_j, add_special_tokens=True, max_length=512)
 
     max_length = max(len(tokens_i), len(tokens_j))
-    padded_tokens_i = tensor(tokens_i + [tokenizer.pad_token_id] * (max_length - len(tokens_i)))
-    padded_tokens_j = tensor(tokens_j + [tokenizer.pad_token_id] * (max_length - len(tokens_j)))
+    padded_tokens_i = torch.tensor(tokens_i + [tokenizer.pad_token_id] * (max_length - len(tokens_i)))
+    padded_tokens_j = torch.tensor(tokens_j + [tokenizer.pad_token_id] * (max_length - len(tokens_j)))
 
-    batched_tokens = stack([padded_tokens_i, padded_tokens_j])
+    batched_tokens = torch.stack([padded_tokens_i, padded_tokens_j])
 
-    with no_grad():
+    with torch.no_grad():
         embeddings = model(batched_tokens)[0]
 
     sim = CosineSimilarity(dim=-1)
     cosine = sim(embeddings[0], embeddings[1])
-    average_similarity = mean(cosine)
+    average_similarity = torch.mean(cosine)
     return average_similarity.item()
 
 
 def class_similarity(alpha, classes_info):
     # get the models ready
+    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     tokenizer = RobertaTokenizer.from_pretrained("microsoft/codebert-base")
     model = RobertaModel.from_pretrained("microsoft/codebert-base")
+    model.to(device)
 
     class_similarity_matrix = zeros((len(classes_info), len(classes_info)))
     len_classes_info = len(classes_info)

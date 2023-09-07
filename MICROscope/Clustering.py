@@ -23,8 +23,4 @@ def fcm(class_similarity_matrix, n_clusters):
         plt.plot(pos[:,0][cluster_membership == i],
                 pos[:,1][cluster_membership == i], '.', color=colors[i])
 
-    # Mark the center of each fuzzy cluster
-    for pt in cntr:
-        plt.plot(pt[0], pt[1], 'rs')
-
     return u, fpc
