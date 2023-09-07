@@ -63,6 +63,7 @@ class Parser {
             classJson.put("methods", methodNames);
             classJson.put("method_calls", methodCalls);
             classJson.put("words", words);
+            classJson.put("source", cls.toString());
             jsonObject.put(cls.getNameAsString(), classJson);
         });
 
