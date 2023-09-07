@@ -22,7 +22,8 @@ from MICROscope.main import MICROscope
 
 source_file_path = "path/to/source.java"
 alpha = 0.5
+n_clusters = 3
 
-clusters = MICROscope(source_file_path, alpha)
+clusters = MICROscope(source_file_path, alpha, n_clusters)
 
 ```
