@@ -1,7 +1,7 @@
-from nltk import download
 from os import path, pathsep
 from subprocess import run
 from json import load
+from transformers import RobertaTokenizer, RobertaModel 
 from MICROscope.SimilarityAnalysis import class_similarity
 from MICROscope.Clustering import fcm
 
@@ -26,10 +26,6 @@ def MICROscope(source_code_path, alpha):
                     call["class_name"] = other_clss
                     break
     print("done!\n")
-
-    # necessary downloads for nltk
-    download('punkt')
-    download('stopwords')
 
     # get class similarity metric to feed to DBSCAN
     print("\n[MICROscope] building class similarity matrix...", flush=True)

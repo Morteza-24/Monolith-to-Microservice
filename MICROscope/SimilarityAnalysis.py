@@ -1,16 +1,7 @@
-'''
-def structural_similarity(ci, cj, classes_info) -> sim_str(ci, cj)
-def semantic_similarity(ci, cj, classes_info) -> sim_sem(ci, cj)
-def class_similarity(alpha, classes_info) -> class_similarity_matrix
-'''
-
-
-from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.metrics.pairwise import cosine_similarity
 from numpy import zeros
-from MICROscope.Preprocess import preprocess
-from transformers import AutoTokenizer, AutoModel
-import torch
+from transformers import RobertaTokenizer, RobertaModel
+from torch import tensor, stack, no_grad, mean
+from torch.nn import CosineSimilarity
 
 
 def calls(ci, cj, classes_info):
@@ -38,47 +29,41 @@ def structural_similarity(ci, cj, classes_info):
         return 0
 
 
-def semantic_similarity_vectors(classes_info):
-    tokenizer = AutoTokenizer.from_pretrained("microsoft/codebert-base")
-    model = AutoModel.from_pretrained("microsoft/codebert-base")
+def semantic_similarity(ci, cj, classes_info, tokenizer, model):
+    source_i = classes_info[ci]["source"]
+    source_j = classes_info[cj]["source"]
 
-    vectors = []
-    for clss in classes_info:
-        text = preprocess(' '.join(classes_info[clss]['words']))
-        inputs = tokenizer(text, return_tensors="pt")
-        with torch.no_grad():
-            outputs = model(**inputs)
-        vectors.append(outputs.last_hidden_state[0].mean(dim=0).numpy())
+    tokens_i = tokenizer.encode(source_i, add_special_tokens=True, max_length=512)
+    tokens_j = tokenizer.encode(source_j, add_special_tokens=True, max_length=512)
 
-    similarity_matrix = cosine_similarity(vectors)
-    return similarity_matrix
+    max_length = max(len(tokens_i), len(tokens_j))
+    padded_tokens_i = tensor(tokens_i + [tokenizer.pad_token_id] * (max_length - len(tokens_i)))
+    padded_tokens_j = tensor(tokens_j + [tokenizer.pad_token_id] * (max_length - len(tokens_j)))
 
+    batched_tokens = stack([padded_tokens_i, padded_tokens_j])
 
-# def semantic_similarity_vectors(classes_info):
-#     corpus = []
-#     for clss in classes_info:
-#         corpus.append(preprocess(' '.join(classes_info[clss]['words'])))
+    with no_grad():
+        embeddings = model(batched_tokens)[0]
 
-#     vectorizer = TfidfVectorizer()
-#     tf_idf_vectors = vectorizer.fit_transform(corpus)
-
-#     # ci = list(classes_info.keys()).index(ci)
-#     # cj = list(classes_info.keys()).index(cj)
-
-#     # return cosine_similarity(tf_idf_vectors[ci], tf_idf_vectors[cj])[0][0]
-#     return tf_idf_vectors
+    sim = CosineSimilarity(dim=-1)
+    cosine = sim(embeddings[0], embeddings[1])
+    average_similarity = mean(cosine)
+    return average_similarity.item()
 
 
 def class_similarity(alpha, classes_info):
+    # get the models ready
+    tokenizer = RobertaTokenizer.from_pretrained("microsoft/codebert-base")
+    model = RobertaModel.from_pretrained("microsoft/codebert-base")
+
     class_similarity_matrix = zeros((len(classes_info), len(classes_info)))
-    tf_idf_vectors = semantic_similarity_vectors(classes_info)
     len_classes_info = len(classes_info)
+
     for i in range(len_classes_info):
         for j in range(i+1,len_classes_info):
             ci = list(classes_info.keys())[i]
             cj = list(classes_info.keys())[j]
-            class_similarity_matrix[i][j] = 1 - (alpha*structural_similarity(ci, cj, classes_info) + (1-alpha)*cosine_similarity(tf_idf_vectors[i], tf_idf_vectors[j])[0][0])
-            # print(class_similarity_matrix[i][j], end="|", flush=True)
+            class_similarity_matrix[i][j] = 1 - (alpha*structural_similarity(ci, cj, classes_info) + (1-alpha)*semantic_similarity(ci, cj, classes_info, tokenizer, model))
         print(f"\r[SimilarityAnalysis] {int(100*i/len_classes_info):02d}%", end="", flush=True)
     print(f"\r[SimilarityAnalysis] 100%", flush=True)
 
