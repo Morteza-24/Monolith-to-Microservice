@@ -7,4 +7,4 @@ The JavaParser Library is used to create a java program that takes a file path o
 
 1. Make sure you have Java installed and the `java` command is available.
 2. run it:
-```$ java -cp /lib/* Parser.java source_code_path json_output_path```
+```$ java -cp ./lib/"*" Parser.java source_code_path json_output_path```
