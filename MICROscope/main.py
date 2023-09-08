@@ -1,7 +1,6 @@
 from os import path, pathsep
 from subprocess import run
 from json import load
-from transformers import RobertaTokenizer, RobertaModel 
 from MICROscope.SimilarityAnalysis import class_similarity
 from MICROscope.Clustering import fcm
 
