@@ -1,4 +1,4 @@
-from A_Hierarchical_DBSCAN_Method.main import hierarchical_DBSCAN
+from MICROscope.main import MICROscope
 from EvaluationMeasures import *
 from argparse import ArgumentParser
 from json import load
@@ -6,9 +6,9 @@ from subprocess import run
 from os import makedirs, walk, path, pathsep
 
 parser = ArgumentParser(
-    prog='python main.py',
+    prog='python MICROscope.py',
     description='This program offers tools related to migrating from monolithic architectures to microservices.',
-    epilog='example usage: python main.py -p ./Test_Projects/PetClinic/src -e NED ICP SR -k 5 7')
+    epilog='example usage: python MICROscope.py -p ./Test_Projects/PetClinic/src -e NED ICP SR -k 5 7')
 
 parser.add_argument("-f", "--file", dest="file_path",
                     help="path to the java source code file (use this option if your whole monolithic program is in one file)")
@@ -64,13 +64,13 @@ if args.project_directory:
     project_dir_name = args.project_directory.split('/')[-1]
     true_ms_dirs = next(walk(args.project_directory))[1]
     true_ms_classnames = []
-    libs = path.join(base_dir, "A_Hierarchical_DBSCAN_Method/JavaParser/lib/javaparser-core-3.25.5-SNAPSHOT.jar")+pathsep+path.join(base_dir, "A_Hierarchical_DBSCAN_Method/JavaParser/lib/json-20230618.jar")
+    libs = path.join(base_dir, "MICROscope/JavaParser/lib/javaparser-core-3.25.5-SNAPSHOT.jar")+pathsep+path.join(base_dir, "MICROscope/JavaParser/lib/json-20230618.jar")
     makedirs(path.join(base_dir, f"data/{project_dir_name}"), exist_ok=True)
     for directory in true_ms_dirs:
         if directory.endswith("/"):
             directory = directory[:-1]
         json_path = path.join(base_dir, f"data/{project_dir_name}/{directory}.json")
-        run(['java', '-cp', libs, path.join(base_dir, 'A_Hierarchical_DBSCAN_Method/JavaParser/ClassScanner.java'), path.join(args.project_directory, directory), json_path])
+        run(['java', '-cp', libs, path.join(base_dir, 'MICROscope/JavaParser/ClassScanner.java'), path.join(args.project_directory, directory), json_path])
         with open(json_path, "rt") as classes_file:
             true_ms_classnames.append(load(classes_file)["classes"])
 
@@ -79,12 +79,10 @@ if args.project_directory:
     print("done!")
 
 if args.file_path:
-    print("\n--- A Hierarchical DBSCAN Method ---\n")
+    print("\n--- MICROscope ---\n")
     alpha = float(input("alpha: "))
-    min_samples = int(input("minimum number of sample: "))
-    max_epsilon = float(input("max epsilon: "))
-    layers, classes_info = hierarchical_DBSCAN(
-        args.file_path, alpha, min_samples, max_epsilon)
+    n_clusters = int(input("number of clusters: "))
+    clusters, classes_info = MICROscope(args.file_path, alpha, n_clusters)
 
     class_names = list(classes_info.keys())
     if args.project_directory:
@@ -98,23 +96,18 @@ if args.file_path:
     for class_number, class_name in enumerate(classes_info):
         print(f"#{class_number}: \t{class_name}")
 
-    print("\nLayers:")
-    for epsilon in layers:
-        print("epsilon:", epsilon)
-        print("microservices:")
-        print(layers[epsilon])
-        for microservice in set(layers[epsilon]):
-            print(f"ms #{microservice}:", [class_names[clss] for clss, ms in enumerate(layers[epsilon]) if ms == microservice])
-        if args.evaluation_measure:
-            for measure in args.evaluation_measure:
-                if measure in ["SM", "IFN", "ICP"]:
-                    print(
-                        f"{measure}: {measures[measure](layers[epsilon], classes_info)}")
-                elif measure == "Precision":
-                    print(f"{measure}: {measures[measure](layers[epsilon], true_microservices)}")
-                elif measure == "SR":
-                    for k in args.k:
-                        print(f"{measure}@{k}: {measures[measure](layers[epsilon], true_microservices, k)}")
-                else:
-                    print(f"{measure}: {measures[measure](layers[epsilon])}")
-        print()
+    print("\nClusters:")
+    print(clusters)
+    if args.evaluation_measure:
+        for measure in args.evaluation_measure:
+            if measure in ["SM", "IFN", "ICP"]:
+                print(
+                    f"{measure}: {measures[measure](clusters, classes_info)}")
+            elif measure == "Precision":
+                print(f"{measure}: {measures[measure](clusters, true_microservices)}")
+            elif measure == "SR":
+                for k in args.k:
+                    print(f"{measure}@{k}: {measures[measure](clusters, true_microservices, k)}")
+            else:
+                print(f"{measure}: {measures[measure](clusters)}")
+    print()
