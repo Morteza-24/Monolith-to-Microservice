@@ -26,4 +26,4 @@ def fcm(class_similarity_matrix, n_clusters):
     for i, xy in enumerate(zip(alldata[0], alldata[1])):
         plt.text(xy[0], xy[1], str(i), color="red", fontsize=12)
 
-    return u, fpc
+    return u

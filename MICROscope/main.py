@@ -31,4 +31,4 @@ def MICROscope(source_code_path, alpha, n_clusters):
     class_similarity_matrix = class_similarity(alpha, classes_info)
     print("[MICROscope] done!")
 
-    return fcm(class_similarity_matrix, n_clusters)
+    return fcm(class_similarity_matrix, n_clusters), classes_info
