@@ -33,17 +33,13 @@ def semantic_similarity(ci, cj, classes_info, tokenizer, model):
     source_i = classes_info[ci]["source"]
     source_j = classes_info[cj]["source"]
 
-    tokens_i = tokenizer.encode(source_i, add_special_tokens=True, max_length=512)
-    tokens_j = tokenizer.encode(source_j, add_special_tokens=True, max_length=512)
+    tokens_i = tokenizer.encode(source_i, add_special_tokens=True, padding='max_length', truncation=True, return_tensors='pt')
+    tokens_j = tokenizer.encode(source_j, add_special_tokens=True, padding='max_length', truncation=True, return_tensors='pt')
 
-    max_length = max(len(tokens_i), len(tokens_j))
-    padded_tokens_i = torch.tensor(tokens_i + [tokenizer.pad_token_id] * (max_length - len(tokens_i)))
-    padded_tokens_j = torch.tensor(tokens_j + [tokenizer.pad_token_id] * (max_length - len(tokens_j)))
-
-    batched_tokens = torch.stack([padded_tokens_i, padded_tokens_j])
+    tokens = torch.stack([tokens_i[0], tokens_j[0]])
 
     with torch.no_grad():
-        embeddings = model(batched_tokens)[0]
+        embeddings = model(tokens)[0]
 
     sim = CosineSimilarity(dim=-1)
     cosine = sim(embeddings[0], embeddings[1])
