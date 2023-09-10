@@ -1,5 +1,5 @@
 from MICROscope.main import MICROscope
-from EvaluationMeasures import *
+from MICROscope.EvaluationMeasures import *
 from argparse import ArgumentParser
 from json import load
 from subprocess import run
