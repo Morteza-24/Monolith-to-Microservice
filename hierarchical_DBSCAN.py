@@ -1,5 +1,5 @@
 from A_Hierarchical_DBSCAN_Method.main import hierarchical_DBSCAN
-from EvaluationMeasures import *
+from A_Hierarchical_DBSCAN_Method.EvaluationMeasures import *
 from argparse import ArgumentParser
 from json import load
 from subprocess import run
