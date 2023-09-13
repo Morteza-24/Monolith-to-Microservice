@@ -71,18 +71,37 @@ def SM(microservices, classes_info):
         return 0
 
 
+# def IFN(microservices, classes_info):
+#     num_microservices = max(microservices) + 1
+#     interfaces_per_microservice = [set() for i in range(num_microservices)]
+
+#     for class_index, class_name in enumerate(classes_info):
+#         microservice_i = microservices[class_index]
+#         for call in classes_info[class_name]["method_calls"]:
+#             if call['class_name'] in classes_info:
+#                 if microservices[list(classes_info).index(call["class_name"])] != microservice_i:
+#                     interfaces_per_microservice[microservice_i].add(
+#                         call['class_name'])
+#                     break
+
+#     total_interfaces = sum([len(interfaces)
+#                            for interfaces in interfaces_per_microservice])
+#     interface_number = total_interfaces / num_microservices
+#     return interface_number
+
 def IFN(microservices, classes_info):
-    num_microservices = max(microservices) + 1
+    num_microservices = max(max(ms) for ms in microservices) + 1
     interfaces_per_microservice = [set() for i in range(num_microservices)]
 
     for class_index, class_name in enumerate(classes_info):
-        microservice_i = microservices[class_index]
+        class_ms_list = microservices[class_index]
         for call in classes_info[class_name]["method_calls"]:
             if call['class_name'] in classes_info:
-                if microservices[list(classes_info).index(call["class_name"])] != microservice_i:
-                    interfaces_per_microservice[microservice_i].add(
-                        call['class_name'])
-                    break
+                class_j_index = list(classes_info).index(call["class_name"])
+                method_class_ms_list = microservices[class_j_index]
+                for ms_i in class_ms_list:
+                    if ms_i not in method_class_ms_list:
+                        interfaces_per_microservice[ms_i].add(call['class_name'])
 
     total_interfaces = sum([len(interfaces)
                            for interfaces in interfaces_per_microservice])
