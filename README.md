@@ -6,7 +6,9 @@
 
 - [x] implementing `MICROscope` Method; using CodeBERT and fuzzy c-means clustering
 
-- [ ] implementing evaluation measures to test the the _MICROscope Method_ on some _Test_Projects_
+- [x] implementing evaluation measures to test the the _MICROscope Method_ on some _Test_Projects_
+
+- [ ] optimize & improve the _MICROscope Method_
 
 
 # How to Use
