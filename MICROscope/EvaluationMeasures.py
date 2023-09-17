@@ -14,19 +14,21 @@ def _corresponding(microservice_classes, true_microservices):
 
 def Precision(microservices, true_microservices):
     precision_sum = 0
-    for microservice in set(microservices):
+    n_microservices = max(max(m) for m in microservices) + 1
+    for microservice in range(n_microservices):
         ms_classes = {clss for clss, ms in enumerate(microservices)
-                      if ms == microservice}
+                      if microservice in ms}
         precision_sum += len(ms_classes.intersection(_corresponding(ms_classes, true_microservices))) / len(ms_classes)
-    return precision_sum / len(set(microservices))
+    return precision_sum / n_microservices
 
 
 def SR(microservices, true_microservices, k):
     threshold = k/10
     matches = 0
-    for microservice in set(microservices):
+    n_microservices = max(max(m) for m in microservices) + 1
+    for microservice in range(n_microservices):
         ms_classes = {clss for clss, ms in enumerate(microservices)
-                      if ms == microservice}
+                      if microservice in ms}
         matching = len(ms_classes.intersection(_corresponding(ms_classes, true_microservices))) / len(ms_classes)
         if matching >= threshold:
             matches += 1
@@ -34,23 +36,23 @@ def SR(microservices, true_microservices, k):
 
 
 def SM(microservices, classes_info):
-    K = len(set(microservices))
+    K = max(max(m) for m in microservices) + 1
     m = [0] * K  # number of classes for each microservice
     mu = [0] * K  # number of inside calls
     sigma = [[0]*K for _ in range(K)]  # number of outside calls
 
     for class_index, class_name in enumerate(classes_info):
-        microservice_i = microservices[class_index]
-        m[microservice_i] += 1
-        for call in classes_info[class_name]["method_calls"]:
-            class_j = call["class_name"]
-            if class_j in classes_info:
-                j = list(classes_info).index(class_j)
-                microservice_j = microservices[j]
-                if microservice_i == microservice_j:
-                    mu[microservice_i] += 1
-                else:
-                    sigma[microservice_i][microservice_j] += 1
+        for microservice_i in microservices[class_index]:
+            m[microservice_i] += 1
+            for call in classes_info[class_name]["method_calls"]:
+                class_j = call["class_name"]
+                if class_j in classes_info:
+                    j = list(classes_info).index(class_j)
+                    for microservice_j in microservices[j]:
+                        if microservice_i == microservice_j:
+                            mu[microservice_i] += 1
+                        else:
+                            sigma[microservice_i][microservice_j] += 1
 
     SM1, SM2 = 0, 0
     for i in range(K):
@@ -73,16 +75,16 @@ def SM(microservices, classes_info):
 
 def IFN(microservices, classes_info):
     num_microservices = max(max(ms) for ms in microservices) + 1
-    interfaces_per_microservice = [set() for i in range(num_microservices)]
+    interfaces_per_microservice = [set() for _ in range(num_microservices)]
 
     for class_index, class_name in enumerate(classes_info):
         class_ms_list = microservices[class_index]
         for call in classes_info[class_name]["method_calls"]:
             if call['class_name'] in classes_info:
-                class_j_index = list(classes_info).index(call["class_name"])
-                method_class_ms_list = microservices[class_j_index]
+                call_class_index = list(classes_info).index(call["class_name"])
+                call_ms_list = microservices[call_class_index]
                 for ms_i in class_ms_list:
-                    if ms_i not in method_class_ms_list:
+                    if ms_i not in call_ms_list:
                         interfaces_per_microservice[ms_i].add(call['class_name'])
 
     total_interfaces = sum([len(interfaces)
@@ -92,13 +94,12 @@ def IFN(microservices, classes_info):
 
 
 def NED(microservices):
-    k = len(set(microservices))
+    microservices = [ims for ms in microservices for ims in ms]
     extreme = 0
-    microservices = list(microservices)
-    for i in range(1, k+1):
+    for i in set(microservices):
         if 5 < microservices.count(i) < 20:
             extreme += 1
-    return 1 - extreme/k
+    return 1 - extreme/len(set(microservices))
 
 
 def _calls(classes_i, classes_j, classes_info):
@@ -113,22 +114,24 @@ def ICP(microservices, classes_info):
     class_names = list(classes_info.keys())
     numerator, denominator = 0, 0
 
-    for microservice_i in set(microservices):
-        classes_i = {class_names[class_number] for class_number, microservice_number in enumerate(microservices)
-                     if microservice_number == microservice_i}
-        for microservice_j in set(microservices):
-            classes_j = {class_names[class_number] for class_number, microservice_number in enumerate(microservices)
-                         if microservice_number == microservice_j}
+    n_microservices = max(max(m) for m in microservices) + 1
+    for microservice_i in range(n_microservices):
+        for microservice_j in range(n_microservices):
+            classes_i = {class_names[class_number] for class_number, microservices_list in enumerate(microservices)
+                            if microservice_i in microservices_list}
+            classes_j = {class_names[class_number] for class_number, microservices_list in enumerate(microservices)
+                        if microservice_j in microservices_list}
 
             if microservice_i != microservice_j:
                 try:
                     numerator += log(_calls(classes_i, classes_j, classes_info))+1
                 except ValueError:
-                    pass  # log domain erro, can be ignored
+                    pass  # log domain error, can be ignored
+
             try:
                 denominator += log(_calls(classes_i, classes_j, classes_info))+1
             except ValueError:
-                pass  # log domain erro, can be ignored
+                pass  # log domain error, can be ignored
 
     try:
         return numerator/denominator
