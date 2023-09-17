@@ -112,10 +112,10 @@ def ICP(microservices, classes_info):
     class_names = list(classes_info.keys())
     numerator, denominator = 0, 0
 
-    for microservice_i in set(microservices):
+    for microservice_i in range(max(microservices)+1):
         classes_i = {class_names[class_number] for class_number, microservice_number in enumerate(microservices)
                      if microservice_number == microservice_i}
-        for microservice_j in set(microservices):
+        for microservice_j in range(max(microservices)+1):
             classes_j = {class_names[class_number] for class_number, microservice_number in enumerate(microservices)
                          if microservice_number == microservice_j}
 
