@@ -3,9 +3,10 @@ from subprocess import run
 from json import load
 from MICROscope.SimilarityAnalysis import class_similarity
 from MICROscope.Clustering import fcm
+import numpy as np
 
 
-def MICROscope(source_code_path, alpha, n_clusters):
+def MICROscope(source_code_path, alpha):
     # parse the source code and get classes, methods, etc.
     print("\n[MICROscope] parsing the code...", end=" ", flush=True)
     base_dir = path.dirname(path.realpath(__file__))
@@ -24,11 +25,11 @@ def MICROscope(source_code_path, alpha, n_clusters):
                 if call["method_name"] in classes_info[other_clss]["methods"]:
                     call["class_name"] = other_clss
                     break
-    print("done!\n")
+    print("done!")
 
-    # get class similarity metric to feed to DBSCAN
-    print("\n[MICROscope] building class similarity matrix...", flush=True)
+    # get class similarity metric to feed to FCM
+    print("[MICROscope] building class similarity matrix")
     class_similarity_matrix = class_similarity(alpha, classes_info)
-    print("[MICROscope] done!")
+    print("[MICROscope] class similarity matrix built successfully!")
 
-    return fcm(class_similarity_matrix, n_clusters), classes_info
+    return fcm(class_similarity_matrix), classes_info

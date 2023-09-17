@@ -81,8 +81,7 @@ if args.project_directory:
 if args.file_path:
     print("\n--- MICROscope ---\n")
     alpha = float(input("alpha: "))
-    n_clusters = int(input("number of clusters: "))
-    clusters, classes_info = MICROscope(args.file_path, alpha, n_clusters)
+    clusters, classes_info = MICROscope(args.file_path, alpha)
 
     class_names = list(classes_info.keys())
     if args.project_directory:
@@ -98,6 +97,10 @@ if args.file_path:
 
     print("\nClusters:")
     print(clusters)
+    print("\nMicroservices")
+    for ms in range(max(max(_) for _ in clusters)+1):
+        print(f"ms #{ms}", [class_names[clss_i] for clss_i, ms_list in enumerate(clusters) if ms in ms_list])
+
     if args.evaluation_measure:
         for measure in args.evaluation_measure:
             if measure in ["SM", "IFN", "ICP"]:
