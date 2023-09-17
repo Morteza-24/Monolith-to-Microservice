@@ -10,9 +10,9 @@ This method consists of two major steps:
 # How to Use
 
 1. Make sure you have Java installed and the `java` command is available.
-2. Make sure that `numpy`, `scikit-learn`, `scikit-fuzzy`, `pytorch`, `transformers` are installed:
+2. Make sure that `numpy`, `matplotlib`, `scikit-learn`, `scikit-fuzzy`, `pytorch`, `transformers` are installed:
 ```
-python -m pip install numpy scikit-learn scikit-fuzzy torch transformers
+python -m pip install numpy matplotlib scikit-learn scikit-fuzzy torch transformers
 ```
 3. import it in your code and use it:
 ```
@@ -22,8 +22,7 @@ from MICROscope.main import MICROscope
 
 source_file_path = "path/to/source.java"
 alpha = 0.5
-n_clusters = 3
 
-clusters = MICROscope(source_file_path, alpha, n_clusters)
+clusters = MICROscope(source_file_path, alpha)
 
 ```
