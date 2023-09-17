@@ -4,26 +4,41 @@ import skfuzzy as fuzz
 import matplotlib.pyplot as plt
 
 
-def fcm(class_similarity_matrix, n_clusters):
+def fcm(class_similarity_matrix):
     mds = manifold.MDS(
-        max_iter=3000,
-        eps=1e-9,
+        max_iter=10000000,
+        eps=1e-90,
         dissimilarity="precomputed",
         normalized_stress="auto",
     )
     pos = mds.fit(class_similarity_matrix).embedding_
-
     alldata = np.vstack((pos[:, 0], pos[:, 1]))
-    cntr, u, u0, d, jm, p, fpc = fuzz.cluster.cmeans(
-        alldata, 5, 2, error=0.005, maxiter=1000, init=None)
 
-    cluster_membership = np.argmax(u, axis=0)
-    colors = ['b', 'orange', 'g', 'r', 'c', 'm', 'y', 'k', 'Brown', 'ForestGreen']
-    for i in range(n_clusters):
-        plt.plot(pos[:,0][cluster_membership == i],
-                pos[:,1][cluster_membership == i], '.', color=colors[i])
-
+    fig, ax = plt.subplots()
+    ax.plot(pos[:,0], pos[:,1], ".")
     for i, xy in enumerate(zip(alldata[0], alldata[1])):
-        plt.text(xy[0], xy[1], str(i), color="red", fontsize=12)
+        ax.text(xy[0], xy[1], str(i), color="red", fontsize=12)
+    fig.show()
 
-    return u
+    n_clusters = int(input("\nnumber of clusters: "))
+
+    cntr, u, u0, d, jm, p, fpc = fuzz.cluster.cmeans(
+        alldata, n_clusters, 2, error=1e-90, maxiter=100000, init=None)
+
+
+    fig, axs = plt.subplots(n_clusters, sharex='all')
+    for i, cluster in enumerate(u):
+        axs[i].bar(range(len(class_similarity_matrix)), cluster)
+
+    plt.xticks(range(len(class_similarity_matrix)))
+    fig.show()
+
+    cluster_membership = [{-1} for _ in u[0]]
+    threshold = float(input("degree of membership threshold: "))
+    for cluster_i in range(len(u)):
+        for class_i in range(len(u[cluster_i])):
+            if u[cluster_i][class_i] >= threshold:
+                cluster_membership[class_i].discard(-1)
+                cluster_membership[class_i].add(cluster_i)
+
+    return cluster_membership
