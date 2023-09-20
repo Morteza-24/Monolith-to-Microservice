@@ -1,494 +1,46 @@
-/*
- *    Copyright 2010-2022 the original author or authors.
- *
- *    Licensed under the Apache License, Version 2.0 (the "License");
- *    you may not use this file except in compliance with the License.
- *    You may obtain a copy of the License at
- *
- *       https://www.apache.org/licenses/LICENSE-2.0
- *
- *    Unless required by applicable law or agreed to in writing, software
- *    distributed under the License is distributed on an "AS IS" BASIS,
- *    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- *    See the License for the specific language governing permissions and
- *    limitations under the License.
- */
 
 import java.io.Serializable;
 
-import net.sourceforge.stripes.validation.Validate;
 
-/**
- * The Class Account.
- *
- * @author Eduardo Macarron
- */
-public class Account implements Serializable {
-
-  private static final long serialVersionUID = 8751282105532159742L;
-
-  private String username;
-  private String password;
-  private String email;
-  private String firstName;
-  private String lastName;
-  private String status;
-  private String address1;
-  private String address2;
-  private String city;
-  private String state;
-  private String zip;
-  private String country;
-  private String phone;
-  private String favouriteCategoryId;
-  private String languagePreference;
-  private boolean listOption;
-  private boolean bannerOption;
-  private String bannerName;
-
-  public String getUsername() {
-    return username;
-  }
-
-  public void setUsername(String username) {
-    this.username = username;
-  }
-
-  public String getPassword() {
-    return password;
-  }
-
-  public void setPassword(String password) {
-    this.password = password;
-  }
-
-  public String getEmail() {
-    return email;
-  }
-
-  public void setEmail(String email) {
-    this.email = email;
-  }
-
-  public String getFirstName() {
-    return firstName;
-  }
-
-  @Validate(required = true, on = { "newAccount", "editAccount" })
-  public void setFirstName(String firstName) {
-    this.firstName = firstName;
-  }
-
-  public String getLastName() {
-    return lastName;
-  }
-
-  @Validate(required = true, on = { "newAccount", "editAccount" })
-  public void setLastName(String lastName) {
-    this.lastName = lastName;
-  }
-
-  public String getStatus() {
-    return status;
-  }
-
-  public void setStatus(String status) {
-    this.status = status;
-  }
-
-  public String getAddress1() {
-    return address1;
-  }
-
-  public void setAddress1(String address1) {
-    this.address1 = address1;
-  }
-
-  public String getAddress2() {
-    return address2;
-  }
-
-  public void setAddress2(String address2) {
-    this.address2 = address2;
-  }
-
-  public String getCity() {
-    return city;
-  }
-
-  public void setCity(String city) {
-    this.city = city;
-  }
-
-  public String getState() {
-    return state;
-  }
-
-  public void setState(String state) {
-    this.state = state;
-  }
-
-  public String getZip() {
-    return zip;
-  }
-
-  public void setZip(String zip) {
-    this.zip = zip;
-  }
-
-  public String getCountry() {
-    return country;
-  }
-
-  public void setCountry(String country) {
-    this.country = country;
-  }
-
-  public String getPhone() {
-    return phone;
-  }
-
-  public void setPhone(String phone) {
-    this.phone = phone;
-  }
-
-  public String getFavouriteCategoryId() {
-    return favouriteCategoryId;
-  }
-
-  public void setFavouriteCategoryId(String favouriteCategoryId) {
-    this.favouriteCategoryId = favouriteCategoryId;
-  }
-
-  public String getLanguagePreference() {
-    return languagePreference;
-  }
-
-  public void setLanguagePreference(String languagePreference) {
-    this.languagePreference = languagePreference;
-  }
-
-  public boolean isListOption() {
-    return listOption;
-  }
-
-  public void setListOption(boolean listOption) {
-    this.listOption = listOption;
-  }
-
-  public boolean isBannerOption() {
-    return bannerOption;
-  }
-
-  public void setBannerOption(boolean bannerOption) {
-    this.bannerOption = bannerOption;
-  }
-
-  public String getBannerName() {
-    return bannerName;
-  }
-
-  public void setBannerName(String bannerName) {
-    this.bannerName = bannerName;
-  }
-
-}
-
-/*
- *    Copyright 2010-2022 the original author or authors.
- *
- *    Licensed under the Apache License, Version 2.0 (the "License");
- *    you may not use this file except in compliance with the License.
- *    You may obtain a copy of the License at
- *
- *       https://www.apache.org/licenses/LICENSE-2.0
- *
- *    Unless required by applicable law or agreed to in writing, software
- *    distributed under the License is distributed on an "AS IS" BASIS,
- *    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- *    See the License for the specific language governing permissions and
- *    limitations under the License.
- */
-
-import java.io.Serializable;
-import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
-
-/**
- * The Class Cart.
- *
- * @author Eduardo Macarron
- */
-public class Cart implements Serializable {
-
-  private static final long serialVersionUID = 8329559983943337176L;
-
-  private final Map<String, CartItem> itemMap = Collections.synchronizedMap(new HashMap<>());
-  private final List<CartItem> itemList = new ArrayList<>();
-
-  public Iterator<CartItem> getCartItems() {
-    return itemList.iterator();
-  }
-
-  public List<CartItem> getCartItemList() {
-    return itemList;
-  }
-
-  public int getNumberOfItems() {
-    return itemList.size();
-  }
-
-  public Iterator<CartItem> getAllCartItems() {
-    return itemList.iterator();
-  }
-
-  public boolean containsItemId(String itemId) {
-    return itemMap.containsKey(itemId);
-  }
-
-  /**
-   * Adds the item.
-   *
-   * @param item
-   *          the item
-   * @param isInStock
-   *          the is in stock
-   */
-  public void addItem(Item item, boolean isInStock) {
-    CartItem cartItem = itemMap.get(item.getItemId());
-    if (cartItem == null) {
-      cartItem = new CartItem();
-      cartItem.setItem(item);
-      cartItem.setQuantity(0);
-      cartItem.setInStock(isInStock);
-      itemMap.put(item.getItemId(), cartItem);
-      itemList.add(cartItem);
-    }
-    cartItem.incrementQuantity();
-  }
-
-  /**
-   * Removes the item by id.
-   *
-   * @param itemId
-   *          the item id
-   *
-   * @return the item
-   */
-  public Item removeItemById(String itemId) {
-    CartItem cartItem = itemMap.remove(itemId);
-    if (cartItem == null) {
-      return null;
-    } else {
-      itemList.remove(cartItem);
-      return cartItem.getItem();
-    }
-  }
-
-  /**
-   * Increment quantity by item id.
-   *
-   * @param itemId
-   *          the item id
-   */
-  public void incrementQuantityByItemId(String itemId) {
-    CartItem cartItem = itemMap.get(itemId);
-    cartItem.incrementQuantity();
-  }
-
-  public void setQuantityByItemId(String itemId, int quantity) {
-    CartItem cartItem = itemMap.get(itemId);
-    cartItem.setQuantity(quantity);
-  }
-
-  /**
-   * Gets the sub total.
-   *
-   * @return the sub total
-   */
-  public BigDecimal getSubTotal() {
-    return itemList.stream()
-        .map(cartItem -> cartItem.getItem().getListPrice().multiply(new BigDecimal(cartItem.getQuantity())))
-        .reduce(BigDecimal.ZERO, BigDecimal::add);
-  }
-
-}
-
-/*
- *    Copyright 2010-2022 the original author or authors.
- *
- *    Licensed under the Apache License, Version 2.0 (the "License");
- *    you may not use this file except in compliance with the License.
- *    You may obtain a copy of the License at
- *
- *       https://www.apache.org/licenses/LICENSE-2.0
- *
- *    Unless required by applicable law or agreed to in writing, software
- *    distributed under the License is distributed on an "AS IS" BASIS,
- *    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- *    See the License for the specific language governing permissions and
- *    limitations under the License.
- */
-
-import java.io.Serializable;
-import java.math.BigDecimal;
-import java.util.Optional;
-
-/**
- * The Class CartItem.
- *
- * @author Eduardo Macarron
- */
-public class CartItem implements Serializable {
-
-  private static final long serialVersionUID = 6620528781626504362L;
-
-  private Item item;
-  private int quantity;
-  private boolean inStock;
-  private BigDecimal total;
-
-  public boolean isInStock() {
-    return inStock;
-  }
-
-  public void setInStock(boolean inStock) {
-    this.inStock = inStock;
-  }
-
-  public BigDecimal getTotal() {
-    return total;
-  }
-
-  public Item getItem() {
-    return item;
-  }
-
-  public void setItem(Item item) {
-    this.item = item;
-    calculateTotal();
-  }
-
-  public int getQuantity() {
-    return quantity;
-  }
-
-  public void setQuantity(int quantity) {
-    this.quantity = quantity;
-    calculateTotal();
-  }
-
-  public void incrementQuantity() {
-    quantity++;
-    calculateTotal();
-  }
-
-  private void calculateTotal() {
-    total = Optional.ofNullable(item).map(Item::getListPrice).map(v -> v.multiply(new BigDecimal(quantity)))
-        .orElse(null);
-  }
-
-}
-
-/*
- *    Copyright 2010-2022 the original author or authors.
- *
- *    Licensed under the Apache License, Version 2.0 (the "License");
- *    you may not use this file except in compliance with the License.
- *    You may obtain a copy of the License at
- *
- *       https://www.apache.org/licenses/LICENSE-2.0
- *
- *    Unless required by applicable law or agreed to in writing, software
- *    distributed under the License is distributed on an "AS IS" BASIS,
- *    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- *    See the License for the specific language governing permissions and
- *    limitations under the License.
- */
-
-import java.io.Serializable;
-
-/**
- * The Class Category.
- *
- * @author Eduardo Macarron
- */
 public class Category implements Serializable {
 
-  private static final long serialVersionUID = 3992469837058393712L;
+  /* Private Fields */
 
   private String categoryId;
   private String name;
   private String description;
 
-  public String getCategoryId() {
-    return categoryId;
-  }
+  /* JavaBeans Properties */
 
-  public void setCategoryId(String categoryId) {
-    this.categoryId = categoryId.trim();
-  }
+  public String getCategoryId() { return categoryId; }
+  public void setCategoryId(String categoryId) { this.categoryId = categoryId.trim(); }
 
-  public String getName() {
-    return name;
-  }
+  public String getName() { return name; }
+  public void setName(String name) { this.name = name; }
 
-  public void setName(String name) {
-    this.name = name;
-  }
+  public String getDescription() { return description; }
+  public void setDescription(String description) { this.description = description; }
 
-  public String getDescription() {
-    return description;
-  }
+  /* Public Methods */
 
-  public void setDescription(String description) {
-    this.description = description;
-  }
-
-  @Override
   public String toString() {
     return getCategoryId();
   }
 
 }
 
-/*
- *    Copyright 2010-2022 the original author or authors.
- *
- *    Licensed under the Apache License, Version 2.0 (the "License");
- *    you may not use this file except in compliance with the License.
- *    You may obtain a copy of the License at
- *
- *       https://www.apache.org/licenses/LICENSE-2.0
- *
- *    Unless required by applicable law or agreed to in writing, software
- *    distributed under the License is distributed on an "AS IS" BASIS,
- *    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- *    See the License for the specific language governing permissions and
- *    limitations under the License.
- */
 
 import java.io.Serializable;
-import java.math.BigDecimal;
 
-/**
- * The Class Item.
- *
- * @author Eduardo Macarron
- */
+
 public class Item implements Serializable {
 
-  private static final long serialVersionUID = -2159121673445254631L;
+  /* Private Fields */
 
   private String itemId;
   private String productId;
-  private BigDecimal listPrice;
-  private BigDecimal unitCost;
+  private double listPrice;
+  private double unitCost;
   private int supplierId;
   private String status;
   private String attribute1;
@@ -499,258 +51,148 @@ public class Item implements Serializable {
   private Product product;
   private int quantity;
 
-  public String getItemId() {
-    return itemId;
-  }
+  /* JavaBeans Properties */
 
-  public void setItemId(String itemId) {
-    this.itemId = itemId.trim();
-  }
+  public String getItemId() { return itemId; }
+  public void setItemId(String itemId) { this.itemId = itemId.trim(); }
 
-  public int getQuantity() {
-    return quantity;
-  }
+  public int getQuantity() { return quantity; }
+  public void setQuantity(int quantity) { this.quantity = quantity; }
 
-  public void setQuantity(int quantity) {
-    this.quantity = quantity;
-  }
+  public Product getProduct() { return product; }
+  public void setProduct(Product product) { this.product = product; }
 
-  public Product getProduct() {
-    return product;
-  }
+  public String getProductId() { return productId; }
+  public void setProductId(String productId) { this.productId = productId; }
 
-  public void setProduct(Product product) {
-    this.product = product;
-  }
+  public int getSupplierId() { return supplierId; }
+  public void setSupplierId(int supplierId) { this.supplierId = supplierId; }
 
-  public int getSupplierId() {
-    return supplierId;
-  }
+  public double getListPrice() { return listPrice; }
+  public void setListPrice(double listPrice) { this.listPrice = listPrice; }
 
-  public void setSupplierId(int supplierId) {
-    this.supplierId = supplierId;
-  }
+  public double getUnitCost() { return unitCost; }
+  public void setUnitCost(double unitCost) { this.unitCost = unitCost; }
 
-  public BigDecimal getListPrice() {
-    return listPrice;
-  }
+  public String getStatus() { return status; }
+  public void setStatus(String status) { this.status = status; }
 
-  public void setListPrice(BigDecimal listPrice) {
-    this.listPrice = listPrice;
-  }
+  public String getAttribute1() { return attribute1; }
+  public void setAttribute1(String attribute1) { this.attribute1 = attribute1; }
 
-  public BigDecimal getUnitCost() {
-    return unitCost;
-  }
+  public String getAttribute2() { return attribute2; }
+  public void setAttribute2(String attribute2) { this.attribute2 = attribute2; }
 
-  public void setUnitCost(BigDecimal unitCost) {
-    this.unitCost = unitCost;
-  }
+  public String getAttribute3() { return attribute3; }
+  public void setAttribute3(String attribute3) { this.attribute3 = attribute3; }
 
-  public String getStatus() {
-    return status;
-  }
+  public String getAttribute4() { return attribute4; }
+  public void setAttribute4(String attribute4) { this.attribute4 = attribute4; }
 
-  public void setStatus(String status) {
-    this.status = status;
-  }
+  public String getAttribute5() { return attribute5; }
+  public void setAttribute5(String attribute5) { this.attribute5 = attribute5; }
 
-  public String getAttribute1() {
-    return attribute1;
-  }
+  /* Public Methods */
 
-  public void setAttribute1(String attribute1) {
-    this.attribute1 = attribute1;
-  }
-
-  public String getAttribute2() {
-    return attribute2;
-  }
-
-  public void setAttribute2(String attribute2) {
-    this.attribute2 = attribute2;
-  }
-
-  public String getAttribute3() {
-    return attribute3;
-  }
-
-  public void setAttribute3(String attribute3) {
-    this.attribute3 = attribute3;
-  }
-
-  public String getAttribute4() {
-    return attribute4;
-  }
-
-  public void setAttribute4(String attribute4) {
-    this.attribute4 = attribute4;
-  }
-
-  public String getAttribute5() {
-    return attribute5;
-  }
-
-  public void setAttribute5(String attribute5) {
-    this.attribute5 = attribute5;
-  }
-
-  @Override
   public String toString() {
-    return "(" + getItemId() + "-" + getProduct().getProductId() + ")";
+    return "(" + getItemId().trim() + "-" + getProductId().trim() + ")";
   }
 
 }
 
-/*
- *    Copyright 2010-2022 the original author or authors.
- *
- *    Licensed under the Apache License, Version 2.0 (the "License");
- *    you may not use this file except in compliance with the License.
- *    You may obtain a copy of the License at
- *
- *       https://www.apache.org/licenses/LICENSE-2.0
- *
- *    Unless required by applicable law or agreed to in writing, software
- *    distributed under the License is distributed on an "AS IS" BASIS,
- *    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- *    See the License for the specific language governing permissions and
- *    limitations under the License.
- */
 
 import java.io.Serializable;
-import java.math.BigDecimal;
-import java.util.Optional;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
 
-/**
- * The Class LineItem.
- *
- * @author Eduardo Macarron
- */
-public class LineItem implements Serializable {
+import org.springframework.beans.support.PagedListHolder;
 
-  private static final long serialVersionUID = 6804536240033522156L;
+public class Cart implements Serializable {
 
-  private int orderId;
-  private int lineNumber;
-  private int quantity;
-  private String itemId;
-  private BigDecimal unitPrice;
-  private Item item;
-  private BigDecimal total;
+  /* Private Fields */
 
-  public LineItem() {
+  private final Map itemMap = Collections.synchronizedMap(new HashMap());
+	
+  private final PagedListHolder itemList = new PagedListHolder();
+
+  /* JavaBeans Properties */
+
+	public Cart() {
+		this.itemList.setPageSize(4);
+	}
+
+	public Iterator getAllCartItems() { return itemList.getSource().iterator(); }
+  public PagedListHolder getCartItemList() { return itemList; }
+  public int getNumberOfItems() { return itemList.getSource().size(); }
+
+  /* Public Methods */
+
+  public boolean containsItemId(String itemId) {
+    return itemMap.containsKey(itemId);
   }
 
-  /**
-   * Instantiates a new line item.
-   *
-   * @param lineNumber
-   *          the line number
-   * @param cartItem
-   *          the cart item
-   */
-  public LineItem(int lineNumber, CartItem cartItem) {
-    this.lineNumber = lineNumber;
-    this.quantity = cartItem.getQuantity();
-    this.itemId = cartItem.getItem().getItemId();
-    this.unitPrice = cartItem.getItem().getListPrice();
-    this.item = cartItem.getItem();
-    calculateTotal();
+  public void addItem(Item item, boolean isInStock) {
+    CartItem cartItem = (CartItem) itemMap.get(item.getItemId());
+    if (cartItem == null) {
+      cartItem = new CartItem();
+      cartItem.setItem(item);
+      cartItem.setQuantity(0);
+      cartItem.setInStock(isInStock);
+      itemMap.put(item.getItemId(), cartItem);
+      itemList.getSource().add(cartItem);
+    }
+    cartItem.incrementQuantity();
   }
 
-  public int getOrderId() {
-    return orderId;
+
+  public Item removeItemById(String itemId) {
+    CartItem cartItem = (CartItem) itemMap.remove(itemId);
+    if (cartItem == null) {
+      return null;
+    }
+		else {
+      itemList.getSource().remove(cartItem);
+      return cartItem.getItem();
+    }
   }
 
-  public void setOrderId(int orderId) {
-    this.orderId = orderId;
+  public void incrementQuantityByItemId(String itemId) {
+    CartItem cartItem = (CartItem) itemMap.get(itemId);
+    cartItem.incrementQuantity();
   }
 
-  public int getLineNumber() {
-    return lineNumber;
+  public void setQuantityByItemId(String itemId, int quantity) {
+    CartItem cartItem = (CartItem) itemMap.get(itemId);
+    cartItem.setQuantity(quantity);
   }
 
-  public void setLineNumber(int lineNumber) {
-    this.lineNumber = lineNumber;
-  }
-
-  public String getItemId() {
-    return itemId;
-  }
-
-  public void setItemId(String itemId) {
-    this.itemId = itemId;
-  }
-
-  public BigDecimal getUnitPrice() {
-    return unitPrice;
-  }
-
-  public void setUnitPrice(BigDecimal unitprice) {
-    this.unitPrice = unitprice;
-  }
-
-  public BigDecimal getTotal() {
-    return total;
-  }
-
-  public Item getItem() {
-    return item;
-  }
-
-  public void setItem(Item item) {
-    this.item = item;
-    calculateTotal();
-  }
-
-  public int getQuantity() {
-    return quantity;
-  }
-
-  public void setQuantity(int quantity) {
-    this.quantity = quantity;
-    calculateTotal();
-  }
-
-  private void calculateTotal() {
-    total = Optional.ofNullable(item).map(Item::getListPrice).map(v -> v.multiply(new BigDecimal(quantity)))
-        .orElse(null);
+  public double getSubTotal() {
+    double subTotal = 0;
+    Iterator items = getAllCartItems();
+    while (items.hasNext()) {
+      CartItem cartItem = (CartItem) items.next();
+      Item item = cartItem.getItem();
+      double listPrice = item.getListPrice();
+      int quantity = cartItem.getQuantity();
+      subTotal += listPrice * quantity;
+    }
+    return subTotal;
   }
 
 }
 
-/*
- *    Copyright 2010-2022 the original author or authors.
- *
- *    Licensed under the Apache License, Version 2.0 (the "License");
- *    you may not use this file except in compliance with the License.
- *    You may obtain a copy of the License at
- *
- *       https://www.apache.org/licenses/LICENSE-2.0
- *
- *    Unless required by applicable law or agreed to in writing, software
- *    distributed under the License is distributed on an "AS IS" BASIS,
- *    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- *    See the License for the specific language governing permissions and
- *    limitations under the License.
- */
 
 import java.io.Serializable;
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 
-/**
- * The Class Order.
- *
- * @author Eduardo Macarron
- */
 public class Order implements Serializable {
 
-  private static final long serialVersionUID = 6321792448424424931L;
+  /* Private Fields */
 
   private int orderId;
   private String username;
@@ -768,7 +210,7 @@ public class Order implements Serializable {
   private String billZip;
   private String billCountry;
   private String courier;
-  private BigDecimal totalPrice;
+  private double totalPrice;
   private String billToFirstName;
   private String billToLastName;
   private String shipToFirstName;
@@ -778,234 +220,94 @@ public class Order implements Serializable {
   private String cardType;
   private String locale;
   private String status;
-  private List<LineItem> lineItems = new ArrayList<>();
+  private List lineItems = new ArrayList();
 
-  public int getOrderId() {
-    return orderId;
-  }
+  /* JavaBeans Properties */
 
-  public void setOrderId(int orderId) {
-    this.orderId = orderId;
-  }
+  public int getOrderId() { return orderId; }
+  public void setOrderId(int orderId) { this.orderId = orderId; }
 
-  public String getUsername() {
-    return username;
-  }
+  public String getUsername() { return username; }
+  public void setUsername(String username) { this.username = username; }
 
-  public void setUsername(String username) {
-    this.username = username;
-  }
+  public Date getOrderDate() { return orderDate; }
+  public void setOrderDate(Date orderDate) { this.orderDate = orderDate; }
 
-  public Date getOrderDate() {
-    return orderDate;
-  }
+  public String getShipAddress1() { return shipAddress1; }
+  public void setShipAddress1(String shipAddress1) { this.shipAddress1 = shipAddress1; }
 
-  public void setOrderDate(Date orderDate) {
-    this.orderDate = orderDate;
-  }
+  public String getShipAddress2() { return shipAddress2; }
+  public void setShipAddress2(String shipAddress2) { this.shipAddress2 = shipAddress2; }
 
-  public String getShipAddress1() {
-    return shipAddress1;
-  }
+  public String getShipCity() { return shipCity; }
+  public void setShipCity(String shipCity) { this.shipCity = shipCity; }
 
-  public void setShipAddress1(String shipAddress1) {
-    this.shipAddress1 = shipAddress1;
-  }
+  public String getShipState() { return shipState; }
+  public void setShipState(String shipState) { this.shipState = shipState; }
 
-  public String getShipAddress2() {
-    return shipAddress2;
-  }
+  public String getShipZip() { return shipZip; }
+  public void setShipZip(String shipZip) { this.shipZip = shipZip; }
 
-  public void setShipAddress2(String shipAddress2) {
-    this.shipAddress2 = shipAddress2;
-  }
+  public String getShipCountry() { return shipCountry; }
+  public void setShipCountry(String shipCountry) { this.shipCountry = shipCountry; }
 
-  public String getShipCity() {
-    return shipCity;
-  }
+  public String getBillAddress1() { return billAddress1; }
+  public void setBillAddress1(String billAddress1) { this.billAddress1 = billAddress1; }
 
-  public void setShipCity(String shipCity) {
-    this.shipCity = shipCity;
-  }
+  public String getBillAddress2() { return billAddress2; }
+  public void setBillAddress2(String billAddress2) { this.billAddress2 = billAddress2; }
 
-  public String getShipState() {
-    return shipState;
-  }
+  public String getBillCity() { return billCity; }
+  public void setBillCity(String billCity) { this.billCity = billCity; }
 
-  public void setShipState(String shipState) {
-    this.shipState = shipState;
-  }
+  public String getBillState() { return billState; }
+  public void setBillState(String billState) { this.billState = billState; }
 
-  public String getShipZip() {
-    return shipZip;
-  }
+  public String getBillZip() { return billZip; }
+  public void setBillZip(String billZip) { this.billZip = billZip; }
 
-  public void setShipZip(String shipZip) {
-    this.shipZip = shipZip;
-  }
+  public String getBillCountry() { return billCountry; }
+  public void setBillCountry(String billCountry) { this.billCountry = billCountry; }
 
-  public String getShipCountry() {
-    return shipCountry;
-  }
+  public String getCourier() { return courier; }
+  public void setCourier(String courier) { this.courier = courier; }
 
-  public void setShipCountry(String shipCountry) {
-    this.shipCountry = shipCountry;
-  }
+  public double getTotalPrice() { return totalPrice; }
+  public void setTotalPrice(double totalPrice) { this.totalPrice = totalPrice; }
 
-  public String getBillAddress1() {
-    return billAddress1;
-  }
+  public String getBillToFirstName() { return billToFirstName; }
+  public void setBillToFirstName(String billToFirstName) { this.billToFirstName = billToFirstName; }
 
-  public void setBillAddress1(String billAddress1) {
-    this.billAddress1 = billAddress1;
-  }
+  public String getBillToLastName() { return billToLastName; }
+  public void setBillToLastName(String billToLastName) { this.billToLastName = billToLastName; }
 
-  public String getBillAddress2() {
-    return billAddress2;
-  }
+  public String getShipToFirstName() { return shipToFirstName; }
+  public void setShipToFirstName(String shipFoFirstName) { this.shipToFirstName = shipFoFirstName; }
 
-  public void setBillAddress2(String billAddress2) {
-    this.billAddress2 = billAddress2;
-  }
+  public String getShipToLastName() { return shipToLastName; }
+  public void setShipToLastName(String shipToLastName) { this.shipToLastName = shipToLastName; }
 
-  public String getBillCity() {
-    return billCity;
-  }
+  public String getCreditCard() { return creditCard; }
+  public void setCreditCard(String creditCard) { this.creditCard = creditCard; }
 
-  public void setBillCity(String billCity) {
-    this.billCity = billCity;
-  }
+  public String getExpiryDate() { return expiryDate; }
+  public void setExpiryDate(String expiryDate) { this.expiryDate = expiryDate; }
 
-  public String getBillState() {
-    return billState;
-  }
+  public String getCardType() { return cardType; }
+  public void setCardType(String cardType) { this.cardType = cardType; }
 
-  public void setBillState(String billState) {
-    this.billState = billState;
-  }
+  public String getLocale() { return locale; }
+  public void setLocale(String locale) { this.locale = locale; }
 
-  public String getBillZip() {
-    return billZip;
-  }
+  public String getStatus() { return status; }
+  public void setStatus(String status) { this.status = status; }
 
-  public void setBillZip(String billZip) {
-    this.billZip = billZip;
-  }
+  public void setLineItems(List lineItems) { this.lineItems = lineItems; }
+  public List getLineItems() { return lineItems; }
 
-  public String getBillCountry() {
-    return billCountry;
-  }
+  /* Public Methods */
 
-  public void setBillCountry(String billCountry) {
-    this.billCountry = billCountry;
-  }
-
-  public String getCourier() {
-    return courier;
-  }
-
-  public void setCourier(String courier) {
-    this.courier = courier;
-  }
-
-  public BigDecimal getTotalPrice() {
-    return totalPrice;
-  }
-
-  public void setTotalPrice(BigDecimal totalPrice) {
-    this.totalPrice = totalPrice;
-  }
-
-  public String getBillToFirstName() {
-    return billToFirstName;
-  }
-
-  public void setBillToFirstName(String billToFirstName) {
-    this.billToFirstName = billToFirstName;
-  }
-
-  public String getBillToLastName() {
-    return billToLastName;
-  }
-
-  public void setBillToLastName(String billToLastName) {
-    this.billToLastName = billToLastName;
-  }
-
-  public String getShipToFirstName() {
-    return shipToFirstName;
-  }
-
-  public void setShipToFirstName(String shipFoFirstName) {
-    this.shipToFirstName = shipFoFirstName;
-  }
-
-  public String getShipToLastName() {
-    return shipToLastName;
-  }
-
-  public void setShipToLastName(String shipToLastName) {
-    this.shipToLastName = shipToLastName;
-  }
-
-  public String getCreditCard() {
-    return creditCard;
-  }
-
-  public void setCreditCard(String creditCard) {
-    this.creditCard = creditCard;
-  }
-
-  public String getExpiryDate() {
-    return expiryDate;
-  }
-
-  public void setExpiryDate(String expiryDate) {
-    this.expiryDate = expiryDate;
-  }
-
-  public String getCardType() {
-    return cardType;
-  }
-
-  public void setCardType(String cardType) {
-    this.cardType = cardType;
-  }
-
-  public String getLocale() {
-    return locale;
-  }
-
-  public void setLocale(String locale) {
-    this.locale = locale;
-  }
-
-  public String getStatus() {
-    return status;
-  }
-
-  public void setStatus(String status) {
-    this.status = status;
-  }
-
-  public void setLineItems(List<LineItem> lineItems) {
-    this.lineItems = lineItems;
-  }
-
-  public List<LineItem> getLineItems() {
-    return lineItems;
-  }
-
-  /**
-   * Inits the order.
-   *
-   * @param account
-   *          the account
-   * @param cart
-   *          the cart
-   */
   public void initOrder(Account account, Cart cart) {
-
     username = account.getUsername();
     orderDate = new Date();
 
@@ -1036,12 +338,11 @@ public class Order implements Serializable {
     locale = "CA";
     status = "P";
 
-    Iterator<CartItem> i = cart.getAllCartItems();
+    Iterator i = cart.getAllCartItems();
     while (i.hasNext()) {
-      CartItem cartItem = i.next();
+      CartItem cartItem = (CartItem) i.next();
       addLineItem(cartItem);
     }
-
   }
 
   public void addLineItem(CartItem cartItem) {
@@ -1053,108 +354,966 @@ public class Order implements Serializable {
     lineItems.add(lineItem);
   }
 
+
 }
 
-/*
- *    Copyright 2010-2022 the original author or authors.
- *
- *    Licensed under the Apache License, Version 2.0 (the "License");
- *    you may not use this file except in compliance with the License.
- *    You may obtain a copy of the License at
- *
- *       https://www.apache.org/licenses/LICENSE-2.0
- *
- *    Unless required by applicable law or agreed to in writing, software
- *    distributed under the License is distributed on an "AS IS" BASIS,
- *    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- *    See the License for the specific language governing permissions and
- *    limitations under the License.
- */
 
 import java.io.Serializable;
 
-/**
- * The Class Product.
- *
- * @author Eduardo Macarron
- */
+public class LineItem implements Serializable {
+
+  /* Private Fields */
+
+  private int orderId;
+  private int lineNumber;
+  private int quantity;
+  private String itemId;
+  private double unitPrice;
+  private Item item;
+
+  /* Constructors */
+
+  public LineItem() {
+  }
+
+  public LineItem(int lineNumber, CartItem cartItem) {
+    this.lineNumber = lineNumber;
+    this.quantity = cartItem.getQuantity();
+    this.itemId = cartItem.getItem().getItemId();
+    this.unitPrice = cartItem.getItem().getListPrice();
+    this.item = cartItem.getItem();
+  }
+
+  /* JavaBeans Properties */
+
+  public int getOrderId() { return orderId; }
+  public void setOrderId(int orderId) { this.orderId = orderId; }
+
+  public int getLineNumber() { return lineNumber; }
+  public void setLineNumber(int lineNumber) { this.lineNumber = lineNumber; }
+
+  public String getItemId() { return itemId; }
+  public void setItemId(String itemId) { this.itemId = itemId; }
+
+  public double getUnitPrice() { return unitPrice; }
+  public void setUnitPrice(double unitprice) { this.unitPrice = unitprice; }
+
+  public Item getItem() { return item; }
+  public void setItem(Item item) {
+    this.item = item;
+  }
+
+  public int getQuantity() { return quantity; }
+  public void setQuantity(int quantity) {
+    this.quantity = quantity;
+  }
+
+	public double getTotalPrice() {
+		return this.unitPrice * this.quantity;
+	}
+
+}
+
+
+import java.io.Serializable;
+
+
+public class Account implements Serializable {
+
+  /* Private Fields */
+
+  private String username;
+  private String password;
+  private String email;
+  private String firstName;
+  private String lastName;
+  private String status;
+  private String address1;
+  private String address2;
+  private String city;
+  private String state;
+  private String zip;
+  private String country;
+  private String phone;
+  private String favouriteCategoryId;
+  private String languagePreference;
+  private boolean listOption;
+  private boolean bannerOption;
+  private String bannerName;
+
+  /* JavaBeans Properties */
+
+  public String getUsername() { return username; }
+  public void setUsername(String username) { this.username = username; }
+
+  public String getPassword() { return password; }
+  public void setPassword(String password) { this.password = password; }
+
+  public String getEmail() { return email; }
+  public void setEmail(String email) { this.email = email; }
+
+  public String getFirstName() { return firstName; }
+  public void setFirstName(String firstName) { this.firstName = firstName; }
+
+  public String getLastName() { return lastName; }
+  public void setLastName(String lastName) { this.lastName = lastName; }
+
+  public String getStatus() { return status; }
+  public void setStatus(String status) { this.status = status; }
+
+  public String getAddress1() { return address1; }
+  public void setAddress1(String address1) { this.address1 = address1; }
+
+  public String getAddress2() { return address2; }
+  public void setAddress2(String address2) { this.address2 = address2; }
+
+  public String getCity() { return city; }
+  public void setCity(String city) { this.city = city; }
+
+  public String getState() { return state; }
+  public void setState(String state) { this.state = state; }
+
+  public String getZip() { return zip; }
+  public void setZip(String zip) { this.zip = zip; }
+
+  public String getCountry() { return country; }
+  public void setCountry(String country) { this.country = country; }
+
+  public String getPhone() { return phone; }
+  public void setPhone(String phone) { this.phone = phone; }
+
+  public String getFavouriteCategoryId() { return favouriteCategoryId; }
+  public void setFavouriteCategoryId(String favouriteCategoryId) { this.favouriteCategoryId = favouriteCategoryId; }
+
+  public String getLanguagePreference() { return languagePreference; }
+  public void setLanguagePreference(String languagePreference) { this.languagePreference = languagePreference; }
+
+  public boolean isListOption() { return listOption; }
+  public void setListOption(boolean listOption) { this.listOption = listOption; }
+	public int getListOptionAsInt() { return listOption ? 1 : 0; }
+
+  public boolean isBannerOption() { return bannerOption; }
+  public void setBannerOption(boolean bannerOption) { this.bannerOption = bannerOption; }
+	public int getBannerOptionAsInt() { return bannerOption ? 1 : 0; }
+
+  public String getBannerName() { return bannerName; }
+  public void setBannerName(String bannerName) { this.bannerName = bannerName; }
+
+}
+
+
+import java.io.Serializable;
+
+
 public class Product implements Serializable {
 
-  private static final long serialVersionUID = -7492639752670189553L;
+  /* Private Fields */
 
   private String productId;
   private String categoryId;
   private String name;
   private String description;
 
-  public String getProductId() {
-    return productId;
-  }
+  /* JavaBeans Properties */
 
-  public void setProductId(String productId) {
-    this.productId = productId.trim();
-  }
+  public String getProductId() { return productId; }
+  public void setProductId(String productId) { this.productId = productId.trim(); }
 
-  public String getCategoryId() {
-    return categoryId;
-  }
+  public String getCategoryId() { return categoryId; }
+  public void setCategoryId(String categoryId) { this.categoryId = categoryId; }
 
-  public void setCategoryId(String categoryId) {
-    this.categoryId = categoryId;
-  }
+  public String getName() { return name; }
+  public void setName(String name) { this.name = name; }
 
-  public String getName() {
-    return name;
-  }
+  public String getDescription() { return description; }
+  public void setDescription(String description) { this.description = description; }
 
-  public void setName(String name) {
-    this.name = name;
-  }
+  /* Public Methods*/
 
-  public String getDescription() {
-    return description;
-  }
-
-  public void setDescription(String description) {
-    this.description = description;
-  }
-
-  @Override
   public String toString() {
     return getName();
   }
 
 }
 
-/*
- *    Copyright 2010-2022 the original author or authors.
- *
- *    Licensed under the Apache License, Version 2.0 (the "License");
- *    you may not use this file except in compliance with the License.
- *    You may obtain a copy of the License at
- *
- *       https://www.apache.org/licenses/LICENSE-2.0
- *
- *    Unless required by applicable law or agreed to in writing, software
- *    distributed under the License is distributed on an "AS IS" BASIS,
- *    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- *    See the License for the specific language governing permissions and
- *    limitations under the License.
- */
 
 import java.io.Serializable;
 
+public class CartItem implements Serializable {
+
+  /* Private Fields */
+
+  private Item item;
+  private int quantity;
+  private boolean inStock;
+
+  /* JavaBeans Properties */
+
+  public boolean isInStock() { return inStock; }
+  public void setInStock(boolean inStock) { this.inStock = inStock; }
+
+  public Item getItem() { return item; }
+  public void setItem(Item item) {
+    this.item = item;
+  }
+
+  public int getQuantity() { return quantity; }
+  public void setQuantity(int quantity) {
+    this.quantity = quantity;
+  }
+
+	public double getTotalPrice() {
+		if (item != null) {
+			return item.getListPrice() * quantity;
+		}
+		else {
+			return 0;
+		}
+	}
+
+  /* Public methods */
+
+  public void incrementQuantity() {
+    quantity++;
+  }
+
+}
+
+
+import java.util.List;
+
+import org.springframework.samples.jpetstore.domain.Account;
+import org.springframework.samples.jpetstore.domain.Category;
+import org.springframework.samples.jpetstore.domain.Item;
+import org.springframework.samples.jpetstore.domain.Order;
+import org.springframework.samples.jpetstore.domain.Product;
+
 /**
- * The Class Sequence.
+ * JPetStore's central business interface.
  *
- * @author Eduardo Macarron
+ * @author Juergen Hoeller
+ * @since 30.11.2003
  */
+public interface PetStoreFacade {
+
+	Account getAccount(String username);
+
+	Account getAccount(String username, String password);
+
+	void insertAccount(Account account);
+
+	void updateAccount(Account account);
+
+	List getUsernameList();
+
+
+	List getCategoryList();
+
+	Category getCategory(String categoryId);
+	
+
+	List getProductListByCategory(String categoryId);
+
+	List searchProductList(String keywords);
+
+	Product getProduct(String productId);
+
+
+	List getItemListByProduct(String productId);
+
+	Item getItem(String itemId);
+
+	boolean isItemInStock(String itemId);
+
+
+	void insertOrder(Order order);
+
+	Order getOrder(int orderId);
+
+	List getOrdersByUsername(String username);
+
+}
+
+
+import java.util.List;
+
+import org.springframework.samples.jpetstore.dao.AccountDao;
+import org.springframework.samples.jpetstore.dao.CategoryDao;
+import org.springframework.samples.jpetstore.dao.ItemDao;
+import org.springframework.samples.jpetstore.dao.OrderDao;
+import org.springframework.samples.jpetstore.dao.ProductDao;
+import org.springframework.samples.jpetstore.domain.Account;
+import org.springframework.samples.jpetstore.domain.Category;
+import org.springframework.samples.jpetstore.domain.Item;
+import org.springframework.samples.jpetstore.domain.Order;
+import org.springframework.samples.jpetstore.domain.Product;
+import org.springframework.transaction.annotation.Transactional;
+
+/**
+ * JPetStore primary business object.
+ * 
+ * <p>This object makes use of five DAO objects, decoupling it
+ * from the details of working with persistence APIs. So
+ * although this application uses iBATIS for data access,
+ * a different persistence tool could be dropped in without
+ * breaking this class.
+ *
+ * <p>The DAOs are made available to the instance of this object
+ * using Dependency Injection. (The DAOs are in turn configured using
+ * Dependency Injection themselves.) We use Setter Injection here,
+ * exposing JavaBean setter methods for each DAO. This means there is
+ * a JavaBean property for each DAO. In the present case, the properties
+ * are write-only: there are no corresponding getter methods. Getter
+ * methods for configuration properties are optional: Implement them
+ * only if you want to expose those properties to other business objects.
+ *
+ * <p>There is one instance of this class in the JPetStore application.
+ * In Spring terminology, it is a "singleton", referring to a
+ * per-Application Context singleton. The factory creates a single
+ * instance; there is no need for a private constructor, static
+ * factory method etc as in the traditional implementation of
+ * the Singleton Design Pattern. 
+ *
+ * <p>This is a POJO. It does not depend on any Spring APIs.
+ * It's usable outside a Spring container, and can be instantiated
+ * using new in a JUnit test. However, we can still apply declarative
+ * transaction management to it using Spring AOP.
+ *
+ * <p>This class defines a default transaction annotation for all methods.
+ *
+ * @author Juergen Hoeller
+ * @since 30.11.2003
+ */
+@Transactional
+public class PetStoreImpl implements PetStoreFacade, OrderService {
+
+	private AccountDao accountDao;
+
+	private CategoryDao categoryDao;
+
+	private ProductDao productDao;
+
+	private ItemDao itemDao;
+
+	private OrderDao orderDao;
+
+
+	//-------------------------------------------------------------------------
+	// Setter methods for dependency injection
+	//-------------------------------------------------------------------------
+
+	public void setAccountDao(AccountDao accountDao) {
+		this.accountDao = accountDao;
+	}
+
+	public void setCategoryDao(CategoryDao categoryDao) {
+		this.categoryDao = categoryDao;
+	}
+
+	public void setProductDao(ProductDao productDao) {
+		this.productDao = productDao;
+	}
+
+	public void setItemDao(ItemDao itemDao) {
+		this.itemDao = itemDao;
+	}
+
+	public void setOrderDao(OrderDao orderDao) {
+		this.orderDao = orderDao;
+	}
+
+
+	//-------------------------------------------------------------------------
+	// Operation methods, implementing the PetStoreFacade interface
+	//-------------------------------------------------------------------------
+
+	public Account getAccount(String username) {
+		return this.accountDao.getAccount(username);
+	}
+
+	public Account getAccount(String username, String password) {
+		return this.accountDao.getAccount(username, password);
+	}
+
+	public void insertAccount(Account account) {
+		this.accountDao.insertAccount(account);
+	}
+
+	public void updateAccount(Account account) {
+		this.accountDao.updateAccount(account);
+	}
+
+	public List getUsernameList() {
+		return this.accountDao.getUsernameList();
+	}
+
+	public List getCategoryList() {
+		return this.categoryDao.getCategoryList();
+	}
+
+	public Category getCategory(String categoryId) {
+		return this.categoryDao.getCategory(categoryId);
+	}
+
+	public List getProductListByCategory(String categoryId) {
+		return this.productDao.getProductListByCategory(categoryId);
+	}
+
+	public List searchProductList(String keywords) {
+		return this.productDao.searchProductList(keywords);
+	}
+
+	public Product getProduct(String productId) {
+		return this.productDao.getProduct(productId);
+	}
+
+	public List getItemListByProduct(String productId) {
+		return this.itemDao.getItemListByProduct(productId);
+	}
+
+	public Item getItem(String itemId) {
+		return this.itemDao.getItem(itemId);
+	}
+
+	public boolean isItemInStock(String itemId) {
+		return this.itemDao.isItemInStock(itemId);
+	}
+
+	public void insertOrder(Order order) {
+		this.orderDao.insertOrder(order);
+		this.itemDao.updateQuantity(order);
+	}
+
+	public Order getOrder(int orderId) {
+		return this.orderDao.getOrder(orderId);
+	}
+
+	public List getOrdersByUsername(String username) {
+		return this.orderDao.getOrdersByUsername(username);
+	}
+
+}
+
+
+import java.lang.reflect.Method;
+
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+
+import org.springframework.aop.AfterReturningAdvice;
+import org.springframework.beans.factory.InitializingBean;
+import org.springframework.mail.MailException;
+import org.springframework.mail.MailSender;
+import org.springframework.mail.SimpleMailMessage;
+import org.springframework.samples.jpetstore.domain.Account;
+import org.springframework.samples.jpetstore.domain.Order;
+
+/**
+ * AOP advice that sends confirmation email after order has been submitted
+ * @author Dmitriy Kopylenko
+ */
+public class SendOrderConfirmationEmailAdvice implements AfterReturningAdvice, InitializingBean {
+
+	private static final String DEFAULT_MAIL_FROM = "jpetstore@springframework.org";
+
+	private static final String DEFAULT_SUBJECT = "Thank you for your order!";
+
+	private final Log logger = LogFactory.getLog(getClass());
+
+	private MailSender mailSender;
+
+	private String mailFrom = DEFAULT_MAIL_FROM;
+
+	private String subject = DEFAULT_SUBJECT;
+
+	public void setMailSender(MailSender mailSender) {
+		this.mailSender = mailSender;
+	}
+
+	public void setMailFrom(String mailFrom) {
+		this.mailFrom = mailFrom;
+	}
+
+	public void setSubject(String subject) {
+		this.subject = subject;
+	}
+
+	public void afterPropertiesSet() throws Exception {
+		if (this.mailSender == null) {
+			throw new IllegalStateException("mailSender is required");
+		}
+	}
+
+	public void afterReturning(Object returnValue, Method m, Object[] args, Object target) throws Throwable {
+		Order order = (Order) args[0];
+		Account account = ((PetStoreFacade) target).getAccount(order.getUsername());
+
+		// don't do anything if email address is not set
+		if (account.getEmail() == null || account.getEmail().length() == 0) {
+			return;
+		}
+
+		StringBuffer text = new StringBuffer();
+		text.append("Dear ").append(account.getFirstName()).append(' ').append(account.getLastName());
+		text.append(", thank your for your order from JPetStore. Please note that your order number is ");
+		text.append(order.getOrderId());
+
+		SimpleMailMessage mailMessage = new SimpleMailMessage();
+		mailMessage.setTo(account.getEmail());
+		mailMessage.setFrom(this.mailFrom);
+		mailMessage.setSubject(this.subject);
+		mailMessage.setText(text.toString());
+		try {
+			this.mailSender.send(mailMessage);
+		}
+		catch (MailException ex) {
+			// just log it and go on
+			logger.warn("An exception occured when trying to send email", ex);
+		}
+	}
+
+}
+
+
+import org.springframework.samples.jpetstore.domain.Order;
+
+/**
+ * Separate OrderService interface, implemented by PetStoreImpl
+ * in addition to PetStoreFacade.
+ *
+ * <p>Mainly targeted at usage as remote service interface,
+ * just exposing the <code>getOrder</code> method.
+ *
+ * @author Juergen Hoeller
+ * @since 26.12.2003
+ * @see PetStoreFacade
+ * @see PetStoreImpl
+ * @see org.springframework.samples.jpetstore.service.JaxRpcOrderService
+ */
+public interface OrderService {
+
+	Order getOrder(int orderId);
+
+}
+
+
+import org.springframework.samples.jpetstore.domain.Account;
+import org.springframework.validation.Errors;
+import org.springframework.validation.ValidationUtils;
+import org.springframework.validation.Validator;
+
+/**
+ * @author Juergen Hoeller
+ * @since 01.12.2003
+ */
+public class AccountValidator implements Validator {
+
+	public boolean supports(Class clazz) {
+		return Account.class.isAssignableFrom(clazz);
+	}
+
+	public void validate(Object obj, Errors errors) {
+		ValidationUtils.rejectIfEmpty(errors, "firstName", "FIRST_NAME_REQUIRED", "First name is required.");
+		ValidationUtils.rejectIfEmpty(errors, "lastName", "LAST_NAME_REQUIRED", "Last name is required.");
+		ValidationUtils.rejectIfEmpty(errors, "email", "EMAIL_REQUIRED", "Email address is required.");
+		ValidationUtils.rejectIfEmpty(errors, "phone", "PHONE_REQUIRED", "Phone number is required.");
+		ValidationUtils.rejectIfEmpty(errors, "address1", "ADDRESS_REQUIRED", "Address (1) is required.");
+		ValidationUtils.rejectIfEmpty(errors, "city", "CITY_REQUIRED", "City is required.");
+		ValidationUtils.rejectIfEmpty(errors, "state", "STATE_REQUIRED", "State is required.");
+		ValidationUtils.rejectIfEmpty(errors, "zip", "ZIP_REQUIRED", "ZIP is required.");
+		ValidationUtils.rejectIfEmpty(errors, "country", "COUNTRY_REQUIRED", "Country is required.");
+	}
+}
+
+
+import org.springframework.samples.jpetstore.domain.Order;
+import org.springframework.validation.Errors;
+import org.springframework.validation.ValidationUtils;
+import org.springframework.validation.Validator;
+
+/**
+ * @author Juergen Hoeller
+ * @since 01.12.2003
+ */
+public class OrderValidator implements Validator {
+
+	public boolean supports(Class clazz) {
+		return Order.class.isAssignableFrom(clazz);
+	}
+
+	public void validate(Object obj, Errors errors) {
+		validateCreditCard((Order) obj, errors);
+		validateBillingAddress((Order) obj, errors);
+		validateShippingAddress((Order) obj, errors);
+	}
+
+	public void validateCreditCard(Order order, Errors errors) {
+		ValidationUtils.rejectIfEmpty(errors, "creditCard", "CCN_REQUIRED", "FAKE (!) credit card number required.");
+		ValidationUtils.rejectIfEmpty(errors, "expiryDate", "EXPIRY_DATE_REQUIRED", "Expiry date is required.");
+		ValidationUtils.rejectIfEmpty(errors, "cardType", "CARD_TYPE_REQUIRED", "Card type is required.");
+	}
+
+	public void validateBillingAddress(Order order, Errors errors) {
+		ValidationUtils.rejectIfEmpty(errors, "billToFirstName", "FIRST_NAME_REQUIRED", "Billing Info: first name is required.");
+		ValidationUtils.rejectIfEmpty(errors, "billToLastName", "LAST_NAME_REQUIRED", "Billing Info: last name is required.");
+		ValidationUtils.rejectIfEmpty(errors, "billAddress1", "ADDRESS_REQUIRED", "Billing Info: address is required.");
+		ValidationUtils.rejectIfEmpty(errors, "billCity", "CITY_REQUIRED", "Billing Info: city is required.");
+		ValidationUtils.rejectIfEmpty(errors, "billState", "STATE_REQUIRED", "Billing Info: state is required.");
+		ValidationUtils.rejectIfEmpty(errors, "billZip", "ZIP_REQUIRED", "Billing Info: zip/postal code is required.");
+		ValidationUtils.rejectIfEmpty(errors, "billCountry", "COUNTRY_REQUIRED", "Billing Info: country is required.");
+	}
+
+	public void validateShippingAddress(Order order, Errors errors) {
+		ValidationUtils.rejectIfEmpty(errors, "shipToFirstName", "FIRST_NAME_REQUIRED", "Shipping Info: first name is required.");
+		ValidationUtils.rejectIfEmpty(errors, "shipToLastName", "LAST_NAME_REQUIRED", "Shipping Info: last name is required.");
+		ValidationUtils.rejectIfEmpty(errors, "shipAddress1", "ADDRESS_REQUIRED", "Shipping Info: address is required.");
+		ValidationUtils.rejectIfEmpty(errors, "shipCity", "CITY_REQUIRED", "Shipping Info: city is required.");
+		ValidationUtils.rejectIfEmpty(errors, "shipState", "STATE_REQUIRED", "Shipping Info: state is required.");
+		ValidationUtils.rejectIfEmpty(errors, "shipZip", "ZIP_REQUIRED", "Shipping Info: zip/postal code is required.");
+		ValidationUtils.rejectIfEmpty(errors, "shipCountry", "COUNTRY_REQUIRED", "Shipping Info: country is required.");
+	}
+}
+
+
+import java.util.List;
+
+import org.springframework.dao.DataAccessException;
+import org.springframework.samples.jpetstore.domain.Category;
+
+public interface CategoryDao {
+
+	List getCategoryList() throws DataAccessException;
+
+  Category getCategory(String categoryId) throws DataAccessException;
+
+}
+
+
+import java.util.List;
+
+import org.springframework.dao.DataAccessException;
+import org.springframework.samples.jpetstore.domain.Item;
+import org.springframework.samples.jpetstore.domain.Order;
+
+public interface ItemDao {
+
+  public void updateQuantity(Order order) throws DataAccessException;
+
+  boolean isItemInStock(String itemId) throws DataAccessException;
+
+  List getItemListByProduct(String productId) throws DataAccessException;
+
+  Item getItem(String itemId) throws DataAccessException;
+
+}
+
+
+import java.util.List;
+
+import org.springframework.dao.DataAccessException;
+import org.springframework.samples.jpetstore.domain.Product;
+
+public interface ProductDao {
+
+  List getProductListByCategory(String categoryId) throws DataAccessException;
+
+  List searchProductList(String keywords) throws DataAccessException;
+
+	Product getProduct(String productId) throws DataAccessException;
+
+}
+
+
+import java.util.List;
+
+import org.springframework.dao.DataAccessException;
+import org.springframework.samples.jpetstore.domain.Account;
+
+public interface AccountDao {
+
+  Account getAccount(String username) throws DataAccessException;
+
+  Account getAccount(String username, String password) throws DataAccessException;
+
+  void insertAccount(Account account) throws DataAccessException;
+
+  void updateAccount(Account account) throws DataAccessException;
+
+	List getUsernameList() throws DataAccessException;
+
+}
+
+
+import java.util.List;
+
+import org.springframework.dao.DataAccessException;
+import org.springframework.samples.jpetstore.domain.Order;
+
+public interface OrderDao {
+
+  List getOrdersByUsername(String username) throws DataAccessException;
+
+  Order getOrder(int orderId) throws DataAccessException;
+
+  void insertOrder(Order order) throws DataAccessException;
+
+}
+
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.springframework.dao.DataAccessException;
+import org.springframework.orm.ibatis.support.SqlMapClientDaoSupport;
+import org.springframework.samples.jpetstore.dao.ItemDao;
+import org.springframework.samples.jpetstore.domain.Item;
+import org.springframework.samples.jpetstore.domain.LineItem;
+import org.springframework.samples.jpetstore.domain.Order;
+
+public class SqlMapItemDao extends SqlMapClientDaoSupport implements ItemDao {
+
+  public void updateQuantity(Order order) throws DataAccessException {
+    for (int i = 0; i < order.getLineItems().size(); i++) {
+      LineItem lineItem = (LineItem) order.getLineItems().get(i);
+      String itemId = lineItem.getItemId();
+      Integer increment = new Integer(lineItem.getQuantity());
+      Map param = new HashMap(2);
+      param.put("itemId", itemId);
+      param.put("increment", increment);
+      getSqlMapClientTemplate().update("updateInventoryQuantity", param, 1);
+    }
+  }
+
+  public boolean isItemInStock(String itemId) throws DataAccessException {
+    Integer i = (Integer) getSqlMapClientTemplate().queryForObject("getInventoryQuantity", itemId);
+    return (i != null && i.intValue() > 0);
+  }
+
+  public List getItemListByProduct(String productId) throws DataAccessException {
+    return getSqlMapClientTemplate().queryForList("getItemListByProduct", productId);
+  }
+
+  public Item getItem(String itemId) throws DataAccessException {
+    Item item = (Item) getSqlMapClientTemplate().queryForObject("getItem", itemId);
+		if (item != null) {
+			Integer qty = (Integer) getSqlMapClientTemplate().queryForObject("getInventoryQuantity", itemId);
+			item.setQuantity(qty.intValue());
+		}
+    return item;
+  }
+
+}
+
+
+import java.util.List;
+
+import org.springframework.dao.DataAccessException;
+import org.springframework.orm.ibatis.support.SqlMapClientDaoSupport;
+import org.springframework.samples.jpetstore.dao.AccountDao;
+import org.springframework.samples.jpetstore.domain.Account;
+
+/**
+ * In this and other DAOs in this package, a DataSource property
+ * is inherited from the SqlMapClientDaoSupport convenience superclass
+ * supplied by Spring. DAOs don't need to extend such superclasses,
+ * but it saves coding in many cases. There are analogous superclasses
+ * for JDBC (JdbcDaoSupport), Hibernate (HibernateDaoSupport),
+ * JDO (JdoDaoSupport) etc.
+ *
+ * <p>This and other DAOs are configured using Dependency Injection.
+ * This means, for example, that Spring can source the DataSource
+ * from a local class, such as the Commons DBCP BasicDataSource,
+ * or from JNDI, concealing the JNDI lookup from application code.
+ * 
+ * @author Juergen Hoeller
+ * @author Colin Sampaleanu
+ */
+public class SqlMapAccountDao extends SqlMapClientDaoSupport implements AccountDao {
+
+  public Account getAccount(String username) throws DataAccessException {
+    return (Account) getSqlMapClientTemplate().queryForObject("getAccountByUsername", username);
+  }
+
+  public Account getAccount(String username, String password) throws DataAccessException {
+    Account account = new Account();
+    account.setUsername(username);
+    account.setPassword(password);
+    return (Account) getSqlMapClientTemplate().queryForObject("getAccountByUsernameAndPassword", account);
+  }
+
+  public void insertAccount(Account account) throws DataAccessException {
+    getSqlMapClientTemplate().insert("insertAccount", account);
+    getSqlMapClientTemplate().insert("insertProfile", account);
+    getSqlMapClientTemplate().insert("insertSignon", account);
+  }
+
+  public void updateAccount(Account account) throws DataAccessException {
+    getSqlMapClientTemplate().update("updateAccount", account, 1);
+    getSqlMapClientTemplate().update("updateProfile", account, 1);
+    if (account.getPassword() != null && account.getPassword().length() > 0) {
+      getSqlMapClientTemplate().update("updateSignon", account, 1);
+    }
+  }
+ 
+	public List getUsernameList() throws DataAccessException {
+		return getSqlMapClientTemplate().queryForList("getUsernameList", null);
+	}
+
+}
+
+
+import org.springframework.dao.DataAccessException;
+import org.springframework.samples.jpetstore.domain.LineItem;
+import org.springframework.samples.jpetstore.domain.Order;
+
+public class MsSqlOrderDao extends SqlMapOrderDao {
+
+  /**
+   * Special MS SQL Server version to allow the Item ID
+	 * to be retrieved from an identity column.
+   */
+  public void insertOrder(Order order) throws DataAccessException {
+    Integer orderId = (Integer) getSqlMapClientTemplate().queryForObject("msSqlServerInsertOrder", order);
+    order.setOrderId(orderId.intValue());
+    getSqlMapClientTemplate().insert("insertOrderStatus", order);
+    for (int i = 0; i < order.getLineItems().size(); i++) {
+      LineItem lineItem = (LineItem) order.getLineItems().get(i);
+      lineItem.setOrderId(order.getOrderId());
+      getSqlMapClientTemplate().insert("insertLineItem", lineItem);
+    }
+  }
+  
+}
+
+
+import org.springframework.dao.DataAccessException;
+import org.springframework.dao.DataRetrievalFailureException;
+import org.springframework.orm.ibatis.support.SqlMapClientDaoSupport;
+
+public class SqlMapSequenceDao extends SqlMapClientDaoSupport {
+
+  /**
+   * This is a generic sequence ID generator that is based on a database
+   * table called 'SEQUENCE', which contains two columns (NAME, NEXTID).
+   * This approach should work with any database.
+   * @param name the name of the sequence
+   * @return the next ID
+   */
+  public int getNextId(String name) throws DataAccessException {
+    Sequence sequence = new Sequence(name, -1);
+    sequence = (Sequence) getSqlMapClientTemplate().queryForObject("getSequence", sequence);
+    if (sequence == null) {
+      throw new DataRetrievalFailureException(
+					"Could not get next value of sequence '" + name + "': sequence does not exist");
+    }
+    Object parameterObject = new Sequence(name, sequence.getNextId() + 1);
+    getSqlMapClientTemplate().update("updateSequence", parameterObject, 1);
+    return sequence.getNextId();
+  }
+
+}
+
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.StringTokenizer;
+
+import org.springframework.dao.DataAccessException;
+import org.springframework.orm.ibatis.support.SqlMapClientDaoSupport;
+import org.springframework.samples.jpetstore.dao.ProductDao;
+import org.springframework.samples.jpetstore.domain.Product;
+
+public class SqlMapProductDao extends SqlMapClientDaoSupport implements ProductDao {
+
+  public List getProductListByCategory(String categoryId) throws DataAccessException {
+    return getSqlMapClientTemplate().queryForList("getProductListByCategory", categoryId);
+  }
+
+  public Product getProduct(String productId) throws DataAccessException {
+    return (Product) getSqlMapClientTemplate().queryForObject("getProduct", productId);
+  }
+
+  public List searchProductList(String keywords) throws DataAccessException {
+    Object parameterObject = new ProductSearch(keywords);
+    return getSqlMapClientTemplate().queryForList("searchProductList", parameterObject);
+  }
+
+
+  /* Inner Classes */
+
+  public static class ProductSearch {
+
+    private List keywordList = new ArrayList();
+
+    public ProductSearch(String keywords) {
+      StringTokenizer splitter = new StringTokenizer(keywords, " ", false);
+      while (splitter.hasMoreTokens()) {
+        this.keywordList.add("%" + splitter.nextToken() + "%");
+      }
+    }
+
+    public List getKeywordList() {
+      return keywordList;
+    }
+  }
+
+}
+
+
+import java.util.List;
+
+import org.springframework.dao.DataAccessException;
+import org.springframework.orm.ibatis.support.SqlMapClientDaoSupport;
+import org.springframework.samples.jpetstore.dao.OrderDao;
+import org.springframework.samples.jpetstore.domain.LineItem;
+import org.springframework.samples.jpetstore.domain.Order;
+
+public class SqlMapOrderDao extends SqlMapClientDaoSupport implements OrderDao {
+
+  private SqlMapSequenceDao sequenceDao;
+
+	public void setSequenceDao(SqlMapSequenceDao sequenceDao) {
+		this.sequenceDao = sequenceDao;
+	}
+
+	public List getOrdersByUsername(String username) throws DataAccessException {
+    return getSqlMapClientTemplate().queryForList("getOrdersByUsername", username);
+  }
+
+  public Order getOrder(int orderId) throws DataAccessException {
+    Object parameterObject = new Integer(orderId);
+    Order order = (Order) getSqlMapClientTemplate().queryForObject("getOrder", parameterObject);
+		if (order != null) {
+    	order.setLineItems(getSqlMapClientTemplate().queryForList("getLineItemsByOrderId", new Integer(order.getOrderId())));
+		}
+    return order;
+  }
+
+  public void insertOrder(Order order) throws DataAccessException {
+		order.setOrderId(this.sequenceDao.getNextId("ordernum"));
+		getSqlMapClientTemplate().insert("insertOrder", order);
+		getSqlMapClientTemplate().insert("insertOrderStatus", order);
+    for (int i = 0; i < order.getLineItems().size(); i++) {
+      LineItem lineItem = (LineItem) order.getLineItems().get(i);
+      lineItem.setOrderId(order.getOrderId());
+      getSqlMapClientTemplate().insert("insertLineItem", lineItem);
+    }
+  }
+
+}
+
+
+import java.io.Serializable;
+
 public class Sequence implements Serializable {
 
-  private static final long serialVersionUID = 8278780133180137281L;
+  /* Private Fields */
 
   private String name;
   private int nextId;
+
+  /* Constructors */
 
   public Sequence() {
   }
@@ -1164,1381 +1323,2018 @@ public class Sequence implements Serializable {
     this.nextId = nextId;
   }
 
-  public String getName() {
-    return name;
-  }
+  /* JavaBeans Properties */
 
-  public void setName(String name) {
-    this.name = name;
-  }
+  public String getName() { return name; }
+  public void setName(String name) { this.name = name; }
 
-  public int getNextId() {
-    return nextId;
-  }
-
-  public void setNextId(int nextId) {
-    this.nextId = nextId;
-  }
+  public int getNextId() { return nextId; }
+  public void setNextId(int nextId) { this.nextId = nextId; }
 
 }
 
-
-/*
- *    Copyright 2010-2022 the original author or authors.
- *
- *    Licensed under the Apache License, Version 2.0 (the "License");
- *    you may not use this file except in compliance with the License.
- *    You may obtain a copy of the License at
- *
- *       https://www.apache.org/licenses/LICENSE-2.0
- *
- *    Unless required by applicable law or agreed to in writing, software
- *    distributed under the License is distributed on an "AS IS" BASIS,
- *    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- *    See the License for the specific language governing permissions and
- *    limitations under the License.
- */
-
-import org.mybatis.jpetstore.domain.Account;
-
-/**
- * The Interface AccountMapper.
- *
- * @author Eduardo Macarron
- */
-public interface AccountMapper {
-
-  Account getAccountByUsername(String username);
-
-  Account getAccountByUsernameAndPassword(String username, String password);
-
-  void insertAccount(Account account);
-
-  void insertProfile(Account account);
-
-  void insertSignon(Account account);
-
-  void updateAccount(Account account);
-
-  void updateProfile(Account account);
-
-  void updateSignon(Account account);
-
-}
-
-/*
- *    Copyright 2010-2022 the original author or authors.
- *
- *    Licensed under the Apache License, Version 2.0 (the "License");
- *    you may not use this file except in compliance with the License.
- *    You may obtain a copy of the License at
- *
- *       https://www.apache.org/licenses/LICENSE-2.0
- *
- *    Unless required by applicable law or agreed to in writing, software
- *    distributed under the License is distributed on an "AS IS" BASIS,
- *    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- *    See the License for the specific language governing permissions and
- *    limitations under the License.
- */
 
 import java.util.List;
 
-import org.mybatis.jpetstore.domain.Category;
+import org.springframework.dao.DataAccessException;
+import org.springframework.orm.ibatis.support.SqlMapClientDaoSupport;
+import org.springframework.samples.jpetstore.dao.CategoryDao;
+import org.springframework.samples.jpetstore.domain.Category;
 
-/**
- * The Interface CategoryMapper.
- *
- * @author Eduardo Macarron
- */
-public interface CategoryMapper {
+public class SqlMapCategoryDao extends SqlMapClientDaoSupport implements CategoryDao {
 
-  List<Category> getCategoryList();
-
-  Category getCategory(String categoryId);
-
-}
-
-/*
- *    Copyright 2010-2022 the original author or authors.
- *
- *    Licensed under the Apache License, Version 2.0 (the "License");
- *    you may not use this file except in compliance with the License.
- *    You may obtain a copy of the License at
- *
- *       https://www.apache.org/licenses/LICENSE-2.0
- *
- *    Unless required by applicable law or agreed to in writing, software
- *    distributed under the License is distributed on an "AS IS" BASIS,
- *    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- *    See the License for the specific language governing permissions and
- *    limitations under the License.
- */
-
-import java.util.List;
-import java.util.Map;
-
-import org.mybatis.jpetstore.domain.Item;
-
-/**
- * The Interface ItemMapper.
- *
- * @author Eduardo Macarron
- */
-public interface ItemMapper {
-
-  void updateInventoryQuantity(Map<String, Object> param);
-
-  int getInventoryQuantity(String itemId);
-
-  List<Item> getItemListByProduct(String productId);
-
-  Item getItem(String itemId);
-
-}
-
-/*
- *    Copyright 2010-2022 the original author or authors.
- *
- *    Licensed under the Apache License, Version 2.0 (the "License");
- *    you may not use this file except in compliance with the License.
- *    You may obtain a copy of the License at
- *
- *       https://www.apache.org/licenses/LICENSE-2.0
- *
- *    Unless required by applicable law or agreed to in writing, software
- *    distributed under the License is distributed on an "AS IS" BASIS,
- *    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- *    See the License for the specific language governing permissions and
- *    limitations under the License.
- */
-
-import java.util.List;
-
-import org.mybatis.jpetstore.domain.LineItem;
-
-/**
- * The Interface LineItemMapper.
- *
- * @author Eduardo Macarron
- */
-public interface LineItemMapper {
-
-  List<LineItem> getLineItemsByOrderId(int orderId);
-
-  void insertLineItem(LineItem lineItem);
-
-}
-
-/*
- *    Copyright 2010-2022 the original author or authors.
- *
- *    Licensed under the Apache License, Version 2.0 (the "License");
- *    you may not use this file except in compliance with the License.
- *    You may obtain a copy of the License at
- *
- *       https://www.apache.org/licenses/LICENSE-2.0
- *
- *    Unless required by applicable law or agreed to in writing, software
- *    distributed under the License is distributed on an "AS IS" BASIS,
- *    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- *    See the License for the specific language governing permissions and
- *    limitations under the License.
- */
-
-import java.util.List;
-
-import org.mybatis.jpetstore.domain.Order;
-
-/**
- * The Interface OrderMapper.
- *
- * @author Eduardo Macarron
- */
-public interface OrderMapper {
-
-  List<Order> getOrdersByUsername(String username);
-
-  Order getOrder(int orderId);
-
-  void insertOrder(Order order);
-
-  void insertOrderStatus(Order order);
-
-}
-
-/*
- *    Copyright 2010-2022 the original author or authors.
- *
- *    Licensed under the Apache License, Version 2.0 (the "License");
- *    you may not use this file except in compliance with the License.
- *    You may obtain a copy of the License at
- *
- *       https://www.apache.org/licenses/LICENSE-2.0
- *
- *    Unless required by applicable law or agreed to in writing, software
- *    distributed under the License is distributed on an "AS IS" BASIS,
- *    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- *    See the License for the specific language governing permissions and
- *    limitations under the License.
- */
-
-import java.util.List;
-
-import org.mybatis.jpetstore.domain.Product;
-
-/**
- * The Interface ProductMapper.
- *
- * @author Eduardo Macarron
- */
-public interface ProductMapper {
-
-  List<Product> getProductListByCategory(String categoryId);
-
-  Product getProduct(String productId);
-
-  List<Product> searchProductList(String keywords);
-
-}
-
-/*
- *    Copyright 2010-2022 the original author or authors.
- *
- *    Licensed under the Apache License, Version 2.0 (the "License");
- *    you may not use this file except in compliance with the License.
- *    You may obtain a copy of the License at
- *
- *       https://www.apache.org/licenses/LICENSE-2.0
- *
- *    Unless required by applicable law or agreed to in writing, software
- *    distributed under the License is distributed on an "AS IS" BASIS,
- *    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- *    See the License for the specific language governing permissions and
- *    limitations under the License.
- */
-
-import org.mybatis.jpetstore.domain.Sequence;
-
-/**
- * The Interface SequenceMapper.
- *
- * @author Eduardo Macarron
- */
-public interface SequenceMapper {
-
-  Sequence getSequence(Sequence sequence);
-
-  void updateSequence(Sequence sequence);
-}
-
-/*
- *    Copyright 2010-2022 the original author or authors.
- *
- *    Licensed under the Apache License, Version 2.0 (the "License");
- *    you may not use this file except in compliance with the License.
- *    You may obtain a copy of the License at
- *
- *       https://www.apache.org/licenses/LICENSE-2.0
- *
- *    Unless required by applicable law or agreed to in writing, software
- *    distributed under the License is distributed on an "AS IS" BASIS,
- *    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- *    See the License for the specific language governing permissions and
- *    limitations under the License.
- */
-
-import java.util.Optional;
-
-import org.mybatis.jpetstore.domain.Account;
-import org.mybatis.jpetstore.mapper.AccountMapper;
-import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
-
-/**
- * The Class AccountService.
- *
- * @author Eduardo Macarron
- */
-@Service
-public class AccountService {
-
-  private final AccountMapper accountMapper;
-
-  public AccountService(AccountMapper accountMapper) {
-    this.accountMapper = accountMapper;
+  public List getCategoryList() throws DataAccessException {
+    return getSqlMapClientTemplate().queryForList("getCategoryList", null);
   }
 
-  public Account getAccount(String username) {
-    return accountMapper.getAccountByUsername(username);
+  public Category getCategory(String categoryId) throws DataAccessException {
+    return (Category) getSqlMapClientTemplate().queryForObject("getCategory", categoryId);
   }
 
-  public Account getAccount(String username, String password) {
-    return accountMapper.getAccountByUsernameAndPassword(username, password);
-  }
+}
+
+
+import org.springframework.dao.DataAccessException;
+
+public class OracleSequenceDao extends SqlMapSequenceDao {
 
   /**
-   * Insert account.
-   *
-   * @param account
-   *          the account
+   * Get the next sequence using an Oracle thread-safe sequence
+   * @param name Name is the name of the oracle sequence.
+   * @return the next sequence
    */
-  @Transactional
-  public void insertAccount(Account account) {
-    accountMapper.insertAccount(account);
-    accountMapper.insertProfile(account);
-    accountMapper.insertSignon(account);
-  }
-
-  /**
-   * Update account.
-   *
-   * @param account
-   *          the account
-   */
-  @Transactional
-  public void updateAccount(Account account) {
-    accountMapper.updateAccount(account);
-    accountMapper.updateProfile(account);
-
-    Optional.ofNullable(account.getPassword()).filter(password -> password.length() > 0)
-        .ifPresent(password -> accountMapper.updateSignon(account));
-  }
-
-}
-
-/*
- *    Copyright 2010-2022 the original author or authors.
- *
- *    Licensed under the Apache License, Version 2.0 (the "License");
- *    you may not use this file except in compliance with the License.
- *    You may obtain a copy of the License at
- *
- *       https://www.apache.org/licenses/LICENSE-2.0
- *
- *    Unless required by applicable law or agreed to in writing, software
- *    distributed under the License is distributed on an "AS IS" BASIS,
- *    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- *    See the License for the specific language governing permissions and
- *    limitations under the License.
- */
-
-import java.util.ArrayList;
-import java.util.List;
-
-import org.mybatis.jpetstore.domain.Category;
-import org.mybatis.jpetstore.domain.Item;
-import org.mybatis.jpetstore.domain.Product;
-import org.mybatis.jpetstore.mapper.CategoryMapper;
-import org.mybatis.jpetstore.mapper.ItemMapper;
-import org.mybatis.jpetstore.mapper.ProductMapper;
-import org.springframework.stereotype.Service;
-
-/**
- * The Class CatalogService.
- *
- * @author Eduardo Macarron
- */
-@Service
-public class CatalogService {
-
-  private final CategoryMapper categoryMapper;
-  private final ItemMapper itemMapper;
-  private final ProductMapper productMapper;
-
-  public CatalogService(CategoryMapper categoryMapper, ItemMapper itemMapper, ProductMapper productMapper) {
-    this.categoryMapper = categoryMapper;
-    this.itemMapper = itemMapper;
-    this.productMapper = productMapper;
-  }
-
-  public List<Category> getCategoryList() {
-    return categoryMapper.getCategoryList();
-  }
-
-  public Category getCategory(String categoryId) {
-    return categoryMapper.getCategory(categoryId);
-  }
-
-  public Product getProduct(String productId) {
-    return productMapper.getProduct(productId);
-  }
-
-  public List<Product> getProductListByCategory(String categoryId) {
-    return productMapper.getProductListByCategory(categoryId);
-  }
-
-  /**
-   * Search product list.
-   *
-   * @param keywords
-   *          the keywords
-   *
-   * @return the list
-   */
-  public List<Product> searchProductList(String keywords) {
-    List<Product> products = new ArrayList<>();
-    for (String keyword : keywords.split("\\s+")) {
-      products.addAll(productMapper.searchProductList("%" + keyword.toLowerCase() + "%"));
-    }
-    return products;
-  }
-
-  public List<Item> getItemListByProduct(String productId) {
-    return itemMapper.getItemListByProduct(productId);
-  }
-
-  public Item getItem(String itemId) {
-    return itemMapper.getItem(itemId);
-  }
-
-  public boolean isItemInStock(String itemId) {
-    return itemMapper.getInventoryQuantity(itemId) > 0;
-  }
-}
-
-/*
- *    Copyright 2010-2022 the original author or authors.
- *
- *    Licensed under the Apache License, Version 2.0 (the "License");
- *    you may not use this file except in compliance with the License.
- *    You may obtain a copy of the License at
- *
- *       https://www.apache.org/licenses/LICENSE-2.0
- *
- *    Unless required by applicable law or agreed to in writing, software
- *    distributed under the License is distributed on an "AS IS" BASIS,
- *    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- *    See the License for the specific language governing permissions and
- *    limitations under the License.
- */
-
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import org.mybatis.jpetstore.domain.Item;
-import org.mybatis.jpetstore.domain.Order;
-import org.mybatis.jpetstore.domain.Sequence;
-import org.mybatis.jpetstore.mapper.ItemMapper;
-import org.mybatis.jpetstore.mapper.LineItemMapper;
-import org.mybatis.jpetstore.mapper.OrderMapper;
-import org.mybatis.jpetstore.mapper.SequenceMapper;
-import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
-
-/**
- * The Class OrderService.
- *
- * @author Eduardo Macarron
- */
-@Service
-public class OrderService {
-
-  private final ItemMapper itemMapper;
-  private final OrderMapper orderMapper;
-  private final SequenceMapper sequenceMapper;
-  private final LineItemMapper lineItemMapper;
-
-  public OrderService(ItemMapper itemMapper, OrderMapper orderMapper, SequenceMapper sequenceMapper,
-      LineItemMapper lineItemMapper) {
-    this.itemMapper = itemMapper;
-    this.orderMapper = orderMapper;
-    this.sequenceMapper = sequenceMapper;
-    this.lineItemMapper = lineItemMapper;
-  }
-
-  /**
-   * Insert order.
-   *
-   * @param order
-   *          the order
-   */
-  @Transactional
-  public void insertOrder(Order order) {
-    order.setOrderId(getNextId("ordernum"));
-    order.getLineItems().forEach(lineItem -> {
-      String itemId = lineItem.getItemId();
-      Integer increment = lineItem.getQuantity();
-      Map<String, Object> param = new HashMap<>(2);
-      param.put("itemId", itemId);
-      param.put("increment", increment);
-      itemMapper.updateInventoryQuantity(param);
-    });
-
-    orderMapper.insertOrder(order);
-    orderMapper.insertOrderStatus(order);
-    order.getLineItems().forEach(lineItem -> {
-      lineItem.setOrderId(order.getOrderId());
-      lineItemMapper.insertLineItem(lineItem);
-    });
-  }
-
-  /**
-   * Gets the order.
-   *
-   * @param orderId
-   *          the order id
-   *
-   * @return the order
-   */
-  @Transactional
-  public Order getOrder(int orderId) {
-    Order order = orderMapper.getOrder(orderId);
-    order.setLineItems(lineItemMapper.getLineItemsByOrderId(orderId));
-
-    order.getLineItems().forEach(lineItem -> {
-      Item item = itemMapper.getItem(lineItem.getItemId());
-      item.setQuantity(itemMapper.getInventoryQuantity(lineItem.getItemId()));
-      lineItem.setItem(item);
-    });
-
-    return order;
-  }
-
-  /**
-   * Gets the orders by username.
-   *
-   * @param username
-   *          the username
-   *
-   * @return the orders by username
-   */
-  public List<Order> getOrdersByUsername(String username) {
-    return orderMapper.getOrdersByUsername(username);
-  }
-
-  /**
-   * Gets the next id.
-   *
-   * @param name
-   *          the name
-   *
-   * @return the next id
-   */
-  public int getNextId(String name) {
-    Sequence sequence = sequenceMapper.getSequence(new Sequence(name, -1));
-    if (sequence == null) {
-      throw new RuntimeException(
-          "Error: A null sequence was returned from the database (could not get next " + name + " sequence).");
-    }
-    Sequence parameterObject = new Sequence(name, sequence.getNextId() + 1);
-    sequenceMapper.updateSequence(parameterObject);
+  public int getNextId(String name) throws DataAccessException {
+    Sequence sequence = new Sequence();
+    sequence.setName(name);
+    sequence = (Sequence) getSqlMapClientTemplate().queryForObject("oracleSequence", sequence);
     return sequence.getNextId();
   }
 
 }
 
-/*
- *    Copyright 2010-2022 the original author or authors.
- *
- *    Licensed under the Apache License, Version 2.0 (the "License");
- *    you may not use this file except in compliance with the License.
- *    You may obtain a copy of the License at
- *
- *       https://www.apache.org/licenses/LICENSE-2.0
- *
- *    Unless required by applicable law or agreed to in writing, software
- *    distributed under the License is distributed on an "AS IS" BASIS,
- *    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- *    See the License for the specific language governing permissions and
- *    limitations under the License.
- */
 
-import java.io.Serializable;
-
-import net.sourceforge.stripes.action.ActionBean;
-import net.sourceforge.stripes.action.ActionBeanContext;
-import net.sourceforge.stripes.action.SimpleMessage;
+import org.springframework.remoting.jaxrpc.ServletEndpointSupport;
+import org.springframework.samples.jpetstore.domain.Order;
+import org.springframework.samples.jpetstore.domain.logic.OrderService;
 
 /**
- * The Class AbstractActionBean.
+ * JAX-RPC OrderService endpoint that simply delegates to the OrderService
+ * implementation in the root web application context. Implements the plain
+ * OrderService interface as service interface, just like the target bean does.
  *
- * @author Eduardo Macarron
+ * <p>This proxy class is necessary because JAX-RPC/Axis requires a dedicated
+ * endpoint class to instantiate. If an existing service needs to be exported,
+ * a wrapper that extends ServletEndpointSupport for simple application context
+ * access is the simplest JAX-RPC compliant way.
+ *
+ * <p>This is the class registered with the server-side JAX-RPC implementation.
+ * In the case of Axis, this happens in "server-config.wsdd" respectively via
+ * deployment calls. The Web Service tool manages the lifecycle of instances
+ * of this class: A Spring application context can just be accessed here.
+ *
+ * <p>Note that this class does <i>not</i> implement an RMI port interface,
+ * despite the JAX-RPC spec requiring this for service endpoints. Axis and
+ * other JAX-RPC implementations are known to accept non-RMI endpoint classes
+ * too, so there's no need to maintain an RMI port interface in addition to
+ * the existing non-RMI service interface (OrderService).
+ *
+ * <p>If your JAX-RPC implementation imposes a strict requirement on a service
+ * endpoint class to implement an RMI port interface, then let your endpoint
+ * class implement both the non-RMI service interface and the RMI port interface.
+ * This will work as long as the methods in both interfaces just differ in the
+ * declared RemoteException. Of course, this unfortunately involves double
+ * maintenance: one interface for your business logic, one for JAX-RPC.
+ * Therefore, it is usually preferable to avoid this if not absolutely necessary.
+ *
+ * @author Juergen Hoeller
+ * @since 26.12.2003
  */
-public abstract class AbstractActionBean implements ActionBean, Serializable {
+public class JaxRpcOrderService extends ServletEndpointSupport implements OrderService {
 
-  private static final long serialVersionUID = -1767714708233127983L;
+	private OrderService orderService;
 
-  protected static final String ERROR = "/WEB-INF/jsp/common/Error.jsp";
+	protected void onInit() {
+		this.orderService = (OrderService) getWebApplicationContext().getBean("petStore");
+	}
 
-  protected transient ActionBeanContext context;
+	public Order getOrder(int orderId) {
+		return this.orderService.getOrder(orderId);
+	}
 
-  protected void setMessage(String value) {
-    context.getMessages().add(new SimpleMessage(value));
-  }
+}
 
-  @Override
-  public ActionBeanContext getContext() {
-    return context;
-  }
 
-  @Override
-  public void setContext(ActionBeanContext context) {
-    this.context = context;
+import java.util.Iterator;
+import java.util.Map;
+
+import org.springframework.beans.factory.ListableBeanFactory;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.samples.jpetstore.domain.LineItem;
+import org.springframework.samples.jpetstore.domain.Order;
+import org.springframework.samples.jpetstore.domain.logic.OrderService;
+import org.springframework.util.StopWatch;
+
+/**
+ * Demo client class for remote OrderServices, to be invoked as standalone
+ * program from the command line, e.g. via "client.bat" or "run.xml".
+ *
+ * <p>You need to specify an order ID and optionally a number of calls,
+ * e.g. for order ID 1000: 'client 1000' for a single call per service or
+ * 'client 1000 10' for 10 calls each".
+ *
+ * <p>Reads in the application context from a "clientContext.xml" file in
+ * the VM execution directory, calling all OrderService proxies defined in it.
+ * See that file for details.
+ *
+ * @author Juergen Hoeller
+ * @since 26.12.2003
+ * @see org.springframework.samples.jpetstore.domain.logic.OrderService
+ */
+public class OrderServiceClient {
+
+	public static final String CLIENT_CONTEXT_CONFIG_LOCATION = "client/clientContext.xml";
+
+
+	private final ListableBeanFactory beanFactory;
+
+	public OrderServiceClient(ListableBeanFactory beanFactory) {
+		this.beanFactory = beanFactory;
+	}
+
+	public void invokeOrderServices(int orderId, int nrOfCalls) {
+		StopWatch stopWatch = new StopWatch(nrOfCalls + " OrderService call(s)");
+		Map orderServices = this.beanFactory.getBeansOfType(OrderService.class);
+		for (Iterator it = orderServices.keySet().iterator(); it.hasNext();) {
+			String beanName = (String) it.next();
+			OrderService orderService = (OrderService) orderServices.get(beanName);
+			System.out.println("Calling OrderService '" + beanName + "' with order ID " + orderId);
+			stopWatch.start(beanName);
+			Order order = null;
+			for (int i = 0; i < nrOfCalls; i++) {
+				order = orderService.getOrder(orderId);
+			}
+			stopWatch.stop();
+			if (order != null) {
+				printOrder(order);
+			}
+			else {
+				System.out.println("Order with ID " + orderId + " not found");
+			}
+			System.out.println();
+		}
+		System.out.println(stopWatch.prettyPrint());
+	}
+
+	protected void printOrder(Order order) {
+		System.out.println("Got order with order ID " + order.getOrderId() +
+				" and order date " + order.getOrderDate());
+		System.out.println("Shipping address is: " + order.getShipAddress1());
+		for (Iterator lineItems = order.getLineItems().iterator(); lineItems.hasNext();) {
+			LineItem lineItem = (LineItem) lineItems.next();
+			System.out.println("LineItem " + lineItem.getLineNumber() + ": " + lineItem.getQuantity() +
+					" piece(s) of item " + lineItem.getItemId());
+		}
+	}
+
+
+	public static void main(String[] args) {
+		if (args.length == 0 || "".equals(args[0])) {
+			System.out.println(
+					"You need to specify an order ID and optionally a number of calls, e.g. for order ID 1000: " +
+					"'client 1000' for a single call per service or 'client 1000 10' for 10 calls each");
+		}
+		else {
+			int orderId = Integer.parseInt(args[0]);
+			int nrOfCalls = 1;
+			if (args.length > 1 && !"".equals(args[1])) {
+				nrOfCalls = Integer.parseInt(args[1]);
+			}
+			ListableBeanFactory beanFactory = new ClassPathXmlApplicationContext(CLIENT_CONTEXT_CONFIG_LOCATION);
+			OrderServiceClient client = new OrderServiceClient(beanFactory);
+			client.invokeOrderServices(orderId, nrOfCalls);
+		}
+	}
+
+}
+
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.apache.struts.action.ActionForm;
+import org.apache.struts.action.ActionForward;
+import org.apache.struts.action.ActionMapping;
+
+import org.springframework.samples.jpetstore.domain.Account;
+
+public class NewAccountFormAction extends BaseAction {
+
+  public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) throws Exception {
+    AccountActionForm workingAcctForm = new AccountActionForm();
+    request.getSession().removeAttribute("workingAccountForm");
+    request.getSession().setAttribute("workingAccountForm", workingAcctForm);
+    if (workingAcctForm.getAccount() == null) {
+      workingAcctForm.setAccount(new Account());
+    }
+    if (workingAcctForm.getCategories() == null) {
+      workingAcctForm.setCategories(getPetStore().getCategoryList());
+    }
+    return mapping.findForward("success");
   }
 
 }
 
-/*
- *    Copyright 2010-2022 the original author or authors.
- *
- *    Licensed under the Apache License, Version 2.0 (the "License");
- *    you may not use this file except in compliance with the License.
- *    You may obtain a copy of the License at
- *
- *       https://www.apache.org/licenses/LICENSE-2.0
- *
- *    Unless required by applicable law or agreed to in writing, software
- *    distributed under the License is distributed on an "AS IS" BASIS,
- *    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- *    See the License for the specific language governing permissions and
- *    limitations under the License.
- */
 
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
-import javax.servlet.http.HttpSession;
+import org.apache.struts.action.ActionForm;
+import org.apache.struts.action.ActionForward;
+import org.apache.struts.action.ActionMapping;
 
-import net.sourceforge.stripes.action.DefaultHandler;
-import net.sourceforge.stripes.action.ForwardResolution;
-import net.sourceforge.stripes.action.RedirectResolution;
-import net.sourceforge.stripes.action.Resolution;
-import net.sourceforge.stripes.action.SessionScope;
-import net.sourceforge.stripes.integration.spring.SpringBean;
-import net.sourceforge.stripes.validation.Validate;
+import org.springframework.samples.jpetstore.domain.Order;
 
-import org.mybatis.jpetstore.domain.Account;
-import org.mybatis.jpetstore.domain.Product;
-import org.mybatis.jpetstore.service.AccountService;
-import org.mybatis.jpetstore.service.CatalogService;
+public class ViewOrderAction extends SecureBaseAction {
 
-/**
- * The Class AccountActionBean.
- *
- * @author Eduardo Macarron
- */
-@SessionScope
-public class AccountActionBean extends AbstractActionBean {
-
-  private static final long serialVersionUID = 5499663666155758178L;
-
-  private static final String NEW_ACCOUNT = "/WEB-INF/jsp/account/NewAccountForm.jsp";
-  private static final String EDIT_ACCOUNT = "/WEB-INF/jsp/account/EditAccountForm.jsp";
-  private static final String SIGNON = "/WEB-INF/jsp/account/SignonForm.jsp";
-
-  private static final List<String> LANGUAGE_LIST;
-  private static final List<String> CATEGORY_LIST;
-
-  @SpringBean
-  private transient AccountService accountService;
-  @SpringBean
-  private transient CatalogService catalogService;
-
-  private Account account = new Account();
-  private List<Product> myList;
-  private boolean authenticated;
-
-  static {
-    LANGUAGE_LIST = Collections.unmodifiableList(Arrays.asList("english", "japanese"));
-    CATEGORY_LIST = Collections.unmodifiableList(Arrays.asList("FISH", "DOGS", "REPTILES", "CATS", "BIRDS"));
-  }
-
-  public Account getAccount() {
-    return this.account;
-  }
-
-  public String getUsername() {
-    return account.getUsername();
-  }
-
-  @Validate(required = true, on = { "signon", "newAccount", "editAccount" })
-  public void setUsername(String username) {
-    account.setUsername(username);
-  }
-
-  public String getPassword() {
-    return account.getPassword();
-  }
-
-  @Validate(required = true, on = { "signon", "newAccount", "editAccount" })
-  public void setPassword(String password) {
-    account.setPassword(password);
-  }
-
-  public List<Product> getMyList() {
-    return myList;
-  }
-
-  public void setMyList(List<Product> myList) {
-    this.myList = myList;
-  }
-
-  public List<String> getLanguages() {
-    return LANGUAGE_LIST;
-  }
-
-  public List<String> getCategories() {
-    return CATEGORY_LIST;
-  }
-
-  public Resolution newAccountForm() {
-    return new ForwardResolution(NEW_ACCOUNT);
-  }
-
-  /**
-   * New account.
-   *
-   * @return the resolution
-   */
-  public Resolution newAccount() {
-    accountService.insertAccount(account);
-    account = accountService.getAccount(account.getUsername());
-    myList = catalogService.getProductListByCategory(account.getFavouriteCategoryId());
-    authenticated = true;
-    return new RedirectResolution(CatalogActionBean.class);
-  }
-
-  /**
-   * Edits the account form.
-   *
-   * @return the resolution
-   */
-  public Resolution editAccountForm() {
-    return new ForwardResolution(EDIT_ACCOUNT);
-  }
-
-  /**
-   * Edits the account.
-   *
-   * @return the resolution
-   */
-  public Resolution editAccount() {
-    accountService.updateAccount(account);
-    account = accountService.getAccount(account.getUsername());
-    myList = catalogService.getProductListByCategory(account.getFavouriteCategoryId());
-    return new RedirectResolution(CatalogActionBean.class);
-  }
-
-  /**
-   * Signon form.
-   *
-   * @return the resolution
-   */
-  @DefaultHandler
-  public Resolution signonForm() {
-    return new ForwardResolution(SIGNON);
-  }
-
-  /**
-   * Signon.
-   *
-   * @return the resolution
-   */
-  public Resolution signon() {
-
-    account = accountService.getAccount(getUsername(), getPassword());
-
-    if (account == null) {
-      String value = "Invalid username or password.  Signon failed.";
-      setMessage(value);
-      clear();
-      return new ForwardResolution(SIGNON);
-    } else {
-      account.setPassword(null);
-      myList = catalogService.getProductListByCategory(account.getFavouriteCategoryId());
-      authenticated = true;
-      HttpSession s = context.getRequest().getSession();
-      // this bean is already registered as /actions/Account.action
-      s.setAttribute("accountBean", this);
-      return new RedirectResolution(CatalogActionBean.class);
+  protected ActionForward doExecute(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) throws Exception {
+    AccountActionForm acctForm = (AccountActionForm) form;
+    int orderId = Integer.parseInt(request.getParameter("orderId"));
+    Order order = getPetStore().getOrder(orderId);
+    if (acctForm.getAccount().getUsername().equals(order.getUsername())) {
+      request.setAttribute("order", order);
+      return mapping.findForward("success");
+    }
+		else {
+      request.setAttribute("message", "You may only view your own orders.");
+      return mapping.findForward("failure");
     }
   }
 
-  /**
-   * Signoff.
-   *
-   * @return the resolution
-   */
-  public Resolution signoff() {
-    context.getRequest().getSession().invalidate();
-    clear();
-    return new RedirectResolution(CatalogActionBean.class);
-  }
+}
 
-  /**
-   * Checks if is authenticated.
-   *
-   * @return true, if is authenticated
-   */
-  public boolean isAuthenticated() {
-    return authenticated && account != null && account.getUsername() != null;
-  }
 
-  /**
-   * Clear.
-   */
-  public void clear() {
-    account = new Account();
-    myList = null;
-    authenticated = false;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.apache.struts.action.ActionForm;
+import org.apache.struts.action.ActionForward;
+import org.apache.struts.action.ActionMapping;
+
+import org.springframework.samples.jpetstore.domain.Item;
+
+public class ViewItemAction extends BaseAction {
+
+  public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) throws Exception {
+    String itemId = request.getParameter("itemId");
+    Item item = getPetStore().getItem(itemId);
+    request.setAttribute("item", item);
+    request.setAttribute("product", item.getProduct());
+    return mapping.findForward("success");
   }
 
 }
 
-/*
- *    Copyright 2010-2022 the original author or authors.
- *
- *    Licensed under the Apache License, Version 2.0 (the "License");
- *    you may not use this file except in compliance with the License.
- *    You may obtain a copy of the License at
- *
- *       https://www.apache.org/licenses/LICENSE-2.0
- *
- *    Unless required by applicable law or agreed to in writing, software
- *    distributed under the License is distributed on an "AS IS" BASIS,
- *    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- *    See the License for the specific language governing permissions and
- *    limitations under the License.
- */
 
-import java.util.Iterator;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.apache.struts.action.ActionForm;
+import org.apache.struts.action.ActionForward;
+import org.apache.struts.action.ActionMapping;
+
+import org.springframework.samples.jpetstore.domain.Cart;
+import org.springframework.samples.jpetstore.domain.Item;
+
+public class AddItemToCartAction extends BaseAction {
+
+  public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) throws Exception {
+    CartActionForm cartForm = (CartActionForm) form;
+    Cart cart = cartForm.getCart();
+    String workingItemId = cartForm.getWorkingItemId();
+    if (cart.containsItemId(workingItemId)) {
+      cart.incrementQuantityByItemId(workingItemId);
+    }
+		else {
+      // isInStock is a "real-time" property that must be updated
+      // every time an item is added to the cart, even if other
+      // item details are cached.
+      boolean isInStock = getPetStore().isItemInStock(workingItemId);
+      Item item = getPetStore().getItem(workingItemId);
+      cartForm.getCart().addItem(item, isInStock);
+    }
+    return mapping.findForward("success");
+  }
+
+}
+
+
+import javax.servlet.ServletContext;
+
+import org.apache.struts.action.Action;
+import org.apache.struts.action.ActionServlet;
+
+import org.springframework.samples.jpetstore.domain.logic.PetStoreFacade;
+import org.springframework.web.context.WebApplicationContext;
+import org.springframework.web.context.support.WebApplicationContextUtils;
+
+/**
+ * Superclass for Struts actions in JPetStore's web tier.
+ *
+ * <p>Looks up the Spring WebApplicationContext via the ServletContext
+ * and obtains the PetStoreFacade implementation from it, making it
+ * available to subclasses via a protected getter method.
+ *
+ * <p>As alternative to such a base class, consider using Spring's
+ * ActionSupport class for Struts, which pre-implements
+ * WebApplicationContext lookup in a generic fashion.
+ *
+ * @author Juergen Hoeller
+ * @since 30.11.2003
+ * @see #getPetStore
+ * @see org.springframework.web.context.support.WebApplicationContextUtils#getRequiredWebApplicationContext
+ * @see org.springframework.web.struts.ActionSupport
+ */
+public abstract class BaseAction extends Action {
+
+  private PetStoreFacade petStore;
+
+	public void setServlet(ActionServlet actionServlet) {
+		super.setServlet(actionServlet);
+		if (actionServlet != null) {
+			ServletContext servletContext = actionServlet.getServletContext();
+			WebApplicationContext wac = WebApplicationContextUtils.getRequiredWebApplicationContext(servletContext);
+			this.petStore = (PetStoreFacade) wac.getBean("petStore");
+		}
+	}
+
+	protected PetStoreFacade getPetStore() {
+		return petStore;
+	}
+
+}
+
 
 import javax.servlet.http.HttpServletRequest;
 
-import net.sourceforge.stripes.action.ForwardResolution;
-import net.sourceforge.stripes.action.Resolution;
-import net.sourceforge.stripes.action.SessionScope;
-import net.sourceforge.stripes.integration.spring.SpringBean;
+import org.apache.struts.action.ActionMapping;
 
-import org.mybatis.jpetstore.domain.Cart;
-import org.mybatis.jpetstore.domain.CartItem;
-import org.mybatis.jpetstore.domain.Item;
-import org.mybatis.jpetstore.service.CatalogService;
+import org.springframework.samples.jpetstore.domain.Cart;
 
-/**
- * The Class CartActionBean.
- *
- * @author Eduardo Macarron
- */
-@SessionScope
-public class CartActionBean extends AbstractActionBean {
+public class CartActionForm extends BaseActionForm {
 
-  private static final long serialVersionUID = -4038684592582714235L;
-
-  private static final String VIEW_CART = "/WEB-INF/jsp/cart/Cart.jsp";
-  private static final String CHECK_OUT = "/WEB-INF/jsp/cart/Checkout.jsp";
-
-  @SpringBean
-  private transient CatalogService catalogService;
+  /* Private Fields */
 
   private Cart cart = new Cart();
   private String workingItemId;
 
-  public Cart getCart() {
-    return cart;
-  }
+  /* JavaBeans Properties */
 
-  public void setCart(Cart cart) {
-    this.cart = cart;
-  }
+  public Cart getCart() { return cart; }
+  public void setCart(Cart cart) { this.cart = cart; }
 
-  public void setWorkingItemId(String workingItemId) {
-    this.workingItemId = workingItemId;
-  }
+  public String getWorkingItemId() { return workingItemId; }
+  public void setWorkingItemId(String workingItemId) { this.workingItemId = workingItemId; }
 
-  /**
-   * Adds the item to cart.
-   *
-   * @return the resolution
-   */
-  public Resolution addItemToCart() {
-    if (cart.containsItemId(workingItemId)) {
-      cart.incrementQuantityByItemId(workingItemId);
-    } else {
-      // isInStock is a "real-time" property that must be updated
-      // every time an item is added to the cart, even if other
-      // item details are cached.
-      boolean isInStock = catalogService.isItemInStock(workingItemId);
-      Item item = catalogService.getItem(workingItemId);
-      cart.addItem(item, isInStock);
+  /* Public Methods */
+
+  public void reset(ActionMapping mapping, HttpServletRequest request) {
+    super.reset(mapping, request);
+    workingItemId = null;
+  }
+}
+
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.apache.struts.action.ActionForm;
+import org.apache.struts.action.ActionForward;
+import org.apache.struts.action.ActionMapping;
+
+import org.springframework.samples.jpetstore.domain.Order;
+
+public class NewOrderAction extends SecureBaseAction {
+
+  protected ActionForward doExecute(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) throws Exception {
+    OrderActionForm orderForm = (OrderActionForm) form;
+    if (orderForm.isShippingAddressRequired()) {
+      return mapping.findForward("shipping");
     }
-
-    return new ForwardResolution(VIEW_CART);
-  }
-
-  /**
-   * Removes the item from cart.
-   *
-   * @return the resolution
-   */
-  public Resolution removeItemFromCart() {
-
-    Item item = cart.removeItemById(workingItemId);
-
-    if (item == null) {
-      setMessage("Attempted to remove null CartItem from Cart.");
-      return new ForwardResolution(ERROR);
-    } else {
-      return new ForwardResolution(VIEW_CART);
+		else if (!orderForm.isConfirmed()) {
+      return mapping.findForward("confirm");
+    }
+		else if (orderForm.getOrder() != null) {
+      Order order = orderForm.getOrder();
+      getPetStore().insertOrder(order);
+      request.getSession().removeAttribute("workingOrderForm");
+      request.getSession().removeAttribute("cartForm");
+      request.setAttribute("order", order);
+      request.setAttribute("message", "Thank you, your order has been submitted.");
+      return mapping.findForward("success");
+    }
+		else {
+      request.setAttribute("message", "An error occurred processing your order (order was null).");
+      return mapping.findForward("failure");
     }
   }
 
-  /**
-   * Update cart quantities.
-   *
-   * @return the resolution
-   */
-  public Resolution updateCartQuantities() {
-    HttpServletRequest request = context.getRequest();
+}
 
-    Iterator<CartItem> cartItems = getCart().getAllCartItems();
-    while (cartItems.hasNext()) {
-      CartItem cartItem = cartItems.next();
-      String itemId = cartItem.getItem().getItemId();
-      try {
-        int quantity = Integer.parseInt(request.getParameter(itemId));
-        getCart().setQuantityByItemId(itemId, quantity);
-        if (quantity < 1) {
-          cartItems.remove();
+
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.apache.struts.action.ActionMapping;
+
+import org.springframework.beans.support.PagedListHolder;
+import org.springframework.samples.jpetstore.domain.Account;
+
+public class AccountActionForm extends BaseActionForm {
+
+  /* Constants */
+
+  public static final String VALIDATE_EDIT_ACCOUNT = "editAccount";
+  public static final String VALIDATE_NEW_ACCOUNT = "newAccount";
+  private static final ArrayList LANGUAGE_LIST = new ArrayList();
+
+  /* Private Fields */
+
+  private String username;
+  private String password;
+  private String repeatedPassword;
+  private List languages;
+  private List categories;
+  private String validate;
+  private String forwardAction;
+  private Account account;
+  private PagedListHolder myList;
+
+  /* Static Initializer */
+
+  static {
+    LANGUAGE_LIST.add("english");
+    LANGUAGE_LIST.add("japanese");
+  }
+
+  /* Constructors */
+
+  public AccountActionForm() {
+    languages = LANGUAGE_LIST;
+  }
+
+  /* JavaBeans Properties */
+
+  public PagedListHolder getMyList() { return myList; }
+  public void setMyList(PagedListHolder myList) { this.myList = myList; }
+
+  public String getForwardAction() { return forwardAction; }
+  public void setForwardAction(String forwardAction) { this.forwardAction = forwardAction; }
+
+  public String getUsername() { return username; }
+  public void setUsername(String username) { this.username = username; }
+
+  public String getPassword() { return password; }
+  public void setPassword(String password) { this.password = password; }
+
+  public String getRepeatedPassword() { return repeatedPassword; }
+  public void setRepeatedPassword(String repeatedPassword) { this.repeatedPassword = repeatedPassword; }
+
+  public Account getAccount() { return account; }
+  public void setAccount(Account account) { this.account = account; }
+
+  public List getLanguages() { return languages; }
+  public void setLanguages(List languages) { this.languages = languages; }
+
+  public List getCategories() { return categories; }
+  public void setCategories(List categories) { this.categories = categories; }
+
+  public String getValidate() { return validate; }
+  public void setValidate(String validate) { this.validate = validate; }
+
+  /* Public Methods */
+
+  public void doValidate(ActionMapping mapping, HttpServletRequest request, List errors) {
+    if (validate != null) {
+      if (VALIDATE_EDIT_ACCOUNT.equals(validate) || VALIDATE_NEW_ACCOUNT.equals(validate)) {
+        if (VALIDATE_NEW_ACCOUNT.equals(validate)) {
+          account.setStatus("OK");
+          addErrorIfStringEmpty(errors, "User ID is required.", account.getUsername());
+          if (account.getPassword() == null || account.getPassword().length() < 1 || !account.getPassword().equals(repeatedPassword)) {
+            errors.add("Passwords did not match or were not provided.  Matching passwords are required.");
+          }
         }
-      } catch (Exception e) {
-        // ignore parse exceptions on purpose
+        if (account.getPassword() != null && account.getPassword().length() > 0) {
+          if (!account.getPassword().equals(repeatedPassword)) {
+            errors.add("Passwords did not match.");
+          }
+        }
+        addErrorIfStringEmpty(errors, "First name is required.", this.account.getFirstName());
+        addErrorIfStringEmpty(errors, "Last name is required.", this.account.getLastName());
+        addErrorIfStringEmpty(errors, "Email address is required.", this.account.getEmail());
+        addErrorIfStringEmpty(errors, "Phone number is required.", this.account.getPhone());
+        addErrorIfStringEmpty(errors, "Address (1) is required.", this.account.getAddress1());
+        addErrorIfStringEmpty(errors, "City is required.", this.account.getCity());
+        addErrorIfStringEmpty(errors, "State is required.", this.account.getState());
+        addErrorIfStringEmpty(errors, "ZIP is required.", this.account.getZip());
+        addErrorIfStringEmpty(errors, "Country is required.", this.account.getCountry());
       }
     }
 
-    return new ForwardResolution(VIEW_CART);
   }
 
-  public ForwardResolution viewCart() {
-    return new ForwardResolution(VIEW_CART);
-  }
-
-  public ForwardResolution checkOut() {
-    return new ForwardResolution(CHECK_OUT);
-  }
-
-  public void clear() {
-    cart = new Cart();
-    workingItemId = null;
+  public void reset(ActionMapping mapping, HttpServletRequest request) {
+    super.reset(mapping, request);
+    setUsername(null);
+    setPassword(null);
+    setRepeatedPassword(null);
   }
 
 }
 
-/*
- *    Copyright 2010-2022 the original author or authors.
- *
- *    Licensed under the Apache License, Version 2.0 (the "License");
- *    you may not use this file except in compliance with the License.
- *    You may obtain a copy of the License at
- *
- *       https://www.apache.org/licenses/LICENSE-2.0
- *
- *    Unless required by applicable law or agreed to in writing, software
- *    distributed under the License is distributed on an "AS IS" BASIS,
- *    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- *    See the License for the specific language governing permissions and
- *    limitations under the License.
- */
 
-import java.util.List;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
-import net.sourceforge.stripes.action.DefaultHandler;
-import net.sourceforge.stripes.action.ForwardResolution;
-import net.sourceforge.stripes.action.SessionScope;
-import net.sourceforge.stripes.integration.spring.SpringBean;
+import org.apache.struts.action.ActionForm;
+import org.apache.struts.action.ActionForward;
+import org.apache.struts.action.ActionMapping;
 
-import org.mybatis.jpetstore.domain.Category;
-import org.mybatis.jpetstore.domain.Item;
-import org.mybatis.jpetstore.domain.Product;
-import org.mybatis.jpetstore.service.CatalogService;
+import org.springframework.beans.support.PagedListHolder;
+import org.springframework.samples.jpetstore.domain.Product;
 
-/**
- * The Class CatalogActionBean.
- *
- * @author Eduardo Macarron
- */
-@SessionScope
-public class CatalogActionBean extends AbstractActionBean {
+public class ViewProductAction extends BaseAction {
 
-  private static final long serialVersionUID = 5849523372175050635L;
-
-  private static final String MAIN = "/WEB-INF/jsp/catalog/Main.jsp";
-  private static final String VIEW_CATEGORY = "/WEB-INF/jsp/catalog/Category.jsp";
-  private static final String VIEW_PRODUCT = "/WEB-INF/jsp/catalog/Product.jsp";
-  private static final String VIEW_ITEM = "/WEB-INF/jsp/catalog/Item.jsp";
-  private static final String SEARCH_PRODUCTS = "/WEB-INF/jsp/catalog/SearchProducts.jsp";
-
-  @SpringBean
-  private transient CatalogService catalogService;
-
-  private String keyword;
-
-  private String categoryId;
-  private Category category;
-  private List<Category> categoryList;
-
-  private String productId;
-  private Product product;
-  private List<Product> productList;
-
-  private String itemId;
-  private Item item;
-  private List<Item> itemList;
-
-  public String getKeyword() {
-    return keyword;
-  }
-
-  public void setKeyword(String keyword) {
-    this.keyword = keyword;
-  }
-
-  public String getCategoryId() {
-    return categoryId;
-  }
-
-  public void setCategoryId(String categoryId) {
-    this.categoryId = categoryId;
-  }
-
-  public String getProductId() {
-    return productId;
-  }
-
-  public void setProductId(String productId) {
-    this.productId = productId;
-  }
-
-  public String getItemId() {
-    return itemId;
-  }
-
-  public void setItemId(String itemId) {
-    this.itemId = itemId;
-  }
-
-  public Category getCategory() {
-    return category;
-  }
-
-  public void setCategory(Category category) {
-    this.category = category;
-  }
-
-  public Product getProduct() {
-    return product;
-  }
-
-  public void setProduct(Product product) {
-    this.product = product;
-  }
-
-  public Item getItem() {
-    return item;
-  }
-
-  public void setItem(Item item) {
-    this.item = item;
-  }
-
-  public List<Category> getCategoryList() {
-    return categoryList;
-  }
-
-  public void setCategoryList(List<Category> categoryList) {
-    this.categoryList = categoryList;
-  }
-
-  public List<Product> getProductList() {
-    return productList;
-  }
-
-  public void setProductList(List<Product> productList) {
-    this.productList = productList;
-  }
-
-  public List<Item> getItemList() {
-    return itemList;
-  }
-
-  public void setItemList(List<Item> itemList) {
-    this.itemList = itemList;
-  }
-
-  @DefaultHandler
-  public ForwardResolution viewMain() {
-    return new ForwardResolution(MAIN);
-  }
-
-  /**
-   * View category.
-   *
-   * @return the forward resolution
-   */
-  public ForwardResolution viewCategory() {
-    if (categoryId != null) {
-      productList = catalogService.getProductListByCategory(categoryId);
-      category = catalogService.getCategory(categoryId);
-    }
-    return new ForwardResolution(VIEW_CATEGORY);
-  }
-
-  /**
-   * View product.
-   *
-   * @return the forward resolution
-   */
-  public ForwardResolution viewProduct() {
+  public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) throws Exception {
+    String productId = request.getParameter("productId");
     if (productId != null) {
-      itemList = catalogService.getItemListByProduct(productId);
-      product = catalogService.getProduct(productId);
+			PagedListHolder itemList = new PagedListHolder(getPetStore().getItemListByProduct(productId));
+			itemList.setPageSize(4);
+			Product product = getPetStore().getProduct(productId);
+      request.getSession().setAttribute("ViewProductAction_itemList", itemList);
+			request.getSession().setAttribute("ViewProductAction_product", product);
+			request.setAttribute("itemList", itemList);
+      request.setAttribute("product", product);
     }
-    return new ForwardResolution(VIEW_PRODUCT);
-  }
-
-  /**
-   * View item.
-   *
-   * @return the forward resolution
-   */
-  public ForwardResolution viewItem() {
-    item = catalogService.getItem(itemId);
-    product = item.getProduct();
-    return new ForwardResolution(VIEW_ITEM);
-  }
-
-  /**
-   * Search products.
-   *
-   * @return the forward resolution
-   */
-  public ForwardResolution searchProducts() {
-    if (keyword == null || keyword.length() < 1) {
-      setMessage("Please enter a keyword to search for, then press the search button.");
-      return new ForwardResolution(ERROR);
-    } else {
-      productList = catalogService.searchProductList(keyword.toLowerCase());
-      return new ForwardResolution(SEARCH_PRODUCTS);
+		else {
+			PagedListHolder itemList = (PagedListHolder) request.getSession().getAttribute("ViewProductAction_itemList");
+			Product product = (Product) request.getSession().getAttribute("ViewProductAction_product");
+      String page = request.getParameter("page");
+      if ("next".equals(page)) {
+        itemList.nextPage();
+      }
+			else if ("previous".equals(page)) {
+        itemList.previousPage();
+      }
+			request.setAttribute("itemList", itemList);
+      request.setAttribute("product", product);
     }
-  }
-
-  /**
-   * Clear.
-   */
-  public void clear() {
-    keyword = null;
-
-    categoryId = null;
-    category = null;
-    categoryList = null;
-
-    productId = null;
-    product = null;
-    productList = null;
-
-    itemId = null;
-    item = null;
-    itemList = null;
+    return mapping.findForward("success");
   }
 
 }
 
-/*
- *    Copyright 2010-2022 the original author or authors.
- *
- *    Licensed under the Apache License, Version 2.0 (the "License");
- *    you may not use this file except in compliance with the License.
- *    You may obtain a copy of the License at
- *
- *       https://www.apache.org/licenses/LICENSE-2.0
- *
- *    Unless required by applicable law or agreed to in writing, software
- *    distributed under the License is distributed on an "AS IS" BASIS,
- *    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- *    See the License for the specific language governing permissions and
- *    limitations under the License.
- */
 
-import java.util.Arrays;
-import java.util.Collections;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.apache.struts.action.ActionForm;
+import org.apache.struts.action.ActionForward;
+import org.apache.struts.action.ActionMapping;
+
+public class DoNothingAction extends BaseAction {
+
+  /* Public Methods */
+
+  public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) throws Exception {
+    return mapping.findForward("success");
+  }
+}
+
+
+import java.util.Iterator;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.apache.struts.action.ActionForm;
+import org.apache.struts.action.ActionForward;
+import org.apache.struts.action.ActionMapping;
+
+import org.springframework.samples.jpetstore.domain.CartItem;
+
+public class UpdateCartQuantitiesAction extends BaseAction {
+
+  public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) throws Exception {
+    CartActionForm cartForm = (CartActionForm) form;
+    Iterator cartItems = cartForm.getCart().getAllCartItems();
+    while (cartItems.hasNext()) {
+      CartItem cartItem = (CartItem) cartItems.next();
+      String itemId = cartItem.getItem().getItemId();
+      try {
+        int quantity = Integer.parseInt(request.getParameter(itemId));
+        cartForm.getCart().setQuantityByItemId(itemId, quantity);
+        if (quantity < 1) {
+          cartItems.remove();
+        }
+      }
+			catch (NumberFormatException e) {
+        //ignore on purpose
+      }
+    }
+    return mapping.findForward("success");
+  }
+
+}
+
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.apache.struts.action.ActionForm;
+import org.apache.struts.action.ActionForward;
+import org.apache.struts.action.ActionMapping;
+
+public abstract class SecureBaseAction extends BaseAction {
+
+  public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) throws Exception {
+    AccountActionForm acctForm = (AccountActionForm) request.getSession().getAttribute("accountForm");
+    if (acctForm == null || acctForm.getAccount() == null) {
+      String url = request.getServletPath();
+      String query = request.getQueryString();
+      if (query != null) {
+        request.setAttribute("signonForwardAction", url+"?"+query);
+      }
+			else {
+        request.setAttribute("signonForwardAction", url);
+      }
+      return mapping.findForward("global-signon");
+    }
+		else {
+      return doExecute(mapping, form, request, response);
+    }
+  }
+
+	protected abstract ActionForward doExecute(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) throws Exception;
+
+}
+
+
+import java.util.ArrayList;
 import java.util.List;
 
-import javax.servlet.http.HttpSession;
+import javax.servlet.http.HttpServletRequest;
 
-import net.sourceforge.stripes.action.ForwardResolution;
-import net.sourceforge.stripes.action.Resolution;
-import net.sourceforge.stripes.action.SessionScope;
-import net.sourceforge.stripes.integration.spring.SpringBean;
+import org.apache.struts.action.ActionError;
+import org.apache.struts.action.ActionErrors;
+import org.apache.struts.action.ActionForm;
+import org.apache.struts.action.ActionMapping;
 
-import org.mybatis.jpetstore.domain.Order;
-import org.mybatis.jpetstore.service.OrderService;
+public class BaseActionForm extends ActionForm {
 
-/**
- * The Class OrderActionBean.
- *
- * @author Eduardo Macarron
- */
-@SessionScope
-public class OrderActionBean extends AbstractActionBean {
+  /* Public Methods */
 
-  private static final long serialVersionUID = -6171288227470176272L;
+  public ActionErrors validate(ActionMapping mapping, HttpServletRequest request) {
+    ActionErrors actionErrors = null;
+    ArrayList errorList = new ArrayList();
+    doValidate(mapping, request, errorList);
+    request.setAttribute("errors", errorList);
+    if (!errorList.isEmpty()) {
+      actionErrors = new ActionErrors();
+      actionErrors.add(ActionErrors.GLOBAL_ERROR, new ActionError("global.error"));
+    }
+    return actionErrors;
+  }
 
-  private static final String CONFIRM_ORDER = "/WEB-INF/jsp/order/ConfirmOrder.jsp";
-  private static final String LIST_ORDERS = "/WEB-INF/jsp/order/ListOrders.jsp";
-  private static final String NEW_ORDER = "/WEB-INF/jsp/order/NewOrderForm.jsp";
-  private static final String SHIPPING = "/WEB-INF/jsp/order/ShippingForm.jsp";
-  private static final String VIEW_ORDER = "/WEB-INF/jsp/order/ViewOrder.jsp";
+  public void doValidate(ActionMapping mapping, HttpServletRequest request, List errors) {
+  }
 
-  private static final List<String> CARD_TYPE_LIST;
+  /* Protected Methods */
 
-  @SpringBean
-  private transient OrderService orderService;
+  protected void addErrorIfStringEmpty(List errors, String message, String value) {
+    if (value == null || value.trim().length() < 1) {
+      errors.add(message);
+    }
+  }
 
-  private Order order = new Order();
+}
+
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.apache.struts.action.ActionForm;
+import org.apache.struts.action.ActionForward;
+import org.apache.struts.action.ActionMapping;
+
+public class RemoveItemFromCartAction extends BaseAction {
+
+  public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) throws Exception {
+    CartActionForm cartForm = (CartActionForm) form;
+    cartForm.getCart().removeItemById(cartForm.getWorkingItemId());
+		return mapping.findForward("success");
+  }
+
+}
+
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.apache.struts.action.ActionForm;
+import org.apache.struts.action.ActionForward;
+import org.apache.struts.action.ActionMapping;
+
+import org.springframework.beans.support.PagedListHolder;
+import org.springframework.samples.jpetstore.domain.Account;
+
+public class NewAccountAction extends BaseAction {
+
+  public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) throws Exception {
+    AccountActionForm acctForm = (AccountActionForm) form;
+		if (AccountActionForm.VALIDATE_NEW_ACCOUNT.equals(acctForm.getValidate())) {
+			acctForm.getAccount().setListOption(request.getParameter("account.listOption") != null);
+			acctForm.getAccount().setBannerOption(request.getParameter("account.bannerOption") != null);
+			Account account = acctForm.getAccount();
+			String username = acctForm.getAccount().getUsername();
+			getPetStore().insertAccount(account);
+			acctForm.setAccount(getPetStore().getAccount(username));
+			PagedListHolder myList = new PagedListHolder(getPetStore().getProductListByCategory(account.getFavouriteCategoryId()));
+			myList.setPageSize(4);
+			acctForm.setMyList(myList);
+			request.getSession().setAttribute("accountForm", acctForm);
+			request.getSession().removeAttribute("workingAccountForm");
+			return mapping.findForward("success");
+		}
+		else {
+			request.setAttribute("message", "Your account was not created because the submitted information was not validated.");
+			return mapping.findForward("failure");
+		}
+  }
+
+}
+
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.apache.struts.action.ActionForm;
+import org.apache.struts.action.ActionForward;
+import org.apache.struts.action.ActionMapping;
+
+public class ListOrdersAction extends SecureBaseAction {
+
+  protected ActionForward doExecute(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) throws Exception {
+    AccountActionForm acctForm = (AccountActionForm) form;
+    String username = acctForm.getAccount().getUsername();
+    request.setAttribute("orderList", getPetStore().getOrdersByUsername(username));
+    return mapping.findForward("success");
+  }
+
+}
+
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.apache.struts.action.ActionForm;
+import org.apache.struts.action.ActionForward;
+import org.apache.struts.action.ActionMapping;
+
+import org.springframework.beans.support.PagedListHolder;
+import org.springframework.samples.jpetstore.domain.Category;
+
+public class ViewCategoryAction extends BaseAction {
+
+  public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) throws Exception {
+    String categoryId = request.getParameter("categoryId");
+    if (categoryId != null) {
+			Category category = getPetStore().getCategory(categoryId);
+      PagedListHolder productList = new PagedListHolder(getPetStore().getProductListByCategory(categoryId));
+			productList.setPageSize(4);
+			request.getSession().setAttribute("ViewProductAction_category", category);
+			request.getSession().setAttribute("ViewProductAction_productList", productList);
+			request.setAttribute("category", category);
+			request.setAttribute("productList", productList);
+    }
+		else {
+			Category category = (Category) request.getSession().getAttribute("ViewProductAction_category");
+			PagedListHolder productList = (PagedListHolder) request.getSession().getAttribute("ViewProductAction_productList");
+			if (category == null || productList == null) {
+				throw new IllegalStateException("Cannot find pre-loaded category and product list");
+			}
+      String page = request.getParameter("page");
+      if ("next".equals(page)) {
+        productList.nextPage();
+      }
+			else if ("previous".equals(page)) {
+        productList.previousPage();
+      }
+			request.setAttribute("category", category);
+			request.setAttribute("productList", productList);
+    }
+    return mapping.findForward("success");
+  }
+
+}
+
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.apache.struts.action.ActionForm;
+import org.apache.struts.action.ActionForward;
+import org.apache.struts.action.ActionMapping;
+
+import org.springframework.beans.support.PagedListHolder;
+import org.springframework.samples.jpetstore.domain.Account;
+
+public class EditAccountAction extends SecureBaseAction {
+
+  protected ActionForward doExecute(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) throws Exception {
+    AccountActionForm acctForm = (AccountActionForm) form;
+		if (AccountActionForm.VALIDATE_EDIT_ACCOUNT.equals(acctForm.getValidate())) {
+			acctForm.getAccount().setListOption(request.getParameter("account.listOption") != null);
+			acctForm.getAccount().setBannerOption(request.getParameter("account.bannerOption") != null);
+			Account account = acctForm.getAccount();
+			getPetStore().updateAccount(account);
+			acctForm.setAccount(getPetStore().getAccount(account.getUsername()));
+			PagedListHolder myList = new PagedListHolder(getPetStore().getProductListByCategory(account.getFavouriteCategoryId()));
+			myList.setPageSize(4);
+			acctForm.setMyList(myList);
+			request.getSession().setAttribute("accountForm", acctForm);
+			request.getSession().removeAttribute("workingAccountForm");
+			return mapping.findForward("success");
+		}
+		else {
+			request.setAttribute("message", "Your account was not updated because the submitted information was not validated.");
+			return mapping.findForward("failure");
+		}
+  }
+
+}
+
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.apache.struts.action.ActionForm;
+import org.apache.struts.action.ActionForward;
+import org.apache.struts.action.ActionMapping;
+
+public class ViewCartAction extends BaseAction {
+
+  public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) throws Exception {
+    CartActionForm cartForm = (CartActionForm) form;
+    AccountActionForm acctForm = (AccountActionForm) request.getSession().getAttribute("accountForm");
+    String page = request.getParameter("page");
+    if (acctForm != null && acctForm.getAccount() != null) {
+      if ("next".equals(page)) {
+        acctForm.getMyList().nextPage();
+      }
+			else if ("previous".equals(page)) {
+        acctForm.getMyList().previousPage();
+      }
+    }
+    if ("nextCart".equals(page)) {
+      cartForm.getCart().getCartItemList().nextPage();
+    }
+		else if ("previousCart".equals(page)) {
+      cartForm.getCart().getCartItemList().previousPage();
+    }
+    return mapping.findForward("success");
+  }
+
+}
+
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.apache.struts.action.ActionForm;
+import org.apache.struts.action.ActionForward;
+import org.apache.struts.action.ActionMapping;
+
+import org.springframework.samples.jpetstore.domain.Account;
+
+public class NewOrderFormAction extends SecureBaseAction {
+
+  protected ActionForward doExecute(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) throws Exception {
+    AccountActionForm acctForm = (AccountActionForm) request.getSession().getAttribute("accountForm");
+    CartActionForm cartForm = (CartActionForm) request.getSession().getAttribute("cartForm");
+    if (cartForm != null) {
+      OrderActionForm orderForm = (OrderActionForm) form;
+      // Re-read account from DB at team's request.
+      Account account = getPetStore().getAccount(acctForm.getAccount().getUsername());
+      orderForm.getOrder().initOrder(account, cartForm.getCart());
+      return mapping.findForward("success");
+    }
+		else {
+      request.setAttribute("message", "An order could not be created because a cart could not be found.");
+      return mapping.findForward("failure");
+    }
+  }
+
+}
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.apache.struts.action.ActionForm;
+import org.apache.struts.action.ActionForward;
+import org.apache.struts.action.ActionMapping;
+
+import org.springframework.beans.support.PagedListHolder;
+import org.springframework.util.StringUtils;
+
+public class SearchProductsAction extends BaseAction {
+
+  public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) throws Exception {
+		String keyword = request.getParameter("keyword");
+		if (keyword != null) {
+			if (!StringUtils.hasLength(keyword)) {
+				request.setAttribute("message", "Please enter a keyword to search for, then press the search button.");
+				return mapping.findForward("failure");
+			}
+			PagedListHolder productList = new PagedListHolder(getPetStore().searchProductList(keyword.toLowerCase()));
+			productList.setPageSize(4);
+			request.getSession().setAttribute("SearchProductsAction_productList", productList);
+			request.setAttribute("productList", productList);
+			return mapping.findForward("success");
+		}
+		else {
+      String page = request.getParameter("page");
+      PagedListHolder productList = (PagedListHolder) request.getSession().getAttribute("SearchProductsAction_productList");
+			if (productList == null) {
+				request.setAttribute("message", "Your session has timed out. Please start over again.");
+				return mapping.findForward("failure");
+			}
+			if ("next".equals(page)) {
+				productList.nextPage();
+			}
+			else if ("previous".equals(page)) {
+				productList.previousPage();
+			}
+			request.setAttribute("productList", productList);
+			return mapping.findForward("success");
+    }
+  }
+
+}
+
+
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.apache.struts.action.ActionMapping;
+
+import org.springframework.samples.jpetstore.domain.Order;
+
+public class OrderActionForm extends BaseActionForm {
+
+  /* Constants */
+
+  private static final List CARD_TYPE_LIST = new ArrayList();
+
+  /* Private Fields */
+
+  private Order order;
   private boolean shippingAddressRequired;
   private boolean confirmed;
-  private List<Order> orderList;
+  private List cardTypeList;
+
+  /* Static Initializer */
 
   static {
-    CARD_TYPE_LIST = Collections.unmodifiableList(Arrays.asList("Visa", "MasterCard", "American Express"));
+    CARD_TYPE_LIST.add("Visa");
+    CARD_TYPE_LIST.add("MasterCard");
+    CARD_TYPE_LIST.add("American Express");
   }
 
-  public int getOrderId() {
-    return order.getOrderId();
+  /* Constructors */
+
+  public OrderActionForm() {
+    this.order = new Order();
+    this.shippingAddressRequired = false;
+    this.cardTypeList = CARD_TYPE_LIST;
+    this.confirmed = false;
   }
 
-  public void setOrderId(int orderId) {
-    order.setOrderId(orderId);
-  }
+  /* JavaBeans Properties */
 
-  public Order getOrder() {
-    return order;
-  }
+  public boolean isConfirmed() { return confirmed; }
+  public void setConfirmed(boolean confirmed) { this.confirmed = confirmed; }
 
-  public void setOrder(Order order) {
-    this.order = order;
-  }
+  public Order getOrder() { return order; }
+  public void setOrder(Order order) { this.order = order; }
 
-  public boolean isShippingAddressRequired() {
-    return shippingAddressRequired;
-  }
+  public boolean isShippingAddressRequired() { return shippingAddressRequired; }
+  public void setShippingAddressRequired(boolean shippingAddressRequired) { this.shippingAddressRequired = shippingAddressRequired; }
 
-  public void setShippingAddressRequired(boolean shippingAddressRequired) {
-    this.shippingAddressRequired = shippingAddressRequired;
-  }
+  public List getCreditCardTypes() { return cardTypeList; }
 
-  public boolean isConfirmed() {
-    return confirmed;
-  }
+  /* Public Methods */
 
-  public void setConfirmed(boolean confirmed) {
-    this.confirmed = confirmed;
-  }
+  public void doValidate(ActionMapping mapping, HttpServletRequest request, List errors) {
 
-  public List<String> getCreditCardTypes() {
-    return CARD_TYPE_LIST;
-  }
+    if (!this.isShippingAddressRequired()) {
+      addErrorIfStringEmpty(errors, "FAKE (!) credit card number required.", order.getCreditCard());
+      addErrorIfStringEmpty(errors, "Expiry date is required.", order.getExpiryDate());
+      addErrorIfStringEmpty(errors, "Card type is required.", order.getCardType());
 
-  public List<Order> getOrderList() {
-    return orderList;
-  }
+      addErrorIfStringEmpty(errors, "Shipping Info: first name is required.", order.getShipToFirstName());
+      addErrorIfStringEmpty(errors, "Shipping Info: last name is required.", order.getShipToLastName());
+      addErrorIfStringEmpty(errors, "Shipping Info: address is required.", order.getShipAddress1());
+      addErrorIfStringEmpty(errors, "Shipping Info: city is required.", order.getShipCity());
+      addErrorIfStringEmpty(errors, "Shipping Info: state is required.", order.getShipState());
+      addErrorIfStringEmpty(errors, "Shipping Info: zip/postal code is required.", order.getShipZip());
+      addErrorIfStringEmpty(errors, "Shipping Info: country is required.", order.getShipCountry());
 
-  /**
-   * List orders.
-   *
-   * @return the resolution
-   */
-  public Resolution listOrders() {
-    HttpSession session = context.getRequest().getSession();
-    AccountActionBean accountBean = (AccountActionBean) session.getAttribute("/actions/Account.action");
-    orderList = orderService.getOrdersByUsername(accountBean.getAccount().getUsername());
-    return new ForwardResolution(LIST_ORDERS);
-  }
-
-  /**
-   * New order form.
-   *
-   * @return the resolution
-   */
-  public Resolution newOrderForm() {
-    HttpSession session = context.getRequest().getSession();
-    AccountActionBean accountBean = (AccountActionBean) session.getAttribute("/actions/Account.action");
-    CartActionBean cartBean = (CartActionBean) session.getAttribute("/actions/Cart.action");
-
-    clear();
-    if (accountBean == null || !accountBean.isAuthenticated()) {
-      setMessage("You must sign on before attempting to check out.  Please sign on and try checking out again.");
-      return new ForwardResolution(AccountActionBean.class);
-    } else if (cartBean != null) {
-      order.initOrder(accountBean.getAccount(), cartBean.getCart());
-      return new ForwardResolution(NEW_ORDER);
-    } else {
-      setMessage("An order could not be created because a cart could not be found.");
-      return new ForwardResolution(ERROR);
+      addErrorIfStringEmpty(errors, "Billing Info: first name is required.", order.getBillToFirstName());
+      addErrorIfStringEmpty(errors, "Billing Info: last name is required.", order.getBillToLastName());
+      addErrorIfStringEmpty(errors, "Billing Info: address is required.", order.getBillAddress1());
+      addErrorIfStringEmpty(errors, "Billing Info: city is required.", order.getBillCity());
+      addErrorIfStringEmpty(errors, "Billing Info: state is required.", order.getBillState());
+      addErrorIfStringEmpty(errors, "Billing Info: zip/postal code is required.", order.getBillZip());
+      addErrorIfStringEmpty(errors, "Billing Info: country is required.", order.getBillCountry());
     }
-  }
 
-  /**
-   * New order.
-   *
-   * @return the resolution
-   */
-  public Resolution newOrder() {
-    HttpSession session = context.getRequest().getSession();
-
-    if (shippingAddressRequired) {
-      shippingAddressRequired = false;
-      return new ForwardResolution(SHIPPING);
-    } else if (!isConfirmed()) {
-      return new ForwardResolution(CONFIRM_ORDER);
-    } else if (getOrder() != null) {
-
-      orderService.insertOrder(order);
-
-      CartActionBean cartBean = (CartActionBean) session.getAttribute("/actions/Cart.action");
-      cartBean.clear();
-
-      setMessage("Thank you, your order has been submitted.");
-
-      return new ForwardResolution(VIEW_ORDER);
-    } else {
-      setMessage("An error occurred processing your order (order was null).");
-      return new ForwardResolution(ERROR);
+    if (errors.size() > 0) {
+      order.setBillAddress1(order.getShipAddress1());
+      order.setBillAddress2(order.getShipAddress2());
+      order.setBillToFirstName(order.getShipToFirstName());
+      order.setBillToLastName(order.getShipToLastName());
+      order.setBillCity(order.getShipCity());
+      order.setBillCountry(order.getShipCountry());
+      order.setBillState(order.getShipState());
+      order.setBillZip(order.getShipZip());
     }
+
   }
 
-  /**
-   * View order.
-   *
-   * @return the resolution
-   */
-  public Resolution viewOrder() {
-    HttpSession session = context.getRequest().getSession();
-
-    AccountActionBean accountBean = (AccountActionBean) session.getAttribute("accountBean");
-
-    order = orderService.getOrder(order.getOrderId());
-
-    if (accountBean.getAccount().getUsername().equals(order.getUsername())) {
-      return new ForwardResolution(VIEW_ORDER);
-    } else {
-      order = null;
-      setMessage("You may only view your own orders.");
-      return new ForwardResolution(ERROR);
-    }
-  }
-
-  /**
-   * Clear.
-   */
-  public void clear() {
-    order = new Order();
+  public void reset(ActionMapping mapping, HttpServletRequest request) {
+    super.reset(mapping, request);
     shippingAddressRequired = false;
-    confirmed = false;
-    orderList = null;
   }
 
 }
+
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.apache.struts.action.ActionForm;
+import org.apache.struts.action.ActionForward;
+import org.apache.struts.action.ActionMapping;
+
+import org.springframework.beans.support.PagedListHolder;
+import org.springframework.samples.jpetstore.domain.Account;
+
+public class SignonAction extends BaseAction {
+
+  public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) throws Exception {
+    request.getSession().removeAttribute("workingAccountForm");
+    request.getSession().removeAttribute("accountForm");
+    if (request.getParameter("signoff") != null) {
+      request.getSession().invalidate();
+      return mapping.findForward("success");
+    }
+		else {
+      AccountActionForm acctForm = (AccountActionForm) form;
+      String username = acctForm.getUsername();
+      String password = acctForm.getPassword();
+      Account account = getPetStore().getAccount(username, password);
+      if (account == null) {
+        request.setAttribute("message", "Invalid username or password.  Signon failed.");
+        return mapping.findForward("failure");
+      }
+			else {
+				String forwardAction = acctForm.getForwardAction();
+				acctForm = new AccountActionForm();
+				acctForm.setForwardAction(forwardAction);
+        acctForm.setAccount(account);
+        acctForm.getAccount().setPassword(null);
+        PagedListHolder myList = new PagedListHolder(getPetStore().getProductListByCategory(account.getFavouriteCategoryId()));
+				myList.setPageSize(4);
+				acctForm.setMyList(myList);
+				request.getSession().setAttribute("accountForm", acctForm);
+        if (acctForm.getForwardAction() == null || acctForm.getForwardAction().length() < 1) {
+          return mapping.findForward("success");
+        }
+				else {
+          response.sendRedirect(acctForm.getForwardAction());
+          return null;
+        }
+      }
+    }
+  }
+
+}
+
+
+import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.apache.struts.action.ActionForm;
+import org.apache.struts.action.ActionForward;
+import org.apache.struts.action.ActionMapping;
+
+import org.springframework.samples.jpetstore.domain.Account;
+
+public class EditAccountFormAction extends SecureBaseAction {
+
+  protected ActionForward doExecute(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response) throws Exception {
+    AccountActionForm workingAcctForm = (AccountActionForm) form;
+    AccountActionForm acctForm = (AccountActionForm) request.getSession().getAttribute("accountForm");
+    String username = acctForm.getAccount().getUsername();
+    if (workingAcctForm.getAccount() == null) {
+      Account account = getPetStore().getAccount(username);
+      workingAcctForm.setAccount(account);
+    }
+    if (workingAcctForm.getCategories() == null) {
+      List categories = getPetStore().getCategoryList();
+      workingAcctForm.setCategories(categories);
+    }
+    return mapping.findForward("success");
+  }
+
+}
+
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.springframework.beans.support.PagedListHolder;
+import org.springframework.samples.jpetstore.domain.logic.PetStoreFacade;
+import org.springframework.util.StringUtils;
+import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.Controller;
+
+/**
+ * @author Juergen Hoeller
+ * @since 30.11.2003
+ */
+public class SearchProductsController implements Controller {
+
+	private PetStoreFacade petStore;
+
+	public void setPetStore(PetStoreFacade petStore) {
+		this.petStore = petStore;
+	}
+
+	public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		String keyword = request.getParameter("keyword");
+		if (keyword != null) {
+			if (!StringUtils.hasLength(keyword)) {
+				return new ModelAndView("Error", "message", "Please enter a keyword to search for, then press the search button.");
+			}
+			PagedListHolder productList = new PagedListHolder(this.petStore.searchProductList(keyword.toLowerCase()));
+			productList.setPageSize(4);
+			request.getSession().setAttribute("SearchProductsController_productList", productList);
+			return new ModelAndView("SearchProducts", "productList", productList);
+		}
+		else {
+			String page = request.getParameter("page");
+			PagedListHolder productList = (PagedListHolder) request.getSession().getAttribute("SearchProductsController_productList");
+			if (productList == null) {
+				return new ModelAndView("Error", "message", "Your session has timed out. Please start over again.");
+			}
+			if ("next".equals(page)) {
+				productList.nextPage();
+			}
+			else if ("previous".equals(page)) {
+				productList.previousPage();
+			}
+			return new ModelAndView("SearchProducts", "productList", productList);
+		}
+	}
+
+}
+
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.springframework.beans.support.PagedListHolder;
+import org.springframework.samples.jpetstore.domain.Account;
+import org.springframework.samples.jpetstore.domain.logic.PetStoreFacade;
+import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.Controller;
+
+/**
+ * @author Juergen Hoeller
+ * @since 30.11.2003
+ */
+public class SignonController implements Controller {
+
+	private PetStoreFacade petStore;
+
+	public void setPetStore(PetStoreFacade petStore) {
+		this.petStore = petStore;
+	}
+
+	public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		String username = request.getParameter("username");
+		String password = request.getParameter("password");
+		Account account = this.petStore.getAccount(username, password);
+		if (account == null) {
+			return new ModelAndView("Error", "message", "Invalid username or password.  Signon failed.");
+		}
+		else {
+			UserSession userSession = new UserSession(account);
+			PagedListHolder myList = new PagedListHolder(this.petStore.getProductListByCategory(account.getFavouriteCategoryId()));
+			myList.setPageSize(4);
+			userSession.setMyList(myList);
+			request.getSession().setAttribute("userSession", userSession);
+			String forwardAction = request.getParameter("forwardAction");
+			if (forwardAction != null) {
+				response.sendRedirect(forwardAction);
+				return null;
+			}
+			else {
+				return new ModelAndView("index");
+			}
+		}
+	}
+
+}
+
+
+import java.util.HashMap;
+import java.util.Map;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.springframework.beans.support.PagedListHolder;
+import org.springframework.dao.DataIntegrityViolationException;
+import org.springframework.samples.jpetstore.domain.Account;
+import org.springframework.samples.jpetstore.domain.logic.PetStoreFacade;
+import org.springframework.validation.BindException;
+import org.springframework.validation.ValidationUtils;
+import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.SimpleFormController;
+import org.springframework.web.util.WebUtils;
+
+/**
+ * @author Juergen Hoeller
+ * @since 01.12.2003
+ */
+public class AccountFormController extends SimpleFormController {
+
+	public static final String[] LANGUAGES = {"english", "japanese"};
+
+	private PetStoreFacade petStore;
+
+	public AccountFormController() {
+		setSessionForm(true);
+		setValidateOnBinding(false);
+		setCommandName("accountForm");
+		setFormView("EditAccountForm");
+	}
+
+	public void setPetStore(PetStoreFacade petStore) {
+		this.petStore = petStore;
+	}
+
+	protected Object formBackingObject(HttpServletRequest request) throws Exception {
+		UserSession userSession = (UserSession) WebUtils.getSessionAttribute(request, "userSession");
+		if (userSession != null) {
+			return new AccountForm(this.petStore.getAccount(userSession.getAccount().getUsername()));
+		}
+		else {
+			return new AccountForm();
+		}
+	}
+
+	protected void onBindAndValidate(HttpServletRequest request, Object command, BindException errors)
+			throws Exception {
+
+		AccountForm accountForm = (AccountForm) command;
+		Account account = accountForm.getAccount();
+
+		if (request.getParameter("account.listOption") == null) {
+			account.setListOption(false);
+		}
+		if (request.getParameter("account.bannerOption") == null) {
+			account.setBannerOption(false);
+		}
+
+		errors.setNestedPath("account");
+		getValidator().validate(account, errors);
+		errors.setNestedPath("");
+
+		if (accountForm.isNewAccount()) {
+			account.setStatus("OK");
+			ValidationUtils.rejectIfEmpty(errors, "account.username", "USER_ID_REQUIRED", "User ID is required.");
+			if (account.getPassword() == null || account.getPassword().length() < 1 ||
+					!account.getPassword().equals(accountForm.getRepeatedPassword())) {
+			 errors.reject("PASSWORD_MISMATCH",
+					 "Passwords did not match or were not provided. Matching passwords are required.");
+			}
+		}
+		else if (account.getPassword() != null && account.getPassword().length() > 0) {
+		  if (!account.getPassword().equals(accountForm.getRepeatedPassword())) {
+				errors.reject("PASSWORD_MISMATCH",
+						"Passwords did not match. Matching passwords are required.");
+		  }
+	  }
+ 	}
+
+	protected Map referenceData(HttpServletRequest request) throws Exception {
+		Map model = new HashMap();
+		model.put("languages", LANGUAGES);
+		model.put("categories", this.petStore.getCategoryList());
+		return model;
+	}
+
+	protected ModelAndView onSubmit(
+			HttpServletRequest request, HttpServletResponse response, Object command, BindException errors)
+			throws Exception {
+
+		AccountForm accountForm = (AccountForm) command;
+		try {
+			if (accountForm.isNewAccount()) {
+				this.petStore.insertAccount(accountForm.getAccount());
+			}
+			else {
+				this.petStore.updateAccount(accountForm.getAccount());
+			}
+		}
+		catch (DataIntegrityViolationException ex) {
+			errors.rejectValue("account.username", "USER_ID_ALREADY_EXISTS",
+					"User ID already exists: choose a different ID.");
+			return showForm(request, response, errors);
+		}
+		
+		UserSession userSession = new UserSession(this.petStore.getAccount(accountForm.getAccount().getUsername()));
+		PagedListHolder myList = new PagedListHolder(
+				this.petStore.getProductListByCategory(accountForm.getAccount().getFavouriteCategoryId()));
+		myList.setPageSize(4);
+		userSession.setMyList(myList);
+		request.getSession().setAttribute("userSession", userSession);
+		return super.onSubmit(request, response, command, errors);
+	}
+
+}
+
+
+import java.io.Serializable;
+
+import org.springframework.beans.support.PagedListHolder;
+import org.springframework.samples.jpetstore.domain.Account;
+
+/**
+ * @author Juergen Hoeller
+ * @since 30.11.2003
+ */
+public class UserSession implements Serializable {
+
+	private Account account;
+
+	private PagedListHolder myList;
+
+	public UserSession(Account account) {
+		this.account = account;
+	}
+
+	public Account getAccount() {
+		return account;
+	}
+
+	public void setMyList(PagedListHolder myList) {
+		this.myList = myList;
+	}
+
+	public PagedListHolder getMyList() {
+		return myList;
+	}
+
+}
+
+
+import java.util.HashMap;
+import java.util.Map;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.springframework.beans.support.PagedListHolder;
+import org.springframework.samples.jpetstore.domain.Category;
+import org.springframework.samples.jpetstore.domain.logic.PetStoreFacade;
+import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.Controller;
+
+/**
+ * @author Juergen Hoeller
+ * @since 30.11.2003
+ */
+public class ViewCategoryController implements Controller {
+
+	private PetStoreFacade petStore;
+
+	public void setPetStore(PetStoreFacade petStore) {
+		this.petStore = petStore;
+	}
+
+	public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		Map model = new HashMap();
+		String categoryId = request.getParameter("categoryId");
+		if (categoryId != null) {
+			Category category = this.petStore.getCategory(categoryId);
+			PagedListHolder productList = new PagedListHolder(this.petStore.getProductListByCategory(categoryId));
+			productList.setPageSize(4);
+			request.getSession().setAttribute("ViewProductAction_category", category);
+			request.getSession().setAttribute("ViewProductAction_productList", productList);
+			model.put("category", category);
+			model.put("productList", productList);
+		}
+		else {
+			Category category = (Category) request.getSession().getAttribute("ViewProductAction_category");
+			PagedListHolder productList = (PagedListHolder) request.getSession().getAttribute("ViewProductAction_productList");
+			if (category == null || productList == null) {
+				throw new IllegalStateException("Cannot find pre-loaded category and product list");
+			}
+			String page = request.getParameter("page");
+			if ("next".equals(page)) {
+				productList.nextPage();
+			}
+			else if ("previous".equals(page)) {
+				productList.previousPage();
+			}
+			model.put("category", category);
+			model.put("productList", productList);
+		}
+		return new ModelAndView("Category", model);
+	}
+
+}
+
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.ModelAndViewDefiningException;
+import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
+import org.springframework.web.util.WebUtils;
+
+/**
+ * @author Juergen Hoeller
+ * @since 01.12.2003
+ */
+public class SignonInterceptor extends HandlerInterceptorAdapter {
+
+	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
+			throws Exception {
+		UserSession userSession = (UserSession) WebUtils.getSessionAttribute(request, "userSession");
+		if (userSession == null) {
+			String url = request.getServletPath();
+			String query = request.getQueryString();
+			ModelAndView modelAndView = new ModelAndView("SignonForm");
+			if (query != null) {
+				modelAndView.addObject("signonForwardAction", url+"?"+query);
+			}
+			else {
+				modelAndView.addObject("signonForwardAction", url);
+			}
+			throw new ModelAndViewDefiningException(modelAndView);
+		}
+		else {
+			return true;
+		}
+	}
+
+}
+
+
+import java.util.Iterator;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.springframework.samples.jpetstore.domain.Cart;
+import org.springframework.samples.jpetstore.domain.CartItem;
+import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.Controller;
+import org.springframework.web.util.WebUtils;
+
+/**
+ * @author Juergen Hoeller
+ * @since 30.11.2003
+ */
+public class UpdateCartQuantitiesController implements Controller {
+
+	public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		Cart cart = (Cart) WebUtils.getOrCreateSessionAttribute(request.getSession(), "sessionCart", Cart.class);
+		Iterator cartItems = cart.getAllCartItems();
+		while (cartItems.hasNext()) {
+			CartItem cartItem = (CartItem) cartItems.next();
+			String itemId = cartItem.getItem().getItemId();
+			try {
+				int quantity = Integer.parseInt(request.getParameter(itemId));
+				cart.setQuantityByItemId(itemId, quantity);
+				if (quantity < 1) {
+					cartItems.remove();
+				}
+			}
+			catch (NumberFormatException ex) {
+				// ignore on purpose
+			}
+		}
+		request.getSession().setAttribute("sessionCart", cart);
+		return new ModelAndView("Cart", "cart", cart);
+	}
+
+}
+
+
+import java.util.HashMap;
+import java.util.Map;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.springframework.beans.support.PagedListHolder;
+import org.springframework.samples.jpetstore.domain.Product;
+import org.springframework.samples.jpetstore.domain.logic.PetStoreFacade;
+import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.Controller;
+
+/**
+ * @author Juergen Hoeller
+ * @since 30.11.2003
+ */
+public class ViewProductController implements Controller {
+
+	private PetStoreFacade petStore;
+
+	public void setPetStore(PetStoreFacade petStore) {
+		this.petStore = petStore;
+	}
+
+	public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		Map model = new HashMap();
+		String productId = request.getParameter("productId");
+		if (productId != null) {
+			PagedListHolder itemList = new PagedListHolder(this.petStore.getItemListByProduct(productId));
+			itemList.setPageSize(4);
+			Product product = this.petStore.getProduct(productId);
+			request.getSession().setAttribute("ViewProductAction_itemList", itemList);
+			request.getSession().setAttribute("ViewProductAction_product", product);
+			model.put("itemList", itemList);
+			model.put("product", product);
+		}
+		else {
+			PagedListHolder itemList = (PagedListHolder) request.getSession().getAttribute("ViewProductAction_itemList");
+			Product product = (Product) request.getSession().getAttribute("ViewProductAction_product");
+			String page = request.getParameter("page");
+			if ("next".equals(page)) {
+				itemList.nextPage();
+			}
+			else if ("previous".equals(page)) {
+				itemList.previousPage();
+			}
+			model.put("itemList", itemList);
+			model.put("product", product);
+		}
+		return new ModelAndView("Product", model);
+	}
+
+}
+
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.springframework.samples.jpetstore.domain.Account;
+import org.springframework.samples.jpetstore.domain.Cart;
+import org.springframework.samples.jpetstore.domain.logic.OrderValidator;
+import org.springframework.samples.jpetstore.domain.logic.PetStoreFacade;
+import org.springframework.validation.BindException;
+import org.springframework.validation.Errors;
+import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.ModelAndViewDefiningException;
+import org.springframework.web.servlet.mvc.AbstractWizardFormController;
+
+/**
+ * @author Juergen Hoeller
+ * @since 01.12.2003
+ */
+public class OrderFormController extends AbstractWizardFormController {
+
+	private PetStoreFacade petStore;
+
+	public OrderFormController() {
+		setCommandName("orderForm");
+		setPages(new String[] {"NewOrderForm", "ShippingForm", "ConfirmOrder"});
+	}
+
+	public void setPetStore(PetStoreFacade petStore) {
+		this.petStore = petStore;
+	}
+
+	protected Object formBackingObject(HttpServletRequest request) throws ModelAndViewDefiningException {
+		UserSession userSession = (UserSession) request.getSession().getAttribute("userSession");
+		Cart cart = (Cart) request.getSession().getAttribute("sessionCart");
+		if (cart != null) {
+			// Re-read account from DB at team's request.
+			Account account = this.petStore.getAccount(userSession.getAccount().getUsername());
+			OrderForm orderForm = new OrderForm();
+			orderForm.getOrder().initOrder(account, cart);
+			return orderForm;
+		}
+		else {
+			ModelAndView modelAndView = new ModelAndView("Error");
+			modelAndView.addObject("message", "An order could not be created because a cart could not be found.");
+			throw new ModelAndViewDefiningException(modelAndView);
+		}
+	}
+
+	protected void onBindAndValidate(HttpServletRequest request, Object command, BindException errors, int page) {
+		if (page == 0 && request.getParameter("shippingAddressRequired") == null) {
+			OrderForm orderForm = (OrderForm) command;
+			orderForm.setShippingAddressRequired(false);
+		}
+	}
+
+	protected Map referenceData(HttpServletRequest request, int page) {
+		if (page == 0) {
+			List creditCardTypes = new ArrayList();
+			creditCardTypes.add("Visa");
+			creditCardTypes.add("MasterCard");
+			creditCardTypes.add("American Express");
+			Map model = new HashMap();
+			model.put("creditCardTypes", creditCardTypes);
+			return model;
+		}
+		return null;
+	}
+
+	protected int getTargetPage(HttpServletRequest request, Object command, Errors errors, int currentPage) {
+		OrderForm orderForm = (OrderForm) command;
+		if (currentPage == 0 && orderForm.isShippingAddressRequired()) {
+			return 1;
+		}
+		else {
+			return 2;
+		}
+	}
+
+	protected void validatePage(Object command, Errors errors, int page) {
+		OrderForm orderForm = (OrderForm) command;
+		OrderValidator orderValidator = (OrderValidator) getValidator();
+		errors.setNestedPath("order");
+		switch (page) {
+			case 0:
+				orderValidator.validateCreditCard(orderForm.getOrder(), errors);
+				orderValidator.validateBillingAddress(orderForm.getOrder(), errors);
+				break;
+			case 1:
+				orderValidator.validateShippingAddress(orderForm.getOrder(), errors);
+		}
+		errors.setNestedPath("");
+	}
+
+	protected ModelAndView processFinish(
+			HttpServletRequest request, HttpServletResponse response, Object command, BindException errors) {
+		OrderForm orderForm = (OrderForm) command;
+		this.petStore.insertOrder(orderForm.getOrder());
+		request.getSession().removeAttribute("sessionCart");
+		Map model = new HashMap();
+		model.put("order", orderForm.getOrder());
+		model.put("message", "Thank you, your order has been submitted.");
+		return new ModelAndView("ViewOrder", model);
+	}
+
+}
+
+
+import java.io.Serializable;
+
+import org.springframework.samples.jpetstore.domain.Order;
+
+/**
+ * @author Juergen Hoeller
+ * @since 01.12.2003
+ */
+public class OrderForm implements Serializable {
+
+	private final Order order = new Order();
+
+	private boolean shippingAddressRequired;
+
+	private boolean confirmed;
+
+	public Order getOrder() {
+		return order;
+	}
+
+	public void setShippingAddressRequired(boolean shippingAddressRequired) {
+		this.shippingAddressRequired = shippingAddressRequired;
+	}
+
+	public boolean isShippingAddressRequired() {
+		return shippingAddressRequired;
+	}
+
+	public void setConfirmed(boolean confirmed) {
+		this.confirmed = confirmed;
+	}
+
+	public boolean isConfirmed() {
+		return confirmed;
+	}
+
+}
+
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.springframework.samples.jpetstore.domain.Cart;
+import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.Controller;
+import org.springframework.web.util.WebUtils;
+
+/**
+ * @author Juergen Hoeller
+ * @since 30.11.2003
+ */
+public class ViewCartController implements Controller {
+
+	private String successView;
+
+	public void setSuccessView(String successView) {
+		this.successView = successView;
+	}
+
+	public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		UserSession userSession = (UserSession) WebUtils.getSessionAttribute(request, "userSession");
+		Cart cart = (Cart) WebUtils.getOrCreateSessionAttribute(request.getSession(), "sessionCart", Cart.class);
+		String page = request.getParameter("page");
+		if (userSession != null) {
+			if ("next".equals(page)) {
+				userSession.getMyList().nextPage();
+			}
+			else if ("previous".equals(page)) {
+				userSession.getMyList().previousPage();
+			}
+		}
+		if ("nextCart".equals(page)) {
+			cart.getCartItemList().nextPage();
+		}
+		else if ("previousCart".equals(page)) {
+			cart.getCartItemList().previousPage();
+		}
+		return new ModelAndView(this.successView, "cart", cart);
+	}
+
+}
+
+
+import java.io.Serializable;
+
+import org.springframework.samples.jpetstore.domain.Account;
+
+/**
+ * @author Juergen Hoeller
+ * @since 01.12.2003
+ */
+public class AccountForm implements Serializable {
+
+	private Account account;
+
+	private boolean newAccount;
+
+	private String repeatedPassword;
+
+	public AccountForm(Account account) {
+		this.account = account;
+		this.newAccount = false;
+	}
+
+	public AccountForm() {
+		this.account = new Account();
+		this.newAccount = true;
+	}
+
+	public Account getAccount() {
+		return account;
+	}
+
+	public boolean isNewAccount() {
+		return newAccount;
+	}
+
+	public void setRepeatedPassword(String repeatedPassword) {
+		this.repeatedPassword = repeatedPassword;
+	}
+
+	public String getRepeatedPassword() {
+		return repeatedPassword;
+	}
+
+}
+
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.Controller;
+
+/**
+ * @author Juergen Hoeller
+ * @since 30.11.2003
+ */
+public class SignoffController implements Controller {
+
+	public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		request.getSession().removeAttribute("userSession");
+		request.getSession().invalidate();
+		return new ModelAndView("index");
+	}
+
+}
+
+
+import java.util.HashMap;
+import java.util.Map;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.springframework.samples.jpetstore.domain.logic.PetStoreFacade;
+import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.Controller;
+import org.springframework.web.util.WebUtils;
+
+/**
+ * @author Juergen Hoeller
+ * @since 01.12.2003
+ */
+public class ListOrdersController implements Controller {
+
+	private PetStoreFacade petStore;
+
+	public void setPetStore(PetStoreFacade petStore) {
+		this.petStore = petStore;
+	}
+
+	public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		UserSession userSession = (UserSession) WebUtils.getRequiredSessionAttribute(request, "userSession");
+		String username = userSession.getAccount().getUsername();
+		Map model = new HashMap();
+		model.put("orderList", this.petStore.getOrdersByUsername(username));
+		return new ModelAndView("ListOrders", model);
+	}
+
+}
+
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.springframework.samples.jpetstore.domain.Cart;
+import org.springframework.samples.jpetstore.domain.Item;
+import org.springframework.samples.jpetstore.domain.logic.PetStoreFacade;
+import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.Controller;
+import org.springframework.web.util.WebUtils;
+
+/**
+ * @author Juergen Hoeller
+ * @since 30.11.2003
+ */
+public class AddItemToCartController implements Controller {
+
+	private PetStoreFacade petStore;
+
+	public void setPetStore(PetStoreFacade petStore) {
+		this.petStore = petStore;
+	}
+
+	public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		Cart cart = (Cart) WebUtils.getOrCreateSessionAttribute(request.getSession(), "sessionCart", Cart.class);
+		String workingItemId = request.getParameter("workingItemId");
+		if (cart.containsItemId(workingItemId)) {
+			cart.incrementQuantityByItemId(workingItemId);
+		}
+		else {
+			// isInStock is a "real-time" property that must be updated
+			// every time an item is added to the cart, even if other
+			// item details are cached.
+			boolean isInStock = this.petStore.isItemInStock(workingItemId);
+			Item item = this.petStore.getItem(workingItemId);
+			cart.addItem(item, isInStock);
+		}
+		return new ModelAndView("Cart", "cart", cart);
+	}
+
+}
+
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.springframework.samples.jpetstore.domain.Order;
+import org.springframework.samples.jpetstore.domain.logic.PetStoreFacade;
+import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.Controller;
+import org.springframework.web.util.WebUtils;
+
+/**
+ * @author Juergen Hoeller
+ * @since 01.12.2003
+ */
+public class ViewOrderController implements Controller {
+
+	private PetStoreFacade petStore;
+
+	public void setPetStore(PetStoreFacade petStore) {
+		this.petStore = petStore;
+	}
+
+	public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		UserSession userSession = (UserSession) WebUtils.getRequiredSessionAttribute(request, "userSession");
+		int orderId = Integer.parseInt(request.getParameter("orderId"));
+		Order order = this.petStore.getOrder(orderId);
+		if (userSession.getAccount().getUsername().equals(order.getUsername())) {
+			return new ModelAndView("ViewOrder", "order", order);
+		}
+		else {
+			return new ModelAndView("Error", "message", "You may only view your own orders.");
+		}
+	}
+
+}
+
+
+import java.util.HashMap;
+import java.util.Map;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.springframework.samples.jpetstore.domain.Item;
+import org.springframework.samples.jpetstore.domain.logic.PetStoreFacade;
+import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.Controller;
+
+/**
+ * @author Juergen Hoeller
+ * @since 30.11.2003
+ */
+public class ViewItemController implements Controller {
+
+	private PetStoreFacade petStore;
+
+	public void setPetStore(PetStoreFacade petStore) {
+		this.petStore = petStore;
+	}
+
+	public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		String itemId = request.getParameter("itemId");
+		Item item = this.petStore.getItem(itemId);
+		Map model = new HashMap();
+		model.put("item", item);
+		model.put("product", item.getProduct());
+		return new ModelAndView("Item", model);
+	}
+
+}
+
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.springframework.samples.jpetstore.domain.Cart;
+import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.Controller;
+import org.springframework.web.util.WebUtils;
+
+/**
+ * @author Juergen Hoeller
+ * @since 30.11.2003
+ */
+public class RemoveItemFromCartController implements Controller {
+
+	public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		Cart cart = (Cart) WebUtils.getOrCreateSessionAttribute(request.getSession(), "sessionCart", Cart.class);
+		cart.removeItemById(request.getParameter("workingItemId"));
+		return new ModelAndView("Cart", "cart", cart);
+	}
+
+}
+
