@@ -8,6 +8,8 @@
 
 - [x] implementing evaluation measures to test the the _MICROscope Method_ on some _Test_Projects_
 
+- [ ] compare Hierarchical DBSCAN and MICROscope
+
 - [ ] optimize & improve the _MICROscope Method_
 
 
