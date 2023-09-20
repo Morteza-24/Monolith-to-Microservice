@@ -24,7 +24,8 @@ def hierarchical_DBSCAN(source_code_path, alpha, minimum_number_of_sample, max_e
             for other_clss in classes_info:
                 if call["method_name"] in classes_info[other_clss]["methods"]:
                     call["class_name"] = other_clss
-                    break
+                    if clss == other_clss:
+                        break
     print("done!\n")
 
     # necessary downloads for nltk
