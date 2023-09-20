@@ -24,7 +24,8 @@ def MICROscope(source_code_path, alpha):
             for other_clss in classes_info:
                 if call["method_name"] in classes_info[other_clss]["methods"]:
                     call["class_name"] = other_clss
-                    break
+                    if clss == other_clss:
+                        break
     print("done!")
 
     # get class similarity metric to feed to FCM

@@ -3,14 +3,14 @@ from numpy import zeros
 
 def _calls(ci, cj, classes_info):
     return len([
-        _ for _ in classes_info[ci]["method_calls"]
-        if _["method_name"] in classes_info[cj]["methods"]
+        1 for call in classes_info[ci]["method_calls"]
+        if call["class_name"] == cj
     ])
 
 
 def _calls_in(ci, classes_info):
     return sum(
-        [_calls(cj, ci, classes_info) for cj in classes_info if cj != ci])
+        [_calls(cj, ci, classes_info) for cj in classes_info])
 
 
 def structural_similarity(classes_info):
@@ -79,10 +79,10 @@ def class_similarity(alpha, classes_info):
     # --- 1. upload classes.json to google colab and run the notebook
     # --- 2. download ssm.npy from google colab and put it in working directory
     # --- 3. comment the following line:
-    semantic_similarity_matrix = semantic_similarity(classes_info)
+    # semantic_similarity_matrix = semantic_similarity(classes_info)
     # --- 4. uncomment the following lines:
-    # from numpy import load
-    # semantic_similarity_matrix = load("ssm.npy")
+    from numpy import load
+    semantic_similarity_matrix = load("ssm.npy")
 
     # --- DEBUG SECTION
 

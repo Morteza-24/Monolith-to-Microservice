@@ -32,7 +32,7 @@ def SR(microservices, true_microservices, k):
         matching = len(ms_classes.intersection(_corresponding(ms_classes, true_microservices))) / len(ms_classes)
         if matching >= threshold:
             matches += 1
-    return matches / len(set(microservices))
+    return matches / n_microservices
 
 
 def SM(microservices, classes_info):
@@ -43,12 +43,16 @@ def SM(microservices, classes_info):
 
     for class_index, class_name in enumerate(classes_info):
         for microservice_i in microservices[class_index]:
+            if microservice_i == -1:
+                continue
             m[microservice_i] += 1
             for call in classes_info[class_name]["method_calls"]:
                 class_j = call["class_name"]
                 if class_j in classes_info:
                     j = list(classes_info).index(class_j)
                     for microservice_j in microservices[j]:
+                        if microservice_j == -1:
+                            continue
                         if microservice_i == microservice_j:
                             mu[microservice_i] += 1
                         else:
@@ -63,7 +67,7 @@ def SM(microservices, classes_info):
         for j in range(K):
             if i != j:
                 try:
-                    SM2 += sigma[i][j] / (2 * m[i] * m[j])
+                    SM2 += (sigma[i][j]+sigma[j][i]) / (2 * m[i] * m[j])
                 except ZeroDivisionError:
                     continue
     try:
@@ -71,7 +75,7 @@ def SM(microservices, classes_info):
         return structural_modularity
     except ZeroDivisionError:
         return 0
-    
+
 
 def IFN(microservices, classes_info):
     num_microservices = max(max(ms) for ms in microservices) + 1
@@ -83,8 +87,8 @@ def IFN(microservices, classes_info):
             if call['class_name'] in classes_info:
                 call_class_index = list(classes_info).index(call["class_name"])
                 call_ms_list = microservices[call_class_index]
-                for ms_i in class_ms_list:
-                    if ms_i not in call_ms_list:
+                for ms_i in call_ms_list:
+                    if ms_i not in class_ms_list:
                         interfaces_per_microservice[ms_i].add(call['class_name'])
 
     total_interfaces = sum([len(interfaces)
@@ -94,19 +98,24 @@ def IFN(microservices, classes_info):
 
 
 def NED(microservices):
-    microservices = [ims for ms in microservices for ims in ms]
-    extreme = 0
+    microservices = [ims for ms in microservices for ims in ms if ims != -1]
+    non_extreme = 0
     for i in set(microservices):
         if 5 < microservices.count(i) < 20:
-            extreme += 1
-    return 1 - extreme/len(set(microservices))
+            non_extreme += 1
+    return 1 - non_extreme/(max(microservices)+1)
 
 
-def _calls(classes_i, classes_j, classes_info):
+def _icp(classes_i, classes_j, classes_info):
     sum_calls = 0
     for class_i in classes_i:
-        sum_calls += len([1 for call in classes_info[class_i]["method_calls"]
-                          if call["class_name"] in classes_j])
+        for class_j in classes_j:
+            calls = len([1 for call in classes_info[class_i]["method_calls"]
+                         if call["class_name"] == class_j])
+            try:
+                sum_calls += log(calls)+1
+            except ValueError:
+                pass  # log domain error is okay to pass
     return sum_calls
 
 
@@ -124,12 +133,12 @@ def ICP(microservices, classes_info):
 
             if microservice_i != microservice_j:
                 try:
-                    numerator += log(_calls(classes_i, classes_j, classes_info))+1
+                    numerator += _icp(classes_i, classes_j, classes_info)
                 except ValueError:
                     pass  # log domain error, can be ignored
 
             try:
-                denominator += log(_calls(classes_i, classes_j, classes_info))+1
+                denominator += _icp(classes_i, classes_j, classes_info)
             except ValueError:
                 pass  # log domain error, can be ignored
 
