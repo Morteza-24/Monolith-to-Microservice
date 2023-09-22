@@ -14,8 +14,8 @@ def _calls_in(ci, classes_info):
 
 
 def structural_similarity(classes_info):
-    structural_similarity_matrix = zeros((len(classes_info), len(classes_info)))
     len_classes_info = len(classes_info)
+    structural_similarity_matrix = zeros((len_classes_info, len_classes_info))
     for i in range(len_classes_info):
         ci = list(classes_info.keys())[i]
         for j in range(i+1,len_classes_info):
@@ -82,7 +82,7 @@ def class_similarity(alpha, classes_info):
     # semantic_similarity_matrix = semantic_similarity(classes_info)
     # --- 4. uncomment the following lines:
     from numpy import load
-    semantic_similarity_matrix = load("ssm.npy")
+    semantic_similarity_matrix = load("JPetStoreSSM.npy")
 
     # --- DEBUG SECTION
 

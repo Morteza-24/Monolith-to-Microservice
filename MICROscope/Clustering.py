@@ -4,7 +4,7 @@ import skfuzzy as fuzz
 import matplotlib.pyplot as plt
 
 
-def fcm(class_similarity_matrix):
+def fcm(class_similarity_matrix, n_clusters, threshold):
     mds = manifold.MDS(
         max_iter=10000000,
         eps=1e-90,
@@ -14,31 +14,37 @@ def fcm(class_similarity_matrix):
     pos = mds.fit(class_similarity_matrix).embedding_
     alldata = np.vstack((pos[:, 0], pos[:, 1]))
 
-    fig, ax = plt.subplots()
-    ax.plot(pos[:,0], pos[:,1], ".")
-    for i, xy in enumerate(zip(alldata[0], alldata[1])):
-        ax.text(xy[0], xy[1], str(i), color="red", fontsize=12)
-    fig.show()
+    if n_clusters == None:
+        fig, ax = plt.subplots()
+        ax.plot(pos[:,0], pos[:,1], ".")
+        for i, xy in enumerate(zip(alldata[0], alldata[1])):
+            ax.text(xy[0], xy[1], str(i), color="red", fontsize=12)
+        fig.show()
+        n_clusters = int(input("\nnumber of clusters: "))
+        print()
 
-    n_clusters = int(input("\nnumber of clusters: "))
-
-    cntr, u, u0, d, jm, p, fpc = fuzz.cluster.cmeans(
+    cntr, total_u, u0, d, jm, p, fpc = fuzz.cluster.cmeans(
         alldata, n_clusters, 2, error=1e-90, maxiter=100000, init=None)
+    for i in range(4):
+        cntr, u, u0, d, jm, p, fpc = fuzz.cluster.cmeans(
+            alldata, n_clusters, 2, error=1e-90, maxiter=100000, init=None)
+        total_u += u
+    memberships = total_u/5
 
+    if threshold == None:
+        fig, axs = plt.subplots(n_clusters, sharex='all')
+        for i, cluster in enumerate(u):
+            axs[i].bar(range(len(class_similarity_matrix)), cluster)
 
-    fig, axs = plt.subplots(n_clusters, sharex='all')
-    for i, cluster in enumerate(u):
-        axs[i].bar(range(len(class_similarity_matrix)), cluster)
+        plt.xticks(range(len(class_similarity_matrix)))
+        fig.show()
+        threshold = float(input("degree of membership threshold: "))
 
-    plt.xticks(range(len(class_similarity_matrix)))
-    fig.show()
+    clusters = [{-1} for _ in memberships[0]]
+    for cluster_i in range(len(memberships)):
+        for class_i in range(len(memberships[cluster_i])):
+            if memberships[cluster_i][class_i] >= threshold:
+                clusters[class_i].discard(-1)
+                clusters[class_i].add(cluster_i)
 
-    cluster_membership = [{-1} for _ in u[0]]
-    threshold = float(input("degree of membership threshold: "))
-    for cluster_i in range(len(u)):
-        for class_i in range(len(u[cluster_i])):
-            if u[cluster_i][class_i] >= threshold:
-                cluster_membership[class_i].discard(-1)
-                cluster_membership[class_i].add(cluster_i)
-
-    return cluster_membership
+    return clusters
