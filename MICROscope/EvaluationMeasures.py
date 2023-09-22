@@ -103,15 +103,34 @@ def NED(microservices):
     for i in set(microservices):
         if 5 < microservices.count(i) < 20:
             non_extreme += 1
-    return 1 - non_extreme/(max(microservices)+1)
+    try:
+        return 1 - non_extreme/(max(microservices)+1)
+    except:
+        return 1
 
 
-def _icp(classes_i, classes_j, classes_info):
+def _icp_num(classes_i, classes_j, classes_info):
+    sum_calls = 0
+    for class_i in classes_i:
+        if class_i in classes_j:
+            continue
+        for class_j in classes_j:
+            if class_j in classes_i:
+                continue
+            calls = len([1 for call in classes_info[class_i]["method_calls"]
+                        if call["class_name"] == class_j])
+            try:
+                sum_calls += log(calls)+1
+            except ValueError:
+                pass  # log domain error is okay to pass
+    return sum_calls
+
+def _icp_denom(classes_i, classes_j, classes_info):
     sum_calls = 0
     for class_i in classes_i:
         for class_j in classes_j:
             calls = len([1 for call in classes_info[class_i]["method_calls"]
-                         if call["class_name"] == class_j])
+                        if call["class_name"] == class_j])
             try:
                 sum_calls += log(calls)+1
             except ValueError:
@@ -125,24 +144,16 @@ def ICP(microservices, classes_info):
 
     n_microservices = max(max(m) for m in microservices) + 1
     for microservice_i in range(n_microservices):
+        classes_i = {class_names[class_number] for class_number, microservices_list in enumerate(microservices)
+                     if microservice_i in microservices_list}
         for microservice_j in range(n_microservices):
-            classes_i = {class_names[class_number] for class_number, microservices_list in enumerate(microservices)
-                            if microservice_i in microservices_list}
             classes_j = {class_names[class_number] for class_number, microservices_list in enumerate(microservices)
                         if microservice_j in microservices_list}
 
             if microservice_i != microservice_j:
-                try:
-                    numerator += _icp(classes_i, classes_j, classes_info)
-                except ValueError:
-                    pass  # log domain error, can be ignored
+                numerator += _icp_num(classes_i, classes_j, classes_info)
+            denominator += _icp_denom(classes_i, classes_j, classes_info)
 
-            try:
-                denominator += _icp(classes_i, classes_j, classes_info)
-            except ValueError:
-                pass  # log domain error, can be ignored
-
-    try:
-        return numerator/denominator
-    except ZeroDivisionError:
-        return float("inf")
+    if numerator == 0:
+        return 0
+    return numerator/denominator
