@@ -26,26 +26,25 @@ def hierarchical_DBSCAN(source_code_path, alpha, minimum_number_of_sample, max_e
                     call["class_name"] = other_clss
                     if clss == other_clss:
                         break
-    print("done!\n")
+    print("done!")
 
     # necessary downloads for nltk
     download('punkt')
     download('stopwords')
 
     # get class similarity metric to feed to DBSCAN
-    print("\n[hierarchical_DBSCAN] building class similarity matrix...", flush=True)
+    print("[hierarchical_DBSCAN] building class similarity matrix", flush=True)
     class_similarity_matrix = class_similarity(alpha, classes_info)
     print("[hierarchical_DBSCAN] done!")
 
     # run DBSCAN with different epsilon values to create decomposition layers
-    layers = {}
-    epsilon = 0.01
-    while epsilon <= max_epsilon:
-        layer = dbscan(minimum_number_of_sample, epsilon, class_similarity_matrix)
-        layers[epsilon] = layer
-        epsilon += 0.01
-        epsilon = round(epsilon, 2)
-
-    # TODO: visualize layers
-
-    return layers, classes_info
+    if isinstance(max_epsilon, int) or isinstance(max_epsilon, float):
+        layers = {}
+        epsilon = 0.01
+        while epsilon <= max_epsilon:
+            layer = dbscan(minimum_number_of_sample, epsilon, class_similarity_matrix)
+            layers[epsilon] = layer
+            epsilon += 0.01
+            epsilon = round(epsilon, 2)
+        return layers, classes_info
+    return [dbscan(minimum_number_of_sample, epsilon, class_similarity_matrix) for epsilon in max_epsilon], classes_info
