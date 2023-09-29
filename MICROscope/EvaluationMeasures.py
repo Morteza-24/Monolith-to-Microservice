@@ -40,20 +40,21 @@ def SM(microservices, classes_info):
     m = [0] * K  # number of classes for each microservice
     mu = [0] * K  # number of inside calls
     sigma = [[0]*K for _ in range(K)]  # number of outside calls
-
     for class_index, class_name in enumerate(classes_info):
-        for microservice_i in microservices[class_index]:
-            if microservice_i == -1:
-                continue
+        ms_list_i = microservices[class_index]
+        if -1 in ms_list_i:
+            continue
+        for microservice_i in ms_list_i:
             m[microservice_i] += 1
-            for call in classes_info[class_name]["method_calls"]:
-                class_j = call["class_name"]
-                if class_j in classes_info:
-                    j = list(classes_info).index(class_j)
-                    for microservice_j in microservices[j]:
-                        if microservice_j == -1:
-                            continue
-                        if microservice_i == microservice_j:
+        for call in classes_info[class_name]["method_calls"]:
+            class_j = call["class_name"]
+            if class_j in classes_info:
+                j = list(classes_info).index(class_j)
+                for microservice_j in microservices[j]:
+                    if microservice_j == -1:
+                        continue
+                    if microservice_j in ms_list_i:
+                        for microservice_i in ms_list_i:
                             mu[microservice_i] += 1
                         else:
                             sigma[microservice_i][microservice_j] += 1
