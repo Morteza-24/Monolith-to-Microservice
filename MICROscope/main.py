@@ -28,10 +28,24 @@ def MICROscope(source_code_path, alpha, n_clusters=None, threshold=None):
                         break
     print("done!")
 
-    # get class similarity metric to feed to FCM
+    # get class similarity metrix to feed to FCM
     print("[MICROscope] building class similarity matrix", flush=True)
     class_similarity_matrix = class_similarity(alpha, classes_info)
     print("[MICROscope] class similarity matrix built successfully!", flush=True)
+
+    # --- DEBUG SECTION
+
+    # --- 1. uncomment the following lines and run the script.
+    # np.save("csm.npy", class_similarity_matrix)
+    # return
+    # --- 2. upload csm.npy to google colab and run the notebook.
+    # --- 3. download the layers.npy file from google colab.
+    # --- 4. recomment the above lines and uncomment the following lines.
+    # layers = np.load(f"Test_Projects/JPetStore/layers-{alpha}-{n_clusters[0]}-1_6.npy", allow_pickle=True)
+    # return layers, classes_info
+    # --- 5. run the script again.
+
+    # --- DEBUG SECTION
 
     if isinstance(n_clusters, int) or n_clusters == None:
         if isinstance(threshold, int) or isinstance(threshold, float) or threshold == None:
