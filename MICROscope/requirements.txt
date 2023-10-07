@@ -1,0 +1,6 @@
+numpy
+matplotlib
+scikit-learn
+scikit-fuzzy
+torch
+transformers
