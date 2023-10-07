@@ -1,9 +1,9 @@
 from MICROscope.main import MICROscope
 from MICROscope.EvaluationMeasures import *
 from argparse import ArgumentParser
-from json import load
-from subprocess import run
 from os import makedirs, walk, path, pathsep
+from subprocess import run
+from json import load, dump
 
 parser = ArgumentParser(
     prog='python MICROscope.py',
@@ -14,6 +14,8 @@ parser.add_argument("-f", "--file", dest="file_path",
                     help="path to the java source code file (use this option if your whole monolithic program is in one file)")
 parser.add_argument("-p", "--project", dest="project_directory",
                     help="path to the java project directory, (use this option if your monolithic program is in multiple files) this option overrides --file")
+parser.add_argument("-o", "--output-file", dest="output_file",
+                    help="output file name to save results in")
 parser.add_argument("-e", "--evaluation-measure", choices=["Precision", "SR", "SM", "IFN", "NED", "ICP"], nargs="*",
                     help="For the Precision and the SuccessRate (SR) measures, the ground truth microservices must be in different directories of your project's root directory.\
                         And for the SR measure you should also use the -k option to specify a threshold.")
@@ -95,6 +97,8 @@ if args.file_path:
     for class_number, class_name in enumerate(classes_info):
         print(f"#{class_number}: \t{class_name}")
 
+    outputs = {}
+    outputs["microservices"] = [list(i) for i in clusters]
     print("\nClusters:")
     print(clusters)
     print("\nMicroservices")
@@ -106,11 +110,18 @@ if args.file_path:
             if measure in ["SM", "IFN", "ICP"]:
                 print(
                     f"{measure}: {measures[measure](clusters, classes_info)}")
+                outputs[measure] = measures[measure](clusters, classes_info)
             elif measure == "Precision":
                 print(f"{measure}: {measures[measure](clusters, true_microservices)}")
+                outputs[measure] = measures[measure](clusters, true_microservices)
             elif measure == "SR":
                 for k in args.k:
                     print(f"{measure}@{k}: {measures[measure](clusters, true_microservices, k)}")
+                    outputs[measure] = measures[measure](clusters, true_microservices, k)
             else:
                 print(f"{measure}: {measures[measure](clusters)}")
+                outputs[measure] = measures[measure](clusters)
     print()
+    if args.output_file:
+        with open(args.output_file, "w") as output_file:
+            dump(outputs, output_file, indent=2)
