@@ -36,3 +36,8 @@ python -m pip install numpy scikit-learn nltk
 ```
 python hierarchical_DBSCAN.py --help
 ```
+4. Install Requirements:
+```
+pip install -r requirements.txt
+
+```
