@@ -18,8 +18,3 @@ Our algorithm comprises several critical hyperparameters, such as the threshold 
 
 ## Comparative Experiments
 Benchmarking our algorithm against state-of-the-art existing methods is a crucial step in our evaluation. We employ the optimal hyperparameters identified during the preliminary experiments to ensure a fair comparison. While our algorithm may not be expected to achieve absolute perfection, its performance should strike a balance between practical effectiveness and logical efficiency.
-
-Install Requirements:
-```
-pip install -r requirements.txt
-```

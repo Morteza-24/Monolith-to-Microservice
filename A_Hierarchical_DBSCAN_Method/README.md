@@ -12,9 +12,9 @@ The method used in this paper consists of two major steps:
 # How to Use
 
 1. Make sure you have Java installed and the `java` command is available.
-2. Make sure that `numpy`, `nltk` and `scikit-learn` are installed:
+2. Install python requirements:
 ```
-python -m pip install numpy nltk scikit-learn
+python -m pip install -r requirements.txt
 ```
 3. import it in your code and use it:
 ```

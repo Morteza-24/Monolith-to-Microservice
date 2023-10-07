@@ -15,24 +15,29 @@
 
 # How to Use
 
-## MICROscope
-1. Make sure you have Java installed and the `java` command is available.
-2. Make sure that `numpy`, `matplotlib`, `scikit-learn`, `scikit-fuzzy`, `pytorch`, and `transformers` are installed:
+First of all, make sure you have Java installed and the `java` command is available:
 ```
-python -m pip install numpy matplotlib scikit-learn scikit-fuzzy torch transformers
+java -version
 ```
-3. Run:
+Then, install the python requirements:
 ```
-python MICROscope.py --help
+python -m pip install -r requirements.txt
 ```
 
+
+## MICROscope
+
+example usage:
+
+- ``` python MICROscope.py --help ```
+- ``` python MICROscope.py -p ./Test_Projects/JPetStore/src/ -e ICP NED SR -k 7 -o output.json ```
+- ``` python MICROscope.py -f ./Test_Projects/JPetStore/OneFileSource.java -e IFN NED SM --alpha 0.5 --n-clusters 3 --threshold 0.4 ```
+
+
 ## Hierarchical_DBSCAN
-1. Make sure you have Java installed and the `java` command is available.
-2. Make sure that `numpy`, `scikit-learn`, and `nltk` are installed:
-```
-python -m pip install numpy scikit-learn nltk
-```
-3. Run:
-```
-python hierarchical_DBSCAN.py --help
-```
+
+example usage:
+
+- ``` python hierarchical_DBSCAN.py --help ```
+- ``` python hierarchical_DBSCAN.py -p ./Test_Projects/JPetStore/src/ -e ICP NED SR -k 7 -o output.json ```
+- ``` python hierarchical_DBSCAN.py -f ./Test_Projects/JPetStore/OneFileSource.java -e IFN NED SM --alpha 0.5 --min-samples 2 --max-epsilon 0.75 -1 ```
