@@ -16,10 +16,13 @@
 # How to Use
 
 First of all, make sure you have Java installed and the `java` command is available:
+
 ```
 java -version
 ```
-Then, install the python requirements:
+
+Then, install python requirements:
+
 ```
 python -m pip install -r requirements.txt
 ```
@@ -29,15 +32,31 @@ python -m pip install -r requirements.txt
 
 example usage:
 
-- ``` python MICROscope.py --help ```
-- ``` python MICROscope.py -p ./Test_Projects/JPetStore/src/ -e ICP NED SR -k 7 -o output.json ```
-- ``` python MICROscope.py -f ./Test_Projects/JPetStore/OneFileSource.java -e IFN NED SM --alpha 0.5 --n-clusters 3 --threshold 0.4 ```
+```
+python MICROscope.py --help
+```
+
+```
+python MICROscope.py -p ./Test_Projects/JPetStore/src/ -e ICP NED SR -k 7 -o output.json
+```
+
+```
+python MICROscope.py -f ./Test_Projects/JPetStore/OneFileSource.java -e IFN NED SM --alpha 0.5 --n-clusters 3 --threshold 0.4
+```
 
 
 ## Hierarchical_DBSCAN
 
 example usage:
 
-- ``` python hierarchical_DBSCAN.py --help ```
-- ``` python hierarchical_DBSCAN.py -p ./Test_Projects/JPetStore/src/ -e ICP NED SR -k 7 -o output.json ```
-- ``` python hierarchical_DBSCAN.py -f ./Test_Projects/JPetStore/OneFileSource.java -e IFN NED SM --alpha 0.5 --min-samples 2 --max-epsilon 0.75 -1 ```
+```
+python hierarchical_DBSCAN.py --help
+```
+
+```
+python hierarchical_DBSCAN.py -p ./Test_Projects/JPetStore/src/ -e ICP NED SR -k 7 -o output.json
+```
+
+```
+python hierarchical_DBSCAN.py -f ./Test_Projects/JPetStore/OneFileSource.java -e IFN NED SM --alpha 0.5 --min-samples 2 --max-epsilon 0.75 -1
+```
