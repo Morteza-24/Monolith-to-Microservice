@@ -6,7 +6,7 @@ from A_Hierarchical_DBSCAN_Method.SimilarityAnalysis import class_similarity
 from A_Hierarchical_DBSCAN_Method.DBSCAN import dbscan
 
 
-def hierarchical_DBSCAN(source_code_path, alpha, minimum_number_of_sample, max_epsilon):
+def hierarchical_DBSCAN(source_code_path, alpha, minimum_number_of_sample, max_epsilon, one_shot=False):
     # parse the source code and get classes, methods, etc.
     print("\n[hierarchical_DBSCAN] parsing the code...", end=" ", flush=True)
     base_dir = path.dirname(path.realpath(__file__))
@@ -39,6 +39,8 @@ def hierarchical_DBSCAN(source_code_path, alpha, minimum_number_of_sample, max_e
 
     # run DBSCAN with different epsilon values to create decomposition layers
     if isinstance(max_epsilon, int) or isinstance(max_epsilon, float):
+        if one_shot:
+            return dbscan(minimum_number_of_sample, max_epsilon, class_similarity_matrix), classes_info
         layers = {}
         epsilon = 0.01
         while epsilon <= max_epsilon:
