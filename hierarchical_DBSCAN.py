@@ -21,6 +21,12 @@ parser.add_argument("-e", "--evaluation-measure", choices=["Precision", "SR", "S
                         And for the SR measure you should also use the -k option to specify a threshold.")
 parser.add_argument("-k", type=int, nargs="*",
                     help="The k value for the SR measure (e.g. SR@7). This option can only be used if you are using the SR measure.")
+parser.add_argument("--alpha", dest="alpha", type=float,
+                    help="alpha hyperparameter, determines the semantic similarity affect percentage.")
+parser.add_argument("--min-samples", dest="min_samples", type=int,
+                    help="minimum number of sample hyperparameter for DBSCAN clustering.")
+parser.add_argument("--max-epsilon", dest="max_epsilon", type=float,
+                    help="max epsilon hyperparameter for DBSCAN clustering, add the -1 or --one-shot flag to run DBSCAN for a single epsilon value only.")
 parser.add_argument("-1", "--one-shot", dest="one_shot", action="store_true",
                     help="don't output layers and only run the algorithm for a single epsilon value (max-epsilon).")
 
@@ -84,11 +90,14 @@ if args.project_directory:
 
 if args.file_path:
     print("\n--- A Hierarchical DBSCAN Method ---\n")
-    alpha = float(input("alpha: "))
-    min_samples = int(input("minimum number of sample: "))
-    max_epsilon = float(input("max epsilon: "))
+    if not args.alpha:
+        args.alpha = float(input("alpha: "))
+    if not args.min_samples:
+        args.min_samples = int(input("minimum number of sample: "))
+    if not args.max_epsilon:
+        args.max_epsilon = float(input("max epsilon: "))
     layers, classes_info = hierarchical_DBSCAN(
-        args.file_path, alpha, min_samples, max_epsilon, one_shot=args.one_shot)
+        args.file_path, args.alpha, args.min_samples, args.max_epsilon, one_shot=args.one_shot)
 
     class_names = list(classes_info.keys())
     if args.project_directory:

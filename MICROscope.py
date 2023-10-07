@@ -21,6 +21,12 @@ parser.add_argument("-e", "--evaluation-measure", choices=["Precision", "SR", "S
                         And for the SR measure you should also use the -k option to specify a threshold.")
 parser.add_argument("-k", type=int, nargs="*",
                     help="The k value for the SR measure (e.g. SR@7). This option can only be used if you are using the SR measure.")
+parser.add_argument("--alpha", dest="alpha", type=float,
+                    help="alpha hyperparameter, determines the semantic similarity affect percentage.")
+parser.add_argument("--n-clusters", dest="n_clusters", type=int,
+                    help="number of clusters hyperparameter")
+parser.add_argument("--threshold", dest="threshold", type=float,
+                    help="degree of membership threshold hyperparameter")
 
 args = parser.parse_args()
 
@@ -82,8 +88,9 @@ if args.project_directory:
 
 if args.file_path:
     print("\n--- MICROscope ---\n")
-    alpha = float(input("alpha: "))
-    clusters, classes_info = MICROscope(args.file_path, alpha)
+    if not args.alpha:
+        args.alpha = float(input("alpha: "))
+    clusters, classes_info = MICROscope(args.file_path, args.alpha, args.n_clusters, args.threshold)
 
     class_names = list(classes_info.keys())
     if args.project_directory:
