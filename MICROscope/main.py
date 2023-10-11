@@ -6,7 +6,7 @@ from MICROscope.Clustering import fcm
 import numpy as np
 
 
-def MICROscope(source_code_path, alpha, n_clusters=None, threshold=None):
+def MICROscope(source_code_path, alpha, n_clusters=None, threshold=None, n_fcm_execs=10):
     # parse the source code and get classes, methods, etc.
     print("\n[MICROscope] parsing the code...", end=" ", flush=True)
     base_dir = path.dirname(path.realpath(__file__))
@@ -49,12 +49,12 @@ def MICROscope(source_code_path, alpha, n_clusters=None, threshold=None):
 
     if isinstance(n_clusters, int) or n_clusters == None:
         if isinstance(threshold, int) or isinstance(threshold, float) or threshold == None:
-            return fcm(class_similarity_matrix, n_clusters, threshold), classes_info
+            return fcm(class_similarity_matrix, n_clusters, threshold, n_fcm_execs), classes_info
         else:
             layers = []
             print("[FuzzyCMeans] 0%", end="", flush=True)
             for i in range(len(threshold)):
-                layers.append(fcm(class_similarity_matrix, n_clusters, threshold[i]))
+                layers.append(fcm(class_similarity_matrix, n_clusters, threshold[i], n_fcm_execs))
                 print(f"\r[FuzzyCMeans] {int(100*(i+1)/len(threshold))}%", end="", flush=True)
             print("\r[FuzzyCMeans] 100%", flush=True)
             return layers, classes_info
@@ -63,14 +63,14 @@ def MICROscope(source_code_path, alpha, n_clusters=None, threshold=None):
         if isinstance(threshold, int) or isinstance(threshold, float):
             print("[FuzzyCMeans] 0%", end="", flush=True)
             for i in range(len(n_clusters)):
-                layers.append(fcm(class_similarity_matrix, n_clusters[i], threshold))
+                layers.append(fcm(class_similarity_matrix, n_clusters[i], threshold, n_fcm_execs))
                 print(f"\r[FuzzyCMeans] {int(100*(i+1)/len(n_clusters))}%", end="", flush=True)
             print("\r[FuzzyCMeans] 100%", flush=True)
             return layers, classes_info
         else:
             print("[FuzzyCMeans] 0%", end="", flush=True)
             for i in range(len(n_clusters)):
-                layers.append(fcm(class_similarity_matrix, n_clusters[i], threshold[i]))
+                layers.append(fcm(class_similarity_matrix, n_clusters[i], threshold[i], n_fcm_execs))
                 print(f"\r[FuzzyCMeans] {int(100*(i+1)/len(n_clusters))}%", end="", flush=True)
             print("\r[FuzzyCMeans] 100%", end="", flush=True)
             return layers, classes_info

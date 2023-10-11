@@ -27,6 +27,8 @@ parser.add_argument("--n-clusters", dest="n_clusters", type=int,
                     help="number of clusters hyperparameter")
 parser.add_argument("--threshold", dest="threshold", type=float,
                     help="degree of membership threshold hyperparameter")
+parser.add_argument("--n-execs", dest="n_execs", type=int,
+                    help="the number of times FCM is run to get an average")
 
 args = parser.parse_args()
 
@@ -88,9 +90,11 @@ if args.project_directory:
 
 if args.file_path:
     print("\n--- MICROscope ---\n")
-    if not args.alpha:
+    if args.alpha == None:
         args.alpha = float(input("alpha: "))
-    clusters, classes_info = MICROscope(args.file_path, args.alpha, args.n_clusters, args.threshold)
+    if args.n_execs == None:
+        args.n_execs = 2
+    clusters, classes_info = MICROscope(args.file_path, args.alpha, args.n_clusters, args.threshold, args.n_execs)
 
     class_names = list(classes_info.keys())
     if args.project_directory:

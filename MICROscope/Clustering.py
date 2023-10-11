@@ -4,7 +4,7 @@ import skfuzzy as fuzz
 import matplotlib.pyplot as plt
 
 
-def fcm(class_similarity_matrix, n_clusters, threshold):
+def fcm(class_similarity_matrix, n_clusters, threshold, n_execs):
     mds = manifold.MDS(
         max_iter=10000000,
         eps=1e-90,
@@ -25,11 +25,11 @@ def fcm(class_similarity_matrix, n_clusters, threshold):
 
     cntr, total_u, u0, d, jm, p, fpc = fuzz.cluster.cmeans(
         alldata, n_clusters, 2, error=1e-90, maxiter=100000, init=None)
-    for i in range(4):
+    for i in range(n_execs-1):
         cntr, u, u0, d, jm, p, fpc = fuzz.cluster.cmeans(
             alldata, n_clusters, 2, error=1e-90, maxiter=100000, init=None)
         total_u += u
-    memberships = total_u/5
+    memberships = total_u/n_execs
 
     if threshold == None:
         fig, axs = plt.subplots(n_clusters, sharex='all')
