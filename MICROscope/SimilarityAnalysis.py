@@ -73,21 +73,26 @@ def semantic_similarity(classes_info):
 
 def class_similarity(alpha, classes_info):
     structural_similarity_matrix = structural_similarity(classes_info)
+    class_similarity_matrix = zeros((len(classes_info), len(classes_info)))
+    len_classes_info = len(classes_info)
+
+    if alpha == 1:
+        for i in range(len_classes_info):
+            for j in range(i+1,len_classes_info):
+                class_similarity_matrix[i][j] = 1 - structural_similarity_matrix[i][j]
+        return class_similarity_matrix + class_similarity_matrix.T
 
     # --- DEBUG SECTION
 
     # --- 1. upload classes.json to google colab and run the notebook
     # --- 2. download ssm.npy from google colab and put it in working directory
     # --- 3. comment the following line:
-    # semantic_similarity_matrix = semantic_similarity(classes_info)
+    semantic_similarity_matrix = semantic_similarity(classes_info)
     # --- 4. uncomment the following lines:
-    from numpy import load
-    semantic_similarity_matrix = load("Test_Projects/JPetStore/ssm.npy")
+    # from numpy import load
+    # semantic_similarity_matrix = load("Test_Projects/JPetStore/ssm.npy")
 
     # --- DEBUG SECTION
-
-    class_similarity_matrix = zeros((len(classes_info), len(classes_info)))
-    len_classes_info = len(classes_info)
 
     for i in range(len_classes_info):
         for j in range(i+1,len_classes_info):
