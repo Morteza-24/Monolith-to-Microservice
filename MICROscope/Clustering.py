@@ -23,13 +23,17 @@ def fcm(class_similarity_matrix, n_clusters, threshold, n_execs):
         n_clusters = int(input("\nnumber of clusters: "))
         print()
 
+    print("[FuzzyCMeans] 0%", end="", flush=True)
     cntr, total_u, u0, d, jm, p, fpc = fuzz.cluster.cmeans(
         alldata, n_clusters, 2, error=1e-90, maxiter=100000, init=None)
+    print(f"\r[FuzzyCMeans] {int(100*(1)/n_execs)}%", end="", flush=True)
     for i in range(n_execs-1):
         cntr, u, u0, d, jm, p, fpc = fuzz.cluster.cmeans(
             alldata, n_clusters, 2, error=1e-90, maxiter=100000, init=None)
         total_u += u
+        print(f"\r[FuzzyCMeans] {int(100*(i+2)/n_execs)}%", end="", flush=True)
     memberships = total_u/n_execs
+    print("\r[FuzzyCMeans] 100%", flush=True)
 
     if threshold == None:
         fig, axs = plt.subplots(n_clusters, sharex='all')
