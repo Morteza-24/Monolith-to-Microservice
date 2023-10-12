@@ -45,6 +45,14 @@ python MICROscope.py -f ./Test_Projects/JPetStore/OneFileSource.java -e IFN NED 
 ```
 
 
+## MICROscope_expt
+
+example usage:
+```
+python MICROscope_expt.py -f Test_Projects/JPetStore/OneFileSource.java --alpha 1 --n-clusters 3 --threshold 0.1 0.7 --n-execs 5 -e ICP NED -o output.json
+```
+
+
 ## Hierarchical_DBSCAN
 
 example usage:
