@@ -37,7 +37,7 @@ def fcm(class_similarity_matrix, n_clusters, threshold, n_execs):
 
     if threshold == None:
         fig, axs = plt.subplots(n_clusters, sharex='all')
-        for i, cluster in enumerate(u):
+        for i, cluster in enumerate(total_u):
             axs[i].bar(range(len(class_similarity_matrix)), cluster)
 
         plt.xticks(range(len(class_similarity_matrix)))

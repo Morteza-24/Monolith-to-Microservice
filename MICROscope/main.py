@@ -47,30 +47,19 @@ def MICROscope(source_code_path, alpha, n_clusters=None, threshold=None, n_fcm_e
 
     # --- DEBUG SECTION
 
-    if isinstance(n_clusters, int) or n_clusters == None:
-        if isinstance(threshold, int) or isinstance(threshold, float) or threshold == None:
+    if isinstance(n_clusters, int) or n_clusters is None:
+        if isinstance(threshold, int) or isinstance(threshold, float) or threshold is None:
             return fcm(class_similarity_matrix, n_clusters, threshold, n_fcm_execs), classes_info
         else:
             layers = []
-            print("[FuzzyCMeans] 0%", end="", flush=True)
             for i in range(len(threshold)):
+                print(f"[MICROscope] threshold={threshold[i]}")
                 layers.append(fcm(class_similarity_matrix, n_clusters, threshold[i], n_fcm_execs))
-                print(f"\r[FuzzyCMeans] {int(100*(i+1)/len(threshold))}%", end="", flush=True)
-            print("\r[FuzzyCMeans] 100%", flush=True)
             return layers, classes_info
     else:
         layers = []
-        if isinstance(threshold, int) or isinstance(threshold, float):
-            print("[FuzzyCMeans] 0%", end="", flush=True)
+        if isinstance(threshold, int) or isinstance(threshold, float) or threshold is None:
             for i in range(len(n_clusters)):
+                print(f"[MICROscope] n_clusters={n_clusters[i]}")
                 layers.append(fcm(class_similarity_matrix, n_clusters[i], threshold, n_fcm_execs))
-                print(f"\r[FuzzyCMeans] {int(100*(i+1)/len(n_clusters))}%", end="", flush=True)
-            print("\r[FuzzyCMeans] 100%", flush=True)
-            return layers, classes_info
-        else:
-            print("[FuzzyCMeans] 0%", end="", flush=True)
-            for i in range(len(n_clusters)):
-                layers.append(fcm(class_similarity_matrix, n_clusters[i], threshold[i], n_fcm_execs))
-                print(f"\r[FuzzyCMeans] {int(100*(i+1)/len(n_clusters))}%", end="", flush=True)
-            print("\r[FuzzyCMeans] 100%", end="", flush=True)
             return layers, classes_info

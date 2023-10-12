@@ -93,7 +93,7 @@ if args.file_path:
     if args.alpha == None:
         args.alpha = float(input("alpha: "))
     if args.n_execs == None:
-        args.n_execs = 2
+        args.n_execs = 10
     clusters, classes_info = MICROscope(args.file_path, args.alpha, args.n_clusters, args.threshold, args.n_execs)
 
     class_names = list(classes_info.keys())
@@ -128,7 +128,7 @@ if args.file_path:
             elif measure == "SR":
                 for k in args.k:
                     print(f"{measure}@{k}: {measures[measure](clusters, true_microservices, k)}")
-                    outputs[measure] = measures[measure](clusters, true_microservices, k)
+                    outputs[measure+"@"+str(k)] = measures[measure](clusters, true_microservices, k)
             else:
                 print(f"{measure}: {measures[measure](clusters)}")
                 outputs[measure] = measures[measure](clusters)
