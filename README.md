@@ -4,13 +4,13 @@
 
 - [x] implementing evaluation measures to test the the _Hierarchical DBSCAN Method_ on some _Test_Projects_
 
-- [x] implementing `MICROscope` Method; using CodeBERT and fuzzy c-means clustering
+- [x] implementing `Mono2Multi` Method; using CodeBERT and fuzzy c-means clustering
 
-- [x] implementing evaluation measures to test the the _MICROscope Method_ on some _Test_Projects_
+- [x] implementing evaluation measures to test the the _Mono2Multi Method_ on some _Test_Projects_
 
-- [ ] compare Hierarchical DBSCAN and MICROscope
+- [ ] compare Hierarchical DBSCAN and Mono2Multi
 
-- [ ] optimize & improve the _MICROscope Method_
+- [ ] optimize & improve the _Mono2Multi Method_
 
 
 # How to Use
@@ -28,28 +28,28 @@ python -m pip install -r requirements.txt
 ```
 
 
-## MICROscope
+## Mono2Multi
 
 example usage:
 
 ```
-python MICROscope.py --help
+python Mono2Multi.py --help
 ```
 
 ```
-python MICROscope.py -p ./Test_Projects/JPetStore/src/ -e ICP NED SR -k 7 -o output.json
+python Mono2Multi.py -p ./Test_Projects/JPetStore/src/ -e ICP NED SR -k 7 -o output.json
 ```
 
 ```
-python MICROscope.py -f ./Test_Projects/JPetStore/OneFileSource.java -e IFN NED SM --alpha 0.5 --n-clusters 3 --threshold 0.4
+python Mono2Multi.py -f ./Test_Projects/JPetStore/OneFileSource.java -e IFN NED SM --alpha 0.5 --n-clusters 3 --threshold 0.4
 ```
 
 
-## MICROscope_expt
+## Mono2Multi_expt
 
 example usage:
 ```
-python MICROscope_expt.py -f Test_Projects/JPetStore/OneFileSource.java --alpha 1 --n-clusters 3 --threshold 0.1 0.7 --n-execs 5 -e ICP NED -o output.json
+python Mono2Multi_expt.py -f Test_Projects/JPetStore/OneFileSource.java --alpha 1 --n-clusters 3 --threshold 0.1 0.7 --n-execs 5 -e ICP NED -o output.json
 ```
 
 

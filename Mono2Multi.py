@@ -1,14 +1,14 @@
-from MICROscope.main import MICROscope
-from MICROscope.EvaluationMeasures import *
+from Mono2Multi.main import Mono2Multi
+from Mono2Multi.EvaluationMeasures import *
 from argparse import ArgumentParser
 from os import makedirs, walk, path, pathsep
 from subprocess import run
 from json import load, dump
 
 parser = ArgumentParser(
-    prog='python MICROscope.py',
+    prog='python Mono2Multi.py',
     description='This program offers tools related to migrating from monolithic architectures to microservices.',
-    epilog='example usage: python MICROscope.py -p ./Test_Projects/PetClinic/src -e NED ICP SR -k 5 7')
+    epilog='example usage: python Mono2Multi.py -p ./Test_Projects/PetClinic/src -e NED ICP SR -k 5 7')
 
 parser.add_argument("-f", "--file", dest="file_path",
                     help="path to the java source code file (use this option if your whole monolithic program is in one file)")
@@ -74,13 +74,13 @@ if args.project_directory:
     project_dir_name = args.project_directory.split('/')[-1]
     true_ms_dirs = next(walk(args.project_directory))[1]
     true_ms_classnames = []
-    libs = path.join(base_dir, "MICROscope/JavaParser/lib/javaparser-core-3.25.5-SNAPSHOT.jar")+pathsep+path.join(base_dir, "MICROscope/JavaParser/lib/json-20230618.jar")
+    libs = path.join(base_dir, "Mono2Multi/JavaParser/lib/javaparser-core-3.25.5-SNAPSHOT.jar")+pathsep+path.join(base_dir, "Mono2Multi/JavaParser/lib/json-20230618.jar")
     makedirs(path.join(base_dir, f"data/{project_dir_name}"), exist_ok=True)
     for directory in true_ms_dirs:
         if directory.endswith("/"):
             directory = directory[:-1]
         json_path = path.join(base_dir, f"data/{project_dir_name}/{directory}.json")
-        run(['java', '-cp', libs, path.join(base_dir, 'MICROscope/JavaParser/ClassScanner.java'), path.join(args.project_directory, directory), json_path])
+        run(['java', '-cp', libs, path.join(base_dir, 'Mono2Multi/JavaParser/ClassScanner.java'), path.join(args.project_directory, directory), json_path])
         with open(json_path, "rt") as classes_file:
             true_ms_classnames.append(load(classes_file)["classes"])
 
@@ -89,12 +89,13 @@ if args.project_directory:
     print("done!")
 
 if args.file_path:
-    print("\n--- MICROscope ---\n")
+    print("\n--- Mono2Multi ---\n")
     if args.alpha == None:
         args.alpha = float(input("alpha: "))
     if args.n_execs == None:
-        args.n_execs = 10
-    clusters, classes_info = MICROscope(args.file_path, args.alpha, args.n_clusters, args.threshold, args.n_execs)
+        clusters, classes_info = Mono2Multi(args.file_path, args.alpha, args.n_clusters, args.threshold)
+    else:
+        clusters, classes_info = Mono2Multi(args.file_path, args.alpha, args.n_clusters, args.threshold, args.n_execs)
 
     class_names = list(classes_info.keys())
     if args.project_directory:

@@ -1,14 +1,14 @@
 from os import path, pathsep
 from subprocess import run
 from json import load
-from MICROscope.SimilarityAnalysis import class_similarity
-from MICROscope.Clustering import fcm
+from Mono2Multi.SimilarityAnalysis import class_similarity
+from Mono2Multi.Clustering import fcm
 import numpy as np
 
 
-def MICROscope(source_code_path, alpha, n_clusters=None, threshold=None, n_fcm_execs=10):
+def Mono2Multi(source_code_path, alpha, n_clusters=None, threshold=None, n_fcm_execs=10):
     # parse the source code and get classes, methods, etc.
-    print("\n[MICROscope] parsing the code...", end=" ", flush=True)
+    print("\n[Mono2Multi] parsing the code...", end=" ", flush=True)
     base_dir = path.dirname(path.realpath(__file__))
     libs = path.join(base_dir, "JavaParser/lib/javaparser-core-3.25.5-SNAPSHOT.jar")+pathsep+path.join(base_dir, "JavaParser/lib/json-20230618.jar")
     json_path = path.join(base_dir, "JavaParser/classes.json")
@@ -18,7 +18,7 @@ def MICROscope(source_code_path, alpha, n_clusters=None, threshold=None, n_fcm_e
     print("done!")
 
     # finding class names for each method call
-    print("[MICROscope] analyzing method calls...", end=" ", flush=True)
+    print("[Mono2Multi] analyzing method calls...", end=" ", flush=True)
     for clss in classes_info:
         for call in classes_info[clss]["method_calls"]:
             for other_clss in classes_info:
@@ -29,9 +29,9 @@ def MICROscope(source_code_path, alpha, n_clusters=None, threshold=None, n_fcm_e
     print("done!")
 
     # get class similarity metrix to feed to FCM
-    print("[MICROscope] building class similarity matrix", flush=True)
+    print("[Mono2Multi] building class similarity matrix", flush=True)
     class_similarity_matrix = class_similarity(alpha, classes_info)
-    print("[MICROscope] class similarity matrix built successfully!", flush=True)
+    print("[Mono2Multi] class similarity matrix built successfully!", flush=True)
 
     # --- DEBUG SECTION
 
@@ -52,14 +52,15 @@ def MICROscope(source_code_path, alpha, n_clusters=None, threshold=None, n_fcm_e
             return fcm(class_similarity_matrix, n_clusters, threshold, n_fcm_execs), classes_info
         else:
             layers = []
+            # TODO: move this loop to Clustering.py for better performance
             for i in range(len(threshold)):
-                print(f"[MICROscope] threshold={threshold[i]}")
+                print(f"[Mono2Multi] threshold={threshold[i]}")
                 layers.append(fcm(class_similarity_matrix, n_clusters, threshold[i], n_fcm_execs))
             return layers, classes_info
     else:
         layers = []
         if isinstance(threshold, int) or isinstance(threshold, float) or threshold is None:
             for i in range(len(n_clusters)):
-                print(f"[MICROscope] n_clusters={n_clusters[i]}")
+                print(f"[Mono2Multi] n_clusters={n_clusters[i]}")
                 layers.append(fcm(class_similarity_matrix, n_clusters[i], threshold, n_fcm_execs))
             return layers, classes_info

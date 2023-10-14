@@ -1,5 +1,5 @@
-from MICROscope.main import MICROscope
-from MICROscope.EvaluationMeasures import *
+from Mono2Multi.main import Mono2Multi
+from Mono2Multi.EvaluationMeasures import *
 from argparse import ArgumentParser
 from os import makedirs, walk, path, pathsep
 from subprocess import run
@@ -7,9 +7,9 @@ from json import load, dump
 import numpy as np
 
 parser = ArgumentParser(
-    prog='python MICROscope.py',
-    description='Experiment versoin of the MICROscope tool.',
-    epilog='example usage: python MICROscope_expt.py -f Test_Projects/JPetStore/OneFileSource.java --alpha 1 --n-clusters 3 --threshold 0.1 0.7 --n-execs 10 -e ICP NED -o output.json')
+    prog='python Mono2Multi_expt.py',
+    description='Experiment versoin of the Mono2Multi tool.',
+    epilog='example usage: python Mono2Multi_expt.py -f Test_Projects/JPetStore/OneFileSource.java --alpha 1 --n-clusters 3 --threshold 0.1 0.7 --n-execs 10 -e ICP NED -o output.json')
 
 parser.add_argument("-f", "--file", dest="file_path",
                     help="path to the java source code file (use this option if your whole monolithic program is in one file)")
@@ -85,13 +85,13 @@ if args.project_directory:
     project_dir_name = args.project_directory.split('/')[-1]
     true_ms_dirs = next(walk(args.project_directory))[1]
     true_ms_classnames = []
-    libs = path.join(base_dir, "MICROscope/JavaParser/lib/javaparser-core-3.25.5-SNAPSHOT.jar")+pathsep+path.join(base_dir, "MICROscope/JavaParser/lib/json-20230618.jar")
+    libs = path.join(base_dir, "Mono2Multi/JavaParser/lib/javaparser-core-3.25.5-SNAPSHOT.jar")+pathsep+path.join(base_dir, "Mono2Multi/JavaParser/lib/json-20230618.jar")
     makedirs(path.join(base_dir, f"data/{project_dir_name}"), exist_ok=True)
     for directory in true_ms_dirs:
         if directory.endswith("/"):
             directory = directory[:-1]
         json_path = path.join(base_dir, f"data/{project_dir_name}/{directory}.json")
-        run(['java', '-cp', libs, path.join(base_dir, 'MICROscope/JavaParser/ClassScanner.java'), path.join(args.project_directory, directory), json_path])
+        run(['java', '-cp', libs, path.join(base_dir, 'Mono2Multi/JavaParser/ClassScanner.java'), path.join(args.project_directory, directory), json_path])
         with open(json_path, "rt") as classes_file:
             true_ms_classnames.append(load(classes_file)["classes"])
 
@@ -100,7 +100,7 @@ if args.project_directory:
     print("done!")
 
 if args.file_path:
-    print("\n--- MICROscope ---\n")
+    print("\n--- Mono2Multi ---\n")
     if args.alpha == [None]:
         args.alpha = [float(input("alpha: "))]
     if args.n_execs == None:
@@ -108,9 +108,9 @@ if args.file_path:
 
     outputs = []
     if len(args.alpha) == 2:
-        alphas = np.arange(args.alpha[0], args.alpha[1], 0.1)
+        alphas = [round(_, 3) for _ in np.arange(args.alpha[0], args.alpha[1], 0.1)]
         for alpha in alphas:
-            clusters, classes_info = MICROscope(args.file_path, args.alpha, args.n_clusters[0], args.threshold[0], args.n_execs)
+            clusters, classes_info = Mono2Multi(args.file_path, args.alpha, args.n_clusters[0], args.threshold[0], args.n_execs)
             class_names = list(classes_info.keys())
             if args.project_directory:
                 true_microservices = [-1 for _ in classes_info]
@@ -118,7 +118,7 @@ if args.file_path:
                     for clss in ms:
                         true_microservices[class_names.index(clss)] = i
 
-            output = {"alpha": int(alpha), "microservices": [list(i) for i in clusters]}
+            output = {"alpha": float(alpha), "microservices": [list(i) for i in clusters]}
 
             if args.evaluation_measure:
                 for measure in args.evaluation_measure:
@@ -137,7 +137,7 @@ if args.file_path:
             dump(outputs, output_file, indent=2)
     elif len(args.n_clusters) == 2:
         n_clusterss = np.arange(args.n_clusters[0], args.n_clusters[1], 1)
-        clusters, classes_info = MICROscope(args.file_path, args.alpha[0], n_clusterss, args.threshold[0], args.n_execs)
+        clusters, classes_info = Mono2Multi(args.file_path, args.alpha[0], n_clusterss, args.threshold[0], args.n_execs)
         class_names = list(classes_info.keys())
         if args.project_directory:
             true_microservices = [-1 for _ in classes_info]
@@ -160,8 +160,8 @@ if args.file_path:
             outputs.append(output)
 
     elif len(args.threshold) == 2:
-        thresholds = np.arange(args.threshold[0], args.threshold[1], 0.05)
-        clusters, classes_info = MICROscope(args.file_path, args.alpha[0], args.n_clusters[0], thresholds, args.n_execs)
+        thresholds = [round(_, 3) for _ in np.arange(args.threshold[0], args.threshold[1], 0.05)]
+        clusters, classes_info = Mono2Multi(args.file_path, args.alpha[0], args.n_clusters[0], thresholds, args.n_execs)
         class_names = list(classes_info.keys())
         if args.project_directory:
             true_microservices = [-1 for _ in classes_info]
@@ -169,7 +169,7 @@ if args.file_path:
                 for clss in ms:
                     true_microservices[class_names.index(clss)] = i
         for i in range(len(thresholds)):
-            output = {"threshold": int(thresholds[i]), "microservices": [list(_) for _ in clusters[i]]}
+            output = {"threshold": float(thresholds[i]), "microservices": [list(_) for _ in clusters[i]]}
             if args.evaluation_measure:
                 for measure in args.evaluation_measure:
                     if measure in ["SM", "IFN", "ICP"]:

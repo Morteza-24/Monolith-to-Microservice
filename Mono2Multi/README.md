@@ -1,4 +1,4 @@
-# MICROscope: A Fuzzy Clustering, CodeBERT-Based Method for Extracting Microservices from Monolithic Applications
+# Mono2Multi: A Fuzzy Clustering, CodeBERT-Based Method for Extracting Microservices from Monolithic Applications
 
 This method consists of two major steps:
 1. Similarity Analysis: which contains two parts:
@@ -18,11 +18,11 @@ python -m pip install -r requirements.txt
 ```
 # example.py
 
-from MICROscope.main import MICROscope
+from Mono2Multi.main import Mono2Multi
 
 source_file_path = "path/to/source.java"
 alpha = 0.5
 
-clusters = MICROscope(source_file_path, alpha)
+clusters = Mono2Multi(source_file_path, alpha)
 
 ```
