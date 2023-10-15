@@ -47,7 +47,9 @@ python Mono2Multi.py -f ./Test_Projects/JPetStore/OneFileSource.java -e IFN NED 
 
 ## Mono2Multi_expt
 
-example usage:
+This script facilitates experiments with the Mono2Multi method. You can utilize it to run the Mono2Multi method while varying any of the hyperparameters over a specified interval. 
+For example, you can gradually increase the threshold from 0.1 to 0.7 and save the output of each run in the `output.json` file:
+
 ```
 python Mono2Multi_expt.py -f Test_Projects/JPetStore/OneFileSource.java --alpha 1 --n-clusters 3 --threshold 0.1 0.7 --n-execs 5 -e ICP NED -o output.json
 ```
