@@ -43,6 +43,18 @@ def fcm(class_similarity_matrix, n_clusters, threshold, n_execs):
         plt.xticks(range(len(class_similarity_matrix)))
         fig.show()
         threshold = float(input("degree of membership threshold: "))
+    elif not (isinstance(threshold, int) or isinstance(threshold, float)):
+        layers = []
+        for threshold_i in threshold:
+            print(f"[Mono2Multi] threshold = {threshold_i}")
+            clusters = [{-1} for _ in memberships[0]]
+            for cluster_i in range(len(memberships)):
+                for class_i in range(len(memberships[cluster_i])):
+                    if memberships[cluster_i][class_i] >= threshold_i:
+                        clusters[class_i].discard(-1)
+                        clusters[class_i].add(cluster_i)
+            layers.append(clusters)
+        return layers
 
     clusters = [{-1} for _ in memberships[0]]
     for cluster_i in range(len(memberships)):
