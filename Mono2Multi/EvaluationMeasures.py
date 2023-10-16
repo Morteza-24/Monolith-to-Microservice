@@ -2,6 +2,8 @@ from math import log
 
 
 def _corresponding(microservice_classes, true_microservices):
+    if not microservice_classes:
+        return set()
     max_common_classes = 0
     for true_ms in set(true_microservices):
         true_ms_classes = {clss for clss, ms in enumerate(true_microservices)
@@ -18,7 +20,12 @@ def Precision(microservices, true_microservices):
     for microservice in range(n_microservices):
         ms_classes = {clss for clss, ms in enumerate(microservices)
                       if microservice in ms}
-        precision_sum += len(ms_classes.intersection(_corresponding(ms_classes, true_microservices))) / len(ms_classes)
+        try:
+            precision_sum += len(ms_classes.intersection(_corresponding(ms_classes, true_microservices))) / len(ms_classes)
+        except ZeroDivisionError:
+            pass
+    if n_microservices == 0:
+        return 0
     return precision_sum / n_microservices
 
 
@@ -29,9 +36,14 @@ def SR(microservices, true_microservices, k):
     for microservice in range(n_microservices):
         ms_classes = {clss for clss, ms in enumerate(microservices)
                       if microservice in ms}
-        matching = len(ms_classes.intersection(_corresponding(ms_classes, true_microservices))) / len(ms_classes)
+        try:
+            matching = len(ms_classes.intersection(_corresponding(ms_classes, true_microservices))) / len(ms_classes)
+        except ZeroDivisionError:
+            matching = 0
         if matching >= threshold:
             matches += 1
+    if n_microservices == 0:
+        return 0
     return matches / n_microservices
 
 
@@ -101,7 +113,7 @@ def IFN(microservices, classes_info):
     try:
         interface_number = total_interfaces / num_microservices
     except ZeroDivisionError:
-        interface_number = None
+        interface_number = 0
     return interface_number
 
 
