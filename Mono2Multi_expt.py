@@ -43,9 +43,9 @@ if not args.output_file:
     print("\nerror: -o, --output-file is required in the experment version")
     exit()
 
-if int(len(args.alpha)==2) + int(len(args.n_clusters)==2) + int(len(args.threshold)==2) != 1:
+if len(args.alpha)==2 and (len(args.n_clusters)==2 or len(args.threshold)==2):
     parser.print_help()
-    print("\nerror: you should use an interval for one and only one hyperparameter at each run")
+    print("\nerror: you can't use an interval for alpha and (threshold or n_clusters) at the same time yet.")
     exit()
 
 if args.evaluation_measure:
@@ -135,17 +135,17 @@ if args.file_path:
 
         with open(args.output_file, "w") as output_file:
             dump(outputs, output_file, indent=2)
-    elif len(args.n_clusters) == 2:
-        n_clusterss = np.arange(args.n_clusters[0], args.n_clusters[1], 1)
-        clusters, classes_info = Mono2Multi(args.file_path, args.alpha[0], n_clusterss, args.threshold[0], args.n_execs)
+    elif len(args.n_clusters) == 2 and len(args.threshold) != 2:
+        n_clusters = np.arange(args.n_clusters[0], args.n_clusters[1], 1)
+        clusters, classes_info = Mono2Multi(args.file_path, args.alpha[0], n_clusters, args.threshold[0], args.n_execs)
         class_names = list(classes_info.keys())
         if args.project_directory:
             true_microservices = [-1 for _ in classes_info]
             for i, ms in enumerate(true_ms_classnames):
                 for clss in ms:
                     true_microservices[class_names.index(clss)] = i
-        for i in range(len(n_clusterss)):
-            output = {"n_clusters": int(n_clusterss[i]), "microservices": [list(_) for _ in clusters[i]]}
+        for i in range(len(n_clusters)):
+            output = {"n_clusters": int(n_clusters[i]), "microservices": [list(_) for _ in clusters[i]]}
             if args.evaluation_measure:
                 for measure in args.evaluation_measure:
                     if measure in ["SM", "IFN", "ICP"]:
@@ -159,7 +159,7 @@ if args.file_path:
                         output[measure] = measures[measure](clusters[i])
             outputs.append(output)
 
-    elif len(args.threshold) == 2:
+    elif len(args.threshold) == 2 and len(args.n_clusters) != 2:
         thresholds = [round(_, 3) for _ in np.arange(args.threshold[0], args.threshold[1], 0.05)]
         clusters, classes_info = Mono2Multi(args.file_path, args.alpha[0], args.n_clusters[0], thresholds, args.n_execs)
         class_names = list(classes_info.keys())
@@ -182,6 +182,34 @@ if args.file_path:
                     else:
                         output[measure] = measures[measure](clusters[i])
             outputs.append(output)
+
+    else:
+        n_clusters = np.arange(args.n_clusters[0], args.n_clusters[1], 1)
+        thresholds = [round(_, 3) for _ in np.arange(args.threshold[0], args.threshold[1], 0.05)]
+        clusters, classes_info = Mono2Multi(args.file_path, args.alpha[0], n_clusters, thresholds, args.n_execs)
+        class_names = list(classes_info.keys())
+        if args.project_directory:
+            true_microservices = [-1 for _ in classes_info]
+            for i, ms in enumerate(true_ms_classnames):
+                for clss in ms:
+                    true_microservices[class_names.index(clss)] = i
+        for i in range(len(n_clusters)):
+            for j in range(len(thresholds)):
+                output = {"n_clusters": int(n_clusters[i]),
+                          "threshold": float(thresholds[j]),
+                          "microservices": [list(_) for _ in clusters[i][j]]}
+                if args.evaluation_measure:
+                    for measure in args.evaluation_measure:
+                        if measure in ["SM", "IFN", "ICP"]:
+                            output[measure] = measures[measure](clusters[i][j], classes_info)
+                        elif measure == "Precision":
+                            output[measure] = measures[measure](clusters[i][j], true_microservices)
+                        elif measure == "SR":
+                            for k in args.k:
+                                output[measure+"@"+str(k)] = measures[measure](clusters[i][j], true_microservices, k)
+                        else:
+                            output[measure] = measures[measure](clusters[i][j])
+                outputs.append(output)
 
     with open(args.output_file, "w") as output_file:
         dump(outputs, output_file, indent=2)

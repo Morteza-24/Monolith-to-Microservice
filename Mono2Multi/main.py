@@ -48,15 +48,10 @@ def Mono2Multi(source_code_path, alpha, n_clusters=None, threshold=None, n_fcm_e
     # --- DEBUG SECTION
 
     if isinstance(n_clusters, int) or n_clusters is None:
-        if isinstance(threshold, int) or isinstance(threshold, float) or threshold is None:
             return fcm(class_similarity_matrix, n_clusters, threshold, n_fcm_execs), classes_info
-        else:
-            layers = fcm(class_similarity_matrix, n_clusters, threshold, n_fcm_execs)
-            return layers, classes_info
     else:
         layers = []
-        if isinstance(threshold, int) or isinstance(threshold, float) or threshold is None:
-            for i in range(len(n_clusters)):
-                print(f"[Mono2Multi] n_clusters = {n_clusters[i]}")
-                layers.append(fcm(class_similarity_matrix, n_clusters[i], threshold, n_fcm_execs))
-            return layers, classes_info
+        for i in range(len(n_clusters)):
+            print(f"[Mono2Multi] n_clusters = {n_clusters[i]}")
+            layers.append(fcm(class_similarity_matrix, n_clusters[i], threshold, n_fcm_execs))
+        return layers, classes_info
