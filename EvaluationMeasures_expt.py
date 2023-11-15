@@ -18,8 +18,26 @@ def _merge_java_files(src_dir, dest_file):
                     outfile.write('\n')
 
 
-def init(source_code_path, project_directory=None):
+def init(classes_order, source_code_path, project_directory=None):
     base_dir = path.dirname(path.realpath(__file__))
+    libs = path.join(base_dir, "Mono2Multi/JavaParser/lib/javaparser-core-3.25.5-SNAPSHOT.jar") + pathsep + path.join(
+        base_dir,
+        "Mono2Multi/JavaParser/lib/json-20230618.jar")
+    json_path = path.join(base_dir, "expt_classe_sources.json")
+    run(['java', '-cp', libs, 'ClassSources.java', source_code_path, json_path])
+    with open(json_path, "rt") as classes_file:
+        classes_sources = load(classes_file)
+    new_source = ""
+    for i in classes_order:
+        if classes_order[i] in classes_sources:
+            new_source += classes_sources[classes_order[i]]
+        else:
+            new_source += "public class "+classes_order[i].replace(":","")+"{}"
+        new_source += "\n"
+    with open("ExptOneFileSource.java", "wt") as new_file:
+        new_file.write(new_source)
+    source_code_path = "ExptOneFileSource.java"
+
     if project_directory:
         if project_directory.endswith("/"):
             project_directory = project_directory[:-1]
