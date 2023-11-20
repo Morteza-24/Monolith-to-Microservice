@@ -4,6 +4,51 @@ from json import load
 from math import log
 
 
+if __name__ == "__main__":
+    # fill in the following variables
+    proj = "JPetStore"
+    micros = [5,5,5,5,5,5,5,1,1,1,5,5,5,5,5,5,5,5,5,5,5,1,2,5,5,4,5,3,1,1,5,5,0,5,5,5,5]
+    order = {
+    "0": "AccountFormController",
+    "1": "Account",
+    "2": "AccountForm",
+    "3": "AccountValidator",
+    "4": "PetStoreImpl",
+    "5": "UserSession",
+    "6": "AddItemToCartController",
+    "7": "Cart",
+    "8": "CartItem",
+    "9": "Item",
+    "10": "Category",
+    "11": "LineItem",
+    "12": "Order",
+    "13": "OrderFormController",
+    "14": "OrderForm",
+    "15": "OrderValidator",
+    "16": "SqlMapAccountDao",
+    "17": "SqlMapCategoryDao",
+    "18": "SqlMapItemDao",
+    "19": "SqlMapOrderDao",
+    "20": "SqlMapProductDao",
+    "21": "RemoveItemFromCartController",
+    "22": "ListOrdersController",
+    "23": "Product",
+    "24": "SearchProductsController",
+    "25": "SignoffController",
+    "26": "SignonController",
+    "27": "SignonInterceptor",
+    "28": "UpdateCartQuantitiesController",
+    "29": "ViewCartController",
+    "30": "ViewCategoryController",
+    "31": "ViewItemController",
+    "32": "ViewOrderController",
+    "33": "ViewProductController",
+    "34": "SqlMapSequenceDao",
+    "35": "SqlMapProductDao::ProductSearch",
+    "36": "Sequence"
+}
+
+
 def _merge_java_files(src_dir, dest_file):
     with open(dest_file, 'w') as outfile:
         for root, dirs, files in walk(src_dir):
@@ -18,25 +63,26 @@ def _merge_java_files(src_dir, dest_file):
                     outfile.write('\n')
 
 
-def init(classes_order, source_code_path, project_directory=None):
+def init(classes_order, microservices, source_code_path, project_directory=None):
     base_dir = path.dirname(path.realpath(__file__))
-    libs = path.join(base_dir, "Mono2Multi/JavaParser/lib/javaparser-core-3.25.5-SNAPSHOT.jar") + pathsep + path.join(
-        base_dir,
-        "Mono2Multi/JavaParser/lib/json-20230618.jar")
-    json_path = path.join(base_dir, "expt_classe_sources.json")
-    run(['java', '-cp', libs, 'ClassSources.java', source_code_path, json_path])
-    with open(json_path, "rt") as classes_file:
-        classes_sources = load(classes_file)
-    new_source = ""
-    for i in classes_order:
-        if classes_order[i] in classes_sources:
-            new_source += classes_sources[classes_order[i]]
-        else:
-            new_source += "public class "+classes_order[i].replace(":","")+"{}"
-        new_source += "\n"
-    with open("ExptOneFileSource.java", "wt") as new_file:
-        new_file.write(new_source)
-    source_code_path = "ExptOneFileSource.java"
+
+    # libs = path.join(base_dir, "Mono2Multi/JavaParser/lib/javaparser-core-3.25.5-SNAPSHOT.jar") + pathsep + path.join(
+    #     base_dir,
+    #     "Mono2Multi/JavaParser/lib/json-20230618.jar")
+    # json_path = path.join(base_dir, "expt_classe_sources.json")
+    # run(['java', '-cp', libs, path.join(base_dir, 'Mono2Multi/JavaParser/ClassSources.java'), source_code_path, json_path])
+    # with open(json_path, "rt") as classes_file:
+    #     classes_sources = load(classes_file)
+    # new_source = ""
+    # for i in classes_order:
+    #     if classes_order[i] in classes_sources:
+    #         new_source += classes_sources[classes_order[i]]
+    #     else:
+    #         new_source += "public class "+classes_order[i].replace(":","")+"{}"
+    #     new_source += "\n"
+    # with open("ExptOneFileSource.java", "wt") as new_file:
+    #     new_file.write(new_source)
+    # source_code_path = "ExptOneFileSource.java"
 
     if project_directory:
         if project_directory.endswith("/"):
@@ -63,7 +109,8 @@ def init(classes_order, source_code_path, project_directory=None):
     libs = path.join(base_dir, "Mono2Multi/JavaParser/lib/javaparser-core-3.25.5-SNAPSHOT.jar") + pathsep + path.join(
         base_dir,
         "Mono2Multi/JavaParser/lib/json-20230618.jar")
-    json_path = path.join(base_dir, "expt_classes.json")
+    makedirs(path.join(base_dir, "data"), exist_ok=True)
+    json_path = path.join(base_dir, "data", "expt_classes.json")
     run(['java', '-cp', libs, path.join(base_dir, 'Mono2Multi/JavaParser/Parser.java'), source_code_path, json_path])
     with open(json_path, "rt") as classes_file:
         classes_info = load(classes_file)
@@ -84,7 +131,20 @@ def init(classes_order, source_code_path, project_directory=None):
                 true_microservices[class_names.index(clss)] = i
         return classes_info, true_microservices
 
-    return classes_info
+    new_microservices = []
+    for clss in classes_info:
+        for num in classes_order:
+            if "::" in classes_order[num]:
+                classes_order[num] = classes_order[num].split("::")[1]
+            if clss == classes_order[num]:
+                new_microservices.append(microservices[int(num)])
+                break
+        else:
+            new_microservices.append(-1)
+    for num in classes_order:
+        if classes_order[num] not in classes_info:
+            print(f"different sources: {classes_order[num]}")
+    return new_microservices, classes_info
 
 
 def _corresponding(microservice_classes, true_microservices):
@@ -228,3 +288,13 @@ def ICP(microservices, classes_info):
     if numerator == 0:
         return 0
     return numerator/denominator
+
+
+if __name__ == "__main__":
+    microservices, classes_info = init(order, micros, f"Test_Projects/{proj}/OneFileSource.java")
+    print(len(micros), len(microservices))
+    print(microservices)
+    print("ICP: ", ICP(microservices, classes_info))
+    print("NED: ", NED(microservices))
+    print("SM: ", SM(microservices, classes_info))
+    print("IFN: ", IFN(microservices, classes_info))
