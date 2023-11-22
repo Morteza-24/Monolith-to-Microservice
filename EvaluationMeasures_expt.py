@@ -6,38 +6,36 @@ from math import log
 
 if __name__ == "__main__":
     # fill in the following variables
-    proj = "AcmeAir"
-    micros = [0,0,0,0,0,0,4,0,0,0,0,0,4,4,4,0,0,0,0,0,0,0,4,4,5,2,1,3]
+    proj = "Plants"
+    micros = [3,0,0,4,3,3,0,1,0,5,5,2,5,0,0,2,2,0,5,2,3,2,2,1,1,2]
     order = {
-        "0": "AcmeAirConfiguration",
-        "1": "AuthServiceImpl",
-        "2": "BookingServiceImpl",
-        "3": "CustomerServiceImpl",
-        "4": "FlightServiceImpl",
-        "5": "ServiceLocator",
-        "6": "AuthService",
-        "7": "KeyGenerator",
-        "8": "ConnectionManager",
-        "9": "BookingLoader",
-        "10": "BookingsREST",
-        "11": "CustomerLoader",
-        "12": "CustomerREST",
-        "13": "CustomerInfo",
-        "14": "CustomerService",
-        "15": "FlightLoader",
-        "16": "AirportCodeMapping",
-        "17": "FlightService",
-        "18": "FlightsREST",
-        "19": "Loader",
-        "20": "SessionLoader",
-        "21": "LoaderREST",
-        "22": "LoginREST",
-        "23": "RESTCookieSessionFilter",
-        "24": "AcmeAirApp",
-        "25": "AddressInfo",
-        "26": "AppConfig",
-        "27": "SupportWebSocket"
-    }
+    "0": "AccountBean",
+    "1": "Customer",
+    "2": "CustomerMgr",
+    "3": "LoginInfo",
+    "4": "MailerAppException",
+    "5": "MailerBean",
+    "6": "OrderInfo",
+    "7": "ShoppingBean",
+    "8": "ShoppingCartBean",
+    "9": "Util",
+    "10": "CatalogMgr",
+    "11": "BackOrder",
+    "12": "Inventory",
+    "13": "Order",
+    "14": "OrderItem",
+    "15": "OrderItem::PK",
+    "16": "Supplier",
+    "17": "HelpBean",
+    "18": "ImageServlet",
+    "19": "ListProperties",
+    "20": "EMailMessage",
+    "21": "PopulateDBBean",
+    "22": "ResetDBBean",
+    "23": "ProductBean",
+    "24": "ShoppingItem",
+    "25": "SuppliersBean"
+}
 
 
 def _merge_java_files(src_dir, dest_file):
