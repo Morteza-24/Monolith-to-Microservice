@@ -6,47 +6,38 @@ from math import log
 
 if __name__ == "__main__":
     # fill in the following variables
-    proj = "JPetStore"
-    micros = [5,5,5,5,5,5,5,1,1,1,5,5,5,5,5,5,5,5,5,5,5,1,2,5,5,4,5,3,1,1,5,5,0,5,5,5,5]
+    proj = "AcmeAir"
+    micros = [0,0,0,0,0,0,4,0,0,0,0,0,4,4,4,0,0,0,0,0,0,0,4,4,5,2,1,3]
     order = {
-    "0": "AccountFormController",
-    "1": "Account",
-    "2": "AccountForm",
-    "3": "AccountValidator",
-    "4": "PetStoreImpl",
-    "5": "UserSession",
-    "6": "AddItemToCartController",
-    "7": "Cart",
-    "8": "CartItem",
-    "9": "Item",
-    "10": "Category",
-    "11": "LineItem",
-    "12": "Order",
-    "13": "OrderFormController",
-    "14": "OrderForm",
-    "15": "OrderValidator",
-    "16": "SqlMapAccountDao",
-    "17": "SqlMapCategoryDao",
-    "18": "SqlMapItemDao",
-    "19": "SqlMapOrderDao",
-    "20": "SqlMapProductDao",
-    "21": "RemoveItemFromCartController",
-    "22": "ListOrdersController",
-    "23": "Product",
-    "24": "SearchProductsController",
-    "25": "SignoffController",
-    "26": "SignonController",
-    "27": "SignonInterceptor",
-    "28": "UpdateCartQuantitiesController",
-    "29": "ViewCartController",
-    "30": "ViewCategoryController",
-    "31": "ViewItemController",
-    "32": "ViewOrderController",
-    "33": "ViewProductController",
-    "34": "SqlMapSequenceDao",
-    "35": "SqlMapProductDao::ProductSearch",
-    "36": "Sequence"
-}
+        "0": "AcmeAirConfiguration",
+        "1": "AuthServiceImpl",
+        "2": "BookingServiceImpl",
+        "3": "CustomerServiceImpl",
+        "4": "FlightServiceImpl",
+        "5": "ServiceLocator",
+        "6": "AuthService",
+        "7": "KeyGenerator",
+        "8": "ConnectionManager",
+        "9": "BookingLoader",
+        "10": "BookingsREST",
+        "11": "CustomerLoader",
+        "12": "CustomerREST",
+        "13": "CustomerInfo",
+        "14": "CustomerService",
+        "15": "FlightLoader",
+        "16": "AirportCodeMapping",
+        "17": "FlightService",
+        "18": "FlightsREST",
+        "19": "Loader",
+        "20": "SessionLoader",
+        "21": "LoaderREST",
+        "22": "LoginREST",
+        "23": "RESTCookieSessionFilter",
+        "24": "AcmeAirApp",
+        "25": "AddressInfo",
+        "26": "AppConfig",
+        "27": "SupportWebSocket"
+    }
 
 
 def _merge_java_files(src_dir, dest_file):
@@ -106,12 +97,12 @@ def init(classes_order, microservices, source_code_path, project_directory=None)
         source_code_path = path.join(base_dir, f"data/{project_dir_name}/OneFileSource.java")
         _merge_java_files(project_directory, source_code_path)
 
-    libs = path.join(base_dir, "Mono2Multi/JavaParser/lib/javaparser-core-3.25.5-SNAPSHOT.jar") + pathsep + path.join(
+    libs = path.join(base_dir, "Mono2Multi", "JavaParser","lib","javaparser-core-3.25.5-SNAPSHOT.jar") + pathsep + path.join(
         base_dir,
-        "Mono2Multi/JavaParser/lib/json-20230618.jar")
+        "Mono2Multi","JavaParser","lib","json-20230618.jar")
     makedirs(path.join(base_dir, "data"), exist_ok=True)
     json_path = path.join(base_dir, "data", "expt_classes.json")
-    run(['java', '-cp', libs, path.join(base_dir, 'Mono2Multi/JavaParser/Parser.java'), source_code_path, json_path])
+    run(['java', '-cp', libs, path.join(base_dir, "Mono2Multi","JavaParser","Parser.java"), source_code_path, json_path])
     with open(json_path, "rt") as classes_file:
         classes_info = load(classes_file)
 
