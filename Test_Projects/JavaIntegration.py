@@ -17,7 +17,5 @@ def integrate_java_files(src_dir, dest_file):
                     outfile.write('\n')
 
 
-src_dir = 'C:\Documents\Mehrshad\GitHub\Monolith-to-Microservice\Test_Projects\MicroservicesEventSourcing\src'
-dest_file = r'C:\Documents\Mehrshad\GitHub\Monolith-to-Microservice\Test_Projects\MicroservicesEventSourcing\OneFileSource.java'
 
-integrate_java_files(src_dir, dest_file)
+integrate_java_files(input("src dir: "), input("dest file: "))
