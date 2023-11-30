@@ -37,36 +37,34 @@ def structural_similarity(classes_info):
 
 def semantic_similarity(classes_info):
     import torch
-    from torch.nn import CosineSimilarity
-    from transformers import RobertaTokenizer, RobertaModel
+    from Mono2Multi.unixcoder import UniXcoder
 
     # get the models ready
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-    tokenizer = RobertaTokenizer.from_pretrained("microsoft/codebert-base")
-    model = RobertaModel.from_pretrained("microsoft/codebert-base")
+    model = UniXcoder("microsoft/unixcoder-base")
     model.to(device)
 
     semantic_similarity_matrix = zeros((len(classes_info), len(classes_info)))
     len_classes_info = len(classes_info)
+    i = 0
+    for clss in classes_info:
+        source_i = classes_info[clss]["source"]
+        tokens_ids = model.tokenize([source_i],max_length=512,mode="<encoder-only>")
+        source_ids = torch.tensor(tokens_ids).to(device)
+        tokens_embeddings,embedding_i = model(source_ids)
+        classes_info[clss]["norm_embedding"] = torch.nn.functional.normalize(embedding_i, p=2, dim=1)
+        i += 1
+        print(f"\r[SemanticSimilarity] {int(100*i/len_classes_info)}%", end="", flush=True)
 
+    print("\rnow", end="", flush=True)
     for i in range(len_classes_info):
         ci = list(classes_info.keys())[i]
-        source_i = classes_info[ci]["source"]
-        tokens_i = tokenizer.encode(source_i, add_special_tokens=True, padding='max_length', truncation=True, return_tensors='pt')
+        norm_embedding_i = classes_info[ci]["norm_embedding"]
         for j in range(i+1,len_classes_info):
             cj = list(classes_info.keys())[j]
-            source_j = classes_info[cj]["source"]
-            tokens_j = tokenizer.encode(source_j, add_special_tokens=True, padding='max_length', truncation=True, return_tensors='pt')
+            norm_embedding_j = classes_info[cj]["norm_embedding"]
+            semantic_similarity_matrix[i][j] = torch.einsum("ac,bc->ab",norm_embedding_i,norm_embedding_j)
 
-            tokens = torch.stack([tokens_i[0], tokens_j[0]])
-            with torch.no_grad():
-                embeddings = model(tokens)[0]
-
-            sim = CosineSimilarity(dim=-1)
-            cosine = sim(embeddings[0], embeddings[1])
-            average_similarity = torch.mean(cosine)
-            semantic_similarity_matrix[i][j] = average_similarity.item()
-            print(f"\r[SemanticSimilarity] {int(100*((len_classes_info*i)+(j+1))/(len_classes_info**2))}%", end="", flush=True)
     print(f"\r[SemanticSimilarity] 100%", flush=True)
     return semantic_similarity_matrix
 
