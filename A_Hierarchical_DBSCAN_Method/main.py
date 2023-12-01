@@ -33,20 +33,49 @@ def hierarchical_DBSCAN(source_code_path, alpha, minimum_number_of_sample, max_e
     download('stopwords')
 
     # get class similarity metric to feed to DBSCAN
-    print("[hierarchical_DBSCAN] building class similarity matrix", flush=True)
-    class_similarity_matrix = class_similarity(alpha, classes_info)
-    print("[hierarchical_DBSCAN] done!")
+    if isinstance(alpha, list):
+        ms_dict = {}
+        for alpha_i in alpha:
+            print(f"[hierarchical_DBSCAN] building class similarity matrix (alpha: {alpha_i})", flush=True)
+            class_similarity_matrix = class_similarity(alpha_i, classes_info)
+            print("[hierarchical_DBSCAN] done!")
 
-    # run DBSCAN with different epsilon values to create decomposition layers
-    if isinstance(max_epsilon, int) or isinstance(max_epsilon, float):
-        if one_shot:
-            return dbscan(minimum_number_of_sample, max_epsilon, class_similarity_matrix), classes_info
-        layers = {}
-        epsilon = 0.01
-        while epsilon <= max_epsilon:
-            layer = dbscan(minimum_number_of_sample, epsilon, class_similarity_matrix)
-            layers[epsilon] = layer
-            epsilon += 0.01
-            epsilon = round(epsilon, 2)
-        return layers, classes_info
-    return [dbscan(minimum_number_of_sample, epsilon, class_similarity_matrix) for epsilon in max_epsilon], classes_info
+            # run DBSCAN with different epsilon values to create decomposition layers
+            if isinstance(max_epsilon, int) or isinstance(max_epsilon, float):
+                if one_shot:
+                    ms_dict[alpha_i] = (dbscan(minimum_number_of_sample, max_epsilon, class_similarity_matrix), classes_info)
+                else:
+                    layers = {}
+                    epsilon = 0.01
+                    while epsilon <= max_epsilon:
+                        layer = dbscan(minimum_number_of_sample, epsilon, class_similarity_matrix)
+                        layers[epsilon] = layer
+                        epsilon += 0.01
+                        epsilon = round(epsilon, 2)
+                    ms_dict[alpha_i] = (layers, classes_info)
+            else:
+                layers = {}
+                for epsilon in max_epsilon:
+                    layer = dbscan(minimum_number_of_sample, epsilon, class_similarity_matrix)
+                    layers[epsilon] = layer
+                ms_dict[alpha_i] = (layers, classes_info)
+        return ms_dict
+
+    else:
+        print("[hierarchical_DBSCAN] building class similarity matrix", flush=True)
+        class_similarity_matrix = class_similarity(alpha, classes_info)
+        print("[hierarchical_DBSCAN] done!")
+
+        # run DBSCAN with different epsilon values to create decomposition layers
+        if isinstance(max_epsilon, int) or isinstance(max_epsilon, float):
+            if one_shot:
+                return dbscan(minimum_number_of_sample, max_epsilon, class_similarity_matrix), classes_info
+            layers = {}
+            epsilon = 0.01
+            while epsilon <= max_epsilon:
+                layer = dbscan(minimum_number_of_sample, epsilon, class_similarity_matrix)
+                layers[epsilon] = layer
+                epsilon += 0.01
+                epsilon = round(epsilon, 2)
+            return layers, classes_info
+        return [dbscan(minimum_number_of_sample, epsilon, class_similarity_matrix) for epsilon in max_epsilon], classes_info
