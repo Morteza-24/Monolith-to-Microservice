@@ -55,8 +55,8 @@ def prepare_data(path, measure):
         if not lt_done:
             l_thresholds.append(i["threshold"])
         actual_nc = len(set([_ for ms in i["microservices"] for _ in ms]))
+        values[-1].append(i[measure])
         if actual_nc != i["n_clusters"]:
             print(f'({i["threshold"]}, {i["n_clusters"]}) actaully has {actual_nc} cluters')
-        values[-1].append(i[measure])   
     values = np.array(values).T
     return values, l_thresholds, l_clusters
