@@ -105,8 +105,10 @@ def IFN(microservices, classes_info):
                 call_class_index = list(classes_info).index(call["class_name"])
                 call_ms_list = microservices[call_class_index]
                 for ms_i in call_ms_list:
-                    if ms_i not in class_ms_list:
-                        interfaces_per_microservice[ms_i].add(call['class_name'])
+                    if ms_i in class_ms_list:
+                        break
+                else:
+                    interfaces_per_microservice[ms_i].add(call['class_name'])
 
     total_interfaces = sum([len(interfaces)
                            for interfaces in interfaces_per_microservice])
