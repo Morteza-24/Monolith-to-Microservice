@@ -13,7 +13,7 @@ def _corresponding(microservice_classes, true_microservices):
 
 
 def Precision(microservices, true_microservices):
-    n_microservices = max(microservice)+1
+    n_microservices = max(microservices)+1
     precision_sum = 0
     for microservice in range(n_microservices):
         ms_classes = {clss for clss, ms in enumerate(microservices)
