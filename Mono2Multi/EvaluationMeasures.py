@@ -1,5 +1,5 @@
 from math import log
-
+from random import choice
 
 def _corresponding(microservice_classes, true_microservices):
     if not microservice_classes:
@@ -62,14 +62,14 @@ def SM(microservices, classes_info):
             class_j = call["class_name"]
             if class_j in classes_info:
                 j = list(classes_info).index(class_j)
-                for microservice_j in microservices[j]:
-                    if microservice_j == -1:
+                for ms in set(ms_list_i) - set(microservices[j]):
+                    if ms == -1:
                         continue
-                    if microservice_j in ms_list_i:
-                        for microservice_i in ms_list_i:
-                            mu[microservice_i] += 1
-                        else:
-                            sigma[microservice_i][microservice_j] += 1
+                    sigma[ms][choice(list(microservices[j]))]
+                for ms in set(ms_list_i).union(set(microservices[j])):
+                    if ms == -1:
+                        continue
+                    mu[ms] += 1
 
     SM1, SM2 = 0, 0
     for i in range(K):
