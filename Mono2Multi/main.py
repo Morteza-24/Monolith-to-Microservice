@@ -6,7 +6,7 @@ from Mono2Multi.Clustering import fcm
 import numpy as np
 
 
-def Mono2Multi(source_code_path, alpha, n_clusters=None, threshold=None, n_fcm_execs=10):
+def Mono2Multi(source_code_path, alpha, n_clusters=None, threshold=None, n_fcm_execs=30):
     # parse the source code and get classes, methods, etc.
     print("\n[Mono2Multi] parsing the code...", end=" ", flush=True)
     base_dir = path.dirname(path.realpath(__file__))

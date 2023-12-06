@@ -104,7 +104,7 @@ if args.file_path:
     if args.alpha == [None]:
         args.alpha = [float(input("alpha: "))]
     if args.n_execs == None:
-        args.n_execs = 10
+        args.n_execs = 30
 
     outputs = []
     if len(args.alpha) == 2:
