@@ -1,0 +1,5 @@
+{"classes": [
+    "HttpExceptionHandler",
+    "CORSFilter",
+    "WebConfiguration"
+]}

@@ -1,0 +1,13 @@
+{"classes": [
+    "HeadersRequestTransformer",
+    "ContentRequestTransformer",
+    "ProxyRequestTransformer",
+    "URLRequestTransformer",
+    "RestTemplateErrorHandler",
+    "ApiGatewayServiceConfiguration",
+    "Endpoint",
+    "ApiGatewayProperties",
+    "ApiGatewayServiceMain",
+    "GatewayController",
+    "RestUtil"
+]}

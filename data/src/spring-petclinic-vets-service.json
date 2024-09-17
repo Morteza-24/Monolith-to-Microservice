@@ -1,0 +1,11 @@
+{"classes": [
+    "VetResourceTest",
+    "VetsServiceApplication",
+    "CacheConfig",
+    "Cache",
+    "VetsProperties",
+    "Vet",
+    "Specialty",
+    "VetRepository",
+    "VetResource"
+]}

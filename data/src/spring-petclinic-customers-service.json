@@ -1,0 +1,15 @@
+{"classes": [
+    "PetResourceTest",
+    "MetricConfig",
+    "Pet",
+    "PetType",
+    "OwnerRepository",
+    "PetRepository",
+    "Owner",
+    "CustomersServiceApplication",
+    "PetResource",
+    "PetDetails",
+    "ResourceNotFoundException",
+    "PetRequest",
+    "OwnerResource"
+]}

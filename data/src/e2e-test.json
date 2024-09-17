@@ -1,0 +1,6 @@
+{"classes": [
+    "StompApiTest",
+    "RestApiTest",
+    "AuthControllerTest",
+    "E2ETestConfiguration"
+]}

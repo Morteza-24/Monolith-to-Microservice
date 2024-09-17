@@ -1,0 +1,20 @@
+{"classes": [
+    "TaskDescription",
+    "DetailedTaskEvent",
+    "TaskCompletedEvent",
+    "TaskDeletedEvent",
+    "TaskUpdatedEvent",
+    "TaskBacklogEvent",
+    "TaskStartedEvent",
+    "TaskCreatedEvent",
+    "TaskScheduledEvent",
+    "TaskEvent",
+    "Task",
+    "HistoryResponse",
+    "ChangeTaskStatusRequest",
+    "BacklogResponse",
+    "HistoryEvent",
+    "TaskResponse",
+    "TaskInfo",
+    "TaskDetails"
+]}

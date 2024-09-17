@@ -1,0 +1,8 @@
+{"classes": [
+    "CreateBoardCommand",
+    "BoardCommandController",
+    "BoardService",
+    "BoardCommandSideConfiguration",
+    "BoardAggregate",
+    "BoardCommand"
+]}

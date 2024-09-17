@@ -1,0 +1,19 @@
+{"classes": [
+    "AbstractAuthTest",
+    "BasicWebTestConfiguration",
+    "StompSession",
+    "StompMessageHandler",
+    "StompWebSocketHandler",
+    "WebSocketStompClient",
+    "StompClient",
+    "ConsumerStompMessageHandler",
+    "WebSocketStompSession",
+    "StompListener",
+    "TestUtil",
+    "ValidationUtils",
+    "BaseTest",
+    "TestHistoryResponse",
+    "TestHistoryEvent",
+    "AbstractStompApiTest",
+    "AbstractRestApiTest"
+]}

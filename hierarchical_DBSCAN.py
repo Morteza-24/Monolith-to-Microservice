@@ -1,5 +1,5 @@
 from A_Hierarchical_DBSCAN_Method.main import hierarchical_DBSCAN
-from A_Hierarchical_DBSCAN_Method.EvaluationMeasures import *
+from EvaluationMeasures import *
 from argparse import ArgumentParser
 from os import makedirs, walk, path, pathsep
 from subprocess import run

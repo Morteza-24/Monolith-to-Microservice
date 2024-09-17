@@ -79,8 +79,8 @@ def overlapping_community_detection(A, X, K, threshold):
         for threshold_i in threshold:
             print(f"[Mo2oM] threshold = {threshold_i}")
             for col in range(memberships.shape[1]):
-                memberships[:,col][memberships[:,col]<threshold] = -1
-                memberships[:,col][memberships[:,col]>=threshold] = col
+                memberships[:,col][memberships[:,col]<threshold_i] = -1
+                memberships[:,col][memberships[:,col]>=threshold_i] = col
             memberships = memberships.astype(int)
             clusters = []
             for row in memberships:

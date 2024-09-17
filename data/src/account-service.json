@@ -1,0 +1,16 @@
+{"classes": [
+    "DatabaseInitializerTest",
+    "DatabaseInitializer",
+    "BaseEntity",
+    "CreditCard",
+    "CustomizedRestMvcConfiguretion",
+    "AccountServiceApplication",
+    "AccountServiceV1",
+    "AccountControllerV1",
+    "User",
+    "Address",
+    "Account",
+    "AccountRepository",
+    "CustomerRepository",
+    "Customer"
+]}

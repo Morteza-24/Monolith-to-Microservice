@@ -1,0 +1,5 @@
+{"classes": [
+    "AuthController",
+    "AuthResponse",
+    "AuthRequest"
+]}

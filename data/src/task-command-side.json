@@ -1,0 +1,15 @@
+{"classes": [
+    "CompleteTaskCommand",
+    "ScheduleTaskCommand",
+    "DeleteTaskCommand",
+    "TaskCommandController",
+    "StartTaskCommand",
+    "TaskAggregate",
+    "TaskService",
+    "MoveToBacklogTaskCommand",
+    "CreateTaskCommand",
+    "TaskCommand",
+    "TaskHistoryService",
+    "TaskCommandSideConfiguration",
+    "UpdateTaskCommand"
+]}

@@ -1,0 +1,15 @@
+{"classes": [
+    "VisitsServiceClientIntegrationTest",
+    "ApiGatewayApplicationTests",
+    "ApiGatewayControllerTest",
+    "CircuitBreakerConfiguration",
+    "CustomersServiceClient",
+    "VisitsServiceClient",
+    "ApiGatewayApplication",
+    "ApiGatewayController",
+    "VisitDetails",
+    "OwnerDetails",
+    "PetDetails",
+    "PetType",
+    "Visits"
+]}

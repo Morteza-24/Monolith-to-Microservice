@@ -1,0 +1,23 @@
+{"classes": [
+    "ShoppingCartServiceV1Test",
+    "BaseEntity",
+    "BaseEntityDto",
+    "Inventory",
+    "ShoppingCartServiceV1",
+    "ShoppingCartControllerV1",
+    "CartEventRepository",
+    "ShoppingCart",
+    "CheckoutResult",
+    "CartEvent",
+    "CartItem",
+    "Catalog",
+    "Warehouse",
+    "User",
+    "Product",
+    "OrderItem",
+    "OrderEvent",
+    "Order",
+    "Address",
+    "RepositoryRestMvcConfiguration",
+    "CartServiceApplication"
+]}

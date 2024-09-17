@@ -1,6 +1,7 @@
 from os import path, pathsep
 from subprocess import run
 from json import load
+import numpy as np
 from Mo2oM.SimilarityAnalysis import structural_similarity, semantic_similarity
 from Mo2oM.Clustering import overlapping_community_detection
 
@@ -50,9 +51,12 @@ def Mo2oM(source_code_path, n_clusters, threshold=None):
 
     if isinstance(n_clusters, int):
             return overlapping_community_detection(structural_similarity_matrix, semantic_similarity_matrix, n_clusters, threshold), classes_info
-    else:
-        clusterings = []
-        for i in range(len(n_clusters)):
-            print(f"[Mo2oM] n_clusters = {n_clusters[i]}")
-            clusterings.append(overlapping_community_detection(structural_similarity_matrix, semantic_similarity_matrix, n_clusters[i], threshold))
-        return clusterings, classes_info
+    elif isinstance(n_clusters, str) and n_clusters == "Scanniello":
+        len_classes = len(classes_info)
+        n_clusters = np.arange(2, (len_classes//2)+2, 1)
+        print(f"[Mo2oM] clustering with sizes from 2 to {(len_classes//2)+2}", flush=True)
+    clusterings = []
+    for i in range(len(n_clusters)):
+        print(f"[Mo2oM] n_clusters = {n_clusters[i]}")
+        clusterings.append(overlapping_community_detection(structural_similarity_matrix, semantic_similarity_matrix, n_clusters[i], threshold))
+    return clusterings, classes_info

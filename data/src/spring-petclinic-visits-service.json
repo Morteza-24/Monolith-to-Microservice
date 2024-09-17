@@ -1,0 +1,9 @@
+{"classes": [
+    "VisitResourceTest",
+    "MetricConfig",
+    "Visit",
+    "VisitRepository",
+    "VisitsServiceApplication",
+    "Visits",
+    "VisitResource"
+]}

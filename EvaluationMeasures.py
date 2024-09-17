@@ -1,61 +1,87 @@
 from math import log
+from random import choice
 
 
-def _corresponding(microservice_classes, true_microservices):
+def _ms_to_clss(microservices, n_microservices):
+    ms_clss = [set() for _ in range(n_microservices)]
+    for clss_i, clss_ms in enumerate(microservices):
+        for ms in clss_ms:
+            try:
+                ms_clss[ms].add(clss_i)
+            except IndexError:
+                return []
+    return ms_clss
+
+
+def _corresponding(microservice_classes, true_microservices_classes):
+    if not microservice_classes:
+        return set()
     max_common_classes = 0
-    for true_ms in set(true_microservices):
-        true_ms_classes = {clss for clss, ms in enumerate(true_microservices)
-                           if ms == true_ms}  # TODO: this doesn't have to repeat
-        if (m := len(true_ms_classes.intersection(microservice_classes))) > max_common_classes:
+    for true_microservice_classes in true_microservices_classes:
+        if (m := len(true_microservice_classes.intersection(microservice_classes))) > max_common_classes:
             max_common_classes = m
-            corresponding_ms = true_ms_classes
+            corresponding_ms = true_microservice_classes
     return corresponding_ms
 
 
 def Precision(microservices, true_microservices):
-    n_microservices = max(microservice)+1
+    n_microservices = max(max(m) for m in microservices) + 1
+    microservices_classes = _ms_to_clss(microservices, n_microservices)
+    n_true_microservices = max(max(m) for m in true_microservices) + 1
+    true_microservices_classes = _ms_to_clss(true_microservices, n_true_microservices)
     precision_sum = 0
-    for microservice in range(n_microservices):
-        ms_classes = {clss for clss, ms in enumerate(microservices)
-                      if ms == microservice}
-        precision_sum += len(ms_classes.intersection(_corresponding(ms_classes, true_microservices))) / len(ms_classes)
+    for microservice_classes in microservices_classes:
+        try:
+            precision_sum += len(microservice_classes.intersection(_corresponding(microservice_classes, true_microservices_classes))) / len(microservice_classes)
+        except ZeroDivisionError:
+            pass
+    if n_microservices == 0:
+        return 0
     return precision_sum / n_microservices
 
 
 def SR(microservices, true_microservices, k):
+    n_microservices = max(max(m) for m in microservices) + 1
+    microservices_classes = _ms_to_clss(microservices, n_microservices)
+    n_true_microservices = max(max(m) for m in true_microservices) + 1
+    true_microservices_classes = _ms_to_clss(true_microservices, n_true_microservices)
     threshold = k/10
     matches = 0
-    for microservice in range(max(microservices)+1):
-        ms_classes = {clss for clss, ms in enumerate(microservices)
-                      if ms == microservice}
-        matching = len(ms_classes.intersection(_corresponding(ms_classes, true_microservices))) / len(ms_classes)
+    for microservice_classes in microservices_classes:
+        try:
+            matching = len(microservice_classes.intersection(_corresponding(microservice_classes, true_microservices_classes))) / len(microservice_classes)
+        except ZeroDivisionError:
+            matching = 0
         if matching >= threshold:
             matches += 1
-    return matches / (max(microservices)+1)
+    if n_microservices == 0:
+        return 0
+    return matches / n_microservices
 
 
 def SM(microservices, classes_info):
-    K = max(microservices)+1
+    K = max(max(m) for m in microservices) + 1  # number of microservices
     m = [0] * K  # number of classes for each microservice
     mu = [0] * K  # number of inside calls
     sigma = [[0]*K for _ in range(K)]  # number of outside calls
-
     for class_index, class_name in enumerate(classes_info):
-        microservice_i = microservices[class_index]
-        if microservice_i == -1:
+        class_microservices = microservices[class_index]
+        if -1 in class_microservices:
             continue
-        m[microservice_i] += 1
+        for microservice_i in class_microservices:
+            m[microservice_i] += 1
         for call in classes_info[class_name]["method_calls"]:
             class_j = call["class_name"]
             if class_j in classes_info:
                 j = list(classes_info).index(class_j)
-                microservice_j = microservices[j]
-                if microservice_j == -1:
-                    continue
-                if microservice_i == microservice_j:
-                    mu[microservice_i] += 1
-                else:
-                    sigma[microservice_i][microservice_j] += 1
+                for ms in class_microservices - microservices[j]:
+                    if ms == -1:
+                        continue
+                    sigma[ms][choice(list(microservices[j]))] += 1
+                for ms in class_microservices.union(microservices[j]):
+                    if ms == -1:
+                        continue
+                    mu[ms] += 1
 
     SM1, SM2 = 0, 0
     for i in range(K):
@@ -81,42 +107,64 @@ def SM(microservices, classes_info):
 
 
 def IFN(microservices, classes_info):
-    num_microservices = max(microservices) + 1
-    interfaces_per_microservice = [set() for i in range(num_microservices)]
+    num_microservices = max(max(ms) for ms in microservices) + 1
+    interfaces_per_microservice = [set() for _ in range(num_microservices)]
 
     for class_index, class_name in enumerate(classes_info):
-        microservice_i = microservices[class_index]
-        if microservice_i == -1:
-            continue
+        class_microservices = microservices[class_index]
         for call in classes_info[class_name]["method_calls"]:
             if call['class_name'] in classes_info:
-                microservice_j = microservices[list(classes_info).index(call["class_name"])]
-                if microservice_j != microservice_i:
-                    interfaces_per_microservice[microservice_j].add(
-                        call['class_name'])
+                call_class_index = list(classes_info).index(call["class_name"])
+                call_microservices = microservices[call_class_index]
+                for call_microservice in call_microservices:
+                    if call_microservice in class_microservices:
+                        break
+                else:
+                    interfaces_per_microservice[call_microservice].add(call['class_name'])
 
     total_interfaces = sum([len(interfaces)
                            for interfaces in interfaces_per_microservice])
-    interface_number = total_interfaces / num_microservices
+    try:
+        interface_number = total_interfaces / num_microservices
+    except ZeroDivisionError:
+        interface_number = 0
     return interface_number
 
 
 def NED(microservices):
-    microservices = list(microservices)
-    k = max(microservices)+1
+    microservices = [ims for ms in microservices for ims in ms if ims != -1]
     non_extreme = 0
-    for i in range(k):
+    for i in set(microservices):
         if 5 < microservices.count(i) < 20:
             non_extreme += 1
-    return 1 - non_extreme/k
+    try:
+        return 1 - non_extreme/(max(microservices)+1)
+    except:
+        return 1
 
 
-def _icp(classes_i, classes_j, classes_info):
+def _icp_num(classes_i, classes_j, classes_info):
+    sum_calls = 0
+    for class_i in classes_i:
+        if class_i in classes_j:
+            continue
+        for class_j in classes_j:
+            if class_j in classes_i:
+                continue
+            calls = len([1 for call in classes_info[class_i]["method_calls"]
+                        if call["class_name"] == class_j])
+            try:
+                sum_calls += log(calls)+1
+            except ValueError:
+                pass  # log domain error is okay to pass
+    return sum_calls
+
+def _icp_denom(classes_i, classes_j, classes_info):
     sum_calls = 0
     for class_i in classes_i:
         for class_j in classes_j:
             calls = len([1 for call in classes_info[class_i]["method_calls"]
-                         if call["class_name"] == class_j])
+                        if call["class_name"] == class_j])
             try:
                 sum_calls += log(calls)+1
             except ValueError:
@@ -125,19 +173,20 @@ def _icp(classes_i, classes_j, classes_info):
 
 
 def ICP(microservices, classes_info):
-    class_names = list(classes_info.keys())
+    class_names = list(classes_info)
     numerator, denominator = 0, 0
 
-    for microservice_i in range(max(microservices)+1):
-        classes_i = {class_names[class_number] for class_number, microservice_number in enumerate(microservices)
-                     if microservice_number == microservice_i}
-        for microservice_j in range(max(microservices)+1):
-            classes_j = {class_names[class_number] for class_number, microservice_number in enumerate(microservices)
-                         if microservice_number == microservice_j}
+    n_microservices = max(max(m) for m in microservices) + 1
+    for microservice_i in range(n_microservices):
+        classes_i = {class_names[class_number] for class_number, microservices_list in enumerate(microservices)
+                     if microservice_i in microservices_list}
+        for microservice_j in range(n_microservices):
+            classes_j = {class_names[class_number] for class_number, microservices_list in enumerate(microservices)
+                        if microservice_j in microservices_list}
 
             if microservice_i != microservice_j:
-                numerator += _icp(classes_i, classes_j, classes_info)
-            denominator += _icp(classes_i, classes_j, classes_info)
+                numerator += _icp_num(classes_i, classes_j, classes_info)
+            denominator += _icp_denom(classes_i, classes_j, classes_info)
 
     if numerator == 0:
         return 0

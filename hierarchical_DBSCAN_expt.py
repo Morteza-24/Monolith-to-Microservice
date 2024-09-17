@@ -1,5 +1,5 @@
 from A_Hierarchical_DBSCAN_Method.main import hierarchical_DBSCAN
-from A_Hierarchical_DBSCAN_Method.EvaluationMeasures import *
+from EvaluationMeasures import *
 from argparse import ArgumentParser
 from os import makedirs, walk, path, pathsep
 from subprocess import run
@@ -103,19 +103,21 @@ if args.file_path:
         args.min_samples = 2
 
     outputs = []
-    alphas = [round(_, 3) for _ in np.arange(args.alpha[0], args.alpha[1], 0.05)]
-    epsilons = [round(_, 3) for _ in np.arange(args.epsilon[0], args.epsilon[1], 0.02)]
+    alphas = [round(_, 3) for _ in np.arange(args.alpha[0], args.alpha[1]+0.01, 0.05)]
+    epsilons = [round(_, 3) for _ in np.arange(args.epsilon[0], args.epsilon[1]+0.01, 0.02)]
     ms_dict = hierarchical_DBSCAN(args.file_path, alphas, args.min_samples, epsilons)
     for alpha in ms_dict:
         clusters, classes_info = ms_dict[alpha]
         class_names = list(classes_info.keys())
         if args.project_directory:
-            true_microservices = [-1 for _ in classes_info]
+            true_microservices = [{-1} for _ in classes_info]
             for i, ms in enumerate(true_ms_classnames):
                 for clss in ms:
-                    true_microservices[class_names.index(clss)] = i
+                    true_microservices[class_names.index(clss)].add(i)
+                    if -1 in true_microservices[class_names.index(clss)]:
+                        true_microservices[class_names.index(clss)].discard(-1)
         for epsilon in clusters:
-            output = {"alpha": float(alpha), "epsilon": float(epsilon), "microservices": [int(i) for i in clusters[epsilon]]}
+            output = {"alpha": float(alpha), "epsilon": float(epsilon), "microservices": [[int(_i) for _i in _] for _ in clusters[epsilon]]}
             if args.evaluation_measure:
                 for measure in args.evaluation_measure:
                     if measure in ["SM", "IFN", "ICP"]:
@@ -129,5 +131,31 @@ if args.file_path:
                         output[measure] = measures[measure](clusters[epsilon])
             outputs.append(output)
 
-    with open(args.output_file, "w") as output_file:
+    with open("tmp_"+args.output_file, "w") as output_file:
         dump(outputs, output_file, indent=2)
+
+    in_ms = False
+    inn_ms = False
+    with (open("tmp_"+args.output_file, "rt") as in_f,
+        open(args.output_file, "wt") as out_f):
+        for line in in_f.readlines():
+            if line.endswith("[\n"):
+                if in_ms:
+                    inn_ms = True
+                elif "microservices" in line:
+                    in_ms = True
+                    out_f.write(line[:-1])
+                    continue
+            elif line.endswith("],\n") or line.endswith("]\n"):
+                if inn_ms:
+                    inn_ms = False
+                else:
+                    in_ms = False
+                    out_f.write(line.lstrip())
+                    continue
+            if in_ms:
+                out_f.write(line.strip())
+            else:
+                out_f.write(line)
+
+    run(["rm", "tmp_"+args.output_file])

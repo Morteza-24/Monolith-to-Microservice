@@ -1,0 +1,6 @@
+{"classes": [
+    "WebSocketSecurityConfig",
+    "KanbanWebSocketEvent",
+    "WebSocketConfig",
+    "WebsocketEventsTranslator"
+]}
