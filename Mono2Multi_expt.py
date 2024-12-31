@@ -9,7 +9,7 @@ import numpy as np
 parser = ArgumentParser(
     prog='python Mono2Multi_expt.py',
     description='Experiment versoin of the Mono2Multi tool.',
-    epilog='example usage: python Mono2Multi_expt.py -f Test_Projects/JPetStore/OneFileSource.java --alpha 1 --n-clusters 3 --threshold 0.1 0.7 --n-execs 10 -e ICP NED -o output.json')
+    epilog='example usage: python Mono2Multi_expt.py -f Test_Projects/JPetStore/OneFileSource.java --alpha 1 --n-clusters 3 --threshold 0.1 0.7 -e ICP NED -o output.json')
 
 parser.add_argument("-f", "--file", dest="file_path",
                     help="path to the java source code file (use this option if your whole monolithic program is in one file)")
@@ -29,7 +29,7 @@ parser.add_argument("--n-clusters", dest="n_clusters", type=int, nargs="*", defa
 parser.add_argument("--threshold", dest="threshold", type=float, nargs="*", default=[None],
                     help="degree of membership threshold hyperparameter. Enter two values to run the method on an interval of threshold values.")
 parser.add_argument("--n-execs", dest="n_execs", type=int,
-                    help="the number of times FCM is run to get an average")
+                    help="(deprecated) the number of times FCM is run to get an average")
 
 args = parser.parse_args()
 
