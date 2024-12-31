@@ -28,7 +28,7 @@ parser.add_argument("--n-clusters", dest="n_clusters", type=int,
 parser.add_argument("--threshold", dest="threshold", type=float,
                     help="degree of membership threshold hyperparameter")
 parser.add_argument("--n-execs", dest="n_execs", type=int,
-                    help="the number of times FCM is run to get an average")
+                    help="(deprecated) the number of times FCM is run to get an average")
 
 args = parser.parse_args()
 
