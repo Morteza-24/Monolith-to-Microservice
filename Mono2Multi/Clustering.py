@@ -25,7 +25,7 @@ def fcm(class_similarity_matrix, n_clusters, threshold, n_execs):
 
     print("[FuzzyCMeans] 0%", end="", flush=True)
     cntr, total_u, u0, d, jm, p, fpc = fuzz.cluster.cmeans(
-        alldata, n_clusters, 2, error=1e-90, maxiter=100000, init=None)
+        alldata, n_clusters, 2, error=1e-90, maxiter=100000, seed=42)
     print(f"\r[FuzzyCMeans] {int(100*(1)/n_execs)}%", end="", flush=True)
     for i in range(n_execs-1):
         cntr, u, u0, d, jm, p, fpc = fuzz.cluster.cmeans(
