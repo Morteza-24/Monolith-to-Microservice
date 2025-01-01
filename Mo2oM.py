@@ -35,11 +35,6 @@ if not (args.file_path or args.project_directory):
     print("\nerror: one of the following arguments are required: --file, --project")
     exit()
 
-if not args.output_file:
-    parser.print_help()
-    print("\nerror: -o, --output-file is required in the experment version")
-    exit()
-
 if args.evaluation_measure:
     if bool(args.k) != ("SR" in args.evaluation_measure):
         parser.print_help()

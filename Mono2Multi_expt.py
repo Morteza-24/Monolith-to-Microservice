@@ -104,8 +104,8 @@ if args.file_path:
         args.alpha = [float(input("alpha: "))]
     if args.n_execs == None:
         args.n_execs = 1
-    elif args.n_clusters == [None]:
-        n_clusters = ["Scanniello"]
+    if args.n_clusters == [None]:
+        args.n_clusters = ["Scanniello"]
     outputs = []
     if len(args.alpha) == 2:
         alphas = [round(_, 3) for _ in np.arange(args.alpha[0], args.alpha[1]+0.01, 0.05)]
@@ -120,6 +120,7 @@ if args.file_path:
     else:
         thresholds = args.threshold[0]
     for alpha in alphas:
+        print(f"alpha = {alpha}")
         clusters, classes_info = Mono2Multi(args.file_path, alpha, n_clusters, thresholds, args.n_execs)
         class_names = list(classes_info.keys())
         if args.project_directory:

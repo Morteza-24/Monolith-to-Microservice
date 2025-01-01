@@ -67,7 +67,7 @@ def semantic_similarity(classes_info):
     # --- 1. upload classes.json to google colab and run the notebook
     # --- 2. download embeddings.npz from google colab and put it in working directory
     # --- 3. comment the following line:
-    return sp.csr_matrix(embeddings)
+    return sp.csr_matrix(embeddings.to('cpu'))
     # --- 4. uncomment the following line:
     # return sp.load_npz('semantic.npz')
 
