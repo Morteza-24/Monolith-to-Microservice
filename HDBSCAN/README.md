@@ -31,3 +31,10 @@ layers, classes_info = hierarchical_DBSCAN(
         source_file_path, alpha, min_samples, max_epsilon)
 
 ```
+
+
+## Acknowledgement
+
+This is an unofficial implementation of [A hierarchical DBSCAN method for extracting microservices from monolithic applications](https://arxiv.org/pdf/2206.07010)
+
+- https://dl.acm.org/doi/abs/10.1145/3530019.3530040

@@ -102,6 +102,16 @@ python HDBSCAN.py -f ./Test_Projects/JPetStore/OneFileSource.java -e IFN NED SM 
 ```
 
 
+## HDBSCAN_expt
+
+This script facilitates experiments with the HDBSCAN method. You can utilize it to run the HDBSCAN method while varying any of the hyperparameters over a specified interval. 
+For example, you can gradually increase alpha from 0.45 to 0.55 and epsilon from 0.5 to 0.7 and save the output of each run in the `output.json` file:
+
+```
+python HDBSCAN_expt.py -f Test_Projects/JPetStore/OneFileSource.java --alpha 0.45 0.55 --epsilon 0.5 0.7 -e ICP NED -o output.json
+```
+
+
 ## Acknowledgements
 
 We would like to express our gratitude to the creators of the following repositories:
