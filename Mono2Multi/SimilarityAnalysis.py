@@ -39,8 +39,8 @@ def semantic_similarity(classes_info):
     import torch
     from Mono2Multi.unixcoder import UniXcoder
 
-    # get the models ready
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    print(f"[SemanticSimilarity] using device {device}", flush=True)
     model = UniXcoder("microsoft/unixcoder-base")
     model.to(device)
 
@@ -51,12 +51,13 @@ def semantic_similarity(classes_info):
         source_i = classes_info[clss]["source"]
         tokens_ids = model.tokenize([source_i],max_length=512,mode="<encoder-only>")
         source_ids = torch.tensor(tokens_ids).to(device)
-        tokens_embeddings,embedding_i = model(source_ids)
-        classes_info[clss]["norm_embedding"] = torch.nn.functional.normalize(embedding_i, p=2, dim=1)
+        with torch.no_grad():
+            embedding = model(source_ids)[1]
+            embedding = torch.nn.functional.normalize(embedding, p=2, dim=1)
+        classes_info[clss]["norm_embedding"] = embedding
         i += 1
         print(f"\r[SemanticSimilarity] {int(100*i/len_classes_info)}%", end="", flush=True)
 
-    print("\rnow", end="", flush=True)
     for i in range(len_classes_info):
         ci = list(classes_info.keys())[i]
         norm_embedding_i = classes_info[ci]["norm_embedding"]
