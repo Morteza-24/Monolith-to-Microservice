@@ -158,5 +158,31 @@ if args.file_path:
                             output[measure] = measures[measure](this_clusters)
                 outputs.append(output)
 
-    with open(args.output_file, "w") as output_file:
+    with open("tmp_"+args.output_file, "w") as output_file:
         dump(outputs, output_file, indent=2)
+
+    in_ms = False
+    inn_ms = False
+    with (open("tmp_"+args.output_file, "rt") as in_f,
+        open(args.output_file, "wt") as out_f):
+        for line in in_f.readlines():
+            if line.endswith("[\n"):
+                if in_ms:
+                    inn_ms = True
+                elif "microservices" in line:
+                    in_ms = True
+                    out_f.write(line[:-1])
+                    continue
+            elif line.endswith("],\n") or line.endswith("]\n"):
+                if inn_ms:
+                    inn_ms = False
+                else:
+                    in_ms = False
+                    out_f.write(line.lstrip())
+                    continue
+            if in_ms:
+                out_f.write(line.strip())
+            else:
+                out_f.write(line)
+
+    run(["rm", "tmp_"+args.output_file])
