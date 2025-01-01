@@ -49,9 +49,12 @@ def Mono2Multi(source_code_path, alpha, n_clusters=None, threshold=None, n_fcm_e
 
     if isinstance(n_clusters, int) or n_clusters is None:
             return fcm(class_similarity_matrix, n_clusters, threshold, n_fcm_execs), classes_info
-    else:
-        layers = []
-        for i in range(len(n_clusters)):
-            print(f"[Mono2Multi] n_clusters = {n_clusters[i]}")
-            layers.append(fcm(class_similarity_matrix, n_clusters[i], threshold, n_fcm_execs))
-        return layers, classes_info
+    elif isinstance(n_clusters, str) and n_clusters == "Scanniello":
+        len_classes = len(classes_info)
+        n_clusters = np.arange(2, (len_classes//2)+2, 2)
+        print(f"[Mono2Multi] clustering with sizes from 2 to {(len_classes//2)+2}", flush=True)
+    layers = []
+    for i in range(len(n_clusters)):
+        print(f"[Mono2Multi] n_clusters = {n_clusters[i]}", flush=True)
+        layers.append(fcm(class_similarity_matrix, n_clusters[i], threshold, n_fcm_execs))
+    return layers, classes_info
