@@ -85,20 +85,20 @@ python Mo2oM_expt.py -f Test_Projects/JPetStore/OneFileSource.java --alpha 1 --n
 ```
 
 
-## Hierarchical_DBSCAN
+## HDBSCAN
 
 example usage:
 
 ```
-python hierarchical_DBSCAN.py --help
+python HDBSCAN.py --help
 ```
 
 ```
-python hierarchical_DBSCAN.py -p ./Test_Projects/JPetStore/src/ -e ICP NED SR -k 7 -o output.json
+python HDBSCAN.py -p ./Test_Projects/JPetStore/src/ -e ICP NED SR -k 7 -o output.json
 ```
 
 ```
-python hierarchical_DBSCAN.py -f ./Test_Projects/JPetStore/OneFileSource.java -e IFN NED SM --alpha 0.5 --min-samples 2 --max-epsilon 0.75 -1
+python HDBSCAN.py -f ./Test_Projects/JPetStore/OneFileSource.java -e IFN NED SM --alpha 0.5 --min-samples 2 --max-epsilon 0.75 -1
 ```
 
 

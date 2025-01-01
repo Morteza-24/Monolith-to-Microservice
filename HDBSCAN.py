@@ -4,12 +4,11 @@ from argparse import ArgumentParser
 from os import makedirs, walk, path, pathsep
 from subprocess import run
 from json import load, dump
-import numpy as np
 
 parser = ArgumentParser(
-    prog='python hierarchical_DBSCAN.py',
-    description='Experiment versoin of the hierarchical_DBSCAN tool.',
-    epilog='example usage: python hierarchical_DBSCAN_expt.py -f Test_Projects/JPetStore/OneFileSource.java --alpha 0.5 0.9 --epsilon 0.5 0.9 -e ICP NED -o output.json')
+    prog='python HDBSCAN.py',
+    description='This program offers tools related to migrating from monolithic architectures to microservices.',
+    epilog='example usage: python HDBSCAN.py -p ./Test_Projects/PetClinic/src -e NED ICP SR -k 5 7')
 
 parser.add_argument("-f", "--file", dest="file_path",
                     help="path to the java source code file (use this option if your whole monolithic program is in one file)")
@@ -22,28 +21,20 @@ parser.add_argument("-e", "--evaluation-measure", choices=["Precision", "SR", "S
                         And for the SR measure you should also use the -k option to specify a threshold.")
 parser.add_argument("-k", type=int, nargs="*",
                     help="The k value for the SR measure (e.g. SR@7). This option can only be used if you are using the SR measure.")
+parser.add_argument("--alpha", dest="alpha", type=float,
+                    help="alpha hyperparameter, determines the semantic similarity affect percentage.")
 parser.add_argument("--min-samples", dest="min_samples", type=int,
                     help="minimum number of sample hyperparameter for DBSCAN clustering.")
-parser.add_argument("--alpha", dest="alpha", type=float, nargs=2,
-                    help="alpha hyperparameter, determines the semantic similarity affect percentage. Enter two values to run the method on an interval of alpha values.")
-parser.add_argument("--epsilon", dest="epsilon", type=float, nargs=2,
-                    help="the epsilon parameter of DBSCAN clustering.")
+parser.add_argument("--max-epsilon", dest="max_epsilon", type=float,
+                    help="max epsilon hyperparameter for DBSCAN clustering, add the -1 or --one-shot flag to run DBSCAN for a single epsilon value only.")
+parser.add_argument("-1", "--one-shot", dest="one_shot", action="store_true",
+                    help="don't output layers and only run the algorithm for a single epsilon value (max-epsilon).")
 
 args = parser.parse_args()
 
 if not (args.file_path or args.project_directory):
     parser.print_help()
     print("\nerror: one of the following arguments are required: --file, --project")
-    exit()
-
-if not args.output_file:
-    parser.print_help()
-    print("\nerror: -o, --output-file is required in the experment version")
-    exit()
-
-if len(args.alpha) != 2 or len(args.epsilon) != 2:
-    parser.print_help()
-    print("\nerror: you should use an interval for alpha and epsilon.")
     exit()
 
 if args.evaluation_measure:
@@ -99,63 +90,75 @@ if args.project_directory:
 
 if args.file_path:
     print("\n--- HDBSCAN ---\n")
-    if args.min_samples is None:
-        args.min_samples = 2
+    if not args.alpha:
+        args.alpha = float(input("alpha: "))
+    if not args.min_samples:
+        args.min_samples = int(input("minimum number of sample: "))
+    if not args.max_epsilon:
+        args.max_epsilon = float(input("max epsilon: "))
+    layers, classes_info = hierarchical_DBSCAN(
+        args.file_path, args.alpha, args.min_samples, args.max_epsilon, one_shot=args.one_shot)
 
-    outputs = []
-    alphas = [round(_, 3) for _ in np.arange(args.alpha[0], args.alpha[1]+0.01, 0.05)]
-    epsilons = [round(_, 3) for _ in np.arange(args.epsilon[0], args.epsilon[1]+0.01, 0.05)]
-    ms_dict = hierarchical_DBSCAN(args.file_path, alphas, args.min_samples, epsilons)
-    for alpha in ms_dict:
-        clusters, classes_info = ms_dict[alpha]
-        class_names = list(classes_info.keys())
-        if args.project_directory:
-            true_microservices = [{-1} for _ in classes_info]
-            for i, ms in enumerate(true_ms_classnames):
-                for clss in ms:
-                    true_microservices[class_names.index(clss)].add(i)
-                    if -1 in true_microservices[class_names.index(clss)]:
-                        true_microservices[class_names.index(clss)].discard(-1)
-        for epsilon in clusters:
-            output = {"alpha": float(alpha), "epsilon": float(epsilon), "microservices": [[int(_i) for _i in _] for _ in clusters[epsilon]]}
+    class_names = list(classes_info.keys())
+    if args.project_directory:
+        true_microservices = [-1 for _ in classes_info]
+        for i, ms in enumerate(true_ms_classnames):
+            for clss in ms:
+                true_microservices[class_names.index(clss)] = i
+        print("\nTrue Microservices:", true_microservices)
+
+    print("\nClasses:")
+    for class_number, class_name in enumerate(classes_info):
+        print(f"#{class_number}: \t{class_name}")
+
+    outputs = {}
+    if args.one_shot:
+        outputs["microservices"] = [int(i) for i in layers]
+        print("microservices:")
+        print(layers)
+        if args.evaluation_measure:
+            for measure in args.evaluation_measure:
+                if measure in ["SM", "IFN", "ICP"]:
+                    print(f"{measure}: {measures[measure](layers, classes_info)}")
+                    outputs[measure] = measures[measure](layers, classes_info)
+                elif measure == "Precision":
+                    print(f"{measure}: {measures[measure](layers, true_microservices)}")
+                    outputs[measure] = measures[measure](layers, true_microservices)
+                elif measure == "SR":
+                    for k in args.k:
+                        print(f"{measure}@{k}: {measures[measure](layers, true_microservices, k)}")
+                        outputs[f"{measure}@{k}"] = measures[measure](layers, true_microservices, k)
+                else:
+                    print(f"{measure}: {measures[measure](layers)}")
+                    outputs[measure] = measures[measure](layers)
+    else:
+        print("\nLayers:")
+        for epsilon in layers:
+            outputs[epsilon] = {}
+            outputs[epsilon]["microservices"] = [int(i) for i in layers[epsilon]]
+            print("epsilon:", epsilon)
+            print("microservices:")
+            print(layers[epsilon])
+            for microservice in set(layers[epsilon]):
+                print(f"ms #{microservice}:", [class_names[clss] for clss, ms in enumerate(layers[epsilon]) if ms == microservice])
             if args.evaluation_measure:
                 for measure in args.evaluation_measure:
                     if measure in ["SM", "IFN", "ICP"]:
-                        output[measure] = measures[measure](clusters[epsilon], classes_info)
+                        print(
+                            f"{measure}: {measures[measure](layers[epsilon], classes_info)}")
+                        outputs[epsilon][measure] = measures[measure](layers[epsilon], classes_info)
                     elif measure == "Precision":
-                        output[measure] = measures[measure](clusters[epsilon], true_microservices)
+                        print(f"{measure}: {measures[measure](layers[epsilon], true_microservices)}")
+                        outputs[epsilon][measure] = measures[measure](layers[epsilon], true_microservices)
                     elif measure == "SR":
                         for k in args.k:
-                            output[measure+"@"+str(k)] = measures[measure](clusters[epsilon], true_microservices, k)
+                            print(f"{measure}@{k}: {measures[measure](layers[epsilon], true_microservices, k)}")
+                            outputs[epsilon][measure] = measures[measure](layers[epsilon], true_microservices, k)
                     else:
-                        output[measure] = measures[measure](clusters[epsilon])
-            outputs.append(output)
+                        print(f"{measure}: {measures[measure](layers[epsilon])}")
+                        outputs[epsilon][measure] = measures[measure](layers[epsilon])
+            print()
 
-    with open("tmp_"+args.output_file, "w") as output_file:
-        dump(outputs, output_file, indent=2)
-
-    in_ms = False
-    inn_ms = False
-    with (open("tmp_"+args.output_file, "rt") as in_f,
-        open(args.output_file, "wt") as out_f):
-        for line in in_f.readlines():
-            if line.endswith("[\n"):
-                if in_ms:
-                    inn_ms = True
-                elif "microservices" in line:
-                    in_ms = True
-                    out_f.write(line[:-1])
-                    continue
-            elif line.endswith("],\n") or line.endswith("]\n"):
-                if inn_ms:
-                    inn_ms = False
-                else:
-                    in_ms = False
-                    out_f.write(line.lstrip())
-                    continue
-            if in_ms:
-                out_f.write(line.strip())
-            else:
-                out_f.write(line)
-
-    run(["rm", "tmp_"+args.output_file])
+    if args.output_file:
+        with open(args.output_file, "w") as output_file:
+            dump(outputs, output_file, indent=2)
