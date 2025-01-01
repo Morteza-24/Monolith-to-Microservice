@@ -1,5 +1,5 @@
 from Mono2Multi.main import Mono2Multi
-from Mono2Multi.EvaluationMeasures import *
+from EvaluationMeasures import *
 from argparse import ArgumentParser
 from os import makedirs, walk, path, pathsep
 from subprocess import run
@@ -99,10 +99,12 @@ if args.file_path:
 
     class_names = list(classes_info.keys())
     if args.project_directory:
-        true_microservices = [-1 for _ in classes_info]
+        true_microservices = [{-1} for _ in classes_info]
         for i, ms in enumerate(true_ms_classnames):
             for clss in ms:
-                true_microservices[class_names.index(clss)] = i
+                true_microservices[class_names.index(clss)].add(i)
+                if -1 in true_microservices[class_names.index(clss)]:
+                    true_microservices[class_names.index(clss)].discard(-1)
         print("\nTrue Microservices:", true_microservices)
 
     print("\nClasses:")
