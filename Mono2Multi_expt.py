@@ -25,7 +25,7 @@ parser.add_argument("-k", type=int, nargs="*",
 parser.add_argument("--alpha", dest="alpha", type=float, nargs="*", default=[None],
                     help="alpha hyperparameter, determines the semantic similarity affect percentage. Enter two values to run the method on an interval of alpha values.")
 parser.add_argument("--n-clusters", dest="n_clusters", type=int, nargs="*", default=[None],
-                    help="number of clusters hyperparameter, Enter two values to run the method on an interval of n_clusters values")
+                    help="number of clusters hyperparameter, Enter two values to run the method on an interval of n_clusters values. Leave empty to use Scanniello's approach.")
 parser.add_argument("--threshold", dest="threshold", type=float, nargs="*", default=[None],
                     help="degree of membership threshold hyperparameter. Enter two values to run the method on an interval of threshold values.")
 parser.add_argument("--n-execs", dest="n_execs", type=int,
@@ -43,11 +43,6 @@ if not args.output_file:
     print("\nerror: -o, --output-file is required in the experment version")
     exit()
 
-if len(args.alpha)==2 and (len(args.n_clusters)==2 or len(args.threshold)==2):
-    parser.print_help()
-    print("\nerror: you can't use an interval for alpha and (threshold or n_clusters) at the same time yet.")
-    exit()
-
 if args.evaluation_measure:
     if bool(args.k) != ("SR" in args.evaluation_measure):
         parser.print_help()
@@ -62,6 +57,10 @@ if args.evaluation_measure:
 measures = {"Precision": Precision, "SR": SR,
             "SM": SM, "IFN": IFN, "NED": NED, "ICP": ICP}
 base_dir = path.dirname(path.realpath(__file__))
+
+
+def _listify(x):
+    return x if isinstance(x, list) else [x]
 
 
 def merge_java_files(src_dir, dest_file):
@@ -104,111 +103,56 @@ if args.file_path:
     if args.alpha == [None]:
         args.alpha = [float(input("alpha: "))]
     if args.n_execs == None:
-        args.n_execs = 30
-
+        args.n_execs = 1
+    elif args.n_clusters == [None]:
+        n_clusters = "Scanniello"
     outputs = []
     if len(args.alpha) == 2:
-        alphas = [round(_, 3) for _ in np.arange(args.alpha[0], args.alpha[1], 0.1)]
-        for alpha in alphas:
-            clusters, classes_info = Mono2Multi(args.file_path, args.alpha, args.n_clusters[0], args.threshold[0], args.n_execs)
-            class_names = list(classes_info.keys())
-            if args.project_directory:
-                true_microservices = [-1 for _ in classes_info]
-                for i, ms in enumerate(true_ms_classnames):
-                    for clss in ms:
-                        true_microservices[class_names.index(clss)] = i
-
-            output = {"alpha": float(alpha), "microservices": [list(i) for i in clusters]}
-
-            if args.evaluation_measure:
-                for measure in args.evaluation_measure:
-                    if measure in ["SM", "IFN", "ICP"]:
-                        output[measure] = measures[measure](clusters, classes_info)
-                    elif measure == "Precision":
-                        output[measure] = measures[measure](clusters, true_microservices)
-                    elif measure == "SR":
-                        for k in args.k:
-                            output[measure+"@"+str(k)] = measures[measure](clusters, true_microservices, k)
-                    else:
-                        output[measure] = measures[measure](clusters)
-            outputs.append(output)
-
-        with open(args.output_file, "w") as output_file:
-            dump(outputs, output_file, indent=2)
-    elif len(args.n_clusters) == 2 and len(args.threshold) != 2:
-        n_clusters = np.arange(args.n_clusters[0], args.n_clusters[1], 1)
-        clusters, classes_info = Mono2Multi(args.file_path, args.alpha[0], n_clusters, args.threshold[0], args.n_execs)
-        class_names = list(classes_info.keys())
-        if args.project_directory:
-            true_microservices = [-1 for _ in classes_info]
-            for i, ms in enumerate(true_ms_classnames):
-                for clss in ms:
-                    true_microservices[class_names.index(clss)] = i
-        for i in range(len(n_clusters)):
-            output = {"n_clusters": int(n_clusters[i]), "microservices": [list(_) for _ in clusters[i]]}
-            if args.evaluation_measure:
-                for measure in args.evaluation_measure:
-                    if measure in ["SM", "IFN", "ICP"]:
-                        output[measure] = measures[measure](clusters[i], classes_info)
-                    elif measure == "Precision":
-                        output[measure] = measures[measure](clusters[i], true_microservices)
-                    elif measure == "SR":
-                        for k in args.k:
-                            output[measure+"@"+str(k)] = measures[measure](clusters[i], true_microservices, k)
-                    else:
-                        output[measure] = measures[measure](clusters[i])
-            outputs.append(output)
-
-    elif len(args.threshold) == 2 and len(args.n_clusters) != 2:
-        thresholds = [round(_, 3) for _ in np.arange(args.threshold[0], args.threshold[1], 0.05)]
-        clusters, classes_info = Mono2Multi(args.file_path, args.alpha[0], args.n_clusters[0], thresholds, args.n_execs)
-        class_names = list(classes_info.keys())
-        if args.project_directory:
-            true_microservices = [-1 for _ in classes_info]
-            for i, ms in enumerate(true_ms_classnames):
-                for clss in ms:
-                    true_microservices[class_names.index(clss)] = i
-        for i in range(len(thresholds)):
-            output = {"threshold": float(thresholds[i]), "microservices": [list(_) for _ in clusters[i]]}
-            if args.evaluation_measure:
-                for measure in args.evaluation_measure:
-                    if measure in ["SM", "IFN", "ICP"]:
-                        output[measure] = measures[measure](clusters[i], classes_info)
-                    elif measure == "Precision":
-                        output[measure] = measures[measure](clusters[i], true_microservices)
-                    elif measure == "SR":
-                        for k in args.k:
-                            output[measure+"@"+str(k)] = measures[measure](clusters[i], true_microservices, k)
-                    else:
-                        output[measure] = measures[measure](clusters[i])
-            outputs.append(output)
-
+        alphas = [round(_, 3) for _ in np.arange(args.alpha[0], args.alpha[1], 0.05)]
     else:
-        n_clusters = np.arange(args.n_clusters[0], args.n_clusters[1], 1)
+        alphas = args.alpha
+    if len(args.n_clusters) == 2:
+        n_clusters = list(np.arange(args.n_clusters[0], args.n_clusters[1], 1))
+    else:
+        n_clusters = args.n_clusters[0]
+    if len(args.threshold) == 2:
         thresholds = [round(_, 3) for _ in np.arange(args.threshold[0], args.threshold[1], 0.05)]
-        clusters, classes_info = Mono2Multi(args.file_path, args.alpha[0], n_clusters, thresholds, args.n_execs)
+    else:
+        thresholds = args.threshold[0]
+    for alpha in alphas:
+        clusters, classes_info = Mono2Multi(args.file_path, alpha, n_clusters, thresholds, args.n_execs)
         class_names = list(classes_info.keys())
         if args.project_directory:
             true_microservices = [-1 for _ in classes_info]
             for i, ms in enumerate(true_ms_classnames):
                 for clss in ms:
                     true_microservices[class_names.index(clss)] = i
-        for i in range(len(n_clusters)):
-            for j in range(len(thresholds)):
-                output = {"n_clusters": int(n_clusters[i]),
-                          "threshold": float(thresholds[j]),
-                          "microservices": [list(_) for _ in clusters[i][j]]}
+
+        for i in range(len(_listify(n_clusters))):
+            for j in range(len(_listify(thresholds))):
+                if isinstance(n_clusters, int) and isinstance(thresholds, int):
+                    this_clusters = clusters
+                elif isinstance(n_clusters, int):
+                    this_clusters = clusters[j]
+                elif isinstance(thresholds, int):
+                    this_clusters = clusters[i]
+                else:
+                    this_clusters = clusters[i][j]
+                output = {"alpha": float(alpha),
+                          "n_clusters": int(_listify(n_clusters)[i]),
+                          "threshold": float(_listify(thresholds)[j]),
+                          "microservices": [list(_) for _ in this_clusters]}
                 if args.evaluation_measure:
                     for measure in args.evaluation_measure:
                         if measure in ["SM", "IFN", "ICP"]:
-                            output[measure] = measures[measure](clusters[i][j], classes_info)
+                            output[measure] = measures[measure](this_clusters, classes_info)
                         elif measure == "Precision":
-                            output[measure] = measures[measure](clusters[i][j], true_microservices)
+                            output[measure] = measures[measure](this_clusters, true_microservices)
                         elif measure == "SR":
                             for k in args.k:
-                                output[measure+"@"+str(k)] = measures[measure](clusters[i][j], true_microservices, k)
+                                output[measure+"@"+str(k)] = measures[measure](this_clusters, true_microservices, k)
                         else:
-                            output[measure] = measures[measure](clusters[i][j])
+                            output[measure] = measures[measure](this_clusters)
                 outputs.append(output)
 
     with open(args.output_file, "w") as output_file:
