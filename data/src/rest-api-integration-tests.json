@@ -1,6 +1,0 @@
-{"classes": [
-    "RestAPITestConfiguration",
-    "StompApiTest",
-    "RestApiTest",
-    "AuthControllerTest"
-]}

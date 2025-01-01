@@ -1,7 +1,0 @@
-{"classes": [
-    "TaskRepository",
-    "TaskQuerySideConfiguration",
-    "TaskQueryController",
-    "TaskUpdateService",
-    "TaskQueryWorkflow"
-]}

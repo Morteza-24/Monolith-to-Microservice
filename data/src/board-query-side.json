@@ -1,7 +1,0 @@
-{"classes": [
-    "BoardQuerySideConfiguration",
-    "BoardQueryWorkflow",
-    "BoardQueryController",
-    "BoardUpdateService",
-    "BoardRepository"
-]}

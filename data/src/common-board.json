@@ -1,9 +1,0 @@
-{"classes": [
-    "BoardEvent",
-    "BoardCreatedEvent",
-    "BoardsQueryResponse",
-    "Board",
-    "BoardResponse",
-    "BoardQueryResponse",
-    "BoardInfo"
-]}

@@ -1,8 +1,0 @@
-{"classes": [
-    "TokenAuthenticationService",
-    "StatelessAuthenticationFilter",
-    "User",
-    "UserAuthentication",
-    "AuthConfiguration",
-    "AuthProperties"
-]}
