@@ -1,5 +1,6 @@
 numpy
 matplotlib
+PyQt5
 scikit-learn
 scikit-fuzzy
 nltk

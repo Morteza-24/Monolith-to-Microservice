@@ -41,7 +41,7 @@ def semantic_similarity(classes_info):
     from Mono2Multi.unixcoder import UniXcoder
 
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-    print(f"[SemanticSimilarity] using device {device}")
+    print(f"[SemanticSimilarity] using device {device}", flush=True)
     model = UniXcoder("microsoft/unixcoder-base")
     model.to(device)
 

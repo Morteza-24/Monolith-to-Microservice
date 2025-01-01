@@ -104,7 +104,7 @@ if args.file_path:
 
     outputs = []
     alphas = [round(_, 3) for _ in np.arange(args.alpha[0], args.alpha[1]+0.01, 0.05)]
-    epsilons = [round(_, 3) for _ in np.arange(args.epsilon[0], args.epsilon[1]+0.01, 0.02)]
+    epsilons = [round(_, 3) for _ in np.arange(args.epsilon[0], args.epsilon[1]+0.01, 0.05)]
     ms_dict = hierarchical_DBSCAN(args.file_path, alphas, args.min_samples, epsilons)
     for alpha in ms_dict:
         clusters, classes_info = ms_dict[alpha]

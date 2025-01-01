@@ -53,7 +53,7 @@ def Mo2oM(source_code_path, n_clusters, threshold=None):
             return overlapping_community_detection(structural_similarity_matrix, semantic_similarity_matrix, n_clusters, threshold), classes_info
     elif isinstance(n_clusters, str) and n_clusters == "Scanniello":
         len_classes = len(classes_info)
-        n_clusters = np.arange(2, (len_classes//2)+2, 1)
+        n_clusters = np.arange(2, (len_classes//2)+2, 2)
         print(f"[Mo2oM] clustering with sizes from 2 to {(len_classes//2)+2}", flush=True)
     clusterings = []
     for i in range(len(n_clusters)):
