@@ -53,7 +53,7 @@ def density(Z_pred, adj):
 
     Higher is better.
 
-        (\sum_i density(C_i) * |C_i|) / (\sum_j |C_j|)
+        (sum_i density(C_i) * |C_i|) / (sum_j |C_j|)
 
     Args:
         Z_pred: Binary community affiliation matrix
@@ -77,7 +77,7 @@ def conductance(Z_pred, adj):
 
     Conductance of each community is weighted by its size.
 
-        (\sum_i conductance(C_i) * |C_i|) / (\sum_j |C_j|)
+        (sum_i conductance(C_i) * |C_i|) / (sum_j |C_j|)
 
     Args:
         Z_pred: Binary community affiliation matrix

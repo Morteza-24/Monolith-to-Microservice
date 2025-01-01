@@ -9,6 +9,7 @@ def overlapping_community_detection(A, X, K, threshold):
     # set torch device: cuda vs cpu
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     torch.set_default_device(device)
+    print(f"[NOCD] using device {device}")
 
     x_norm = sp.hstack([X, A])
     x_norm = nocd.utils.to_sparse_tensor(x_norm).to(device)
