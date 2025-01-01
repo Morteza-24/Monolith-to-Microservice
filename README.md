@@ -100,3 +100,14 @@ python hierarchical_DBSCAN.py -p ./Test_Projects/JPetStore/src/ -e ICP NED SR -k
 ```
 python hierarchical_DBSCAN.py -f ./Test_Projects/JPetStore/OneFileSource.java -e IFN NED SM --alpha 0.5 --min-samples 2 --max-epsilon 0.75 -1
 ```
+
+
+## Acknowledgements
+
+We would like to express our gratitude to the creators of the following repositories:
+
+- [NOCD](https://github.com/shchur/overlapping-community-detection)
+- [UniXcoder](https://github.com/microsoft/CodeBERT/tree/master/UniXcoder)
+- [Mono2Micro-FSE-2021](https://github.com/kaliaanup/Mono2Micro-FSE-2021)
+
+Their efforts and contributions to open-source development have been invaluable to this project.
