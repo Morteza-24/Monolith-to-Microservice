@@ -105,18 +105,18 @@ if args.file_path:
     if args.n_execs == None:
         args.n_execs = 1
     elif args.n_clusters == [None]:
-        n_clusters = "Scanniello"
+        n_clusters = ["Scanniello"]
     outputs = []
     if len(args.alpha) == 2:
-        alphas = [round(_, 3) for _ in np.arange(args.alpha[0], args.alpha[1], 0.05)]
+        alphas = [round(_, 3) for _ in np.arange(args.alpha[0], args.alpha[1]+0.01, 0.05)]
     else:
         alphas = args.alpha
     if len(args.n_clusters) == 2:
-        n_clusters = list(np.arange(args.n_clusters[0], args.n_clusters[1], 1))
+        n_clusters = list(np.arange(args.n_clusters[0], args.n_clusters[1]+1, 1))
     else:
         n_clusters = args.n_clusters[0]
     if len(args.threshold) == 2:
-        thresholds = [round(_, 3) for _ in np.arange(args.threshold[0], args.threshold[1], 0.05)]
+        thresholds = [round(_, 3) for _ in np.arange(args.threshold[0], args.threshold[1]+0.01, 0.05)]
     else:
         thresholds = args.threshold[0]
     for alpha in alphas:
@@ -127,6 +127,8 @@ if args.file_path:
             for i, ms in enumerate(true_ms_classnames):
                 for clss in ms:
                     true_microservices[class_names.index(clss)] = i
+        if n_clusters == "Scanniello":
+            n_clusters = list(np.arange(2, (len(classes_info)//2)+2, 2))
 
         for i in range(len(_listify(n_clusters))):
             for j in range(len(_listify(thresholds))):
