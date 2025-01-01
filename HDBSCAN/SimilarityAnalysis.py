@@ -8,7 +8,7 @@ def class_similarity(alpha, classes_info) -> class_similarity_matrix
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 from numpy import zeros
-from A_Hierarchical_DBSCAN_Method.Preprocess import preprocess
+from HDBSCAN.Preprocess import preprocess
 
 
 def calls(ci, cj, classes_info):

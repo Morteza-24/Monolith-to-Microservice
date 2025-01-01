@@ -1,7 +1,7 @@
 __pycache__/
 *.pyc
 .idea/
-A_Hierarchical_DBSCAN_Method/JavaParser/classes.json
+HDBSCAN/JavaParser/classes.json
 vnv/
 *.npy
 *.pkl

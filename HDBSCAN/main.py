@@ -2,8 +2,8 @@ from nltk import download
 from os import path, pathsep
 from subprocess import run
 from json import load
-from A_Hierarchical_DBSCAN_Method.SimilarityAnalysis import class_similarity
-from A_Hierarchical_DBSCAN_Method.DBSCAN import dbscan
+from HDBSCAN.SimilarityAnalysis import class_similarity
+from HDBSCAN.DBSCAN import dbscan
 
 
 def hierarchical_DBSCAN(source_code_path, alpha, minimum_number_of_sample, max_epsilon, one_shot=False):

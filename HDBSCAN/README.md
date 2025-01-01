@@ -20,7 +20,7 @@ python -m pip install -r requirements.txt
 ```
 # example.py
 
-from A_Hierarchical_DBSCAN_Method.main import hierarchical_DBSCAN
+from HDBSCAN.main import hierarchical_DBSCAN
 
 source_file_path = "path/to/source.java"
 alpha = 0.5

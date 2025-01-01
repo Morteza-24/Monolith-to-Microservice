@@ -1,4 +1,4 @@
-from A_Hierarchical_DBSCAN_Method.main import hierarchical_DBSCAN
+from HDBSCAN.main import hierarchical_DBSCAN
 from EvaluationMeasures import *
 from argparse import ArgumentParser
 from os import makedirs, walk, path, pathsep
@@ -74,13 +74,13 @@ if args.project_directory:
     project_dir_name = args.project_directory.split('/')[-1]
     true_ms_dirs = next(walk(args.project_directory))[1]
     true_ms_classnames = []
-    libs = path.join(base_dir, "A_Hierarchical_DBSCAN_Method/JavaParser/lib/javaparser-core-3.25.5-SNAPSHOT.jar")+pathsep+path.join(base_dir, "A_Hierarchical_DBSCAN_Method/JavaParser/lib/json-20230618.jar")
+    libs = path.join(base_dir, "HDBSCAN/JavaParser/lib/javaparser-core-3.25.5-SNAPSHOT.jar")+pathsep+path.join(base_dir, "HDBSCAN/JavaParser/lib/json-20230618.jar")
     makedirs(path.join(base_dir, f"data/{project_dir_name}"), exist_ok=True)
     for directory in true_ms_dirs:
         if directory.endswith("/"):
             directory = directory[:-1]
         json_path = path.join(base_dir, f"data/{project_dir_name}/{directory}.json")
-        run(['java', '-cp', libs, path.join(base_dir, 'A_Hierarchical_DBSCAN_Method/JavaParser/ClassScanner.java'), path.join(args.project_directory, directory), json_path])
+        run(['java', '-cp', libs, path.join(base_dir, 'HDBSCAN/JavaParser/ClassScanner.java'), path.join(args.project_directory, directory), json_path])
         with open(json_path, "rt") as classes_file:
             true_ms_classnames.append(load(classes_file)["classes"])
 
@@ -89,7 +89,7 @@ if args.project_directory:
     print("done!")
 
 if args.file_path:
-    print("\n--- A Hierarchical DBSCAN Method ---\n")
+    print("\n--- HDBSCAN ---\n")
     if not args.alpha:
         args.alpha = float(input("alpha: "))
     if not args.min_samples:
