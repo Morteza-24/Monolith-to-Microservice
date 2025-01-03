@@ -74,13 +74,13 @@ def SM(microservices, classes_info):
             class_j = call["class_name"]
             if class_j in classes_info:
                 j = list(classes_info).index(class_j)
+                if class_index == j:
+                    continue
+                if -1 in microservices[j]:
+                    continue
                 for ms in set(class_microservices) - set(microservices[j]):
-                    if ms == -1:
-                        continue
                     sigma[ms][choice(list(microservices[j]))] += 1
                 for ms in set(class_microservices).union(set(microservices[j])):
-                    if ms == -1:
-                        continue
                     mu[ms] += 1
 
     SM1, SM2 = 0, 0
