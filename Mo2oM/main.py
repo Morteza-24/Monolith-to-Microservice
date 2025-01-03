@@ -43,7 +43,7 @@ def Mo2oM(source_code_path, n_clusters, threshold=None):
     # --- 2. upload structural.npz and semantic.npz to google colab and run the notebook.
     # --- 3. download the membership.npy file from google colab.
     # --- 4. recomment the above lines and uncomment the following lines.
-    # layers = np.load(f"Test_Projects/JPetStore/layers-{alpha}-{n_clusters[0]}-1_6.npy", allow_pickle=True)
+    # layers = np.load(f"TestProjects/JPetStore/layers-{alpha}-{n_clusters[0]}-1_6.npy", allow_pickle=True)
     # return layers, classes_info
     # --- 5. run the script again.
 

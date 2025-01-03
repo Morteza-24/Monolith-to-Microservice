@@ -89,7 +89,7 @@ def class_similarity(alpha, classes_info):
     semantic_similarity_matrix = semantic_similarity(classes_info)
     # --- 4. uncomment the following lines:
     # from numpy import load
-    # semantic_similarity_matrix = load("Test_Projects/JPetStore/ssm.npy")
+    # semantic_similarity_matrix = load("TestProjects/JPetStore/ssm.npy")
 
     # --- DEBUG SECTION
 

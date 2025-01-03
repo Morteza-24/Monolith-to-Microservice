@@ -2,11 +2,11 @@
 
 - [x] implement `A Hierarchical DBSCAN Method for Extracting Microservices from Monolithic Applications`
 
-- [x] implement evaluation measures to test the the _Hierarchical DBSCAN Method_ on some _Test_Projects_
+- [x] implement evaluation measures to test the the _Hierarchical DBSCAN Method_ on some _TestProjects_
 
 - [x] implement `Mono2Multi` Method; using CodeBERT and fuzzy c-means clustering
 
-- [x] implement evaluation measures to test the the _Mono2Multi Method_ on some _Test_Projects_
+- [x] implement evaluation measures to test the the _Mono2Multi Method_ on some _TestProjects_
 
 - [x] compare Hierarchical DBSCAN and Mono2Multi
 
@@ -40,11 +40,11 @@ python Mono2Multi.py --help
 ```
 
 ```
-python Mono2Multi.py -p ./Test_Projects/JPetStore/src/ -e ICP NED SR -k 7 -o output.json
+python Mono2Multi.py -p ./TestProjects/JPetStore/src/ -e ICP NED SR -k 7 -o output.json
 ```
 
 ```
-python Mono2Multi.py -f ./Test_Projects/JPetStore/OneFileSource.java -e IFN NED SM --alpha 0.5 --n-clusters 3 --threshold 0.4
+python Mono2Multi.py -f ./TestProjects/JPetStore/OneFileSource.java -e IFN NED SM --alpha 0.5 --n-clusters 3 --threshold 0.4
 ```
 
 
@@ -54,7 +54,7 @@ This script facilitates experiments with the Mono2Multi method. You can utilize 
 For example, you can gradually increase the threshold from 0.1 to 0.7 and save the output of each run in the `output.json` file:
 
 ```
-python Mono2Multi_expt.py -f Test_Projects/JPetStore/OneFileSource.java --alpha 1 --n-clusters 3 --threshold 0.1 0.7 -e ICP NED -o output.json
+python Mono2Multi_expt.py -f TestProjects/JPetStore/OneFileSource.java --alpha 1 --n-clusters 3 --threshold 0.1 0.7 -e ICP NED -o output.json
 ```
 
 
@@ -67,11 +67,11 @@ python Mo2oM.py --help
 ```
 
 ```
-python Mo2oM.py -p ./Test_Projects/JPetStore/src/ -e ICP NED SR -k 7 -o output.json
+python Mo2oM.py -p ./TestProjects/JPetStore/src/ -e ICP NED SR -k 7 -o output.json
 ```
 
 ```
-python Mo2oM.py -f ./Test_Projects/JPetStore/OneFileSource.java -e IFN NED SM --alpha 0.5 --n-clusters 3 --threshold 0.4
+python Mo2oM.py -f ./TestProjects/JPetStore/OneFileSource.java -e IFN NED SM --alpha 0.5 --n-clusters 3 --threshold 0.4
 ```
 
 
@@ -81,7 +81,7 @@ This script facilitates experiments with the Mo2oM method. You can utilize it to
 For example, you can gradually increase the threshold from 0.1 to 0.7 and save the output of each run in the `output.json` file:
 
 ```
-python Mo2oM_expt.py -f Test_Projects/JPetStore/OneFileSource.java --alpha 1 --n-clusters 3 --threshold 0.1 0.7 -e ICP NED -o output.json
+python Mo2oM_expt.py -f TestProjects/JPetStore/OneFileSource.java --alpha 1 --n-clusters 3 --threshold 0.1 0.7 -e ICP NED -o output.json
 ```
 
 
@@ -94,11 +94,11 @@ python HDBSCAN.py --help
 ```
 
 ```
-python HDBSCAN.py -p ./Test_Projects/JPetStore/src/ -e ICP NED SR -k 7 -o output.json
+python HDBSCAN.py -p ./TestProjects/JPetStore/src/ -e ICP NED SR -k 7 -o output.json
 ```
 
 ```
-python HDBSCAN.py -f ./Test_Projects/JPetStore/OneFileSource.java -e IFN NED SM --alpha 0.5 --min-samples 2 --max-epsilon 0.75 -1
+python HDBSCAN.py -f ./TestProjects/JPetStore/OneFileSource.java -e IFN NED SM --alpha 0.5 --min-samples 2 --max-epsilon 0.75 -1
 ```
 
 
@@ -108,7 +108,7 @@ This script facilitates experiments with the HDBSCAN method. You can utilize it 
 For example, you can gradually increase alpha from 0.45 to 0.55 and epsilon from 0.5 to 0.7 and save the output of each run in the `output.json` file:
 
 ```
-python HDBSCAN_expt.py -f Test_Projects/JPetStore/OneFileSource.java --alpha 0.45 0.55 --epsilon 0.5 0.7 -e ICP NED -o output.json
+python HDBSCAN_expt.py -f TestProjects/JPetStore/OneFileSource.java --alpha 0.45 0.55 --epsilon 0.5 0.7 -e ICP NED -o output.json
 ```
 
 

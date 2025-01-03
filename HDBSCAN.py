@@ -8,7 +8,7 @@ from json import load, dump
 parser = ArgumentParser(
     prog='python HDBSCAN.py',
     description='This program offers tools related to migrating from monolithic architectures to microservices.',
-    epilog='example usage: python HDBSCAN.py -p ./Test_Projects/PetClinic/src -e NED ICP SR -k 5 7')
+    epilog='example usage: python HDBSCAN.py -p ./TestProjects/PetClinic/src -e NED ICP SR -k 5 7')
 
 parser.add_argument("-f", "--file", dest="file_path",
                     help="path to the java source code file (use this option if your whole monolithic program is in one file)")
