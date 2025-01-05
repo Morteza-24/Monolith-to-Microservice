@@ -80,7 +80,7 @@ def SM(microservices, classes_info):
                     continue
                 for ms in set(class_microservices) - set(microservices[j]):
                     sigma[ms][choice(list(microservices[j]))] += 1
-                for ms in set(class_microservices).union(set(microservices[j])):
+                for ms in set(class_microservices).intersection(set(microservices[j])):
                     mu[ms] += 1
 
     SM1, SM2 = 0, 0
