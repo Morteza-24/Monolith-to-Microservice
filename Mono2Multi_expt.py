@@ -167,9 +167,17 @@ if args.file_path:
 
     if args.use_multiprocessing:
         print("Using multiprocessing. Don't get confused by unordered logs.")
-        from multiprocessing import Pool
+        import multiprocessing 
+        class NoDaemonProcess(multiprocessing.Process):
+            def _get_daemon(self):
+                return False
+            def _set_daemon(self, value):
+                pass
+            daemon = property(_get_daemon, _set_daemon)
+        class MyPool(multiprocessing.pool.Pool):
+            Process = NoDaemonProcess
         inputs = [[alpha, args.file_path, n_clusters, thresholds, args.n_execs, args.project_directory] for alpha in alphas]
-        with Pool() as pool:
+        with MyPool() as pool:
             output_lists = pool.starmap(run_with_alpha, inputs)
     else:
         for alpha in alphas:
