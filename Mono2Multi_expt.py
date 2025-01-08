@@ -120,6 +120,7 @@ def run_with_alpha(alpha, file_path, n_clusters, thresholds, n_execs, project_di
                     else:
                         output[measure] = measures[measure](this_clusters)
             outputs.append(output)
+    return outputs
 
 
 if args.project_directory:
