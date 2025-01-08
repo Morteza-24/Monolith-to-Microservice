@@ -79,7 +79,8 @@ def merge_java_files(src_dir, dest_file):
                     outfile.write('\n')
 
 
-def run_with_alpha(alpha, file_path, n_clusters, thresholds, n_execs, project_directory):
+def run_with_alpha(all_args):
+    alpha, file_path, n_clusters, thresholds, n_execs, project_directory = [*all_args]
     print(f"alpha = {alpha}", flush=True)
     outputs = []
     clusters, classes_info = Mono2Multi(file_path, alpha, n_clusters, thresholds, n_execs)
@@ -168,7 +169,7 @@ if args.file_path:
     if args.use_multiprocessing:
         print("Using multiprocessing. Don't get confused by unordered logs.")
         from concurrent.futures import ProcessPoolExecutor as Pool
-        inputs = [[alpha, args.file_path, n_clusters, thresholds, args.n_execs, args.project_directory] for alpha in alphas]
+        inputs = [(alpha, args.file_path, n_clusters, thresholds, args.n_execs, args.project_directory) for alpha in alphas]
         with Pool() as pool:
             output_lists = pool.starmap(run_with_alpha, inputs)
     else:
