@@ -28,6 +28,8 @@ parser.add_argument("--n-clusters", dest="n_clusters", type=int, nargs="*", defa
                     help="number of clusters hyperparameter, Enter two values to run the method on an interval of n_clusters values. Leave empty to use Scanniello's approach.")
 parser.add_argument("--threshold", dest="threshold", type=float, nargs="*", default=[None],
                     help="degree of membership threshold hyperparameter. Enter two values to run the method on an interval of threshold values.")
+parser.add_argument("--multiprocessing", dest="use_multiprocessing", action="store_true",
+                    help="use multiprocessing to reduce runtime when running the model with different values of alpha.")
 parser.add_argument("--n-execs", dest="n_execs", type=int,
                     help="(deprecated) the number of times FCM is run to get an average")
 
@@ -77,6 +79,49 @@ def merge_java_files(src_dir, dest_file):
                     outfile.write('\n')
 
 
+def run_with_alpha(alpha, file_path, n_clusters, thresholds, n_execs, project_directory):
+    print(f"alpha = {alpha}", flush=True)
+    outputs = []
+    clusters, classes_info = Mono2Multi(file_path, alpha, n_clusters, thresholds, n_execs)
+    class_names = list(classes_info.keys())
+    if project_directory:
+        true_microservices = [{-1} for _ in classes_info]
+        for i, ms in enumerate(true_ms_classnames):
+            for clss in ms:
+                true_microservices[class_names.index(clss)].add(i)
+                if -1 in true_microservices[class_names.index(clss)]:
+                    true_microservices[class_names.index(clss)].discard(-1)
+    if n_clusters == "Scanniello":
+        n_clusters = list(np.arange(2, (len(classes_info)//2)+2, 2))
+
+    for i in range(len(_listify(n_clusters))):
+        for j in range(len(_listify(thresholds))):
+            if isinstance(n_clusters, int) and isinstance(thresholds, int):
+                this_clusters = clusters
+            elif isinstance(n_clusters, int):
+                this_clusters = clusters[j]
+            elif isinstance(thresholds, int):
+                this_clusters = clusters[i]
+            else:
+                this_clusters = clusters[i][j]
+            output = {"alpha": float(alpha),
+                        "n_clusters": int(_listify(n_clusters)[i]),
+                        "threshold": float(_listify(thresholds)[j]),
+                        "microservices": [list(_) for _ in this_clusters]}
+            if args.evaluation_measure:
+                for measure in args.evaluation_measure:
+                    if measure in ["SM", "IFN", "ICP"]:
+                        output[measure] = measures[measure](this_clusters, classes_info)
+                    elif measure == "Precision":
+                        output[measure] = measures[measure](this_clusters, true_microservices)
+                    elif measure == "SR":
+                        for k in args.k:
+                            output[measure+"@"+str(k)] = measures[measure](this_clusters, true_microservices, k)
+                    else:
+                        output[measure] = measures[measure](this_clusters)
+            outputs.append(output)
+
+
 if args.project_directory:
     print("merging source files...", end="\t", flush=True)
     if args.project_directory.endswith("/"):
@@ -106,7 +151,6 @@ if args.file_path:
         args.n_execs = 1
     if args.n_clusters == [None]:
         args.n_clusters = ["Scanniello"]
-    outputs = []
     if len(args.alpha) == 2:
         alphas = [round(_, 3) for _ in np.arange(args.alpha[0], args.alpha[1]+0.01, 0.05)]
     else:
@@ -119,47 +163,20 @@ if args.file_path:
         thresholds = [round(_, 3) for _ in np.arange(args.threshold[0], args.threshold[1]+0.01, 0.05)]
     else:
         thresholds = args.threshold[0]
-    for alpha in alphas:
-        print(f"alpha = {alpha}")
-        clusters, classes_info = Mono2Multi(args.file_path, alpha, n_clusters, thresholds, args.n_execs)
-        class_names = list(classes_info.keys())
-        if args.project_directory:
-            true_microservices = [{-1} for _ in classes_info]
-            for i, ms in enumerate(true_ms_classnames):
-                for clss in ms:
-                    true_microservices[class_names.index(clss)].add(i)
-                    if -1 in true_microservices[class_names.index(clss)]:
-                        true_microservices[class_names.index(clss)].discard(-1)
-        if n_clusters == "Scanniello":
-            n_clusters = list(np.arange(2, (len(classes_info)//2)+2, 2))
 
-        for i in range(len(_listify(n_clusters))):
-            for j in range(len(_listify(thresholds))):
-                if isinstance(n_clusters, int) and isinstance(thresholds, int):
-                    this_clusters = clusters
-                elif isinstance(n_clusters, int):
-                    this_clusters = clusters[j]
-                elif isinstance(thresholds, int):
-                    this_clusters = clusters[i]
-                else:
-                    this_clusters = clusters[i][j]
-                output = {"alpha": float(alpha),
-                          "n_clusters": int(_listify(n_clusters)[i]),
-                          "threshold": float(_listify(thresholds)[j]),
-                          "microservices": [list(_) for _ in this_clusters]}
-                if args.evaluation_measure:
-                    for measure in args.evaluation_measure:
-                        if measure in ["SM", "IFN", "ICP"]:
-                            output[measure] = measures[measure](this_clusters, classes_info)
-                        elif measure == "Precision":
-                            output[measure] = measures[measure](this_clusters, true_microservices)
-                        elif measure == "SR":
-                            for k in args.k:
-                                output[measure+"@"+str(k)] = measures[measure](this_clusters, true_microservices, k)
-                        else:
-                            output[measure] = measures[measure](this_clusters)
-                outputs.append(output)
-
+    if args.use_multiprocessing:
+        print("Using multiprocessing. Don't get confused by unordered logs.")
+        from multiprocessing import Pool
+        inputs = [[alpha, args.file_path, n_clusters, thresholds, args.n_execs, args.project_directory] for alpha in alphas]
+        with Pool() as pool:
+            output_lists = pool.starmap(run_with_alpha, inputs)
+    else:
+        for alpha in alphas:
+            output_lists = run_with_alpha(alpha, args.file_path, n_clusters, thresholds, args.n_execs, args.project_directory)
+    outputs = []
+    for l in output_lists:
+        for output in l:
+            outputs.append(output)
     with open("tmp_"+args.output_file, "w") as output_file:
         dump(outputs, output_file, indent=2)
 
