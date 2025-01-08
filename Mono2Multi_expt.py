@@ -171,7 +171,7 @@ if args.file_path:
         from concurrent.futures import ProcessPoolExecutor as Pool
         inputs = [(alpha, args.file_path, n_clusters, thresholds, args.n_execs, args.project_directory) for alpha in alphas]
         with Pool() as pool:
-            output_lists = pool.star(run_with_alpha, inputs)
+            output_lists = pool.map(run_with_alpha, inputs)
     else:
         for alpha in alphas:
             output_lists = run_with_alpha(alpha, args.file_path, n_clusters, thresholds, args.n_execs, args.project_directory)
