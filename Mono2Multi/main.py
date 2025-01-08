@@ -11,7 +11,7 @@ def Mono2Multi(source_code_path, alpha, n_clusters=None, threshold=None, n_fcm_e
     print("\n[Mono2Multi] parsing the code...", end=" ", flush=True)
     base_dir = path.dirname(path.realpath(__file__))
     libs = path.join(base_dir, "JavaParser/lib/javaparser-core-3.25.5-SNAPSHOT.jar")+pathsep+path.join(base_dir, "JavaParser/lib/json-20230618.jar")
-    json_path = path.join(base_dir, "JavaParser/classes.json")
+    json_path = path.join(base_dir, f"JavaParser/classes_{alpha}.json")
     run(['java', '-cp', libs, path.join(base_dir, 'JavaParser/Parser.java'), source_code_path, json_path]) 
     with open(json_path, "rt") as classes_file:
         classes_info = load(classes_file)
