@@ -173,8 +173,9 @@ if args.file_path:
         with Pool() as pool:
             output_lists = pool.map(run_with_alpha, inputs)
     else:
+        output_lists = []
         for alpha in alphas:
-            output_lists = run_with_alpha(alpha, args.file_path, n_clusters, thresholds, args.n_execs, args.project_directory)
+            output_lists.append(run_with_alpha(alpha, args.file_path, n_clusters, thresholds, args.n_execs, args.project_directory))
     outputs = []
     for l in output_lists:
         for output in l:

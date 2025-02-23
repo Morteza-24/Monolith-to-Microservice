@@ -1,6 +1,6 @@
 from Mo2oM import nocd
 import scipy.sparse as sp
-from numpy import inf
+import numpy as np
 import torch
 import torch.nn.functional as F
 
@@ -31,7 +31,7 @@ def overlapping_community_detection(A, X, K, threshold):
     decoder = nocd.nn.BerpoDecoder(A.shape[0], A.nnz, balance_loss=balance_loss)
     opt = torch.optim.Adam(gnn.parameters(), lr=lr)
 
-    val_loss = inf
+    val_loss = np.inf
     validation_fn = lambda: val_loss
     early_stopping = nocd.train.NoImprovementStopping(validation_fn, patience=10)
     model_saver = nocd.train.ModelSaver(gnn)
@@ -78,13 +78,13 @@ def overlapping_community_detection(A, X, K, threshold):
     elif not isinstance(threshold, (int, float)):
         layers = []
         for threshold_i in threshold:
+            classes_microservices = np.full(memberships.shape, -1)
             print(f"[Mo2oM] threshold = {threshold_i}")
             for col in range(memberships.shape[1]):
-                memberships[:,col][memberships[:,col]<threshold_i] = -1
-                memberships[:,col][memberships[:,col]>=threshold_i] = col
-            memberships = memberships.astype(int)
+                classes_microservices[:,col][memberships[:,col]>=threshold_i] = col
+            classes_microservices = classes_microservices.astype(int)
             clusters = []
-            for row in memberships:
+            for row in classes_microservices:
                 row = set(row)
                 if len(row) > 1:
                     row.discard(-1)
