@@ -16,7 +16,7 @@
 
 # How to Use
 
-First of all, make sure you have Java installed and the `java` command is available:
+First, make sure you have Java installed and the `java` command is available:
 
 ```
 java -version
