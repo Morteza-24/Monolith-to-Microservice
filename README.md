@@ -6,15 +6,13 @@
 
 - [x] implement `Mono2Multi` Method; using CodeBERT and fuzzy c-means clustering
 
-- [x] implement evaluation measures to test the the _Mono2Multi Method_ on some _TestProjects_
-
 - [x] compare Hierarchical DBSCAN and Mono2Multi
 
 - [x] optimize & improve the _Mono2Multi Method_
 
 - [x] implement `Mo2oM` Method; using CodeBERT and Neural Overlapping Community Detection
 
-- [ ] conduct extensive experiments
+- [x] conduct extensive experiments
 
 # How to Use
 
