@@ -135,10 +135,11 @@ def NED(microservices):
     microservices = [ims for ms in microservices for ims in ms if ims != -1]
     non_extreme = 0
     for i in set(microservices):
-        if 5 < microservices.count(i) < 20:
-            non_extreme += 1
+        class_count = microservices.count(i)
+        if 5 <= class_count <= 20:
+            non_extreme += class_count
     try:
-        return 1 - non_extreme/(max(microservices)+1)
+        return 1 - non_extreme/len(microservices)
     except:
         return 1
 
@@ -158,6 +159,7 @@ def _icp_num(classes_i, classes_j, classes_info):
             except ValueError:
                 pass  # log domain error is okay to pass
     return sum_calls
+
 
 def _icp_denom(classes_i, classes_j, classes_info):
     sum_calls = 0
