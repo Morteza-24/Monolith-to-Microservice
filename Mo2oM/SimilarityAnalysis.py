@@ -1,4 +1,4 @@
-from numpy import zeros
+import numpy as np
 import scipy.sparse as sp
 
 
@@ -16,7 +16,7 @@ def _calls_in(ci, classes_info):
 
 def structural_similarity(classes_info):
     len_classes_info = len(classes_info)
-    structural_similarity_matrix = zeros((len_classes_info, len_classes_info))
+    structural_similarity_matrix = np.zeros((len_classes_info, len_classes_info))
     for i in range(len_classes_info):
         ci = list(classes_info.keys())[i]
         for j in range(i+1,len_classes_info):
@@ -39,6 +39,13 @@ def structural_similarity(classes_info):
 def semantic_similarity(classes_info):
     import torch
     from Mono2Multi.unixcoder import UniXcoder
+
+    torch.manual_seed(42)
+    torch.cuda.manual_seed(42)
+    torch.cuda.manual_seed_all(42)
+    torch.backends.cudnn.deterministic = True
+    torch.use_deterministic_algorithms(True)
+    np.random.seed(42)
 
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     print(f"[SemanticSimilarity] using device {device}", flush=True)

@@ -1,5 +1,8 @@
 from math import log
-from random import choice
+import random
+
+
+random.seed(42)
 
 
 def _ms_to_clss(microservices, n_microservices):
@@ -79,7 +82,7 @@ def SM(microservices, classes_info):
                 if -1 in microservices[j]:
                     continue
                 for ms in set(class_microservices) - set(microservices[j]):
-                    sigma[ms][choice(list(microservices[j]))] += 1
+                    sigma[ms][random.choice(list(microservices[j]))] += 1
                 for ms in set(class_microservices).intersection(set(microservices[j])):
                     mu[ms] += 1
 

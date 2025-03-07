@@ -2,6 +2,7 @@ import numpy as np
 import scipy.sparse as sp
 import torch
 import torch.utils.data as data_utils
+import random
 
 
 class EdgeSampler(data_utils.Dataset):
@@ -42,6 +43,11 @@ def collate_fn(batch):
     edges, nonedges = batch[0]
     return (edges, nonedges)
 
+def seed_worker(worker_id):
+    worker_seed = torch.initial_seed() % 2**32
+    np.random.seed(worker_seed)
+    random.seed(worker_seed)
+
 def get_edge_sampler(A, num_pos=1000, num_neg=1000, num_workers=2):
     data_source = EdgeSampler(A, num_pos, num_neg)
-    return data_utils.DataLoader(data_source, num_workers=num_workers, collate_fn=collate_fn)
+    return data_utils.DataLoader(data_source, num_workers=num_workers, collate_fn=collate_fn, worker_init_fn=seed_worker, generator=torch.Generator().manual_seed(42))

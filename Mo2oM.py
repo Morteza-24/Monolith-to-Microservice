@@ -4,7 +4,6 @@ from argparse import ArgumentParser
 from os import makedirs, walk, path, pathsep
 from subprocess import run
 from json import load, dump
-import numpy as np
 
 
 parser = ArgumentParser(

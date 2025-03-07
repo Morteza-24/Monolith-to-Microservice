@@ -4,6 +4,12 @@ import numpy as np
 import torch
 import torch.nn.functional as F
 
+torch.manual_seed(42)
+torch.cuda.manual_seed(42)
+torch.cuda.manual_seed_all(42)
+torch.backends.cudnn.deterministic = True
+torch.use_deterministic_algorithms(True)
+np.random.seed(42)
 
 def overlapping_community_detection(A, X, K, threshold):
     # set torch device: cuda vs cpu
