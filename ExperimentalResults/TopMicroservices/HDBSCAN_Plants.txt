@@ -1,0 +1,7 @@
+
+Microservice 1: ['Customer', 'CustomerMgr']
+Microservice 2: ['ResetDBBean', 'Populate']
+Microservice 3: ['ValidatorUtils', 'ValidatePasswords']
+Microservice 4: ['AdminServlet', 'BackOrder', 'BackOrderItem', 'BackOrderMgr']
+Microservice 5: ['MailerBean', 'MailAction', 'EMailMessage']
+Microservice 6: ['Supplier', 'SuppliersBean']

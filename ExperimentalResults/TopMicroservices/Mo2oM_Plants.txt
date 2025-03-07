@@ -1,0 +1,12 @@
+
+Microservice 1: ['ShoppingItem', 'ShoppingCartContent', 'Util', 'AdminServlet', 'AccountBean', 'CatalogMgr', 'Order', 'BackOrder', 'ShoppingBean', 'ShoppingCartBean', 'ProductBean', 'OrderInfo', 'AccountServlet', 'BackOrderMgr', 'SuppliersBean', 'ListProperties', 'OrderItem', 'OrderKey', 'Inventory']
+Microservice 2: ['Customer', 'ShoppingCartContent', 'ResetDBBean', 'Supplier', 'AccountBean', 'CatalogMgr', 'SuppliersBean', 'Inventory']
+Microservice 3: ['Util', 'ResetDBBean', 'AdminServlet', 'ShoppingBean', 'BackOrderItem']
+Microservice 4: ['HelpBean', 'AccountBean', 'LoginInfo']
+Microservice 5: ['Customer', 'Util', 'MailerBean', 'AccountBean', 'MailAction']
+Microservice 6: ['BackOrder']
+Microservice 7: ['ValidatorUtils', 'ShoppingBean', 'ValidatePasswords', 'OrderItem', 'OrderKey', 'ImageServlet']
+Microservice 8: ['Customer', 'Util', 'ResetDBBean', 'AdminServlet', 'AccountBean', 'CatalogMgr', 'Order', 'BackOrder', 'ShoppingBean', 'ShoppingCartBean', 'BackOrderItem', 'BackOrderMgr', 'SuppliersBean', 'ListProperties', 'CustomerMgr', 'OrderItem', 'Populate']
+Microservice 9: ['Customer', 'Supplier', 'AccountBean', 'LoginInfo', 'OrderKey', 'ImageServlet']
+Microservice 10: ['ShoppingItem', 'Util', 'HelpBean', 'ResetDBBean', 'AdminServlet', 'CatalogMgr', 'SuppliersBean', 'ListProperties', 'OrderKey', 'ImageServlet']
+Microservice 11: ['Customer', 'Util', 'HelpBean', 'ResetDBBean', 'AdminServlet', 'AccountBean', 'CatalogMgr', 'Order', 'OrderInfo', 'AccountServlet', 'CustomerMgr', 'PopulateDBBean', 'OrderKey']

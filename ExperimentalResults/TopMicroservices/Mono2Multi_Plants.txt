@@ -1,0 +1,8 @@
+
+Microservice 1: ['NoSupplierException', 'ShoppingItem', 'ShoppingCartContent', 'Util', 'AdminServlet', 'MailerAppException', 'Order', 'BackOrder', 'ShoppingBean', 'ProductBean', 'OrderItem', 'PK', 'OrderKey']
+Microservice 2: ['ShoppingItem', 'ShoppingCartContent', 'Util', 'AdminServlet', 'CatalogMgr', 'BackOrder', 'ShoppingBean', 'ShoppingCartBean', 'ProductBean', 'BackOrderMgr', 'PopulateDBBean', 'Populate', 'OrderKey', 'Inventory']
+Microservice 3: ['NoSupplierException', 'Util', 'MailerBean', 'MailerAppException', 'Order', 'OrderInfo', 'CustomerMgr', 'MailAction', 'EMailMessage', 'PK', 'OrderKey']
+Microservice 4: ['ShoppingCartContent', 'Util', 'ResetDBBean', 'AdminServlet', 'Supplier', 'CatalogMgr', 'AccountServlet', 'BackOrderMgr', 'SuppliersBean', 'ListProperties', 'PopulateDBBean', 'Populate', 'ImageServlet', 'Inventory']
+Microservice 5: ['Customer', 'Util', 'ValidatorUtils', 'Supplier', 'LoginInfo', 'AccountServlet', 'ListProperties', 'CustomerMgr', 'ValidatePasswords']
+Microservice 6: ['NoSupplierException', 'ShoppingItem', 'ShoppingCartContent', 'Util', 'AdminServlet', 'MailerAppException', 'CatalogMgr', 'Order', 'BackOrder', 'ShoppingBean', 'ProductBean', 'BackOrderItem', 'AccountServlet', 'BackOrderMgr', 'CustomerMgr', 'Populate', 'PK', 'OrderKey', 'Inventory']
+Microservice 7: ['ShoppingCartContent', 'Util', 'HelpBean', 'AdminServlet', 'Supplier', 'CatalogMgr', 'AccountServlet', 'SuppliersBean', 'ListProperties', 'CustomerMgr', 'PopulateDBBean', 'Populate', 'ImageServlet']
