@@ -1,7 +1,7 @@
 __pycache__/
 *.pyc
 .idea/
-HDBSCAN/JavaParser/classes.json
+classes.json
 vnv/
 *.npy
 *.pkl
