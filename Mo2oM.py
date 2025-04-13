@@ -22,7 +22,7 @@ parser.add_argument("-e", "--evaluation-measure", choices=["Precision", "SR", "S
                         And for the SR measure you should also use the -k option to specify a threshold.")
 parser.add_argument("-k", type=int, nargs="*",
                     help="The k value for the SR measure (e.g. SR@7). This option can only be used if you are using the SR measure.")
-parser.add_argument("--n-clusters", dest="n_clusters", type=int, default=None,
+parser.add_argument("--n-clusters", dest="n_clusters", type=int, required=True,
                     help="number of clusters hyperparameter")
 parser.add_argument("--threshold", dest="threshold", type=float, default=None,
                     help="degree of membership threshold hyperparameter. Enter two values to run the method on an interval of threshold values.")
