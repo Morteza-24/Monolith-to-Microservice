@@ -17,10 +17,11 @@ def _calls_in(ci, classes_info):
 def structural_similarity(classes_info):
     len_classes_info = len(classes_info)
     structural_similarity_matrix = np.zeros((len_classes_info, len_classes_info))
+    clss_names = list(classes_info.keys())
     for i in range(len_classes_info):
-        ci = list(classes_info.keys())[i]
+        ci = clss_names[i]
         for j in range(i+1,len_classes_info):
-            cj = list(classes_info.keys())[j]
+            cj = clss_names[j]
             if _calls_in(ci, classes_info) != 0 and _calls_in(cj, classes_info) != 0:
                 structural_similarity_matrix[i][j] = (1 / 2) * (
                     _calls(ci, cj, classes_info) / _calls_in(cj, classes_info) +
