@@ -16,7 +16,7 @@ args = parser.parse_args()
 df = pd.DataFrame()
 for project in projects:
 	for model in models:
-		with open(f"results/{model}/{model}_{project}.json", "r") as f:
+		with open(f"../results/{model}/{model}_{project}.json", "r") as f:
 			data = json.load(f)
 			new_df = pd.DataFrame(data)[metrics]
 			new_df["Project"] = project
