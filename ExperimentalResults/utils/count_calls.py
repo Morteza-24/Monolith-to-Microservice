@@ -1,6 +1,7 @@
 import os
-import subprocess
 import json
+import subprocess
+from pathlib import Path
 
 
 def count_calls(project: str, microservices: list[list[str]]):
@@ -29,9 +30,10 @@ def count_calls(project: str, microservices: list[list[str]]):
 		  on their order in the `microservices` input.
 	"""
 
-	cwd = os.getcwd().split(os.sep)
-	if cwd[-3:] != ["Monolith-to-Microservice", "ExperimentalResults", "utils"]:
-		raise ValueError("Please run this code from the 'Monolith-to-Microservice/ExperimentalResults/utils' directory.")
+	current_dir = Path.cwd()
+	expected_dirs = ["Monolith-to-Microservice", "ExperimentalResults", "utils"]
+	if current_dir.parts[-3:] != tuple(expected_dirs):
+		raise ValueError(f"Please run this code from the '{os.path.join(*expected_dirs)}' directory.")
 	if project not in ["JPetStore", "DayTrader", "AcmeAir", "Plants"]:
 		raise ValueError("Project not supported. Supported projects are: JPetStore, DayTrader, AcmeAir, Plants.")
 	ms_ranges = []
@@ -42,9 +44,12 @@ def count_calls(project: str, microservices: list[list[str]]):
 	nodes_labels = []
 	for ms in microservices:
 		nodes_labels.extend(ms)
-	libs = "../../Mo2oM/JavaParser/lib/javaparser-core-3.25.5-SNAPSHOT.jar"+os.pathsep+"../../Mo2oM/JavaParser/lib/json-20230618.jar"
-	json_path = "../../Mo2oM/JavaParser/classes.json"
-	subprocess.run(['java', '-cp', libs, "../../Mo2oM/JavaParser/Parser.java", f"../../TestProjects/{project}/OneFileSource.java", json_path])
+	libs = os.path.join("..", "..", "Mo2oM", "JavaParser", "lib", "javaparser-core-3.25.5-SNAPSHOT.jar") + os.pathsep + \
+		   os.path.join("..", "..", "Mo2oM", "JavaParser", "lib", "json-20230618.jar")
+	json_path = os.path.join("..", "..", "Mo2oM", "JavaParser", "classes.json")
+	source_path = os.path.join("..", "..", "TestProjects", project, "OneFileSource.java")
+	parser_path = os.path.join("..", "..", "Mo2oM", "JavaParser", "Parser.java")
+	subprocess.run(['java', '-cp', libs, parser_path, source_path, json_path])
 	with open(json_path, "rt") as classes_file:
 		classes_info = json.load(classes_file)
 	immutables = []
