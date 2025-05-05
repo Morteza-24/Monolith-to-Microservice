@@ -25,7 +25,11 @@ parser.add_argument("-k", type=int, nargs="*",
 parser.add_argument("--n-clusters", dest="n_clusters", type=int, required=True,
                     help="number of clusters hyperparameter")
 parser.add_argument("--threshold", dest="threshold", type=float, default=None,
-                    help="degree of membership threshold hyperparameter. Enter two values to run the method on an interval of threshold values.")
+                    help="degree of membership threshold hyperparameter.")
+parser.add_argument("--use-tf-idf", dest="use_tf_idf", action="store_true",
+                    help="Use TF-IDF instead of UniXcoder for semantic similarity.")
+parser.add_argument("--hard-clustering", dest="hard_clustering", action="store_true",
+                    help="Use argmax instead of a threshold value to extract microservice from the membership matrix to simulate hard clustering.")
 
 args = parser.parse_args()
 
@@ -44,6 +48,13 @@ if args.evaluation_measure:
         parser.print_help()
         print("\nerror: For the Precision and the SuccessRate (SR) measures, you should use the --project flag and the ground truth microservices must be in different directories of your project's root directory.")
         exit()
+
+if args.hard_clustering:
+    if args.threshold:
+        parser.print_help()
+        print("\nerror: The --hard-clustering flag and the --threshold flag cannot be used together.")
+        exit()
+    args.threshold = "max"
 
 measures = {"Precision": Precision, "SR": SR,
             "SM": SM, "IFN": IFN, "NED": NED, "ICP": ICP}
@@ -87,7 +98,7 @@ if args.project_directory:
 
 print("\n--- Mo2oM ---")
 
-clusters, classes_info = Mo2oM(args.file_path, args.n_clusters, args.threshold)
+clusters, classes_info = Mo2oM(args.file_path, args.n_clusters, args.threshold, args.use_tf_idf)
 class_names = list(classes_info)
 if args.project_directory:
     true_microservices = [{-1} for _ in classes_info]

@@ -6,7 +6,7 @@ from Mo2oM.SimilarityAnalysis import structural_similarity, semantic_similarity
 from Mo2oM.Clustering import overlapping_community_detection
 
 
-def Mo2oM(source_code_path, n_clusters, threshold=None):
+def Mo2oM(source_code_path, n_clusters, threshold=None, use_tf_idf=False):
     # parse the source code and get classes, methods, etc.
     print("\n[Mo2oM] parsing the code...", end=" ", flush=True)
     base_dir = path.dirname(path.realpath(__file__))
@@ -31,7 +31,14 @@ def Mo2oM(source_code_path, n_clusters, threshold=None):
     # get class similarity metrices to feed to NOCD
     print("[Mo2oM] building similarity matrices", flush=True)
     structural_similarity_matrix = structural_similarity(classes_info)
-    semantic_similarity_matrix = semantic_similarity(classes_info)
+    if use_tf_idf:
+        print("[Mo2oM] using tf-idf for semantic similarity", flush=True)
+        from Mo2oM.SimilarityAnalysis import tf_idf_semantic_similarity
+        semantic_similarity_matrix = tf_idf_semantic_similarity(classes_info)
+        print(semantic_similarity_matrix.shape)
+        print(len(classes_info))
+    else:
+        semantic_similarity_matrix = semantic_similarity(classes_info)
     print("[Mo2oM] similarity matrices built successfully!", flush=True)
 
     # --- DEBUG SECTION

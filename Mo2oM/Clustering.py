@@ -81,6 +81,13 @@ def overlapping_community_detection(A, X, K, threshold):
         plt.hist(Z[Z > 0].cpu().detach().numpy(), 100);
         plt.show()
         threshold = float(input("enter degree of membership threshold: "))
+    elif isinstance(threshold, str):
+        if threshold == "max":
+            print("[Mo2oM] using hard clustering")
+            return [{int(ms)} for ms in np.argmax(memberships, axis=1)]
+        else:
+            print("[Mo2oM] invalid value for threshold")
+            return
     elif not isinstance(threshold, (int, float)):
         layers = []
         for threshold_i in threshold:

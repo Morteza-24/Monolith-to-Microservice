@@ -27,6 +27,10 @@ parser.add_argument("--n-clusters", dest="n_clusters", type=int, nargs="*", defa
                     help="number of clusters hyperparameter, Enter two values to run the method on an interval of n_clusters values. Leave empty to use Scanniello's approach.")
 parser.add_argument("--threshold", dest="threshold", type=float, nargs="*", default=[None],
                     help="degree of membership threshold hyperparameter. Enter two values to run the method on an interval of threshold values.")
+parser.add_argument("--use-tf-idf", dest="use_tf_idf", action="store_true",
+                    help="Use TF-IDF instead of UniXcoder for semantic similarity.")
+parser.add_argument("--hard-clustering", dest="hard_clustering", action="store_true",
+                    help="Use argmax instead of a threshold value to extract microservice from the membership matrix to simulate hard clustering.")
 
 args = parser.parse_args()
 
@@ -50,6 +54,13 @@ if args.evaluation_measure:
         parser.print_help()
         print("\nerror: For the Precision and the SuccessRate (SR) measures, you should use the --project flag and the ground truth microservices must be in different directories of your project's root directory.")
         exit()
+
+if args.hard_clustering:
+    if args.threshold != [None]:
+        parser.print_help()
+        print("\nerror: The --hard-clustering flag and the --threshold flag cannot be used together.")
+        exit()
+    args.threshold = ["max"]
 
 measures = {"Precision": Precision, "SR": SR,
             "SM": SM, "IFN": IFN, "NED": NED, "ICP": ICP}
@@ -109,7 +120,7 @@ if len(args.threshold) == 2:
     thresholds = [round(_, 3) for _ in np.arange(args.threshold[0], args.threshold[1]+0.01, 0.05)]
 else:
     thresholds = args.threshold[0]
-clusters, classes_info = Mo2oM(args.file_path, n_clusters, thresholds)
+clusters, classes_info = Mo2oM(args.file_path, n_clusters, thresholds, args.use_tf_idf)
 class_names = list(classes_info)
 if args.project_directory:
     true_microservices = [{-1} for _ in classes_info]
@@ -122,16 +133,16 @@ if n_clusters == "Scanniello":
     n_clusters = list(np.arange(2, (len(classes_info)//2)+2, 2))
 for i in range(len(_listify(n_clusters))):
     for j in range(len(_listify(thresholds))):
-        if isinstance(n_clusters, int) and isinstance(thresholds, int):
+        if isinstance(n_clusters, int) and isinstance(thresholds, (int, str)):
             this_clusters = clusters
         elif isinstance(n_clusters, int):
             this_clusters = clusters[j]
-        elif isinstance(thresholds, int):
+        elif isinstance(thresholds, (int, str)):
             this_clusters = clusters[i]
         else:
             this_clusters = clusters[i][j]
         output = {"n_clusters": int(_listify(n_clusters)[i]),
-                  "threshold": float(_listify(thresholds)[j]),
+                  "threshold": thresholds if isinstance(thresholds, str) else float(_listify(thresholds)[j]),
                   "microservices": [[int(_i) for _i in _] for _ in this_clusters]}
         if args.evaluation_measure:
             for measure in args.evaluation_measure:

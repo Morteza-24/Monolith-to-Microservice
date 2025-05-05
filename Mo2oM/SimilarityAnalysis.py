@@ -80,3 +80,18 @@ def semantic_similarity(classes_info):
     # return sp.load_npz('semantic.npz')
 
     # --- DEBUG SECTION
+
+
+def tf_idf_semantic_similarity(classes_info):
+    from sklearn.feature_extraction.text import TfidfVectorizer
+    from HDBSCAN.Preprocess import preprocess
+    from nltk import download
+    download('punkt')
+    download('punkt_tab')
+    download('stopwords')
+    corpus = []
+    for clss in classes_info:
+        corpus.append(preprocess(' '.join(classes_info[clss]['words'])))
+    vectorizer = TfidfVectorizer()
+    tf_idf_vectors = vectorizer.fit_transform(corpus)
+    return tf_idf_vectors
