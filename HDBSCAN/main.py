@@ -30,6 +30,7 @@ def hierarchical_DBSCAN(source_code_path, alpha, minimum_number_of_sample, max_e
 
     # necessary downloads for nltk
     download('punkt')
+    download('punkt_tab')
     download('stopwords')
 
     # get class similarity metric to feed to DBSCAN
