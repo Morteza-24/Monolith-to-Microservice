@@ -9,7 +9,7 @@ from json import load, dump
 parser = ArgumentParser(
     prog='python Mo2oM.py',
     description='Experiment versoin of the Mo2oM tool.',
-    epilog='example usage: python Mo2oM.py -f TestProjects/JPetStore/OneFileSource.java --n-clusters 3 --threshold 0.1 -e ICP NED -o output.json')
+    epilog='example usage: python Mo2oM.py -f test_projects/JPetStore/OneFileSource.java --n-clusters 3 --threshold 0.1 -e ICP NED -o output.json')
 
 parser.add_argument("-f", "--file", dest="file_path",
                     help="path to the java source code file (use this option if your whole monolithic program is in one file)")

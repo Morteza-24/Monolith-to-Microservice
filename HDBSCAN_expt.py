@@ -9,7 +9,7 @@ import numpy as np
 parser = ArgumentParser(
     prog='python HDBSCAN_expt.py',
     description='Experiment versoin of the hierarchical_DBSCAN tool.',
-    epilog='example usage: python HDBSCAN_expt.py -f TestProjects/JPetStore/OneFileSource.java --alpha 0.5 0.9 --epsilon 0.5 0.9 -e ICP NED -o output.json')
+    epilog='example usage: python HDBSCAN_expt.py -f test_projects/JPetStore/OneFileSource.java --alpha 0.5 0.9 --epsilon 0.5 0.9 -e ICP NED -o output.json')
 
 parser.add_argument("-f", "--file", dest="file_path",
                     help="path to the java source code file (use this option if your whole monolithic program is in one file)")

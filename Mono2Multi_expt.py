@@ -9,7 +9,7 @@ import numpy as np
 parser = ArgumentParser(
     prog='python Mono2Multi_expt.py',
     description='Experiment versoin of the Mono2Multi tool.',
-    epilog='example usage: python Mono2Multi_expt.py -f TestProjects/JPetStore/OneFileSource.java --alpha 1 --n-clusters 3 --threshold 0.1 0.7 -e ICP NED -o output.json')
+    epilog='example usage: python Mono2Multi_expt.py -f test_projects/JPetStore/OneFileSource.java --alpha 1 --n-clusters 3 --threshold 0.1 0.7 -e ICP NED -o output.json')
 
 parser.add_argument("-f", "--file", dest="file_path",
                     help="path to the java source code file (use this option if your whole monolithic program is in one file)")

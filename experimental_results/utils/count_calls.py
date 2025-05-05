@@ -31,7 +31,7 @@ def count_calls(project: str, microservices: list[list[str]]):
 	"""
 
 	current_dir = Path.cwd()
-	expected_dirs = ["Monolith-to-Microservice", "ExperimentalResults", "utils"]
+	expected_dirs = ["Monolith-to-Microservice", "experimental_results", "utils"]
 	if current_dir.parts[-3:] != tuple(expected_dirs):
 		raise ValueError(f"Please run this code from the '{os.path.join(*expected_dirs)}' directory.")
 	if project not in ["JPetStore", "DayTrader", "AcmeAir", "Plants"]:
@@ -47,7 +47,7 @@ def count_calls(project: str, microservices: list[list[str]]):
 	libs = os.path.join("..", "..", "Mo2oM", "JavaParser", "lib", "javaparser-core-3.25.5-SNAPSHOT.jar") + os.pathsep + \
 		   os.path.join("..", "..", "Mo2oM", "JavaParser", "lib", "json-20230618.jar")
 	json_path = os.path.join("..", "..", "Mo2oM", "JavaParser", "classes.json")
-	source_path = os.path.join("..", "..", "TestProjects", project, "OneFileSource.java")
+	source_path = os.path.join("..", "..", "test_projects", project, "OneFileSource.java")
 	parser_path = os.path.join("..", "..", "Mo2oM", "JavaParser", "Parser.java")
 	subprocess.run(['java', '-cp', libs, parser_path, source_path, json_path])
 	with open(json_path, "rt") as classes_file:

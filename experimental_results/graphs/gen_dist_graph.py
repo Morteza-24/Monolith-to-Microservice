@@ -6,7 +6,7 @@ import numpy as np
 
 MODEL = "Mo2oM"
 PROJECT = "JPetStore"
-MICROSERVICES = [   # you can get these from ../TopMicroservices/
+MICROSERVICES = [   # you can get these from ../top_microservices/
 	['Account', 'Product', 'AccountActionForm', 'SqlMapCategoryDao', 'OrderActionForm', 'AccountFormController', 'BaseActionForm', 'AccountForm'],
 	['Account', 'Item', 'SqlMapItemDao', 'AddItemToCartAction', 'NewOrderFormAction', 'SecureBaseAction', 'ListOrdersController', 'RemoveItemFromCartAction', 'UpdateCartQuantitiesController', 'RemoveItemFromCartController', 'MsSqlOrderDao', 'Cart', 'CartActionForm', 'SendOrderConfirmationEmailAdvice', 'LineItem', 'UpdateCartQuantitiesAction', 'ViewCartController', 'OrderServiceClient'],
 	['Account', 'SqlMapItemDao', 'PetStoreImpl', 'CartActionForm', 'UpdateCartQuantitiesAction'],

@@ -32,7 +32,7 @@ for ms in MICROSERVICES:
 
 libs = "../../Mo2oM/JavaParser/lib/javaparser-core-3.25.5-SNAPSHOT.jar"+pathsep+"../../Mo2oM/JavaParser/lib/json-20230618.jar"
 json_path = "../../Mo2oM/JavaParser/classes.json"
-run(['java', '-cp', libs, "../../Mo2oM/JavaParser/Parser.java", f"../../TestProjects/{PROJECT}/OneFileSource.java", json_path])
+run(['java', '-cp', libs, "../../Mo2oM/JavaParser/Parser.java", f"../../test_projects/{PROJECT}/OneFileSource.java", json_path])
 with open(json_path, "rt") as classes_file:
     classes_info = json.load(classes_file)
 immutables = []

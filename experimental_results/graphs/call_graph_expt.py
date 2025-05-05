@@ -7,7 +7,7 @@ import copy
 
 
 PROJECT = "DayTrader"
-ALL_MICROSERVICES = [  # you can get these from ../TopMicroservices/
+ALL_MICROSERVICES = [  # you can get these from ../top_microservices/
 ['Log', 'PingBean', 'PingServlet2IncludeRcv', 'TradeConfigJSF'],
 ['TradeActionProducer', 'PingBean', 'DTStreamer3MDB', 'TimerStat', 'PingServlet2PDF', 'PingServletLargeContentLength'],
 ['HoldingData', 'TradeAppJSF', 'Log', 'TradeDirect', 'TradeConfigJSF'],
@@ -53,7 +53,7 @@ KEEPS = []
 
 libs = "../../Mo2oM/JavaParser/lib/javaparser-core-3.25.5-SNAPSHOT.jar"+pathsep+"../../Mo2oM/JavaParser/lib/json-20230618.jar"
 json_path = "../../Mo2oM/JavaParser/classes.json"
-run(['java', '-cp', libs, "../../Mo2oM/JavaParser/Parser.java", f"../../TestProjects/{PROJECT}/OneFileSource.java", json_path])
+run(['java', '-cp', libs, "../../Mo2oM/JavaParser/Parser.java", f"../../test_projects/{PROJECT}/OneFileSource.java", json_path])
 with open(json_path, "rt") as classes_file:
 	classes_info = json.load(classes_file)
 
