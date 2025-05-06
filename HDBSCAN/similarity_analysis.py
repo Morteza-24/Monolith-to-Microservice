@@ -8,7 +8,7 @@ def class_similarity(alpha, classes_info) -> class_similarity_matrix
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 from numpy import zeros
-from HDBSCAN.Preprocess import preprocess
+from HDBSCAN.preprocess import preprocess
 
 
 def calls(ci, cj, classes_info):
@@ -56,7 +56,7 @@ def class_similarity(alpha, classes_info):
             ci = list(classes_info.keys())[i]
             cj = list(classes_info.keys())[j]
             class_similarity_matrix[i][j] = 1 - (alpha*structural_similarity(ci, cj, classes_info) + (1-alpha)*cosine_similarity(tf_idf_vectors[i], tf_idf_vectors[j])[0][0])
-        print(f"\r[SimilarityAnalysis] {int(100*i/len_classes_info):02d}%", end="", flush=True)
-    print(f"\r[SimilarityAnalysis] 100%", flush=True)
+        print(f"\r[similarity_analysis] {int(100*i/len_classes_info):02d}%", end="", flush=True)
+    print(f"\r[similarity_analysis] 100%", flush=True)
 
     return class_similarity_matrix + class_similarity_matrix.T

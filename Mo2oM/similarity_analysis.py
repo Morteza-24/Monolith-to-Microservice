@@ -84,7 +84,7 @@ def semantic_similarity(classes_info):
 
 def tf_idf_semantic_similarity(classes_info):
     from sklearn.feature_extraction.text import TfidfVectorizer
-    from HDBSCAN.Preprocess import preprocess
+    from HDBSCAN.preprocess import preprocess
     from nltk import download
     download('punkt')
     download('punkt_tab')

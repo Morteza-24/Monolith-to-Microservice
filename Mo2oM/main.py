@@ -2,8 +2,8 @@ from os import path, pathsep
 from subprocess import run
 from json import load
 import numpy as np
-from Mo2oM.SimilarityAnalysis import structural_similarity, semantic_similarity
-from Mo2oM.Clustering import overlapping_community_detection
+from Mo2oM.similarity_analysis import structural_similarity, semantic_similarity
+from Mo2oM.clustering import overlapping_community_detection
 
 
 def Mo2oM(source_code_path, n_clusters, threshold=None, use_tf_idf=False):
@@ -33,7 +33,7 @@ def Mo2oM(source_code_path, n_clusters, threshold=None, use_tf_idf=False):
     structural_similarity_matrix = structural_similarity(classes_info)
     if use_tf_idf:
         print("[Mo2oM] using tf-idf for semantic similarity", flush=True)
-        from Mo2oM.SimilarityAnalysis import tf_idf_semantic_similarity
+        from Mo2oM.similarity_analysis import tf_idf_semantic_similarity
         semantic_similarity_matrix = tf_idf_semantic_similarity(classes_info)
         print(semantic_similarity_matrix.shape)
         print(len(classes_info))

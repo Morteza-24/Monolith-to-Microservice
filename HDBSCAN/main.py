@@ -2,7 +2,7 @@ from nltk import download
 from os import path, pathsep
 from subprocess import run
 from json import load
-from HDBSCAN.SimilarityAnalysis import class_similarity
+from HDBSCAN.similarity_analysis import class_similarity
 from HDBSCAN.DBSCAN import dbscan
 
 

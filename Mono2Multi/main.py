@@ -1,8 +1,8 @@
 from os import path, pathsep
 from subprocess import run
 from json import load
-from Mono2Multi.SimilarityAnalysis import class_similarity
-from Mono2Multi.Clustering import fcm
+from Mono2Multi.similarity_analysis import class_similarity
+from Mono2Multi.clustering import fcm
 import numpy as np
 
 
