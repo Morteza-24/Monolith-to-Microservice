@@ -57,7 +57,7 @@ def Mo2oM(source_code_path, n_clusters, threshold=None, use_tf_idf=False):
     # --- DEBUG SECTION
 
     if isinstance(n_clusters, int):
-            return overlapping_community_detection(structural_similarity_matrix, semantic_similarity_matrix, n_clusters, threshold), classes_info
+        return overlapping_community_detection(structural_similarity_matrix, semantic_similarity_matrix, n_clusters, threshold), classes_info
     elif isinstance(n_clusters, str) and n_clusters == "Scanniello":
         len_classes = len(classes_info)
         n_clusters = np.arange(2, (len_classes//2)+2, 2)
