@@ -1,6 +1,5 @@
 # You can use this file to integrate java files into one java file
 import os
-import shutil
 
 
 def integrate_java_files(src_dir, dest_file):
