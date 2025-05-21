@@ -5,6 +5,8 @@ from os import makedirs, walk, path, pathsep
 from subprocess import run
 from json import load, dump
 import numpy as np
+import shutil
+
 
 parser = ArgumentParser(
     prog='python HDBSCAN_expt.py',
@@ -82,18 +84,23 @@ if args.project_directory:
         args.project_directory = args.project_directory[:-1]
     project_dir_name = args.project_directory.split('/')[-1]
     true_ms_dirs = next(walk(args.project_directory))[1]
+    if path.isdir(".data/"):
+        if input("the previous data directory will be deleted; proceed? (Y/n): ") in ["n", "no", "N", "No", "NO"]:
+            print("operation cancelled.")
+            exit()
+        shutil.rmtree(".data/", ignore_errors=True)
     true_ms_classnames = []
     libs = path.join(base_dir, "HDBSCAN/JavaParser/lib/javaparser-core-3.25.5-SNAPSHOT.jar")+pathsep+path.join(base_dir, "HDBSCAN/JavaParser/lib/json-20230618.jar")
-    makedirs(path.join(base_dir, f"data/{project_dir_name}"), exist_ok=True)
+    makedirs(path.join(base_dir, f".data/{project_dir_name}"), exist_ok=True)
     for directory in true_ms_dirs:
         if directory.endswith("/"):
             directory = directory[:-1]
-        json_path = path.join(base_dir, f"data/{project_dir_name}/{directory}.json")
+        json_path = path.join(base_dir, f".data/{project_dir_name}/{directory}.json")
         run(['java', '-cp', libs, path.join(base_dir, 'HDBSCAN/JavaParser/ClassScanner.java'), path.join(args.project_directory, directory), json_path])
         with open(json_path, "rt") as classes_file:
             true_ms_classnames.append(load(classes_file)["classes"])
 
-    args.file_path = path.join(base_dir, f"data/{project_dir_name}/OneFileSource.java")
+    args.file_path = path.join(base_dir, f".data/{project_dir_name}/OneFileSource.java")
     merge_java_files(args.project_directory, args.file_path)
     print("done!")
 
