@@ -1,3 +1,5 @@
+import com.github.javaparser.JavaParser;
+import com.github.javaparser.ParserConfiguration;
 import com.github.javaparser.StaticJavaParser;
 import com.github.javaparser.ast.CompilationUnit;
 import com.github.javaparser.ast.visitor.VoidVisitor;
@@ -43,7 +45,12 @@ class ClassScanner {
     }
 
     static List<String> getClasses(String path) throws Exception {
-        CompilationUnit cu = StaticJavaParser.parse(Files.newInputStream(Paths.get(path)));
+        final ParserConfiguration parserConfiguration = new ParserConfiguration();
+        parserConfiguration.setLanguageLevel(ParserConfiguration.LanguageLevel.JAVA_17);
+        JavaParser javaParser = new JavaParser(parserConfiguration);
+        CompilationUnit cu = javaParser.parse(Files.newInputStream(Paths.get(path)))
+            .getResult()
+            .orElseThrow(() -> new IOException("Failed to parse the file: " + path));
         VoidVisitor<List<String>> classNameCollector = new ClassNameCollector();
         List<String> classNames = new ArrayList<>();
         classNameCollector.visit(cu, classNames);

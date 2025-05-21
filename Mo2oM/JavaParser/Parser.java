@@ -1,3 +1,5 @@
+import com.github.javaparser.JavaParser;
+import com.github.javaparser.ParserConfiguration;
 import com.github.javaparser.StaticJavaParser;
 import com.github.javaparser.ast.CompilationUnit;
 import com.github.javaparser.ast.visitor.VoidVisitor;
@@ -20,7 +22,13 @@ import java.util.List;
 class Parser {
     public static void main(String[] args) throws Exception {
         JSONObject jsonObject = new JSONObject();
-        CompilationUnit cu = StaticJavaParser.parse(Files.newInputStream(Paths.get(args[0])));
+        final ParserConfiguration parserConfiguration = new ParserConfiguration();
+        parserConfiguration.setLanguageLevel(ParserConfiguration.LanguageLevel.JAVA_17);
+        JavaParser javaParser = new JavaParser(parserConfiguration);
+        // CompilationUnit cu = StaticJavaParser.parse(Files.newInputStream(Paths.get(args[0])));
+        CompilationUnit cu = javaParser.parse(Files.newInputStream(Paths.get(args[0])))
+            .getResult()
+            .orElseThrow(() -> new IOException("Failed to parse the file: " + args[0]));
 
         VoidVisitor<List<ClassOrInterfaceDeclaration>> classNodeCollector = new ClassNodeCollector();
         VoidVisitor<List<String>> methodNameCollector = new MethodNameCollector();
