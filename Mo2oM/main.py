@@ -8,6 +8,8 @@ from Mo2oM.clustering import overlapping_community_detection, process_threshold
 
 
 def Mo2oM(source_code_path, n_clusters, threshold=None, alpha=0.5, use_tf_idf=False):
+    assert 0 <= alpha <= 1, "alpha should be between 0 and 1"
+
     # parse the source code and get classes, methods, etc.
     print("\n[Mo2oM] parsing the code...", end=" ", flush=True)
     base_dir = path.dirname(path.realpath(__file__))
