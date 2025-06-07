@@ -34,7 +34,7 @@ def structural_similarity(classes_info):
                 structural_similarity_matrix[i][j] = 0
         print(f"\r[StructuralSimilarity] {int(100*(i+1)/len_classes_info)}%", end="", flush=True)
     print(f"\r[StructuralSimilarity] 100%", flush=True)
-    return sp.csr_matrix((structural_similarity_matrix != 0).astype(int))
+    return structural_similarity_matrix
 
 
 def semantic_similarity(classes_info):

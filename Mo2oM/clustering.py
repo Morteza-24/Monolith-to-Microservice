@@ -4,6 +4,7 @@ import numpy as np
 import torch
 import torch.nn.functional as F
 
+
 torch.manual_seed(42)
 torch.cuda.manual_seed(42)
 torch.cuda.manual_seed_all(42)
@@ -11,7 +12,8 @@ torch.backends.cudnn.deterministic = True
 torch.use_deterministic_algorithms(True)
 np.random.seed(42)
 
-def overlapping_community_detection(A, X, K, threshold):
+
+def overlapping_community_detection(A, X, K, threshold, membership_only=False):
     # set torch device: cuda vs cpu
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     torch.set_default_device(device)
@@ -74,11 +76,18 @@ def overlapping_community_detection(A, X, K, threshold):
         opt.step()
 
     Z = F.relu(gnn(x_norm, adj_norm))
+    Z_min = torch.min(Z)
+    Z_max = torch.max(Z)
+    denominator = Z_max - Z_min + 1e-8
+    Z = (Z - Z_min) / denominator
     memberships = Z.cpu().detach().numpy()
+    return memberships if membership_only else process_threshold(threshold, memberships)
 
+
+def process_threshold(threshold, memberships):
     if threshold == None:
         import matplotlib.pyplot as plt
-        plt.hist(Z[Z > 0].cpu().detach().numpy(), 100);
+        plt.hist(memberships[memberships > 0], 100);
         plt.show()
         threshold = float(input("enter degree of membership threshold: "))
     elif isinstance(threshold, str):
