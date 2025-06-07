@@ -25,6 +25,8 @@ parser.add_argument("-k", type=int, nargs="*",
                     help="The k value for the SR measure (e.g. SR@7). This option can only be used if you are using the SR measure.")
 parser.add_argument("--n-clusters", dest="n_clusters", type=int, required=True,
                     help="number of clusters hyperparameter")
+parser.add_argument("--alpha", dest="alpha", type=float, default=0.5,
+                    help="alpha hyperparameter to control the tradeoff between semantic and structural features")
 parser.add_argument("--threshold", dest="threshold", type=float, default=None,
                     help="degree of membership threshold hyperparameter.")
 parser.add_argument("--use-tf-idf", dest="use_tf_idf", action="store_true",
@@ -104,7 +106,7 @@ if args.project_directory:
 
 print("\n--- Mo2oM ---")
 
-clusters, classes_info = Mo2oM(args.file_path, args.n_clusters, args.threshold, args.use_tf_idf)
+clusters, classes_info = Mo2oM(args.file_path, args.n_clusters, args.threshold, args.alpha, args.use_tf_idf)
 class_names = list(classes_info)
 if args.project_directory:
     true_microservices = [{-1} for _ in classes_info]
