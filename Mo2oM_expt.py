@@ -26,10 +26,10 @@ parser.add_argument("-k", type=int, nargs="*",
                     help="The k value for the SR measure (e.g. SR@7). This option can only be used if you are using the SR measure.")
 parser.add_argument("--n-clusters", dest="n_clusters", type=int, nargs="*", default=[None],
                     help="number of clusters hyperparameter, Enter two values to run the method on an interval of n_clusters values. Leave empty to use Scanniello's approach.")
-parser.add_argument("--threshold", dest="threshold", type=float, nargs="*", default=[None],
-                    help="degree of membership threshold hyperparameter. Enter two values to run the method on an interval of threshold values.")
 parser.add_argument("--alpha", dest="alpha", type=float, nargs="*", default=[0.5],
                     help="alpha hyperparameter to control the tradeoff between semantic and structural features. Enter two values to run the method on an interval of alpha values.")
+parser.add_argument("--threshold", dest="threshold", type=float, nargs="*", default=[None],
+                    help="degree of membership threshold hyperparameter. Enter two values to run the method on an interval of threshold values.")
 parser.add_argument("--use-tf-idf", dest="use_tf_idf", action="store_true",
                     help="Use TF-IDF instead of UniXcoder for semantic similarity.")
 parser.add_argument("--hard-clustering", dest="hard_clustering", action="store_true",
