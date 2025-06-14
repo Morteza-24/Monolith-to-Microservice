@@ -8,8 +8,6 @@ from Mo2oM.clustering import overlapping_community_detection, process_threshold
 
 
 def Mo2oM(source_code_path, n_clusters, threshold=None, alpha=0.5, use_tf_idf=False):
-    assert 0 <= alpha <= 1, "alpha should be between 0 and 1"
-
     # parse the source code and get classes, methods, etc.
     print("\n[Mo2oM] parsing the code...", end=" ", flush=True)
     base_dir = path.dirname(path.realpath(__file__))
@@ -78,7 +76,7 @@ def Mo2oM(source_code_path, n_clusters, threshold=None, alpha=0.5, use_tf_idf=Fa
         len_classes = len(classes_info)
         n_clusters = np.arange(2, (len_classes//2)+2, 2)
         print(f"[Mo2oM] clustering with sizes from 2 to {(len_classes//2)+2}", flush=True)
-    assert isinstance(n_clusters, list), "n_clusters should either be a list of integers or a single integer"
+    assert isinstance(n_clusters, (list, np.ndarray)), "n_clusters should either be a list of integers or a single integer"
     clusterings = []
     for i in range(len(n_clusters)):
         print(f"[Mo2oM] n_clusters = {n_clusters[i]}")

@@ -135,7 +135,6 @@ def IFN(microservices, classes_info):
 
 
 def NED(microservices):
-    n_classes = len([cls for cls in microservices if cls != {-1}])
     microservices = [ims for ms in microservices for ims in ms if ims != -1]
     non_extreme = 0
     for i in set(microservices):
@@ -143,7 +142,7 @@ def NED(microservices):
         if 5 <= class_count <= 20:
             non_extreme += class_count
     try:
-        return 1 - non_extreme/n_classes
+        return 1 - non_extreme/len(microservices)
     except ZeroDivisionError:
         return 1
 

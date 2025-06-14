@@ -182,12 +182,13 @@ for i in range(len(_listify(n_clusters))):
                         output[measure] = measures[measure](output["microservices"])
             outputs.append(output)
 
-with open("tmp_"+args.output_file, "w") as output_file:
+tmp_output_file = "tmp_" + args.output_file.split("/")[-1] 
+with open(tmp_output_file, "w") as output_file:
     dump(outputs, output_file, indent=2)
 
 in_ms = False
 inn_ms = False
-with (open("tmp_"+args.output_file, "rt") as in_f,
+with (open(tmp_output_file, "rt") as in_f,
       open(args.output_file, "wt") as out_f):
     for line in in_f.readlines():
         if line.endswith("[\n"):
@@ -209,4 +210,4 @@ with (open("tmp_"+args.output_file, "rt") as in_f,
         else:
             out_f.write(line)
 
-run(["rm", "tmp_"+args.output_file])
+run(["rm", tmp_output_file])
