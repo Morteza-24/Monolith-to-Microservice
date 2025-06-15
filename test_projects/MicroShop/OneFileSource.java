@@ -1,21 +1,3 @@
-
-import io.restassured.response.Response;
-import io.vertx.core.Vertx;
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.Test;
-import redis.embedded.RedisServer;
-
-import java.util.concurrent.ThreadLocalRandom;
-import java.util.concurrent.atomic.AtomicBoolean;
-
-import static io.restassured.RestAssured.*;
-import static org.assertj.core.api.Assertions.*;
-import static com.jayway.awaitility.Awaitility.await;
-import static org.hamcrest.core.Is.is;
-
 /**
  * Test case for {@link InventoryRestAPIVerticle}.
  *
@@ -74,16 +56,7 @@ public class InventoryApiTest {
 
 }
 
-import io.vertx.blueprint.microservice.common.RestAPIVerticle;
-import io.vertx.core.Future;
-import io.vertx.core.logging.Logger;
-import io.vertx.core.logging.LoggerFactory;
-import io.vertx.ext.web.Router;
-import io.vertx.ext.web.RoutingContext;
-import io.vertx.ext.web.handler.BodyHandler;
 
-import static io.vertx.blueprint.microservice.common.config.ConfigRetrieverHelper.configurationRetriever;
-import static io.vertx.blueprint.microservice.common.config.Log4jConfigurationServiceHandler.log4jSubscriber;
 
 /**
  * A verticle supplies HTTP endpoint for inventory service API.
@@ -172,10 +145,6 @@ public class InventoryRestAPIVerticle extends RestAPIVerticle {
 }
 
 
-import io.vertx.blueprint.microservice.inventory.impl.InventoryServiceImpl;
-import io.vertx.core.Future;
-import io.vertx.core.Vertx;
-import io.vertx.core.json.JsonObject;
 
 /**
  * Inventory service (asynchronous based on Future).
@@ -222,12 +191,6 @@ public interface InventoryService {
 }
 
 
-import io.vertx.blueprint.microservice.inventory.InventoryService;
-import io.vertx.core.Future;
-import io.vertx.core.Vertx;
-import io.vertx.core.json.JsonObject;
-import io.vertx.redis.RedisClient;
-import io.vertx.redis.RedisOptions;
 
 /**
  * Implementation of {@link InventoryService}.
@@ -270,10 +233,6 @@ public class InventoryServiceImpl implements InventoryService {
 }
 
 
-import io.vertx.codegen.annotations.ProxyGen;
-import io.vertx.codegen.annotations.VertxGen;
-import io.vertx.core.AsyncResult;
-import io.vertx.core.Handler;
 
 /**
  * A service interface managing payment transactions query.
@@ -324,11 +283,7 @@ public interface PaymentQueryService {
 }
 
 
-import io.vertx.codegen.annotations.DataObject;
-import io.vertx.core.json.JsonObject;
 
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 
 /**
  * Payment data object.
@@ -430,26 +385,6 @@ public class Payment {
   }
 }
 
-/**
- * Indicates that this module contains classes that need to be generated / processed.
- */
-@ModuleGen(name = "vertx-blueprint-payment", groupPackage = "io.vertx.blueprint.microservice.payment")
-
-
-import io.vertx.codegen.annotations.ModuleGen;
-
-import io.vertx.blueprint.microservice.payment.Payment;
-import io.vertx.blueprint.microservice.payment.PaymentQueryService;
-import io.vertx.core.AsyncResult;
-import io.vertx.core.Future;
-import io.vertx.core.Handler;
-import io.vertx.core.Vertx;
-import io.vertx.core.json.JsonArray;
-import io.vertx.core.json.JsonObject;
-import io.vertx.ext.jdbc.JDBCClient;
-import io.vertx.ext.sql.SQLConnection;
-
-import java.util.List;
 
 /**
  * Implementation of {@link PaymentQueryService}.
@@ -552,8 +487,6 @@ public class PaymentQueryServiceImpl implements PaymentQueryService {
  */
 
 
-import io.vertx.core.json.JsonObject;
-import io.vertx.core.json.JsonArray;
 
 /**
  * Converter for {@link io.vertx.blueprint.microservice.payment.Payment}.
@@ -609,25 +542,6 @@ public class PaymentConverter {
 */
 
 
-import io.vertx.blueprint.microservice.payment.PaymentQueryService;
-import io.vertx.core.eventbus.DeliveryOptions;
-import io.vertx.core.Vertx;
-import io.vertx.core.Future;
-import io.vertx.core.json.JsonObject;
-import io.vertx.core.json.JsonArray;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-import java.util.stream.Collectors;
-import java.util.function.Function;
-import io.vertx.serviceproxy.ProxyHelper;
-import io.vertx.serviceproxy.ServiceException;
-import io.vertx.serviceproxy.ServiceExceptionMessageCodec;
-import io.vertx.blueprint.microservice.payment.Payment;
-import io.vertx.core.AsyncResult;
-import io.vertx.core.Handler;
 
 /*
   Generated Proxy code - DO NOT EDIT
@@ -786,32 +700,6 @@ public class PaymentQueryServiceVertxEBProxy implements PaymentQueryService {
 */
 
 
-import io.vertx.blueprint.microservice.payment.PaymentQueryService;
-import io.vertx.core.Vertx;
-import io.vertx.core.Handler;
-import io.vertx.core.AsyncResult;
-import io.vertx.core.eventbus.EventBus;
-import io.vertx.core.eventbus.Message;
-import io.vertx.core.eventbus.MessageConsumer;
-import io.vertx.core.eventbus.DeliveryOptions;
-import io.vertx.core.eventbus.ReplyException;
-import io.vertx.core.json.JsonObject;
-import io.vertx.core.json.JsonArray;
-import java.util.Collection;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-import java.util.UUID;
-import java.util.stream.Collectors;
-import io.vertx.serviceproxy.ProxyHelper;
-import io.vertx.serviceproxy.ProxyHandler;
-import io.vertx.serviceproxy.ServiceException;
-import io.vertx.serviceproxy.ServiceExceptionMessageCodec;
-import io.vertx.blueprint.microservice.payment.Payment;
-import io.vertx.core.AsyncResult;
-import io.vertx.core.Handler;
 
 /*
   Generated Proxy code - DO NOT EDIT
@@ -1033,11 +921,6 @@ public class PaymentQueryServiceVertxProxyHandler extends ProxyHandler {
  */
 
 
-import java.util.Map;
-import rx.Observable;
-import io.vertx.blueprint.microservice.payment.Payment;
-import io.vertx.core.AsyncResult;
-import io.vertx.core.Handler;
 
 /**
  * A service interface managing payment transactions query.
@@ -1126,10 +1009,6 @@ public class PaymentQueryService {
 }
 
 
-import io.vertx.codegen.annotations.ProxyGen;
-import io.vertx.codegen.annotations.VertxGen;
-import io.vertx.core.AsyncResult;
-import io.vertx.core.Handler;
 
 /**
  * A service interface for online store CURD operation.
@@ -1176,15 +1055,7 @@ public interface StoreCRUDService {
 }
 
 
-import io.vertx.blueprint.microservice.common.BaseMicroserviceVerticle;
-import io.vertx.blueprint.microservice.store.api.RestStoreAPIVerticle;
-import io.vertx.blueprint.microservice.store.impl.StoreCRUDServiceImpl;
-import io.vertx.core.DeploymentOptions;
-import io.vertx.core.Future;
-import io.vertx.serviceproxy.ProxyHelper;
 
-import static io.vertx.blueprint.microservice.store.StoreCRUDService.SERVICE_ADDRESS;
-import static io.vertx.blueprint.microservice.store.StoreCRUDService.SERVICE_NAME;
 
 /**
  * A verticle for store operation (e.g. apply or close) processing.
@@ -1217,8 +1088,6 @@ public class StoreVerticle extends BaseMicroserviceVerticle {
 }
 
 
-import io.vertx.codegen.annotations.DataObject;
-import io.vertx.core.json.JsonObject;
 
 /**
  * Online store data object.
@@ -1302,16 +1171,7 @@ public class Store {
 @ModuleGen(name = "vertx-blueprint-store", groupPackage = "io.vertx.blueprint.microservice.store")
 
 
-import io.vertx.codegen.annotations.ModuleGen;
 
-import io.vertx.blueprint.microservice.common.RestAPIVerticle;
-import io.vertx.blueprint.microservice.store.Store;
-import io.vertx.blueprint.microservice.store.StoreCRUDService;
-import io.vertx.core.Future;
-import io.vertx.core.json.JsonObject;
-import io.vertx.ext.web.Router;
-import io.vertx.ext.web.RoutingContext;
-import io.vertx.ext.web.handler.BodyHandler;
 
 /**
  * A verticle provides REST API for online store service.
@@ -1374,14 +1234,6 @@ public class RestStoreAPIVerticle extends RestAPIVerticle {
 }
 
 
-import io.vertx.blueprint.microservice.store.Store;
-import io.vertx.blueprint.microservice.store.StoreCRUDService;
-import io.vertx.core.AsyncResult;
-import io.vertx.core.Future;
-import io.vertx.core.Handler;
-import io.vertx.core.Vertx;
-import io.vertx.core.json.JsonObject;
-import io.vertx.ext.mongo.MongoClient;
 
 /**
  * Implementation of {@link StoreCRUDService}. Use MongoDB as the persistence.
@@ -1459,32 +1311,6 @@ public class StoreCRUDServiceImpl implements StoreCRUDService {
 */
 
 
-import io.vertx.blueprint.microservice.store.StoreCRUDService;
-import io.vertx.core.Vertx;
-import io.vertx.core.Handler;
-import io.vertx.core.AsyncResult;
-import io.vertx.core.eventbus.EventBus;
-import io.vertx.core.eventbus.Message;
-import io.vertx.core.eventbus.MessageConsumer;
-import io.vertx.core.eventbus.DeliveryOptions;
-import io.vertx.core.eventbus.ReplyException;
-import io.vertx.core.json.JsonObject;
-import io.vertx.core.json.JsonArray;
-import java.util.Collection;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-import java.util.UUID;
-import java.util.stream.Collectors;
-import io.vertx.serviceproxy.ProxyHelper;
-import io.vertx.serviceproxy.ProxyHandler;
-import io.vertx.serviceproxy.ServiceException;
-import io.vertx.serviceproxy.ServiceExceptionMessageCodec;
-import io.vertx.core.AsyncResult;
-import io.vertx.core.Handler;
-import io.vertx.blueprint.microservice.store.Store;
 
 /*
   Generated Proxy code - DO NOT EDIT
@@ -1706,25 +1532,6 @@ public class StoreCRUDServiceVertxProxyHandler extends ProxyHandler {
 */
 
 
-import io.vertx.blueprint.microservice.store.StoreCRUDService;
-import io.vertx.core.eventbus.DeliveryOptions;
-import io.vertx.core.Vertx;
-import io.vertx.core.Future;
-import io.vertx.core.json.JsonObject;
-import io.vertx.core.json.JsonArray;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-import java.util.stream.Collectors;
-import java.util.function.Function;
-import io.vertx.serviceproxy.ProxyHelper;
-import io.vertx.serviceproxy.ServiceException;
-import io.vertx.serviceproxy.ServiceExceptionMessageCodec;
-import io.vertx.core.AsyncResult;
-import io.vertx.core.Handler;
-import io.vertx.blueprint.microservice.store.Store;
 
 /*
   Generated Proxy code - DO NOT EDIT
@@ -1884,8 +1691,6 @@ public class StoreCRUDServiceVertxEBProxy implements StoreCRUDService {
  */
 
 
-import io.vertx.core.json.JsonObject;
-import io.vertx.core.json.JsonArray;
 
 /**
  * Converter for {@link io.vertx.blueprint.microservice.store.Store}.
@@ -1941,12 +1746,6 @@ public class StoreConverter {
  */
 
 
-import java.util.Map;
-import rx.Observable;
-import rx.Single;
-import io.vertx.core.AsyncResult;
-import io.vertx.core.Handler;
-import io.vertx.blueprint.microservice.store.Store;
 
 /**
  * A service interface for online store CURD operation.
@@ -2047,13 +1846,7 @@ public class StoreCRUDService {
 }
 
 
-import io.vertx.codegen.annotations.Fluent;
-import io.vertx.codegen.annotations.ProxyGen;
-import io.vertx.codegen.annotations.VertxGen;
-import io.vertx.core.AsyncResult;
-import io.vertx.core.Handler;
 
-import java.util.List;
 
 /**
  * A service interface managing user accounts.
@@ -2157,8 +1950,6 @@ public interface AccountService {
 }
 
 
-import io.vertx.codegen.annotations.DataObject;
-import io.vertx.core.json.JsonObject;
 
 /**
  * User account data object
@@ -2245,17 +2036,8 @@ public class Account {
  */
 @ModuleGen(name = "vertx-blueprint-user-account", groupPackage = "io.vertx.blueprint.microservice.account")
 
-import io.vertx.codegen.annotations.ModuleGen;
 
-import io.vertx.blueprint.microservice.account.api.RestUserAccountAPIVerticle;
-import io.vertx.blueprint.microservice.account.impl.JdbcAccountServiceImpl;
-import io.vertx.blueprint.microservice.common.BaseMicroserviceVerticle;
-import io.vertx.core.DeploymentOptions;
-import io.vertx.core.Future;
-import io.vertx.serviceproxy.ProxyHelper;
 
-import static io.vertx.blueprint.microservice.account.AccountService.SERVICE_ADDRESS;
-import static io.vertx.blueprint.microservice.account.AccountService.SERVICE_NAME;
 
 
 /**
@@ -2291,14 +2073,6 @@ public class UserAccountVerticle extends BaseMicroserviceVerticle {
 }
 
 
-import io.vertx.blueprint.microservice.account.Account;
-import io.vertx.blueprint.microservice.account.AccountService;
-import io.vertx.blueprint.microservice.common.RestAPIVerticle;
-import io.vertx.core.Future;
-import io.vertx.core.json.Json;
-import io.vertx.ext.web.Router;
-import io.vertx.ext.web.RoutingContext;
-import io.vertx.ext.web.handler.BodyHandler;
 
 /**
  * This verticle exposes a HTTP endpoint to process user data via REST API.
@@ -2369,17 +2143,7 @@ public class RestUserAccountAPIVerticle extends RestAPIVerticle {
 }
 
 
-import io.vertx.blueprint.microservice.account.Account;
-import io.vertx.blueprint.microservice.account.AccountService;
-import io.vertx.blueprint.microservice.common.service.JdbcRepositoryWrapper;
-import io.vertx.core.AsyncResult;
-import io.vertx.core.Handler;
-import io.vertx.core.Vertx;
-import io.vertx.core.json.JsonArray;
-import io.vertx.core.json.JsonObject;
 
-import java.util.List;
-import java.util.stream.Collectors;
 
 /**
  * JDBC implementation of {@link AccountService}.
@@ -2508,27 +2272,6 @@ public class JdbcAccountServiceImpl extends JdbcRepositoryWrapper implements Acc
 */
 
 
-import io.vertx.blueprint.microservice.account.AccountService;
-import io.vertx.core.eventbus.DeliveryOptions;
-import io.vertx.core.Vertx;
-import io.vertx.core.Future;
-import io.vertx.core.json.JsonObject;
-import io.vertx.core.json.JsonArray;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-import java.util.stream.Collectors;
-import java.util.function.Function;
-import io.vertx.serviceproxy.ProxyHelper;
-import io.vertx.serviceproxy.ServiceException;
-import io.vertx.serviceproxy.ServiceExceptionMessageCodec;
-import java.util.List;
-import io.vertx.core.AsyncResult;
-import io.vertx.blueprint.microservice.account.Account;
-import io.vertx.core.Handler;
-import io.vertx.blueprint.microservice.account.AccountService;
 
 /*
   Generated Proxy code - DO NOT EDIT
@@ -2783,34 +2526,6 @@ public class AccountServiceVertxEBProxy implements AccountService {
 */
 
 
-import io.vertx.blueprint.microservice.account.AccountService;
-import io.vertx.core.Vertx;
-import io.vertx.core.Handler;
-import io.vertx.core.AsyncResult;
-import io.vertx.core.eventbus.EventBus;
-import io.vertx.core.eventbus.Message;
-import io.vertx.core.eventbus.MessageConsumer;
-import io.vertx.core.eventbus.DeliveryOptions;
-import io.vertx.core.eventbus.ReplyException;
-import io.vertx.core.json.JsonObject;
-import io.vertx.core.json.JsonArray;
-import java.util.Collection;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-import java.util.UUID;
-import java.util.stream.Collectors;
-import io.vertx.serviceproxy.ProxyHelper;
-import io.vertx.serviceproxy.ProxyHandler;
-import io.vertx.serviceproxy.ServiceException;
-import io.vertx.serviceproxy.ServiceExceptionMessageCodec;
-import java.util.List;
-import io.vertx.core.AsyncResult;
-import io.vertx.blueprint.microservice.account.Account;
-import io.vertx.core.Handler;
-import io.vertx.blueprint.microservice.account.AccountService;
 
 /*
   Generated Proxy code - DO NOT EDIT
@@ -3082,8 +2797,6 @@ public class AccountServiceVertxProxyHandler extends ProxyHandler {
  */
 
 
-import io.vertx.core.json.JsonObject;
-import io.vertx.core.json.JsonArray;
 
 /**
  * Converter for {@link io.vertx.blueprint.microservice.account.Account}.
@@ -3145,13 +2858,6 @@ public class AccountConverter {
  */
 
 
-import java.util.Map;
-import rx.Observable;
-import rx.Single;
-import java.util.List;
-import io.vertx.core.AsyncResult;
-import io.vertx.blueprint.microservice.account.Account;
-import io.vertx.core.Handler;
 
 /**
  * A service interface managing user accounts.
@@ -3358,8 +3064,6 @@ public class AccountService {
 }
 
 
-import io.vertx.codegen.annotations.DataObject;
-import io.vertx.core.json.JsonObject;
 
 /**
  * A product tuple represents the amount of a certain product in a shopping.
@@ -3450,8 +3154,6 @@ public class ProductTuple /*extends Tuple4<String, String, Double, Integer>*/ {
 }
 
 
-import io.vertx.codegen.annotations.DataObject;
-import io.vertx.core.json.JsonObject;
 
 /**
  * Product data object.
@@ -3569,15 +3271,7 @@ public class Product {
 }
 
 
-import io.vertx.codegen.annotations.Fluent;
-import io.vertx.codegen.annotations.ProxyGen;
-import io.vertx.codegen.annotations.VertxGen;
-import io.vertx.core.AsyncResult;
-import io.vertx.core.Handler;
-import io.vertx.core.Vertx;
-import io.vertx.core.json.JsonObject;
 
-import java.util.List;
 
 /**
  * A service interface managing products.
@@ -3693,17 +3387,8 @@ public interface ProductService {
 @ModuleGen(name = "vertx-blueprint-product", groupPackage = "io.vertx.blueprint.microservice.product")
 
 
-import io.vertx.codegen.annotations.ModuleGen;
 
-import io.vertx.blueprint.microservice.common.BaseMicroserviceVerticle;
-import io.vertx.blueprint.microservice.common.service.ExampleHelper;
-import io.vertx.blueprint.microservice.product.api.RestProductAPIVerticle;
-import io.vertx.blueprint.microservice.product.impl.ProductServiceImpl;
-import io.vertx.core.DeploymentOptions;
-import io.vertx.core.Future;
-import io.vertx.serviceproxy.ProxyHelper;
 
-import static io.vertx.blueprint.microservice.product.ProductService.SERVICE_ADDRESS;
 
 
 /**
@@ -3748,16 +3433,6 @@ public class ProductVerticle extends BaseMicroserviceVerticle {
 }
 
 
-import io.vertx.blueprint.microservice.common.RestAPIVerticle;
-import io.vertx.blueprint.microservice.product.Product;
-import io.vertx.blueprint.microservice.product.ProductService;
-import io.vertx.core.Future;
-import io.vertx.core.json.DecodeException;
-import io.vertx.core.json.Json;
-import io.vertx.core.json.JsonObject;
-import io.vertx.ext.web.Router;
-import io.vertx.ext.web.RoutingContext;
-import io.vertx.ext.web.handler.BodyHandler;
 
 
 /**
@@ -3866,17 +3541,7 @@ public class RestProductAPIVerticle extends RestAPIVerticle {
 }
 
 
-import io.vertx.blueprint.microservice.common.service.JdbcRepositoryWrapper;
-import io.vertx.blueprint.microservice.product.Product;
-import io.vertx.blueprint.microservice.product.ProductService;
-import io.vertx.core.AsyncResult;
-import io.vertx.core.Handler;
-import io.vertx.core.Vertx;
-import io.vertx.core.json.JsonArray;
-import io.vertx.core.json.JsonObject;
 
-import java.util.List;
-import java.util.stream.Collectors;
 
 /**
  * JDBC implementation of {@link io.vertx.blueprint.microservice.product.ProductService}.
@@ -4001,8 +3666,6 @@ public class ProductServiceImpl extends JdbcRepositoryWrapper implements Product
  */
 
 
-import io.vertx.core.json.JsonObject;
-import io.vertx.core.json.JsonArray;
 
 /**
  * Converter for {@link io.vertx.blueprint.microservice.product.Product}.
@@ -4068,35 +3731,6 @@ public class ProductConverter {
 */
 
 
-import io.vertx.blueprint.microservice.product.ProductService;
-import io.vertx.core.Vertx;
-import io.vertx.core.Handler;
-import io.vertx.core.AsyncResult;
-import io.vertx.core.eventbus.EventBus;
-import io.vertx.core.eventbus.Message;
-import io.vertx.core.eventbus.MessageConsumer;
-import io.vertx.core.eventbus.DeliveryOptions;
-import io.vertx.core.eventbus.ReplyException;
-import io.vertx.core.json.JsonObject;
-import io.vertx.core.json.JsonArray;
-import java.util.Collection;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-import java.util.UUID;
-import java.util.stream.Collectors;
-import io.vertx.serviceproxy.ProxyHelper;
-import io.vertx.serviceproxy.ProxyHandler;
-import io.vertx.serviceproxy.ServiceException;
-import io.vertx.serviceproxy.ServiceExceptionMessageCodec;
-import java.util.List;
-import io.vertx.blueprint.microservice.product.ProductService;
-import io.vertx.core.json.JsonObject;
-import io.vertx.core.AsyncResult;
-import io.vertx.core.Handler;
-import io.vertx.blueprint.microservice.product.Product;
 
 /*
   Generated Proxy code - DO NOT EDIT
@@ -4358,28 +3992,6 @@ public class ProductServiceVertxProxyHandler extends ProxyHandler {
 */
 
 
-import io.vertx.blueprint.microservice.product.ProductService;
-import io.vertx.core.eventbus.DeliveryOptions;
-import io.vertx.core.Vertx;
-import io.vertx.core.Future;
-import io.vertx.core.json.JsonObject;
-import io.vertx.core.json.JsonArray;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-import java.util.stream.Collectors;
-import java.util.function.Function;
-import io.vertx.serviceproxy.ProxyHelper;
-import io.vertx.serviceproxy.ServiceException;
-import io.vertx.serviceproxy.ServiceExceptionMessageCodec;
-import java.util.List;
-import io.vertx.blueprint.microservice.product.ProductService;
-import io.vertx.core.json.JsonObject;
-import io.vertx.core.AsyncResult;
-import io.vertx.core.Handler;
-import io.vertx.blueprint.microservice.product.Product;
 
 /*
   Generated Proxy code - DO NOT EDIT
@@ -4634,8 +4246,6 @@ public class ProductServiceVertxEBProxy implements ProductService {
  */
 
 
-import io.vertx.core.json.JsonObject;
-import io.vertx.core.json.JsonArray;
 
 /**
  * Converter for {@link io.vertx.blueprint.microservice.product.ProductTuple}.
@@ -4691,14 +4301,6 @@ public class ProductTupleConverter {
  */
 
 
-import java.util.Map;
-import rx.Observable;
-import rx.Single;
-import java.util.List;
-import io.vertx.core.json.JsonObject;
-import io.vertx.core.AsyncResult;
-import io.vertx.core.Handler;
-import io.vertx.blueprint.microservice.product.Product;
 
 /**
  * A service interface managing products.
@@ -4905,16 +4507,7 @@ public class ProductService {
 }
 
 
-import io.vertx.blueprint.microservice.product.ProductTuple;
-import io.vertx.codegen.annotations.DataObject;
-import io.vertx.codegen.annotations.GenIgnore;
-import io.vertx.core.json.JsonObject;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.stream.Stream;
 
 /**
  * Shopping cart state object.
@@ -4980,12 +4573,6 @@ public class ShoppingCart {
 }
 
 
-import io.vertx.blueprint.microservice.cart.api.RestShoppingAPIVerticle;
-import io.vertx.blueprint.microservice.cart.impl.ShoppingCartServiceImpl;
-import io.vertx.blueprint.microservice.common.BaseMicroserviceVerticle;
-import io.vertx.core.DeploymentOptions;
-import io.vertx.core.Future;
-import io.vertx.serviceproxy.ProxyHelper;
 
 /**
  * Shopping cart verticle.
@@ -5031,8 +4618,6 @@ public class CartVerticle extends BaseMicroserviceVerticle {
 }
 
 
-import io.vertx.codegen.annotations.DataObject;
-import io.vertx.core.json.JsonObject;
 
 /**
  * Cart event state object.
@@ -5162,13 +4747,7 @@ public class CartEvent {
 @ModuleGen(name = "vertx-blueprint-shopping-cart", groupPackage = "io.vertx.blueprint.microservice.cart")
 
 
-import io.vertx.codegen.annotations.ModuleGen;
 
-import io.vertx.codegen.annotations.Fluent;
-import io.vertx.codegen.annotations.ProxyGen;
-import io.vertx.codegen.annotations.VertxGen;
-import io.vertx.core.AsyncResult;
-import io.vertx.core.Handler;
 
 /**
  * A service interface for shopping cart operation.
@@ -5213,7 +4792,6 @@ public interface ShoppingCartService {
 }
 
 
-import io.vertx.codegen.annotations.VertxGen;
 
 /**
  * An enum class for the type of {@link CartEvent}.
@@ -5227,9 +4805,6 @@ public enum CartEventType {
 }
 
 
-import io.vertx.blueprint.microservice.order.Order;
-import io.vertx.codegen.annotations.DataObject;
-import io.vertx.core.json.JsonObject;
 
 /**
  * Checkout result data object.
@@ -5284,13 +4859,6 @@ public class CheckoutResult {
 }
 
 
-import io.vertx.blueprint.microservice.cart.impl.CheckoutServiceImpl;
-import io.vertx.codegen.annotations.ProxyGen;
-import io.vertx.codegen.annotations.VertxGen;
-import io.vertx.core.AsyncResult;
-import io.vertx.core.Handler;
-import io.vertx.core.Vertx;
-import io.vertx.servicediscovery.ServiceDiscovery;
 
 
 /**
@@ -5339,17 +4907,7 @@ public interface CheckoutService {
 }
 
 
-import io.vertx.blueprint.microservice.cart.CartEvent;
-import io.vertx.blueprint.microservice.cart.CheckoutService;
-import io.vertx.blueprint.microservice.cart.ShoppingCartService;
-import io.vertx.blueprint.microservice.common.RestAPIVerticle;
-import io.vertx.core.Future;
-import io.vertx.core.json.JsonObject;
-import io.vertx.ext.web.Router;
-import io.vertx.ext.web.RoutingContext;
-import io.vertx.ext.web.handler.BodyHandler;
 
-import java.util.Optional;
 
 /**
  * This verticle exposes a HTTP endpoint to process shopping cart with REST APIs.
@@ -5429,9 +4987,7 @@ public class RestShoppingAPIVerticle extends RestAPIVerticle {
 }
 
 
-import rx.Single;
 
-import java.util.Optional;
 
 /**
  * Simple Rx-fied data source service interface for CRUD.
@@ -5468,8 +5024,6 @@ public interface SimpleCrudDataSource<T, ID> {
 }
 
 
-import io.vertx.blueprint.microservice.cart.CartEvent;
-import rx.Observable;
 
 /**
  * Data source interface for processing {@link CartEvent}. Append-only operations.
@@ -5489,18 +5043,7 @@ public interface CartEventDataSource extends SimpleCrudDataSource<CartEvent, Lon
 }
 
 
-import io.vertx.blueprint.microservice.cart.CartEvent;
-import io.vertx.blueprint.microservice.cart.CartEventType;
-import io.vertx.blueprint.microservice.cart.repository.CartEventDataSource;
-import io.vertx.core.json.JsonArray;
-import io.vertx.core.json.JsonObject;
-import io.vertx.ext.sql.ResultSet;
-import io.vertx.rxjava.core.Vertx;
-import io.vertx.rxjava.ext.jdbc.JDBCClient;
-import rx.Observable;
-import rx.Single;
 
-import java.util.Optional;
 
 
 /**
@@ -5616,27 +5159,7 @@ public class CartEventDataSourceImpl implements CartEventDataSource {
 }
 
 
-import io.vertx.blueprint.microservice.cache.CounterService;
-import io.vertx.blueprint.microservice.cart.CartEvent;
-import io.vertx.blueprint.microservice.cart.CheckoutResult;
-import io.vertx.blueprint.microservice.cart.CheckoutService;
-import io.vertx.blueprint.microservice.cart.ShoppingCart;
-import io.vertx.blueprint.microservice.cart.ShoppingCartService;
-import io.vertx.blueprint.microservice.common.functional.Functional;
-import io.vertx.blueprint.microservice.order.Order;
-import io.vertx.blueprint.microservice.product.ProductTuple;
-import io.vertx.core.AsyncResult;
-import io.vertx.core.Future;
-import io.vertx.core.Handler;
-import io.vertx.core.Vertx;
-import io.vertx.core.http.HttpClient;
-import io.vertx.core.json.JsonObject;
-import io.vertx.servicediscovery.ServiceDiscovery;
-import io.vertx.servicediscovery.types.EventBusService;
-import io.vertx.servicediscovery.types.HttpEndpoint;
 
-import java.util.List;
-import java.util.stream.Collectors;
 
 /**
  * A simple implementation for {@link CheckoutService}.
@@ -5833,26 +5356,7 @@ public class CheckoutServiceImpl implements CheckoutService {
 }
 
 
-import io.vertx.blueprint.microservice.cart.CartEvent;
-import io.vertx.blueprint.microservice.cart.ShoppingCart;
-import io.vertx.blueprint.microservice.cart.ShoppingCartService;
-import io.vertx.blueprint.microservice.cart.repository.CartEventDataSource;
-import io.vertx.blueprint.microservice.cart.repository.impl.CartEventDataSourceImpl;
-import io.vertx.blueprint.microservice.common.functional.Functional;
-import io.vertx.blueprint.microservice.product.Product;
-import io.vertx.blueprint.microservice.product.ProductService;
-import io.vertx.blueprint.microservice.product.ProductTuple;
-import io.vertx.core.AsyncResult;
-import io.vertx.core.Future;
-import io.vertx.core.Handler;
-import io.vertx.core.Vertx;
-import io.vertx.core.json.JsonObject;
-import io.vertx.servicediscovery.ServiceDiscovery;
-import io.vertx.servicediscovery.types.EventBusService;
 
-import java.util.List;
-import java.util.Objects;
-import java.util.stream.Collectors;
 
 /**
  * Implementation of {@link ShoppingCartService}.
@@ -5995,34 +5499,6 @@ public class ShoppingCartServiceImpl implements ShoppingCartService {
 */
 
 
-import io.vertx.blueprint.microservice.cart.ShoppingCartService;
-import io.vertx.core.Vertx;
-import io.vertx.core.Handler;
-import io.vertx.core.AsyncResult;
-import io.vertx.core.eventbus.EventBus;
-import io.vertx.core.eventbus.Message;
-import io.vertx.core.eventbus.MessageConsumer;
-import io.vertx.core.eventbus.DeliveryOptions;
-import io.vertx.core.eventbus.ReplyException;
-import io.vertx.core.json.JsonObject;
-import io.vertx.core.json.JsonArray;
-import java.util.Collection;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-import java.util.UUID;
-import java.util.stream.Collectors;
-import io.vertx.serviceproxy.ProxyHelper;
-import io.vertx.serviceproxy.ProxyHandler;
-import io.vertx.serviceproxy.ServiceException;
-import io.vertx.serviceproxy.ServiceExceptionMessageCodec;
-import io.vertx.blueprint.microservice.cart.CartEvent;
-import io.vertx.core.AsyncResult;
-import io.vertx.core.Handler;
-import io.vertx.blueprint.microservice.cart.ShoppingCart;
-import io.vertx.blueprint.microservice.cart.ShoppingCartService;
 
 /*
   Generated Proxy code - DO NOT EDIT
@@ -6240,27 +5716,6 @@ public class ShoppingCartServiceVertxProxyHandler extends ProxyHandler {
 */
 
 
-import io.vertx.blueprint.microservice.cart.ShoppingCartService;
-import io.vertx.core.eventbus.DeliveryOptions;
-import io.vertx.core.Vertx;
-import io.vertx.core.Future;
-import io.vertx.core.json.JsonObject;
-import io.vertx.core.json.JsonArray;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-import java.util.stream.Collectors;
-import java.util.function.Function;
-import io.vertx.serviceproxy.ProxyHelper;
-import io.vertx.serviceproxy.ServiceException;
-import io.vertx.serviceproxy.ServiceExceptionMessageCodec;
-import io.vertx.blueprint.microservice.cart.CartEvent;
-import io.vertx.core.AsyncResult;
-import io.vertx.core.Handler;
-import io.vertx.blueprint.microservice.cart.ShoppingCart;
-import io.vertx.blueprint.microservice.cart.ShoppingCartService;
 
 /*
   Generated Proxy code - DO NOT EDIT
@@ -6404,28 +5859,6 @@ public class ShoppingCartServiceVertxEBProxy implements ShoppingCartService {
 */
 
 
-import io.vertx.blueprint.microservice.cart.CheckoutService;
-import io.vertx.core.eventbus.DeliveryOptions;
-import io.vertx.core.Vertx;
-import io.vertx.core.Future;
-import io.vertx.core.json.JsonObject;
-import io.vertx.core.json.JsonArray;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-import java.util.stream.Collectors;
-import java.util.function.Function;
-import io.vertx.serviceproxy.ProxyHelper;
-import io.vertx.serviceproxy.ServiceException;
-import io.vertx.serviceproxy.ServiceExceptionMessageCodec;
-import io.vertx.core.Vertx;
-import io.vertx.blueprint.microservice.cart.CheckoutService;
-import io.vertx.servicediscovery.ServiceDiscovery;
-import io.vertx.core.AsyncResult;
-import io.vertx.core.Handler;
-import io.vertx.blueprint.microservice.cart.CheckoutResult;
 
 /*
   Generated Proxy code - DO NOT EDIT
@@ -6549,8 +5982,6 @@ public class CheckoutServiceVertxEBProxy implements CheckoutService {
  */
 
 
-import io.vertx.core.json.JsonObject;
-import io.vertx.core.json.JsonArray;
 
 /**
  * Converter for {@link io.vertx.blueprint.microservice.cart.CartEvent}.
@@ -6618,8 +6049,6 @@ public class CartEventConverter {
  */
 
 
-import io.vertx.core.json.JsonObject;
-import io.vertx.core.json.JsonArray;
 
 /**
  * Converter for {@link io.vertx.blueprint.microservice.cart.ShoppingCart}.
@@ -6665,35 +6094,6 @@ public class ShoppingCartConverter {
 */
 
 
-import io.vertx.blueprint.microservice.cart.CheckoutService;
-import io.vertx.core.Vertx;
-import io.vertx.core.Handler;
-import io.vertx.core.AsyncResult;
-import io.vertx.core.eventbus.EventBus;
-import io.vertx.core.eventbus.Message;
-import io.vertx.core.eventbus.MessageConsumer;
-import io.vertx.core.eventbus.DeliveryOptions;
-import io.vertx.core.eventbus.ReplyException;
-import io.vertx.core.json.JsonObject;
-import io.vertx.core.json.JsonArray;
-import java.util.Collection;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-import java.util.UUID;
-import java.util.stream.Collectors;
-import io.vertx.serviceproxy.ProxyHelper;
-import io.vertx.serviceproxy.ProxyHandler;
-import io.vertx.serviceproxy.ServiceException;
-import io.vertx.serviceproxy.ServiceExceptionMessageCodec;
-import io.vertx.core.Vertx;
-import io.vertx.blueprint.microservice.cart.CheckoutService;
-import io.vertx.servicediscovery.ServiceDiscovery;
-import io.vertx.core.AsyncResult;
-import io.vertx.core.Handler;
-import io.vertx.blueprint.microservice.cart.CheckoutResult;
 
 /*
   Generated Proxy code - DO NOT EDIT
@@ -6908,8 +6308,6 @@ public class CheckoutServiceVertxProxyHandler extends ProxyHandler {
  */
 
 
-import io.vertx.core.json.JsonObject;
-import io.vertx.core.json.JsonArray;
 
 /**
  * Converter for {@link io.vertx.blueprint.microservice.cart.CheckoutResult}.
@@ -6953,13 +6351,6 @@ public class CheckoutResultConverter {
  */
 
 
-import java.util.Map;
-import rx.Observable;
-import rx.Single;
-import io.vertx.blueprint.microservice.cart.CartEvent;
-import io.vertx.core.AsyncResult;
-import io.vertx.core.Handler;
-import io.vertx.blueprint.microservice.cart.ShoppingCart;
 
 /**
  * A service interface for shopping cart operation.
@@ -7072,14 +6463,6 @@ class ShoppingCartServiceImpl implements ShoppingCartService {
  */
 
 
-import java.util.Map;
-import rx.Observable;
-import rx.Single;
-import io.vertx.rxjava.core.Vertx;
-import io.vertx.rxjava.servicediscovery.ServiceDiscovery;
-import io.vertx.core.AsyncResult;
-import io.vertx.core.Handler;
-import io.vertx.blueprint.microservice.cart.CheckoutResult;
 
 /**
  * A service interface for shopping cart checkout logic.
@@ -7147,14 +6530,7 @@ public class CheckoutService {
 }
 
 
-import io.vertx.blueprint.microservice.product.ProductTuple;
-import io.vertx.codegen.annotations.DataObject;
-import io.vertx.core.json.JsonArray;
-import io.vertx.core.json.JsonObject;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.stream.Collectors;
 
 /**
  * Order data object.
@@ -7259,14 +6635,7 @@ public class Order {
 }
 
 
-import io.vertx.blueprint.microservice.common.BaseMicroserviceVerticle;
-import io.vertx.blueprint.microservice.order.api.RestOrderAPIVerticle;
-import io.vertx.blueprint.microservice.order.impl.OrderServiceImpl;
-import io.vertx.core.DeploymentOptions;
-import io.vertx.core.Future;
-import io.vertx.serviceproxy.ProxyHelper;
 
-import static io.vertx.blueprint.microservice.order.OrderService.*;
 
 /**
  * A verticle deploys multiple verticles for order operation and dispatching.
@@ -7314,19 +6683,7 @@ public class OrderVerticle extends BaseMicroserviceVerticle {
 }
 
 
-import io.vertx.blueprint.microservice.common.BaseMicroserviceVerticle;
-import io.vertx.core.CompositeFuture;
-import io.vertx.core.Future;
-import io.vertx.core.eventbus.Message;
-import io.vertx.core.eventbus.MessageConsumer;
-import io.vertx.core.http.HttpClient;
-import io.vertx.core.json.JsonObject;
-import io.vertx.servicediscovery.ServiceDiscovery;
-import io.vertx.servicediscovery.types.HttpEndpoint;
-import io.vertx.servicediscovery.types.MessageSource;
 
-import java.util.List;
-import java.util.stream.Collectors;
 
 /**
  * A verticle for raw order wrapping and dispatching.
@@ -7441,13 +6798,7 @@ public class RawOrderDispatcher extends BaseMicroserviceVerticle {
 }
 
 
-import io.vertx.codegen.annotations.Fluent;
-import io.vertx.codegen.annotations.ProxyGen;
-import io.vertx.codegen.annotations.VertxGen;
-import io.vertx.core.AsyncResult;
-import io.vertx.core.Handler;
 
-import java.util.List;
 
 /**
  * A service interface managing order storage operations.
@@ -7509,7 +6860,6 @@ public interface OrderService {
 }
 
 
-import io.vertx.codegen.annotations.VertxGen;
 
 /**
  * Order event type.
@@ -7528,10 +6878,7 @@ public enum OrderEventType {
 @ModuleGen(name = "vertx-blueprint-order", groupPackage = "io.vertx.blueprint.microservice.order")
 
 
-import io.vertx.codegen.annotations.ModuleGen;
 
-import io.vertx.codegen.annotations.DataObject;
-import io.vertx.core.json.JsonObject;
 
 /**
  * Checkout result data object.
@@ -7586,16 +6933,7 @@ public class CheckoutResult {
 }
 
 
-import io.vertx.blueprint.microservice.common.RestAPIVerticle;
-import io.vertx.blueprint.microservice.order.OrderService;
-import io.vertx.core.Future;
-import io.vertx.core.json.Json;
-import io.vertx.core.json.JsonObject;
-import io.vertx.ext.web.Router;
-import io.vertx.ext.web.RoutingContext;
-import io.vertx.ext.web.handler.BodyHandler;
 
-import java.util.Optional;
 
 /**
  * A verticle supplies REST endpoint for order service.
@@ -7660,17 +6998,7 @@ public class RestOrderAPIVerticle extends RestAPIVerticle {
 }
 
 
-import io.vertx.blueprint.microservice.common.service.JdbcRepositoryWrapper;
-import io.vertx.blueprint.microservice.order.Order;
-import io.vertx.blueprint.microservice.order.OrderService;
-import io.vertx.core.AsyncResult;
-import io.vertx.core.Handler;
-import io.vertx.core.Vertx;
-import io.vertx.core.json.JsonArray;
-import io.vertx.core.json.JsonObject;
 
-import java.util.List;
-import java.util.stream.Collectors;
 
 /**
  * Implementation of {@link OrderService}.
@@ -7757,8 +7085,6 @@ public class OrderServiceImpl extends JdbcRepositoryWrapper implements OrderServ
  */
 
 
-import io.vertx.core.json.JsonObject;
-import io.vertx.core.json.JsonArray;
 
 /**
  * Converter for {@link io.vertx.blueprint.microservice.order.Order}.
@@ -7833,34 +7159,6 @@ public class OrderConverter {
 */
 
 
-import io.vertx.blueprint.microservice.order.OrderService;
-import io.vertx.core.Vertx;
-import io.vertx.core.Handler;
-import io.vertx.core.AsyncResult;
-import io.vertx.core.eventbus.EventBus;
-import io.vertx.core.eventbus.Message;
-import io.vertx.core.eventbus.MessageConsumer;
-import io.vertx.core.eventbus.DeliveryOptions;
-import io.vertx.core.eventbus.ReplyException;
-import io.vertx.core.json.JsonObject;
-import io.vertx.core.json.JsonArray;
-import java.util.Collection;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-import java.util.UUID;
-import java.util.stream.Collectors;
-import io.vertx.serviceproxy.ProxyHelper;
-import io.vertx.serviceproxy.ProxyHandler;
-import io.vertx.serviceproxy.ServiceException;
-import io.vertx.serviceproxy.ServiceExceptionMessageCodec;
-import java.util.List;
-import io.vertx.blueprint.microservice.order.OrderService;
-import io.vertx.blueprint.microservice.order.Order;
-import io.vertx.core.AsyncResult;
-import io.vertx.core.Handler;
 
 /*
   Generated Proxy code - DO NOT EDIT
@@ -8096,27 +7394,6 @@ public class OrderServiceVertxProxyHandler extends ProxyHandler {
 */
 
 
-import io.vertx.blueprint.microservice.order.OrderService;
-import io.vertx.core.eventbus.DeliveryOptions;
-import io.vertx.core.Vertx;
-import io.vertx.core.Future;
-import io.vertx.core.json.JsonObject;
-import io.vertx.core.json.JsonArray;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-import java.util.stream.Collectors;
-import java.util.function.Function;
-import io.vertx.serviceproxy.ProxyHelper;
-import io.vertx.serviceproxy.ServiceException;
-import io.vertx.serviceproxy.ServiceExceptionMessageCodec;
-import java.util.List;
-import io.vertx.blueprint.microservice.order.OrderService;
-import io.vertx.blueprint.microservice.order.Order;
-import io.vertx.core.AsyncResult;
-import io.vertx.core.Handler;
 
 /*
   Generated Proxy code - DO NOT EDIT
@@ -8297,8 +7574,6 @@ public class OrderServiceVertxEBProxy implements OrderService {
  */
 
 
-import io.vertx.core.json.JsonObject;
-import io.vertx.core.json.JsonArray;
 
 /**
  * Converter for {@link io.vertx.blueprint.microservice.order.CheckoutResult}.
@@ -8342,13 +7617,6 @@ public class CheckoutResultConverter {
  */
 
 
-import java.util.Map;
-import rx.Observable;
-import rx.Single;
-import java.util.List;
-import io.vertx.blueprint.microservice.order.Order;
-import io.vertx.core.AsyncResult;
-import io.vertx.core.Handler;
 
 /**
  * A service interface managing order storage operations.
