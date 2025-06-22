@@ -1,0 +1,21 @@
+version: 2.1
+setup: true
+orbs:
+  eventuate-gradle-build-and-test: "eventuate_io/eventuate-gradle-build-and-test@0.2.1"
+  continuation: circleci/continuation@0.1.2
+jobs:
+  setup:
+    executor: continuation/default
+    steps:
+      - checkout # checkout code
+      - run: # run a command
+          name: Generate config
+          command: |
+            ./.circleci/generate-config.sh > generated_config.yml
+      - continuation/continue:
+          configuration_path: generated_config.yml
+
+workflows:
+  setup:
+    jobs:
+      - setup

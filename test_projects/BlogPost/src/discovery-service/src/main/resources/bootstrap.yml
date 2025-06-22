@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: discovery-service
+  cloud:
+    config:
+      uri: http://localhost:9090
+---
+spring:
+  profiles: docker
+  cloud:
+     config:
+        uri: http://config-server:9090

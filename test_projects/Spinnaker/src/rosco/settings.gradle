@@ -1,0 +1,20 @@
+rootProject.name = 'rosco'
+
+apply from: "../versions.gradle"
+
+include 'rosco-bom',
+  'rosco-core',
+  'rosco-integration',
+  'rosco-manifests',
+  'rosco-web'
+
+def setBuildFile(project) {
+  project.buildFileName = "${project.name}.gradle"
+  project.children.each {
+    setBuildFile(it)
+  }
+}
+
+rootProject.children.each {
+  setBuildFile(it)
+}

@@ -1,0 +1,13 @@
+server:
+  port: 9001
+spring:
+  application:
+    name: product-query-side
+    index: ${random.int[1024,4096]}
+  cloud:
+    config:
+      uri: http://config:8888
+      failFast: true
+      retry:
+        initialInterval: 2000
+        maxAttempts: 30

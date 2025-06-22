@@ -1,0 +1,55 @@
+server:
+  port: 8002
+spring:
+  application:
+    name: qbike-order    # 项目名称尽量用小写
+  jpa:
+    generate-ddl: false
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/qbike?useUnicode=true&characterEncoding=utf8
+    username: root
+    password:
+    tomcat:
+      max-active: 5
+      min-idle: 1
+  redis:
+    host: localhost
+    timeout: 2000ms
+    database: 2
+    jedis:
+      pool:
+        #最大连接数
+        max-active: 8
+        #最大阻塞等待时间(负数表示没限制)
+        max-wait: 1000ms
+        #最大空闲
+        max-idle: 8
+        #最小空闲
+        min-idle: 0
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+  zipkin:
+    rabbitmq:
+      queue: zipkin
+  sleuth:
+    sampler:
+      probability: 1.0f
+logging:
+  level:
+    root: INFO
+    org.hibernate: INFO
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+    org.hibernate.type.descriptor.sql.BasicExtractor: TRACE
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://127.0.0.1:8761/eureka/    # 指定注册中心的地址
+  instance:
+    preferIpAddress: true

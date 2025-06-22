@@ -1,0 +1,93 @@
+server:
+  port: 8070
+
+spring:
+  application:
+    name: service-b
+  sleuth:
+    sampler:
+      probability: 1
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        service-id: config-server
+      fail-fast: true
+      retry:
+        initial-interval: 2000
+        max-interval: 10000
+        multiplier: 2
+        max-attempts: 10
+  rabbitmq:
+    host: localhost
+  zipkin:
+    sender:
+      type: web
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+            defaultZone: http://localhost:8761/eureka/
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    shutdown:
+      enabled: true
+    health:
+      show-details: ALWAYS
+
+---
+spring:
+  profiles: docker
+  application:
+    name: service-b
+  sleuth:
+    sampler:
+      probability: 1
+  zipkin:
+    base-url: http://zipkin:9411/
+    sender:
+      type: web
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        service-id: config-server
+      fail-fast: true
+      retry:
+        initial-interval: 2000
+        max-interval: 10000
+        multiplier: 2
+        max-attempts: 10
+  rabbitmq:
+    host: rabbitmq
+
+server:
+  port: 8070
+
+eureka:
+  instance:
+    hostname: service-b
+    prefer-ip-address: true
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+            defaultZone: http://eureka-server:8761/eureka/
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    shutdown:
+      enabled: true
+    health:
+      show-details: ALWAYS

@@ -1,5 +1,6 @@
 # You can use this file to integrate java files into one java file
 import os
+import sys
 
 
 def integrate_java_files(src_dir, dest_file):
@@ -16,5 +17,6 @@ def integrate_java_files(src_dir, dest_file):
                     outfile.write('\n')
 
 
+proj = sys.argv[1]
+integrate_java_files(f"{proj}src/", f"{proj}OneFileSource.java")
 
-integrate_java_files(input("src dir: "), input("dest file: "))

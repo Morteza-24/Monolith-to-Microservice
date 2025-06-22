@@ -1,0 +1,85 @@
+
+buildscript {
+    dependencies {
+        classpath "io.spring.gradle:dependency-management-plugin:$springDependencyManagementPluginVersion"
+        classpath "org.springframework.cloud:spring-cloud-contract-gradle-plugin:$springCloudContractDependenciesVersion"
+        classpath "com.avast.gradle:gradle-docker-compose-plugin:$dockerComposePluginVersion"
+    }
+    repositories {
+        mavenCentral()
+        jcenter()
+    }
+}
+
+apply plugin: FtgoServicePlugin
+apply plugin: "io.spring.dependency-management"
+// apply plugin: 'spring-cloud-contract'
+apply plugin: IntegrationTestsPlugin
+apply plugin: 'docker-compose'
+
+dependencyManagement {
+    imports {
+        mavenBom "org.springframework.cloud:spring-cloud-contract-dependencies:$springCloudContractDependenciesVersion"
+    }
+}
+
+dependencies {
+    compile 'com.amazonaws:aws-java-sdk-dynamodb:1.11.158'
+
+    compile project(":common-swagger")
+
+    compile (project(":ftgo-order-service-api")) {
+        exclude module: "spring-boot-starter-data-jpa"
+    }
+
+    compile "io.eventuate.tram.core:eventuate-tram-spring-events"
+    compile "io.eventuate.tram.core:eventuate-tram-spring-messaging"
+    compile "io.eventuate.tram.core:eventuate-tram-spring-consumer-kafka"
+
+    compile "org.springframework.boot:spring-boot-starter-actuator:$springBootVersion"
+    compile "org.springframework.boot:spring-boot-starter-web:$springBootVersion"
+    compile 'javax.el:javax.el-api:2.2.5'
+
+    compile('org.apache.kafka:kafka-clients:2.3.0') {
+        force = true
+    }
+
+    testCompile "io.eventuate.tram.core:eventuate-tram-spring-in-memory"
+    testCompile "io.eventuate.util:eventuate-util-test"
+    testCompile "io.eventuate.tram.core:eventuate-tram-test-util"
+
+    testCompile "org.springframework.boot:spring-boot-starter-test:$springBootVersion"
+    testCompile "com.jayway.restassured:rest-assured:$restAssuredVersion"
+    testCompile "com.jayway.jsonpath:json-path:2.3.0"
+
+    testCompile "net.chrisrichardson.ftgo:ftgo-order-service-contracts:unspecified:stubs"
+    testCompile "org.springframework.cloud:spring-cloud-contract-wiremock"
+    testCompile "org.springframework.cloud:spring-cloud-starter-contract-stub-runner"
+    testCompile "io.eventuate.tram.core:eventuate-tram-spring-testing-support-cloud-contract"
+
+    testCompile "org.hamcrest:hamcrest:2.1"
+
+}
+
+dockerCompose {
+
+    environment.put "EVENTUATE_COMMON_VERSION", eventuateCommonImageVersion
+    environment.put "EVENTUATE_CDC_VERSION", eventuateCdcImageVersion
+    environment.put "EVENTUATE_SAGA_VERSION", eventuateTramSagasImageVersion
+    environment.put "EVENTUATE_JAVA_BASE_IMAGE_VERSION", eventuateExamplesBaseImageVersion
+    environment.put "EVENTUATE_MESSAGING_KAFKA_IMAGE_VERSION", eventuateMessagingKafkaImageVersion
+
+    projectName = null
+
+    integrationTests {
+        projectName = null
+        removeOrphans = true
+        retainContainersOnStartupFailure = true
+        startedServices = ["dynamodblocal", "dynamodblocal-init"]
+        stopContainers = false
+        if (System.getenv("FTGO_DOCKER_COMPOSE_FILES") != null)
+            useComposeFiles = System.getenv("FTGO_DOCKER_COMPOSE_FILES").split(",").collect { "../" + it }
+    }
+}
+
+integrationTest.dependsOn(integrationTestsComposeUp)

@@ -1,0 +1,76 @@
+
+apply plugin: FtgoServicePlugin
+
+apply plugin: IntegrationTestsPlugin
+
+apply plugin: 'spring-cloud-contract'
+
+contracts {
+    contractsDslDir = new File("../ftgo-restaurant-service-contracts/src/main/resources/contracts")
+    packageWithBaseClasses = 'net.chrisrichardson.ftgo.restaurantservice.contract'
+    generatedTestSourcesDir = project.file("${project.buildDir}/generated-integration-test-sources/contracts")
+    sourceSet = "integrationTest"
+}
+
+sourceSets {
+    integrationTest {
+        java {
+            srcDir project.file("${project.buildDir}/generated-integration-test-sources/contracts")
+        }
+    }
+}
+
+compileTestGroovy.enabled=false
+
+dependencyManagement {
+    imports {
+        mavenBom "org.springframework.cloud:spring-cloud-contract-dependencies:$springCloudContractDependenciesVersion"
+    }
+}
+
+configurations.all {
+    // Out of date, conflicting JSON library
+    exclude  group: "com.vaadin.external.google"
+}
+
+dependencies {
+
+
+    compile "io.eventuate.tram.core:eventuate-tram-spring-jdbc-kafka"
+    compile "io.eventuate.tram.core:eventuate-tram-spring-events"
+    compile "io.eventuate.tram.core:eventuate-tram-spring-messaging"
+    compile "io.eventuate.tram.sagas:eventuate-tram-sagas-spring-orchestration-simple-dsl"
+    compile "io.eventuate.tram.core:eventuate-tram-aggregate-domain-events"
+
+    compile project(":common-swagger")
+    compile project(":ftgo-restaurant-service-api")
+    compile project(":ftgo-restaurant-service-api-spec")
+    compile project(":ftgo-common-jpa")
+    compile project(":ftgo-common")
+
+    compile "org.springframework.boot:spring-boot-starter-data-jpa:$springBootVersion"
+    compile "org.springframework.boot:spring-boot-starter-web:$springBootVersion"
+    compile "org.springframework.boot:spring-boot-starter-actuator:$springBootVersion"
+
+    compile 'javax.el:javax.el-api:2.2.5'
+
+    compile('org.apache.kafka:kafka-clients:2.3.0') {
+        force = true
+    }
+
+    testCompile "io.eventuate.util:eventuate-util-test"
+    testCompile "io.eventuate.tram.core:eventuate-tram-test-util"
+
+    testCompile "io.eventuate.tram.sagas:eventuate-tram-sagas-spring-in-memory"
+    testCompile "org.springframework.boot:spring-boot-starter-test:$springBootVersion"
+    testCompile "com.jayway.restassured:rest-assured:$restAssuredVersion"
+    testCompile "com.jayway.jsonpath:json-path:2.3.0"
+    testCompile "io.eventuate.tram.core:eventuate-tram-spring-testing-support-cloud-contract"
+    testCompile project(":ftgo-test-util-json-schema")
+
+    integrationTestCompile "org.springframework.cloud:spring-cloud-contract-wiremock"
+    integrationTestCompile "org.springframework.cloud:spring-cloud-starter-contract-stub-runner"
+    integrationTestCompile "io.eventuate.tram.sagas:eventuate-tram-sagas-spring-testing-support"
+    integrationTestCompile "io.eventuate.tram.core:eventuate-tram-spring-in-memory"
+
+}
