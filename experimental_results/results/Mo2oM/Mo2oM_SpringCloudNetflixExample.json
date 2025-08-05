@@ -1,0 +1,7982 @@
+[
+  {
+    "n_clusters": 2,
+    "alpha": 0.0,
+    "threshold": 0.05,
+    "microservices": [[0],[0],[0],[0],[0],[0],[0],[0]],
+    "SM": 0.015625,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.0,
+    "threshold": 0.1,
+    "microservices": [[0],[0],[0],[0],[0],[0],[0],[0]],
+    "SM": 0.015625,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.0,
+    "threshold": 0.15,
+    "microservices": [[0],[0],[0],[0],[0],[0],[0],[0]],
+    "SM": 0.015625,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.0,
+    "threshold": 0.2,
+    "microservices": [[0],[0],[0],[0],[0],[0],[0],[0]],
+    "SM": 0.015625,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.0,
+    "threshold": 0.25,
+    "microservices": [[0],[0],[0],[0],[0],[0],[0],[0]],
+    "SM": 0.015625,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.0,
+    "threshold": 0.3,
+    "microservices": [[0],[0],[0],[0],[0],[0],[0],[0]],
+    "SM": 0.015625,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.0,
+    "threshold": 0.35,
+    "microservices": [[0],[0],[0],[0],[0],[0],[0],[0]],
+    "SM": 0.015625,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.0,
+    "threshold": 0.4,
+    "microservices": [[0],[0],[0],[0],[0],[0],[0],[0]],
+    "SM": 0.015625,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.0,
+    "threshold": 0.45,
+    "microservices": [[0],[0],[0],[0],[0],[0],[0],[0]],
+    "SM": 0.015625,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.0,
+    "threshold": 0.5,
+    "microservices": [[0],[0],[0],[0],[0],[0],[0],[0]],
+    "SM": 0.015625,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.0,
+    "threshold": 0.55,
+    "microservices": [[0],[0],[0],[0],[0],[0],[0],[0]],
+    "SM": 0.015625,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.0,
+    "threshold": 0.6,
+    "microservices": [[0],[0],[0],[0],[0],[0],[0],[0]],
+    "SM": 0.015625,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.0,
+    "threshold": 0.65,
+    "microservices": [[0],[0],[0],[0],[0],[0],[0],[0]],
+    "SM": 0.015625,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.0,
+    "threshold": 0.7,
+    "microservices": [[0],[0],[0],[0],[0],[0],[0],[0]],
+    "SM": 0.015625,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.0,
+    "threshold": 0.75,
+    "microservices": [[0],[0],[0],[0],[0],[0],[0],[0]],
+    "SM": 0.015625,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.0,
+    "threshold": 0.8,
+    "microservices": [[0],[0],[0],[0],[0],[0],[0],[0]],
+    "SM": 0.015625,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.0,
+    "threshold": 0.85,
+    "microservices": [[0],[0],[0],[0],[0],[0],[0],[0]],
+    "SM": 0.015625,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.0,
+    "threshold": 0.9,
+    "microservices": [[0],[0],[0],[0],[0],[0],[0],[0]],
+    "SM": 0.015625,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.0,
+    "threshold": 0.95,
+    "microservices": [[0],[0],[0],[0],[0],[0],[0],[0]],
+    "SM": 0.015625,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.05,
+    "threshold": 0.05,
+    "microservices": [[0,1],[0],[0],[0],[0],[0],[0],[0]],
+    "SM": 0.0078125,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.11111111111111116
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.05,
+    "threshold": 0.1,
+    "microservices": [[0],[0],[0],[0],[0],[0],[0],[0]],
+    "SM": 0.015625,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.05,
+    "threshold": 0.15,
+    "microservices": [[0],[0],[0],[0],[0],[0],[0],[0]],
+    "SM": 0.015625,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.05,
+    "threshold": 0.2,
+    "microservices": [[0],[0],[0],[0],[0],[0],[0],[0]],
+    "SM": 0.015625,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.05,
+    "threshold": 0.25,
+    "microservices": [[0],[0],[0],[0],[0],[0],[0],[0]],
+    "SM": 0.015625,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.05,
+    "threshold": 0.3,
+    "microservices": [[0],[0],[0],[0],[0],[0],[0],[0]],
+    "SM": 0.015625,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.05,
+    "threshold": 0.35,
+    "microservices": [[0],[0],[0],[0],[0],[0],[0],[0]],
+    "SM": 0.015625,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.05,
+    "threshold": 0.4,
+    "microservices": [[0],[0],[0],[0],[0],[0],[0],[0]],
+    "SM": 0.015625,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.05,
+    "threshold": 0.45,
+    "microservices": [[0],[0],[0],[0],[0],[0],[0],[0]],
+    "SM": 0.015625,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.05,
+    "threshold": 0.5,
+    "microservices": [[0],[0],[0],[0],[0],[0],[0],[0]],
+    "SM": 0.015625,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.05,
+    "threshold": 0.55,
+    "microservices": [[0],[0],[0],[0],[0],[0],[0],[0]],
+    "SM": 0.015625,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.05,
+    "threshold": 0.6,
+    "microservices": [[0],[0],[0],[0],[0],[0],[0],[0]],
+    "SM": 0.015625,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.05,
+    "threshold": 0.65,
+    "microservices": [[0],[0],[0],[0],[0],[0],[0],[0]],
+    "SM": 0.015625,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.05,
+    "threshold": 0.7,
+    "microservices": [[0],[0],[0],[0],[0],[0],[0],[0]],
+    "SM": 0.015625,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.05,
+    "threshold": 0.75,
+    "microservices": [[0],[0],[0],[0],[0],[0],[0],[0]],
+    "SM": 0.015625,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.05,
+    "threshold": 0.8,
+    "microservices": [[0],[0],[0],[0],[0],[0],[0],[0]],
+    "SM": 0.015625,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.05,
+    "threshold": 0.85,
+    "microservices": [[0],[0],[0],[0],[0],[0],[0],[0]],
+    "SM": 0.015625,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.05,
+    "threshold": 0.9,
+    "microservices": [[0],[0],[0],[0],[0],[0],[0],[0]],
+    "SM": 0.015625,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.05,
+    "threshold": 0.95,
+    "microservices": [[-1],[0],[0],[-1],[-1],[0],[0],[-1]],
+    "SM": 0.0625,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.1,
+    "threshold": 0.05,
+    "microservices": [[0,1],[0],[0],[0],[0],[0],[0],[0]],
+    "SM": 0.0078125,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.11111111111111116
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.1,
+    "threshold": 0.1,
+    "microservices": [[0,1],[0],[0],[0],[0],[0],[0],[0]],
+    "SM": 0.0078125,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.11111111111111116
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.1,
+    "threshold": 0.15,
+    "microservices": [[0],[0],[0],[0],[0],[0],[0],[0]],
+    "SM": 0.015625,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.1,
+    "threshold": 0.2,
+    "microservices": [[0],[0],[0],[0],[0],[0],[0],[0]],
+    "SM": 0.015625,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.1,
+    "threshold": 0.25,
+    "microservices": [[0],[0],[0],[0],[0],[0],[0],[0]],
+    "SM": 0.015625,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.1,
+    "threshold": 0.3,
+    "microservices": [[0],[0],[0],[0],[0],[0],[0],[0]],
+    "SM": 0.015625,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.1,
+    "threshold": 0.35,
+    "microservices": [[0],[0],[0],[0],[0],[0],[0],[0]],
+    "SM": 0.015625,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.1,
+    "threshold": 0.4,
+    "microservices": [[0],[0],[0],[0],[0],[0],[0],[0]],
+    "SM": 0.015625,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.1,
+    "threshold": 0.45,
+    "microservices": [[0],[0],[0],[0],[0],[0],[0],[0]],
+    "SM": 0.015625,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.1,
+    "threshold": 0.5,
+    "microservices": [[0],[0],[0],[0],[0],[0],[0],[0]],
+    "SM": 0.015625,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.1,
+    "threshold": 0.55,
+    "microservices": [[0],[0],[0],[0],[0],[0],[0],[0]],
+    "SM": 0.015625,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.1,
+    "threshold": 0.6,
+    "microservices": [[0],[0],[0],[0],[0],[0],[0],[0]],
+    "SM": 0.015625,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.1,
+    "threshold": 0.65,
+    "microservices": [[0],[0],[0],[0],[0],[0],[0],[0]],
+    "SM": 0.015625,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.1,
+    "threshold": 0.7,
+    "microservices": [[0],[0],[0],[0],[0],[0],[0],[0]],
+    "SM": 0.015625,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.1,
+    "threshold": 0.75,
+    "microservices": [[0],[0],[0],[0],[0],[0],[0],[0]],
+    "SM": 0.015625,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.1,
+    "threshold": 0.8,
+    "microservices": [[0],[0],[0],[0],[0],[0],[0],[0]],
+    "SM": 0.015625,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.1,
+    "threshold": 0.85,
+    "microservices": [[0],[0],[0],[0],[0],[0],[0],[0]],
+    "SM": 0.015625,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.1,
+    "threshold": 0.9,
+    "microservices": [[-1],[0],[0],[-1],[-1],[0],[0],[-1]],
+    "SM": 0.0625,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.1,
+    "threshold": 0.95,
+    "microservices": [[-1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0,
+    "ICP": 0,
+    "IFN": 0,
+    "NED": 1
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.15,
+    "threshold": 0.05,
+    "microservices": [[0,1],[0],[0,1],[0],[0],[0],[0],[0]],
+    "SM": -0.0546875,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.19999999999999996
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.15,
+    "threshold": 0.1,
+    "microservices": [[0,1],[0],[0],[0],[0],[0],[0],[0]],
+    "SM": 0.0078125,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.11111111111111116
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.15,
+    "threshold": 0.15,
+    "microservices": [[0,1],[0],[0],[0],[0],[0],[0],[0]],
+    "SM": 0.0078125,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.11111111111111116
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.15,
+    "threshold": 0.2,
+    "microservices": [[0],[0],[0],[0],[0],[0],[0],[0]],
+    "SM": 0.015625,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.15,
+    "threshold": 0.25,
+    "microservices": [[0],[0],[0],[0],[0],[0],[0],[0]],
+    "SM": 0.015625,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.15,
+    "threshold": 0.3,
+    "microservices": [[0],[0],[0],[0],[0],[0],[0],[0]],
+    "SM": 0.015625,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.15,
+    "threshold": 0.35,
+    "microservices": [[0],[0],[0],[0],[0],[0],[0],[0]],
+    "SM": 0.015625,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.15,
+    "threshold": 0.4,
+    "microservices": [[0],[0],[0],[0],[0],[0],[0],[0]],
+    "SM": 0.015625,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.15,
+    "threshold": 0.45,
+    "microservices": [[0],[0],[0],[0],[0],[0],[0],[0]],
+    "SM": 0.015625,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.15,
+    "threshold": 0.5,
+    "microservices": [[0],[0],[0],[0],[0],[0],[0],[0]],
+    "SM": 0.015625,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.15,
+    "threshold": 0.55,
+    "microservices": [[0],[0],[0],[0],[0],[0],[0],[0]],
+    "SM": 0.015625,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.15,
+    "threshold": 0.6,
+    "microservices": [[0],[0],[0],[0],[0],[0],[0],[0]],
+    "SM": 0.015625,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.15,
+    "threshold": 0.65,
+    "microservices": [[0],[0],[0],[0],[0],[0],[0],[0]],
+    "SM": 0.015625,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.15,
+    "threshold": 0.7,
+    "microservices": [[0],[0],[0],[0],[0],[0],[0],[0]],
+    "SM": 0.015625,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.15,
+    "threshold": 0.75,
+    "microservices": [[0],[0],[0],[0],[0],[0],[0],[0]],
+    "SM": 0.015625,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.15,
+    "threshold": 0.8,
+    "microservices": [[0],[0],[0],[0],[0],[0],[0],[0]],
+    "SM": 0.015625,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.15,
+    "threshold": 0.85,
+    "microservices": [[-1],[0],[0],[-1],[-1],[0],[0],[-1]],
+    "SM": 0.0625,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.15,
+    "threshold": 0.9,
+    "microservices": [[-1],[-1],[0],[-1],[-1],[0],[-1],[-1]],
+    "SM": 0.25,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.15,
+    "threshold": 0.95,
+    "microservices": [[-1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0,
+    "ICP": 0,
+    "IFN": 0,
+    "NED": 1
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.2,
+    "threshold": 0.05,
+    "microservices": [[0,1],[0],[0,1],[0],[0],[0],[0],[0]],
+    "SM": -0.0546875,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.19999999999999996
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.2,
+    "threshold": 0.1,
+    "microservices": [[0,1],[0],[0],[0],[0],[0],[0],[0]],
+    "SM": 0.0078125,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.11111111111111116
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.2,
+    "threshold": 0.15,
+    "microservices": [[0,1],[0],[0],[0],[0],[0],[0],[0]],
+    "SM": 0.0078125,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.11111111111111116
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.2,
+    "threshold": 0.2,
+    "microservices": [[0,1],[0],[0],[0],[0],[0],[0],[0]],
+    "SM": 0.0078125,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.11111111111111116
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.2,
+    "threshold": 0.25,
+    "microservices": [[0],[0],[0],[0],[0],[0],[0],[0]],
+    "SM": 0.015625,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.2,
+    "threshold": 0.3,
+    "microservices": [[0],[0],[0],[0],[0],[0],[0],[0]],
+    "SM": 0.015625,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.2,
+    "threshold": 0.35,
+    "microservices": [[0],[0],[0],[0],[0],[0],[0],[0]],
+    "SM": 0.015625,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.2,
+    "threshold": 0.4,
+    "microservices": [[0],[0],[0],[0],[0],[0],[0],[0]],
+    "SM": 0.015625,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.2,
+    "threshold": 0.45,
+    "microservices": [[0],[0],[0],[0],[0],[0],[0],[0]],
+    "SM": 0.015625,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.2,
+    "threshold": 0.5,
+    "microservices": [[0],[0],[0],[0],[0],[0],[0],[0]],
+    "SM": 0.015625,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.2,
+    "threshold": 0.55,
+    "microservices": [[0],[0],[0],[0],[0],[0],[0],[0]],
+    "SM": 0.015625,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.2,
+    "threshold": 0.6,
+    "microservices": [[0],[0],[0],[0],[0],[0],[0],[0]],
+    "SM": 0.015625,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.2,
+    "threshold": 0.65,
+    "microservices": [[0],[0],[0],[0],[0],[0],[0],[0]],
+    "SM": 0.015625,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.2,
+    "threshold": 0.7,
+    "microservices": [[0],[0],[0],[0],[0],[0],[0],[0]],
+    "SM": 0.015625,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.2,
+    "threshold": 0.75,
+    "microservices": [[0],[0],[0],[0],[0],[0],[0],[0]],
+    "SM": 0.015625,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.2,
+    "threshold": 0.8,
+    "microservices": [[-1],[0],[0],[-1],[-1],[0],[0],[-1]],
+    "SM": 0.0625,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.2,
+    "threshold": 0.85,
+    "microservices": [[-1],[-1],[0],[-1],[-1],[0],[-1],[-1]],
+    "SM": 0.25,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.2,
+    "threshold": 0.9,
+    "microservices": [[-1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0,
+    "ICP": 0,
+    "IFN": 0,
+    "NED": 1
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.2,
+    "threshold": 0.95,
+    "microservices": [[-1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0,
+    "ICP": 0,
+    "IFN": 0,
+    "NED": 1
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.25,
+    "threshold": 0.05,
+    "microservices": [[0,1],[0],[0,1],[0],[0],[0],[0],[0]],
+    "SM": -0.0546875,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.19999999999999996
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.25,
+    "threshold": 0.1,
+    "microservices": [[0,1],[0],[0,1],[0],[0],[0],[0],[0]],
+    "SM": -0.0546875,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.19999999999999996
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.25,
+    "threshold": 0.15,
+    "microservices": [[0,1],[0],[0],[0],[0],[0],[0],[0]],
+    "SM": 0.0078125,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.11111111111111116
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.25,
+    "threshold": 0.2,
+    "microservices": [[0,1],[0],[0],[0],[0],[0],[0],[0]],
+    "SM": 0.0078125,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.11111111111111116
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.25,
+    "threshold": 0.25,
+    "microservices": [[0,1],[0],[0],[0],[0],[0],[0],[0]],
+    "SM": 0.0078125,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.11111111111111116
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.25,
+    "threshold": 0.3,
+    "microservices": [[0],[0],[0],[0],[0],[0],[0],[0]],
+    "SM": 0.015625,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.25,
+    "threshold": 0.35,
+    "microservices": [[0],[0],[0],[0],[0],[0],[0],[0]],
+    "SM": 0.015625,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.25,
+    "threshold": 0.4,
+    "microservices": [[0],[0],[0],[0],[0],[0],[0],[0]],
+    "SM": 0.015625,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.25,
+    "threshold": 0.45,
+    "microservices": [[0],[0],[0],[0],[0],[0],[0],[0]],
+    "SM": 0.015625,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.25,
+    "threshold": 0.5,
+    "microservices": [[0],[0],[0],[0],[0],[0],[0],[0]],
+    "SM": 0.015625,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.25,
+    "threshold": 0.55,
+    "microservices": [[0],[0],[0],[0],[0],[0],[0],[0]],
+    "SM": 0.015625,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.25,
+    "threshold": 0.6,
+    "microservices": [[0],[0],[0],[0],[0],[0],[0],[0]],
+    "SM": 0.015625,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.25,
+    "threshold": 0.65,
+    "microservices": [[0],[0],[0],[0],[0],[0],[0],[0]],
+    "SM": 0.015625,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.25,
+    "threshold": 0.7,
+    "microservices": [[0],[0],[0],[0],[0],[0],[0],[0]],
+    "SM": 0.015625,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.25,
+    "threshold": 0.75,
+    "microservices": [[-1],[0],[0],[-1],[-1],[0],[0],[-1]],
+    "SM": 0.0625,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.25,
+    "threshold": 0.8,
+    "microservices": [[-1],[-1],[0],[-1],[-1],[0],[-1],[-1]],
+    "SM": 0.25,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.25,
+    "threshold": 0.85,
+    "microservices": [[-1],[-1],[0],[-1],[-1],[0],[-1],[-1]],
+    "SM": 0.25,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.25,
+    "threshold": 0.9,
+    "microservices": [[-1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0,
+    "ICP": 0,
+    "IFN": 0,
+    "NED": 1
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.25,
+    "threshold": 0.95,
+    "microservices": [[-1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0,
+    "ICP": 0,
+    "IFN": 0,
+    "NED": 1
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.3,
+    "threshold": 0.05,
+    "microservices": [[0,1],[0],[0,1],[0],[0],[0],[0],[0]],
+    "SM": -0.0546875,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.19999999999999996
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.3,
+    "threshold": 0.1,
+    "microservices": [[0,1],[0],[0,1],[0],[0],[0],[0],[0]],
+    "SM": -0.0546875,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.19999999999999996
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.3,
+    "threshold": 0.15,
+    "microservices": [[0,1],[0],[0],[0],[0],[0],[0],[0]],
+    "SM": 0.0078125,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.11111111111111116
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.3,
+    "threshold": 0.2,
+    "microservices": [[0,1],[0],[0],[0],[0],[0],[0],[0]],
+    "SM": 0.0078125,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.11111111111111116
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.3,
+    "threshold": 0.25,
+    "microservices": [[0,1],[0],[0],[0],[0],[0],[0],[0]],
+    "SM": 0.0078125,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.11111111111111116
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.3,
+    "threshold": 0.3,
+    "microservices": [[0,1],[0],[0],[0],[0],[0],[0],[0]],
+    "SM": 0.0078125,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.11111111111111116
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.3,
+    "threshold": 0.35,
+    "microservices": [[0],[0],[0],[0],[0],[0],[0],[0]],
+    "SM": 0.015625,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.3,
+    "threshold": 0.4,
+    "microservices": [[0],[0],[0],[0],[0],[0],[0],[0]],
+    "SM": 0.015625,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.3,
+    "threshold": 0.45,
+    "microservices": [[0],[0],[0],[0],[0],[0],[0],[0]],
+    "SM": 0.015625,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.3,
+    "threshold": 0.5,
+    "microservices": [[0],[0],[0],[0],[0],[0],[0],[0]],
+    "SM": 0.015625,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.3,
+    "threshold": 0.55,
+    "microservices": [[0],[0],[0],[0],[0],[0],[0],[0]],
+    "SM": 0.015625,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.3,
+    "threshold": 0.6,
+    "microservices": [[0],[0],[0],[0],[0],[0],[0],[0]],
+    "SM": 0.015625,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.3,
+    "threshold": 0.65,
+    "microservices": [[0],[0],[0],[0],[0],[0],[0],[0]],
+    "SM": 0.015625,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.3,
+    "threshold": 0.7,
+    "microservices": [[-1],[0],[0],[-1],[-1],[0],[0],[-1]],
+    "SM": 0.0625,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.3,
+    "threshold": 0.75,
+    "microservices": [[-1],[0],[0],[-1],[-1],[0],[-1],[-1]],
+    "SM": 0.1111111111111111,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.3,
+    "threshold": 0.8,
+    "microservices": [[-1],[-1],[0],[-1],[-1],[0],[-1],[-1]],
+    "SM": 0.25,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.3,
+    "threshold": 0.85,
+    "microservices": [[-1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0,
+    "ICP": 0,
+    "IFN": 0,
+    "NED": 1
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.3,
+    "threshold": 0.9,
+    "microservices": [[-1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0,
+    "ICP": 0,
+    "IFN": 0,
+    "NED": 1
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.3,
+    "threshold": 0.95,
+    "microservices": [[-1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0,
+    "ICP": 0,
+    "IFN": 0,
+    "NED": 1
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.35,
+    "threshold": 0.05,
+    "microservices": [[0,1],[0],[0,1],[0],[0],[0],[0],[0]],
+    "SM": -0.0546875,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.19999999999999996
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.35,
+    "threshold": 0.1,
+    "microservices": [[0,1],[0],[0,1],[0],[0],[0],[0],[0]],
+    "SM": -0.0546875,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.19999999999999996
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.35,
+    "threshold": 0.15,
+    "microservices": [[0,1],[0],[0,1],[0],[0],[0],[0],[0]],
+    "SM": -0.0546875,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.19999999999999996
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.35,
+    "threshold": 0.2,
+    "microservices": [[0,1],[0],[0],[0],[0],[0],[0],[0]],
+    "SM": 0.0078125,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.11111111111111116
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.35,
+    "threshold": 0.25,
+    "microservices": [[0,1],[0],[0],[0],[0],[0],[0],[0]],
+    "SM": 0.0078125,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.11111111111111116
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.35,
+    "threshold": 0.3,
+    "microservices": [[0,1],[0],[0],[0],[0],[0],[0],[0]],
+    "SM": 0.0078125,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.11111111111111116
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.35,
+    "threshold": 0.35,
+    "microservices": [[0,1],[0],[0],[0],[0],[0],[0],[0]],
+    "SM": 0.0078125,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.11111111111111116
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.35,
+    "threshold": 0.4,
+    "microservices": [[0],[0],[0],[0],[0],[0],[0],[0]],
+    "SM": 0.015625,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.35,
+    "threshold": 0.45,
+    "microservices": [[0],[0],[0],[0],[0],[0],[0],[0]],
+    "SM": 0.015625,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.35,
+    "threshold": 0.5,
+    "microservices": [[0],[0],[0],[0],[0],[0],[0],[0]],
+    "SM": 0.015625,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.35,
+    "threshold": 0.55,
+    "microservices": [[0],[0],[0],[0],[0],[0],[0],[0]],
+    "SM": 0.015625,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.35,
+    "threshold": 0.6,
+    "microservices": [[0],[0],[0],[0],[0],[0],[0],[0]],
+    "SM": 0.015625,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.35,
+    "threshold": 0.65,
+    "microservices": [[-1],[0],[0],[-1],[-1],[0],[0],[-1]],
+    "SM": 0.0625,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.35,
+    "threshold": 0.7,
+    "microservices": [[-1],[0],[0],[-1],[-1],[0],[-1],[-1]],
+    "SM": 0.1111111111111111,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.35,
+    "threshold": 0.75,
+    "microservices": [[-1],[-1],[0],[-1],[-1],[0],[-1],[-1]],
+    "SM": 0.25,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.35,
+    "threshold": 0.8,
+    "microservices": [[-1],[-1],[0],[-1],[-1],[0],[-1],[-1]],
+    "SM": 0.25,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.35,
+    "threshold": 0.85,
+    "microservices": [[-1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0,
+    "ICP": 0,
+    "IFN": 0,
+    "NED": 1
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.35,
+    "threshold": 0.9,
+    "microservices": [[-1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0,
+    "ICP": 0,
+    "IFN": 0,
+    "NED": 1
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.35,
+    "threshold": 0.95,
+    "microservices": [[-1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0,
+    "ICP": 0,
+    "IFN": 0,
+    "NED": 1
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.4,
+    "threshold": 0.05,
+    "microservices": [[0,1],[0],[0,1],[0],[0],[0],[0],[0]],
+    "SM": -0.0546875,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.19999999999999996
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.4,
+    "threshold": 0.1,
+    "microservices": [[0,1],[0],[0,1],[0],[0],[0],[0],[0]],
+    "SM": -0.0546875,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.19999999999999996
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.4,
+    "threshold": 0.15,
+    "microservices": [[0,1],[0],[0,1],[0],[0],[0],[0],[0]],
+    "SM": -0.0546875,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.19999999999999996
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.4,
+    "threshold": 0.2,
+    "microservices": [[0,1],[0],[0],[0],[0],[0],[0],[0]],
+    "SM": 0.0078125,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.11111111111111116
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.4,
+    "threshold": 0.25,
+    "microservices": [[0,1],[0],[0],[0],[0],[0],[0],[0]],
+    "SM": 0.0078125,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.11111111111111116
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.4,
+    "threshold": 0.3,
+    "microservices": [[0,1],[0],[0],[0],[0],[0],[0],[0]],
+    "SM": 0.0078125,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.11111111111111116
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.4,
+    "threshold": 0.35,
+    "microservices": [[0,1],[0],[0],[0],[0],[0],[0],[0]],
+    "SM": 0.0078125,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.11111111111111116
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.4,
+    "threshold": 0.4,
+    "microservices": [[0,1],[0],[0],[0],[0],[0],[0],[0]],
+    "SM": 0.0078125,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.11111111111111116
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.4,
+    "threshold": 0.45,
+    "microservices": [[0],[0],[0],[0],[0],[0],[0],[0]],
+    "SM": 0.015625,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.4,
+    "threshold": 0.5,
+    "microservices": [[0],[0],[0],[0],[0],[0],[0],[0]],
+    "SM": 0.015625,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.4,
+    "threshold": 0.55,
+    "microservices": [[0],[0],[0],[0],[0],[0],[0],[0]],
+    "SM": 0.015625,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.4,
+    "threshold": 0.6,
+    "microservices": [[-1],[0],[0],[-1],[-1],[0],[0],[-1]],
+    "SM": 0.0625,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.4,
+    "threshold": 0.65,
+    "microservices": [[-1],[0],[0],[-1],[-1],[0],[-1],[-1]],
+    "SM": 0.1111111111111111,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.4,
+    "threshold": 0.7,
+    "microservices": [[-1],[-1],[0],[-1],[-1],[0],[-1],[-1]],
+    "SM": 0.25,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.4,
+    "threshold": 0.75,
+    "microservices": [[-1],[-1],[0],[-1],[-1],[0],[-1],[-1]],
+    "SM": 0.25,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.4,
+    "threshold": 0.8,
+    "microservices": [[-1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0,
+    "ICP": 0,
+    "IFN": 0,
+    "NED": 1
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.4,
+    "threshold": 0.85,
+    "microservices": [[-1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0,
+    "ICP": 0,
+    "IFN": 0,
+    "NED": 1
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.4,
+    "threshold": 0.9,
+    "microservices": [[-1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0,
+    "ICP": 0,
+    "IFN": 0,
+    "NED": 1
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.4,
+    "threshold": 0.95,
+    "microservices": [[-1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0,
+    "ICP": 0,
+    "IFN": 0,
+    "NED": 1
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.45,
+    "threshold": 0.05,
+    "microservices": [[0,1],[0],[0,1],[0],[0],[0],[0],[0]],
+    "SM": -0.0546875,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.19999999999999996
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.45,
+    "threshold": 0.1,
+    "microservices": [[0,1],[0],[0,1],[0],[0],[0],[0],[0]],
+    "SM": -0.0546875,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.19999999999999996
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.45,
+    "threshold": 0.15,
+    "microservices": [[0,1],[0],[0,1],[0],[0],[0],[0],[0]],
+    "SM": -0.0546875,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.19999999999999996
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.45,
+    "threshold": 0.2,
+    "microservices": [[0,1],[0],[0,1],[0],[0],[0],[0],[0]],
+    "SM": -0.0546875,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.19999999999999996
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.45,
+    "threshold": 0.25,
+    "microservices": [[0,1],[0],[0],[0],[0],[0],[0],[0]],
+    "SM": 0.0078125,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.11111111111111116
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.45,
+    "threshold": 0.3,
+    "microservices": [[0,1],[0],[0],[0],[0],[0],[0],[0]],
+    "SM": 0.0078125,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.11111111111111116
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.45,
+    "threshold": 0.35,
+    "microservices": [[0,1],[0],[0],[0],[0],[0],[0],[0]],
+    "SM": 0.0078125,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.11111111111111116
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.45,
+    "threshold": 0.4,
+    "microservices": [[0,1],[0],[0],[0],[0],[0],[0],[0]],
+    "SM": 0.0078125,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.11111111111111116
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.45,
+    "threshold": 0.45,
+    "microservices": [[0,1],[0],[0],[0],[0],[0],[0],[0]],
+    "SM": 0.0078125,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.11111111111111116
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.45,
+    "threshold": 0.5,
+    "microservices": [[0],[0],[0],[0],[0],[0],[0],[0]],
+    "SM": 0.015625,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.45,
+    "threshold": 0.55,
+    "microservices": [[-1],[0],[0],[-1],[-1],[0],[0],[-1]],
+    "SM": 0.0625,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.45,
+    "threshold": 0.6,
+    "microservices": [[-1],[0],[0],[-1],[-1],[0],[-1],[-1]],
+    "SM": 0.1111111111111111,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.45,
+    "threshold": 0.65,
+    "microservices": [[-1],[-1],[0],[-1],[-1],[0],[-1],[-1]],
+    "SM": 0.25,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.45,
+    "threshold": 0.7,
+    "microservices": [[-1],[-1],[0],[-1],[-1],[0],[-1],[-1]],
+    "SM": 0.25,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.45,
+    "threshold": 0.75,
+    "microservices": [[-1],[-1],[-1],[-1],[-1],[0],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 1.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.45,
+    "threshold": 0.8,
+    "microservices": [[-1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0,
+    "ICP": 0,
+    "IFN": 0,
+    "NED": 1
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.45,
+    "threshold": 0.85,
+    "microservices": [[-1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0,
+    "ICP": 0,
+    "IFN": 0,
+    "NED": 1
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.45,
+    "threshold": 0.9,
+    "microservices": [[-1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0,
+    "ICP": 0,
+    "IFN": 0,
+    "NED": 1
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.45,
+    "threshold": 0.95,
+    "microservices": [[-1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0,
+    "ICP": 0,
+    "IFN": 0,
+    "NED": 1
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.5,
+    "threshold": 0.05,
+    "microservices": [[0,1],[0],[0,1],[0],[0],[0],[0],[0]],
+    "SM": -0.0546875,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.19999999999999996
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.5,
+    "threshold": 0.1,
+    "microservices": [[0,1],[0],[0,1],[0],[0],[0],[0],[0]],
+    "SM": -0.0546875,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.19999999999999996
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.5,
+    "threshold": 0.15,
+    "microservices": [[0,1],[0],[0,1],[0],[0],[0],[0],[0]],
+    "SM": -0.0546875,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.19999999999999996
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.5,
+    "threshold": 0.2,
+    "microservices": [[0,1],[0],[0,1],[0],[0],[0],[0],[0]],
+    "SM": -0.0546875,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.19999999999999996
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.5,
+    "threshold": 0.25,
+    "microservices": [[0,1],[0],[0],[0],[0],[0],[0],[0]],
+    "SM": 0.0078125,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.11111111111111116
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.5,
+    "threshold": 0.3,
+    "microservices": [[0,1],[0],[0],[0],[0],[0],[0],[0]],
+    "SM": 0.0078125,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.11111111111111116
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.5,
+    "threshold": 0.35,
+    "microservices": [[0,1],[0],[0],[0],[0],[0],[0],[0]],
+    "SM": 0.0078125,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.11111111111111116
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.5,
+    "threshold": 0.4,
+    "microservices": [[0,1],[0],[0],[0],[0],[0],[0],[0]],
+    "SM": 0.0078125,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.11111111111111116
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.5,
+    "threshold": 0.45,
+    "microservices": [[0,1],[0],[0],[0],[0],[0],[0],[0]],
+    "SM": 0.0078125,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.11111111111111116
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.5,
+    "threshold": 0.5,
+    "microservices": [[1],[0],[0],[-1],[-1],[0],[0],[-1]],
+    "SM": 0.03125,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.5,
+    "threshold": 0.55,
+    "microservices": [[-1],[0],[0],[-1],[-1],[0],[-1],[-1]],
+    "SM": 0.1111111111111111,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.5,
+    "threshold": 0.6,
+    "microservices": [[-1],[-1],[0],[-1],[-1],[0],[-1],[-1]],
+    "SM": 0.25,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.5,
+    "threshold": 0.65,
+    "microservices": [[-1],[-1],[0],[-1],[-1],[0],[-1],[-1]],
+    "SM": 0.25,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.5,
+    "threshold": 0.7,
+    "microservices": [[-1],[-1],[0],[-1],[-1],[0],[-1],[-1]],
+    "SM": 0.25,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.5,
+    "threshold": 0.75,
+    "microservices": [[-1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0,
+    "ICP": 0,
+    "IFN": 0,
+    "NED": 1
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.5,
+    "threshold": 0.8,
+    "microservices": [[-1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0,
+    "ICP": 0,
+    "IFN": 0,
+    "NED": 1
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.5,
+    "threshold": 0.85,
+    "microservices": [[-1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0,
+    "ICP": 0,
+    "IFN": 0,
+    "NED": 1
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.5,
+    "threshold": 0.9,
+    "microservices": [[-1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0,
+    "ICP": 0,
+    "IFN": 0,
+    "NED": 1
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.5,
+    "threshold": 0.95,
+    "microservices": [[-1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0,
+    "ICP": 0,
+    "IFN": 0,
+    "NED": 1
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.55,
+    "threshold": 0.05,
+    "microservices": [[0,1],[0],[0,1],[0],[0],[0],[0,1],[0]],
+    "SM": -0.033854166666666664,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.2727272727272727
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.55,
+    "threshold": 0.1,
+    "microservices": [[0,1],[0],[0,1],[0],[0],[0],[0],[0]],
+    "SM": -0.0546875,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.19999999999999996
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.55,
+    "threshold": 0.15,
+    "microservices": [[0,1],[0],[0,1],[0],[0],[0],[0],[0]],
+    "SM": -0.0546875,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.19999999999999996
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.55,
+    "threshold": 0.2,
+    "microservices": [[0,1],[0],[0,1],[0],[0],[0],[0],[0]],
+    "SM": -0.0546875,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.19999999999999996
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.55,
+    "threshold": 0.25,
+    "microservices": [[0,1],[0],[0,1],[0],[0],[0],[0],[0]],
+    "SM": -0.0546875,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.19999999999999996
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.55,
+    "threshold": 0.3,
+    "microservices": [[0,1],[0],[0],[0],[0],[0],[0],[0]],
+    "SM": 0.0078125,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.11111111111111116
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.55,
+    "threshold": 0.35,
+    "microservices": [[0,1],[0],[0],[0],[0],[0],[0],[0]],
+    "SM": 0.0078125,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.11111111111111116
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.55,
+    "threshold": 0.4,
+    "microservices": [[0,1],[0],[0],[0],[0],[0],[0],[0]],
+    "SM": 0.0078125,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.11111111111111116
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.55,
+    "threshold": 0.45,
+    "microservices": [[1],[0],[0],[-1],[-1],[0],[0],[-1]],
+    "SM": 0.03125,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.55,
+    "threshold": 0.5,
+    "microservices": [[1],[0],[0],[-1],[-1],[0],[0],[-1]],
+    "SM": 0.03125,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.55,
+    "threshold": 0.55,
+    "microservices": [[1],[0],[0],[-1],[-1],[0],[-1],[-1]],
+    "SM": 0.05555555555555555,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.55,
+    "threshold": 0.6,
+    "microservices": [[-1],[-1],[0],[-1],[-1],[0],[-1],[-1]],
+    "SM": 0.25,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.55,
+    "threshold": 0.65,
+    "microservices": [[-1],[-1],[0],[-1],[-1],[0],[-1],[-1]],
+    "SM": 0.25,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.55,
+    "threshold": 0.7,
+    "microservices": [[-1],[-1],[-1],[-1],[-1],[0],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 1.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.55,
+    "threshold": 0.75,
+    "microservices": [[-1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0,
+    "ICP": 0,
+    "IFN": 0,
+    "NED": 1
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.55,
+    "threshold": 0.8,
+    "microservices": [[-1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0,
+    "ICP": 0,
+    "IFN": 0,
+    "NED": 1
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.55,
+    "threshold": 0.85,
+    "microservices": [[-1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0,
+    "ICP": 0,
+    "IFN": 0,
+    "NED": 1
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.55,
+    "threshold": 0.9,
+    "microservices": [[-1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0,
+    "ICP": 0,
+    "IFN": 0,
+    "NED": 1
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.55,
+    "threshold": 0.95,
+    "microservices": [[-1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0,
+    "ICP": 0,
+    "IFN": 0,
+    "NED": 1
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.6,
+    "threshold": 0.05,
+    "microservices": [[0,1],[0],[0,1],[0],[0],[0],[0,1],[0]],
+    "SM": -0.033854166666666664,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.2727272727272727
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.6,
+    "threshold": 0.1,
+    "microservices": [[0,1],[0],[0,1],[0],[0],[0],[0],[0]],
+    "SM": -0.0546875,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.19999999999999996
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.6,
+    "threshold": 0.15,
+    "microservices": [[0,1],[0],[0,1],[0],[0],[0],[0],[0]],
+    "SM": -0.0546875,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.19999999999999996
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.6,
+    "threshold": 0.2,
+    "microservices": [[0,1],[0],[0,1],[0],[0],[0],[0],[0]],
+    "SM": -0.0546875,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.19999999999999996
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.6,
+    "threshold": 0.25,
+    "microservices": [[0,1],[0],[0,1],[0],[0],[0],[0],[0]],
+    "SM": -0.0546875,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.19999999999999996
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.6,
+    "threshold": 0.3,
+    "microservices": [[0,1],[0],[0],[0],[0],[0],[0],[0]],
+    "SM": 0.0078125,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.11111111111111116
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.6,
+    "threshold": 0.35,
+    "microservices": [[0,1],[0],[0],[0],[0],[0],[0],[0]],
+    "SM": 0.0078125,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.11111111111111116
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.6,
+    "threshold": 0.4,
+    "microservices": [[1],[0],[0],[-1],[-1],[0],[0],[-1]],
+    "SM": 0.03125,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.6,
+    "threshold": 0.45,
+    "microservices": [[1],[0],[0],[-1],[-1],[0],[0],[-1]],
+    "SM": 0.03125,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.6,
+    "threshold": 0.5,
+    "microservices": [[1],[0],[0],[-1],[-1],[0],[-1],[-1]],
+    "SM": 0.05555555555555555,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.6,
+    "threshold": 0.55,
+    "microservices": [[1],[-1],[0],[-1],[-1],[0],[-1],[-1]],
+    "SM": 0.125,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.6,
+    "threshold": 0.6,
+    "microservices": [[1],[-1],[0],[-1],[-1],[0],[-1],[-1]],
+    "SM": 0.125,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.6,
+    "threshold": 0.65,
+    "microservices": [[-1],[-1],[0],[-1],[-1],[0],[-1],[-1]],
+    "SM": 0.25,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.6,
+    "threshold": 0.7,
+    "microservices": [[-1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0,
+    "ICP": 0,
+    "IFN": 0,
+    "NED": 1
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.6,
+    "threshold": 0.75,
+    "microservices": [[-1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0,
+    "ICP": 0,
+    "IFN": 0,
+    "NED": 1
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.6,
+    "threshold": 0.8,
+    "microservices": [[-1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0,
+    "ICP": 0,
+    "IFN": 0,
+    "NED": 1
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.6,
+    "threshold": 0.85,
+    "microservices": [[-1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0,
+    "ICP": 0,
+    "IFN": 0,
+    "NED": 1
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.6,
+    "threshold": 0.9,
+    "microservices": [[-1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0,
+    "ICP": 0,
+    "IFN": 0,
+    "NED": 1
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.6,
+    "threshold": 0.95,
+    "microservices": [[-1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0,
+    "ICP": 0,
+    "IFN": 0,
+    "NED": 1
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.65,
+    "threshold": 0.05,
+    "microservices": [[0,1],[0],[0,1],[0],[0],[0],[0,1],[0]],
+    "SM": -0.033854166666666664,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.2727272727272727
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.65,
+    "threshold": 0.1,
+    "microservices": [[0,1],[0],[0,1],[0],[0],[0],[0],[0]],
+    "SM": -0.0546875,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.19999999999999996
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.65,
+    "threshold": 0.15,
+    "microservices": [[0,1],[0],[0,1],[0],[0],[0],[0],[0]],
+    "SM": -0.0546875,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.19999999999999996
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.65,
+    "threshold": 0.2,
+    "microservices": [[0,1],[0],[0,1],[0],[0],[0],[0],[0]],
+    "SM": -0.0546875,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.19999999999999996
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.65,
+    "threshold": 0.25,
+    "microservices": [[0,1],[0],[0,1],[0],[0],[0],[0],[0]],
+    "SM": -0.0546875,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.19999999999999996
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.65,
+    "threshold": 0.3,
+    "microservices": [[0,1],[0],[0,1],[0],[0],[0],[0],[0]],
+    "SM": -0.0546875,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.19999999999999996
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.65,
+    "threshold": 0.35,
+    "microservices": [[1],[0],[0],[-1],[-1],[0],[0],[-1]],
+    "SM": 0.03125,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.65,
+    "threshold": 0.4,
+    "microservices": [[1],[0],[0],[-1],[-1],[0],[0],[-1]],
+    "SM": 0.03125,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.65,
+    "threshold": 0.45,
+    "microservices": [[1],[0],[0],[-1],[-1],[0],[-1],[-1]],
+    "SM": 0.05555555555555555,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.65,
+    "threshold": 0.5,
+    "microservices": [[1],[-1],[0],[-1],[-1],[0],[-1],[-1]],
+    "SM": 0.125,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.65,
+    "threshold": 0.55,
+    "microservices": [[1],[-1],[0],[-1],[-1],[0],[-1],[-1]],
+    "SM": 0.125,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.65,
+    "threshold": 0.6,
+    "microservices": [[1],[-1],[0],[-1],[-1],[0],[-1],[-1]],
+    "SM": 0.125,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.65,
+    "threshold": 0.65,
+    "microservices": [[1],[-1],[-1],[-1],[-1],[0],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.5,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.65,
+    "threshold": 0.7,
+    "microservices": [[-1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0,
+    "ICP": 0,
+    "IFN": 0,
+    "NED": 1
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.65,
+    "threshold": 0.75,
+    "microservices": [[-1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0,
+    "ICP": 0,
+    "IFN": 0,
+    "NED": 1
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.65,
+    "threshold": 0.8,
+    "microservices": [[-1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0,
+    "ICP": 0,
+    "IFN": 0,
+    "NED": 1
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.65,
+    "threshold": 0.85,
+    "microservices": [[-1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0,
+    "ICP": 0,
+    "IFN": 0,
+    "NED": 1
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.65,
+    "threshold": 0.9,
+    "microservices": [[-1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0,
+    "ICP": 0,
+    "IFN": 0,
+    "NED": 1
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.65,
+    "threshold": 0.95,
+    "microservices": [[-1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0,
+    "ICP": 0,
+    "IFN": 0,
+    "NED": 1
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.7,
+    "threshold": 0.05,
+    "microservices": [[0,1],[0],[0,1],[0],[0],[0],[0,1],[0]],
+    "SM": -0.033854166666666664,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.2727272727272727
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.7,
+    "threshold": 0.1,
+    "microservices": [[0,1],[0],[0,1],[0],[0],[0],[0],[0]],
+    "SM": -0.0546875,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.19999999999999996
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.7,
+    "threshold": 0.15,
+    "microservices": [[0,1],[0],[0,1],[0],[0],[0],[0],[0]],
+    "SM": -0.0546875,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.19999999999999996
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.7,
+    "threshold": 0.2,
+    "microservices": [[0,1],[0],[0,1],[0],[0],[0],[0],[0]],
+    "SM": -0.0546875,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.19999999999999996
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.7,
+    "threshold": 0.25,
+    "microservices": [[0,1],[0],[0,1],[0],[0],[0],[0],[0]],
+    "SM": -0.0546875,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.19999999999999996
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.7,
+    "threshold": 0.3,
+    "microservices": [[1],[0],[0,1],[-1],[-1],[0],[0],[-1]],
+    "SM": -0.09375,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.7,
+    "threshold": 0.35,
+    "microservices": [[1],[0],[0],[-1],[-1],[0],[0],[-1]],
+    "SM": 0.03125,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.7,
+    "threshold": 0.4,
+    "microservices": [[1],[0],[0],[-1],[-1],[0],[-1],[-1]],
+    "SM": 0.05555555555555555,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.7,
+    "threshold": 0.45,
+    "microservices": [[1],[-1],[0],[-1],[-1],[0],[-1],[-1]],
+    "SM": 0.125,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.7,
+    "threshold": 0.5,
+    "microservices": [[1],[-1],[0],[-1],[-1],[0],[-1],[-1]],
+    "SM": 0.125,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.7,
+    "threshold": 0.55,
+    "microservices": [[1],[-1],[0],[-1],[-1],[0],[-1],[-1]],
+    "SM": 0.125,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.7,
+    "threshold": 0.6,
+    "microservices": [[1],[-1],[0],[-1],[-1],[0],[-1],[-1]],
+    "SM": 0.125,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.7,
+    "threshold": 0.65,
+    "microservices": [[1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.7,
+    "threshold": 0.7,
+    "microservices": [[1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.7,
+    "threshold": 0.75,
+    "microservices": [[-1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0,
+    "ICP": 0,
+    "IFN": 0,
+    "NED": 1
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.7,
+    "threshold": 0.8,
+    "microservices": [[-1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0,
+    "ICP": 0,
+    "IFN": 0,
+    "NED": 1
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.7,
+    "threshold": 0.85,
+    "microservices": [[-1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0,
+    "ICP": 0,
+    "IFN": 0,
+    "NED": 1
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.7,
+    "threshold": 0.9,
+    "microservices": [[-1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0,
+    "ICP": 0,
+    "IFN": 0,
+    "NED": 1
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.7,
+    "threshold": 0.95,
+    "microservices": [[-1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0,
+    "ICP": 0,
+    "IFN": 0,
+    "NED": 1
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.75,
+    "threshold": 0.05,
+    "microservices": [[0,1],[0],[0,1],[0],[0],[0],[0,1],[0]],
+    "SM": -0.033854166666666664,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.2727272727272727
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.75,
+    "threshold": 0.1,
+    "microservices": [[0,1],[0],[0,1],[0],[0],[0],[0],[0]],
+    "SM": -0.0546875,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.19999999999999996
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.75,
+    "threshold": 0.15,
+    "microservices": [[0,1],[0],[0,1],[0],[0],[0],[0],[0]],
+    "SM": -0.0546875,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.19999999999999996
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.75,
+    "threshold": 0.2,
+    "microservices": [[0,1],[0],[0,1],[0],[0],[0],[0],[0]],
+    "SM": -0.0546875,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.19999999999999996
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.75,
+    "threshold": 0.25,
+    "microservices": [[1],[0],[0,1],[-1],[-1],[0],[0],[-1]],
+    "SM": -0.09375,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.75,
+    "threshold": 0.3,
+    "microservices": [[1],[0],[0,1],[-1],[-1],[0],[0],[-1]],
+    "SM": -0.09375,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.75,
+    "threshold": 0.35,
+    "microservices": [[1],[0],[0,1],[-1],[-1],[0],[-1],[-1]],
+    "SM": -0.1111111111111111,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.75,
+    "threshold": 0.4,
+    "microservices": [[1],[-1],[0],[-1],[-1],[0],[-1],[-1]],
+    "SM": 0.125,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.75,
+    "threshold": 0.45,
+    "microservices": [[1],[-1],[0],[-1],[-1],[0],[-1],[-1]],
+    "SM": 0.125,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.75,
+    "threshold": 0.5,
+    "microservices": [[1],[-1],[0],[-1],[-1],[0],[-1],[-1]],
+    "SM": 0.125,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.75,
+    "threshold": 0.55,
+    "microservices": [[1],[-1],[0],[-1],[-1],[0],[-1],[-1]],
+    "SM": 0.125,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.75,
+    "threshold": 0.6,
+    "microservices": [[1],[-1],[-1],[-1],[-1],[0],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.5,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.75,
+    "threshold": 0.65,
+    "microservices": [[1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.75,
+    "threshold": 0.7,
+    "microservices": [[1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.75,
+    "threshold": 0.75,
+    "microservices": [[1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.75,
+    "threshold": 0.8,
+    "microservices": [[-1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0,
+    "ICP": 0,
+    "IFN": 0,
+    "NED": 1
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.75,
+    "threshold": 0.85,
+    "microservices": [[-1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0,
+    "ICP": 0,
+    "IFN": 0,
+    "NED": 1
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.75,
+    "threshold": 0.9,
+    "microservices": [[-1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0,
+    "ICP": 0,
+    "IFN": 0,
+    "NED": 1
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.75,
+    "threshold": 0.95,
+    "microservices": [[-1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0,
+    "ICP": 0,
+    "IFN": 0,
+    "NED": 1
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.8,
+    "threshold": 0.05,
+    "microservices": [[0,1],[0],[0,1],[0],[0],[0],[0,1],[0]],
+    "SM": -0.033854166666666664,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.2727272727272727
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.8,
+    "threshold": 0.1,
+    "microservices": [[0,1],[0],[0,1],[0],[0],[0],[0],[0]],
+    "SM": -0.0546875,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.19999999999999996
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.8,
+    "threshold": 0.15,
+    "microservices": [[0,1],[0],[0,1],[0],[0],[0],[0],[0]],
+    "SM": -0.0546875,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.19999999999999996
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.8,
+    "threshold": 0.2,
+    "microservices": [[1],[0],[0,1],[-1],[-1],[0],[0],[-1]],
+    "SM": -0.09375,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.8,
+    "threshold": 0.25,
+    "microservices": [[1],[0],[0,1],[-1],[-1],[0],[0],[-1]],
+    "SM": -0.09375,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.8,
+    "threshold": 0.3,
+    "microservices": [[1],[0],[0,1],[-1],[-1],[0],[-1],[-1]],
+    "SM": -0.1111111111111111,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.8,
+    "threshold": 0.35,
+    "microservices": [[1],[0],[0,1],[-1],[-1],[0],[-1],[-1]],
+    "SM": -0.1111111111111111,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.8,
+    "threshold": 0.4,
+    "microservices": [[1],[-1],[0],[-1],[-1],[0],[-1],[-1]],
+    "SM": 0.125,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.8,
+    "threshold": 0.45,
+    "microservices": [[1],[-1],[0],[-1],[-1],[0],[-1],[-1]],
+    "SM": 0.125,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.8,
+    "threshold": 0.5,
+    "microservices": [[1],[-1],[0],[-1],[-1],[0],[-1],[-1]],
+    "SM": 0.125,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.8,
+    "threshold": 0.55,
+    "microservices": [[1],[-1],[-1],[-1],[-1],[0],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.5,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.8,
+    "threshold": 0.6,
+    "microservices": [[1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.8,
+    "threshold": 0.65,
+    "microservices": [[1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.8,
+    "threshold": 0.7,
+    "microservices": [[1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.8,
+    "threshold": 0.75,
+    "microservices": [[1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.8,
+    "threshold": 0.8,
+    "microservices": [[1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.8,
+    "threshold": 0.85,
+    "microservices": [[-1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0,
+    "ICP": 0,
+    "IFN": 0,
+    "NED": 1
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.8,
+    "threshold": 0.9,
+    "microservices": [[-1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0,
+    "ICP": 0,
+    "IFN": 0,
+    "NED": 1
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.8,
+    "threshold": 0.95,
+    "microservices": [[-1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0,
+    "ICP": 0,
+    "IFN": 0,
+    "NED": 1
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.85,
+    "threshold": 0.05,
+    "microservices": [[0,1],[0],[0,1],[0],[0],[0],[0,1],[0]],
+    "SM": -0.033854166666666664,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.2727272727272727
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.85,
+    "threshold": 0.1,
+    "microservices": [[0,1],[0],[0,1],[0],[0],[0],[0],[0]],
+    "SM": -0.0546875,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.19999999999999996
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.85,
+    "threshold": 0.15,
+    "microservices": [[1],[0],[0,1],[-1],[-1],[0],[0],[-1]],
+    "SM": -0.09375,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.85,
+    "threshold": 0.2,
+    "microservices": [[1],[0],[0,1],[-1],[-1],[0],[0],[-1]],
+    "SM": -0.09375,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.85,
+    "threshold": 0.25,
+    "microservices": [[1],[0],[0,1],[-1],[-1],[0],[-1],[-1]],
+    "SM": -0.1111111111111111,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.85,
+    "threshold": 0.3,
+    "microservices": [[1],[0],[0,1],[-1],[-1],[0],[-1],[-1]],
+    "SM": -0.1111111111111111,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.85,
+    "threshold": 0.35,
+    "microservices": [[1],[-1],[0,1],[-1],[-1],[0],[-1],[-1]],
+    "SM": -0.125,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.85,
+    "threshold": 0.4,
+    "microservices": [[1],[-1],[0],[-1],[-1],[0],[-1],[-1]],
+    "SM": 0.125,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.85,
+    "threshold": 0.45,
+    "microservices": [[1],[-1],[0],[-1],[-1],[0],[-1],[-1]],
+    "SM": 0.125,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.85,
+    "threshold": 0.5,
+    "microservices": [[1],[-1],[0],[-1],[-1],[0],[-1],[-1]],
+    "SM": 0.125,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.85,
+    "threshold": 0.55,
+    "microservices": [[1],[-1],[-1],[-1],[-1],[0],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.5,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.85,
+    "threshold": 0.6,
+    "microservices": [[1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.85,
+    "threshold": 0.65,
+    "microservices": [[1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.85,
+    "threshold": 0.7,
+    "microservices": [[1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.85,
+    "threshold": 0.75,
+    "microservices": [[1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.85,
+    "threshold": 0.8,
+    "microservices": [[1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.85,
+    "threshold": 0.85,
+    "microservices": [[1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.85,
+    "threshold": 0.9,
+    "microservices": [[-1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0,
+    "ICP": 0,
+    "IFN": 0,
+    "NED": 1
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.85,
+    "threshold": 0.95,
+    "microservices": [[-1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0,
+    "ICP": 0,
+    "IFN": 0,
+    "NED": 1
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.9,
+    "threshold": 0.05,
+    "microservices": [[0,1],[0],[0,1],[0],[0],[0],[0,1],[0]],
+    "SM": -0.033854166666666664,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 0.2727272727272727
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.9,
+    "threshold": 0.1,
+    "microservices": [[1],[0],[0,1],[-1],[-1],[0],[0],[-1]],
+    "SM": -0.09375,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.9,
+    "threshold": 0.15,
+    "microservices": [[1],[0],[0,1],[-1],[-1],[0],[0],[-1]],
+    "SM": -0.09375,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.9,
+    "threshold": 0.2,
+    "microservices": [[1],[0],[0,1],[-1],[-1],[0],[-1],[-1]],
+    "SM": -0.1111111111111111,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.9,
+    "threshold": 0.25,
+    "microservices": [[1],[0],[0,1],[-1],[-1],[0],[-1],[-1]],
+    "SM": -0.1111111111111111,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.9,
+    "threshold": 0.3,
+    "microservices": [[1],[-1],[0,1],[-1],[-1],[0],[-1],[-1]],
+    "SM": -0.125,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.9,
+    "threshold": 0.35,
+    "microservices": [[1],[-1],[0,1],[-1],[-1],[0],[-1],[-1]],
+    "SM": -0.125,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.9,
+    "threshold": 0.4,
+    "microservices": [[1],[-1],[0,1],[-1],[-1],[0],[-1],[-1]],
+    "SM": -0.125,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.9,
+    "threshold": 0.45,
+    "microservices": [[1],[-1],[0],[-1],[-1],[0],[-1],[-1]],
+    "SM": 0.125,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.9,
+    "threshold": 0.5,
+    "microservices": [[1],[-1],[-1],[-1],[-1],[0],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.5,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.9,
+    "threshold": 0.55,
+    "microservices": [[1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.9,
+    "threshold": 0.6,
+    "microservices": [[1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.9,
+    "threshold": 0.65,
+    "microservices": [[1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.9,
+    "threshold": 0.7,
+    "microservices": [[1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.9,
+    "threshold": 0.75,
+    "microservices": [[1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.9,
+    "threshold": 0.8,
+    "microservices": [[1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.9,
+    "threshold": 0.85,
+    "microservices": [[1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.9,
+    "threshold": 0.9,
+    "microservices": [[1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.9,
+    "threshold": 0.95,
+    "microservices": [[-1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0,
+    "ICP": 0,
+    "IFN": 0,
+    "NED": 1
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.95,
+    "threshold": 0.05,
+    "microservices": [[1],[0],[0,1],[-1],[-1],[0],[0,1],[-1]],
+    "SM": -0.05208333333333333,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.95,
+    "threshold": 0.1,
+    "microservices": [[1],[0],[0,1],[-1],[-1],[0],[0],[-1]],
+    "SM": -0.09375,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.95,
+    "threshold": 0.15,
+    "microservices": [[1],[0],[0,1],[-1],[-1],[0],[-1],[-1]],
+    "SM": -0.1111111111111111,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.95,
+    "threshold": 0.2,
+    "microservices": [[1],[0],[0,1],[-1],[-1],[0],[-1],[-1]],
+    "SM": -0.1111111111111111,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.95,
+    "threshold": 0.25,
+    "microservices": [[1],[-1],[0,1],[-1],[-1],[0],[-1],[-1]],
+    "SM": -0.125,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.95,
+    "threshold": 0.3,
+    "microservices": [[1],[-1],[0,1],[-1],[-1],[0],[-1],[-1]],
+    "SM": -0.125,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.95,
+    "threshold": 0.35,
+    "microservices": [[1],[-1],[0,1],[-1],[-1],[0],[-1],[-1]],
+    "SM": -0.125,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.95,
+    "threshold": 0.4,
+    "microservices": [[1],[-1],[0,1],[-1],[-1],[0],[-1],[-1]],
+    "SM": -0.125,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.95,
+    "threshold": 0.45,
+    "microservices": [[1],[-1],[0],[-1],[-1],[0],[-1],[-1]],
+    "SM": 0.125,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.95,
+    "threshold": 0.5,
+    "microservices": [[1],[-1],[-1],[-1],[-1],[0],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.5,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.95,
+    "threshold": 0.55,
+    "microservices": [[1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.95,
+    "threshold": 0.6,
+    "microservices": [[1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.95,
+    "threshold": 0.65,
+    "microservices": [[1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.95,
+    "threshold": 0.7,
+    "microservices": [[1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.95,
+    "threshold": 0.75,
+    "microservices": [[1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.95,
+    "threshold": 0.8,
+    "microservices": [[1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.95,
+    "threshold": 0.85,
+    "microservices": [[1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.95,
+    "threshold": 0.9,
+    "microservices": [[1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 0.95,
+    "threshold": 0.95,
+    "microservices": [[1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 1.0,
+    "threshold": 0.05,
+    "microservices": [[1],[0],[0,1],[-1],[-1],[0],[0,1],[-1]],
+    "SM": -0.05208333333333333,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 1.0,
+    "threshold": 0.1,
+    "microservices": [[1],[0],[0,1],[-1],[-1],[0],[-1],[-1]],
+    "SM": -0.1111111111111111,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 1.0,
+    "threshold": 0.15,
+    "microservices": [[1],[0],[0,1],[-1],[-1],[0],[-1],[-1]],
+    "SM": -0.1111111111111111,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 1.0,
+    "threshold": 0.2,
+    "microservices": [[1],[-1],[0,1],[-1],[-1],[0],[-1],[-1]],
+    "SM": -0.125,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 1.0,
+    "threshold": 0.25,
+    "microservices": [[1],[-1],[0,1],[-1],[-1],[0],[-1],[-1]],
+    "SM": -0.125,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 1.0,
+    "threshold": 0.3,
+    "microservices": [[1],[-1],[0,1],[-1],[-1],[0],[-1],[-1]],
+    "SM": -0.125,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 1.0,
+    "threshold": 0.35,
+    "microservices": [[1],[-1],[0,1],[-1],[-1],[0],[-1],[-1]],
+    "SM": -0.125,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 1.0,
+    "threshold": 0.4,
+    "microservices": [[1],[-1],[0,1],[-1],[-1],[0],[-1],[-1]],
+    "SM": -0.125,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 1.0,
+    "threshold": 0.45,
+    "microservices": [[1],[-1],[1],[-1],[-1],[0],[-1],[-1]],
+    "SM": -0.5,
+    "ICP": 1.0,
+    "IFN": 0.5,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 1.0,
+    "threshold": 0.5,
+    "microservices": [[1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 1.0,
+    "threshold": 0.55,
+    "microservices": [[1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 1.0,
+    "threshold": 0.6,
+    "microservices": [[1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 1.0,
+    "threshold": 0.65,
+    "microservices": [[1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 1.0,
+    "threshold": 0.7,
+    "microservices": [[1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 1.0,
+    "threshold": 0.75,
+    "microservices": [[1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 1.0,
+    "threshold": 0.8,
+    "microservices": [[1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 1.0,
+    "threshold": 0.85,
+    "microservices": [[1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 1.0,
+    "threshold": 0.9,
+    "microservices": [[1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 2,
+    "alpha": 1.0,
+    "threshold": 0.95,
+    "microservices": [[1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.0,
+    "threshold": 0.05,
+    "microservices": [[0,2],[0,1],[0,3],[0],[0],[1],[0,3],[2]],
+    "SM": -0.05555555555555555,
+    "ICP": 0.6666666666666666,
+    "IFN": 0.25,
+    "NED": 0.5
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.0,
+    "threshold": 0.1,
+    "microservices": [[2],[0,1],[0,3],[0],[0],[1],[3],[2]],
+    "SM": -0.0625,
+    "ICP": 0.6666666666666666,
+    "IFN": 0.25,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.0,
+    "threshold": 0.15,
+    "microservices": [[-1],[0],[0,3],[0],[0],[1],[3],[2]],
+    "SM": -0.125,
+    "ICP": 0.6666666666666666,
+    "IFN": 0.25,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.0,
+    "threshold": 0.2,
+    "microservices": [[-1],[-1],[0,3],[0],[0],[-1],[3],[2]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.25,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.0,
+    "threshold": 0.25,
+    "microservices": [[-1],[-1],[0,3],[0],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.25,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.0,
+    "threshold": 0.3,
+    "microservices": [[-1],[-1],[0,3],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.25,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.0,
+    "threshold": 0.35,
+    "microservices": [[-1],[-1],[0,3],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.25,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.0,
+    "threshold": 0.4,
+    "microservices": [[-1],[-1],[3],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.25,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.0,
+    "threshold": 0.45,
+    "microservices": [[-1],[-1],[3],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.25,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.0,
+    "threshold": 0.5,
+    "microservices": [[-1],[-1],[3],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.25,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.0,
+    "threshold": 0.55,
+    "microservices": [[-1],[-1],[3],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.25,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.0,
+    "threshold": 0.6,
+    "microservices": [[-1],[-1],[3],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.25,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.0,
+    "threshold": 0.65,
+    "microservices": [[-1],[-1],[3],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.25,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.0,
+    "threshold": 0.7,
+    "microservices": [[-1],[-1],[3],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.25,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.0,
+    "threshold": 0.75,
+    "microservices": [[-1],[-1],[3],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.25,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.0,
+    "threshold": 0.8,
+    "microservices": [[-1],[-1],[3],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.25,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.0,
+    "threshold": 0.85,
+    "microservices": [[-1],[-1],[3],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.25,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.0,
+    "threshold": 0.9,
+    "microservices": [[-1],[-1],[3],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.25,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.0,
+    "threshold": 0.95,
+    "microservices": [[-1],[-1],[3],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.25,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.05,
+    "threshold": 0.05,
+    "microservices": [[0,2],[0,1],[0,2,3],[0],[0],[1],[0,3],[2]],
+    "SM": -0.08333333333333333,
+    "ICP": 0.75,
+    "IFN": 0.25,
+    "NED": 0.5384615384615384
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.05,
+    "threshold": 0.1,
+    "microservices": [[2],[0,1],[0,3],[0],[0],[1],[3],[2]],
+    "SM": -0.0625,
+    "ICP": 0.6666666666666666,
+    "IFN": 0.25,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.05,
+    "threshold": 0.15,
+    "microservices": [[-1],[0],[0,3],[0],[0],[1],[3],[2]],
+    "SM": -0.125,
+    "ICP": 0.6666666666666666,
+    "IFN": 0.25,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.05,
+    "threshold": 0.2,
+    "microservices": [[-1],[-1],[0,3],[0],[0],[-1],[3],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.25,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.05,
+    "threshold": 0.25,
+    "microservices": [[-1],[-1],[0,3],[0],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.25,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.05,
+    "threshold": 0.3,
+    "microservices": [[-1],[-1],[0,3],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.25,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.05,
+    "threshold": 0.35,
+    "microservices": [[-1],[-1],[3],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.25,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.05,
+    "threshold": 0.4,
+    "microservices": [[-1],[-1],[3],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.25,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.05,
+    "threshold": 0.45,
+    "microservices": [[-1],[-1],[3],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.25,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.05,
+    "threshold": 0.5,
+    "microservices": [[-1],[-1],[3],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.25,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.05,
+    "threshold": 0.55,
+    "microservices": [[-1],[-1],[3],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.25,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.05,
+    "threshold": 0.6,
+    "microservices": [[-1],[-1],[3],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.25,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.05,
+    "threshold": 0.65,
+    "microservices": [[-1],[-1],[3],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.25,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.05,
+    "threshold": 0.7,
+    "microservices": [[-1],[-1],[3],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.25,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.05,
+    "threshold": 0.75,
+    "microservices": [[-1],[-1],[3],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.25,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.05,
+    "threshold": 0.8,
+    "microservices": [[-1],[-1],[3],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.25,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.05,
+    "threshold": 0.85,
+    "microservices": [[-1],[-1],[3],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.25,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.05,
+    "threshold": 0.9,
+    "microservices": [[-1],[-1],[3],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.25,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.05,
+    "threshold": 0.95,
+    "microservices": [[-1],[-1],[3],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.25,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.1,
+    "threshold": 0.05,
+    "microservices": [[0,2],[0,1],[0,2,3],[0],[0],[1,2],[0,3],[2]],
+    "SM": -0.012152777777777776,
+    "ICP": 0.2857142857142857,
+    "IFN": 0.0,
+    "NED": 0.5714285714285714
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.1,
+    "threshold": 0.1,
+    "microservices": [[2],[0,1],[0,2,3],[0],[0],[1],[3],[2]],
+    "SM": -0.09027777777777778,
+    "ICP": 0.75,
+    "IFN": 0.25,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.1,
+    "threshold": 0.15,
+    "microservices": [[-1],[0],[0,3],[0],[0],[1],[3],[2]],
+    "SM": -0.125,
+    "ICP": 0.6666666666666666,
+    "IFN": 0.25,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.1,
+    "threshold": 0.2,
+    "microservices": [[-1],[-1],[0,3],[0],[0],[-1],[3],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.25,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.1,
+    "threshold": 0.25,
+    "microservices": [[-1],[-1],[0,3],[0],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.25,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.1,
+    "threshold": 0.3,
+    "microservices": [[-1],[-1],[0,3],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.25,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.1,
+    "threshold": 0.35,
+    "microservices": [[-1],[-1],[3],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.25,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.1,
+    "threshold": 0.4,
+    "microservices": [[-1],[-1],[3],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.25,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.1,
+    "threshold": 0.45,
+    "microservices": [[-1],[-1],[3],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.25,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.1,
+    "threshold": 0.5,
+    "microservices": [[-1],[-1],[3],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.25,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.1,
+    "threshold": 0.55,
+    "microservices": [[-1],[-1],[3],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.25,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.1,
+    "threshold": 0.6,
+    "microservices": [[-1],[-1],[3],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.25,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.1,
+    "threshold": 0.65,
+    "microservices": [[-1],[-1],[3],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.25,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.1,
+    "threshold": 0.7,
+    "microservices": [[-1],[-1],[3],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.25,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.1,
+    "threshold": 0.75,
+    "microservices": [[-1],[-1],[3],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.25,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.1,
+    "threshold": 0.8,
+    "microservices": [[-1],[-1],[3],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.25,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.1,
+    "threshold": 0.85,
+    "microservices": [[-1],[-1],[3],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.25,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.1,
+    "threshold": 0.9,
+    "microservices": [[-1],[-1],[3],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.25,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.1,
+    "threshold": 0.95,
+    "microservices": [[-1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0,
+    "ICP": 0,
+    "IFN": 0,
+    "NED": 1
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.15,
+    "threshold": 0.05,
+    "microservices": [[0,2],[0,1],[0,2,3],[0],[0],[1,2],[0,3],[2]],
+    "SM": -0.012152777777777776,
+    "ICP": 0.2857142857142857,
+    "IFN": 0.0,
+    "NED": 0.5714285714285714
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.15,
+    "threshold": 0.1,
+    "microservices": [[2],[0,1],[0,2,3],[0],[0],[1,2],[3],[2]],
+    "SM": -0.026041666666666664,
+    "ICP": 0.2857142857142857,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.15,
+    "threshold": 0.15,
+    "microservices": [[-1],[0],[0,2,3],[0],[0],[1],[3],[2]],
+    "SM": -0.20833333333333334,
+    "ICP": 0.75,
+    "IFN": 0.25,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.15,
+    "threshold": 0.2,
+    "microservices": [[-1],[-1],[0,3],[0],[-1],[-1],[3],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.25,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.15,
+    "threshold": 0.25,
+    "microservices": [[-1],[-1],[0,3],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.25,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.15,
+    "threshold": 0.3,
+    "microservices": [[-1],[-1],[0,3],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.25,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.15,
+    "threshold": 0.35,
+    "microservices": [[-1],[-1],[3],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.25,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.15,
+    "threshold": 0.4,
+    "microservices": [[-1],[-1],[3],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.25,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.15,
+    "threshold": 0.45,
+    "microservices": [[-1],[-1],[3],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.25,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.15,
+    "threshold": 0.5,
+    "microservices": [[-1],[-1],[3],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.25,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.15,
+    "threshold": 0.55,
+    "microservices": [[-1],[-1],[3],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.25,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.15,
+    "threshold": 0.6,
+    "microservices": [[-1],[-1],[3],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.25,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.15,
+    "threshold": 0.65,
+    "microservices": [[-1],[-1],[3],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.25,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.15,
+    "threshold": 0.7,
+    "microservices": [[-1],[-1],[3],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.25,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.15,
+    "threshold": 0.75,
+    "microservices": [[-1],[-1],[3],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.25,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.15,
+    "threshold": 0.8,
+    "microservices": [[-1],[-1],[3],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.25,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.15,
+    "threshold": 0.85,
+    "microservices": [[-1],[-1],[3],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.25,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.15,
+    "threshold": 0.9,
+    "microservices": [[-1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0,
+    "ICP": 0,
+    "IFN": 0,
+    "NED": 1
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.15,
+    "threshold": 0.95,
+    "microservices": [[-1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0,
+    "ICP": 0,
+    "IFN": 0,
+    "NED": 1
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.2,
+    "threshold": 0.05,
+    "microservices": [[0,1,2],[0,1],[0,2,3],[0],[0],[1,2],[0,3],[2]],
+    "SM": -0.014467592592592591,
+    "ICP": 0.2857142857142857,
+    "IFN": 0.0,
+    "NED": 0.6
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.2,
+    "threshold": 0.1,
+    "microservices": [[2],[0],[0,2,3],[0],[0],[1,2],[3],[2]],
+    "SM": -0.109375,
+    "ICP": 0.2857142857142857,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.2,
+    "threshold": 0.15,
+    "microservices": [[-1],[-1],[0,2,3],[0],[0],[1,2],[3],[2]],
+    "SM": -0.07407407407407408,
+    "ICP": 0.2857142857142857,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.2,
+    "threshold": 0.2,
+    "microservices": [[-1],[-1],[0,2,3],[0],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.25,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.2,
+    "threshold": 0.25,
+    "microservices": [[-1],[-1],[0,3],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.25,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.2,
+    "threshold": 0.3,
+    "microservices": [[-1],[-1],[0,3],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.25,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.2,
+    "threshold": 0.35,
+    "microservices": [[-1],[-1],[3],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.25,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.2,
+    "threshold": 0.4,
+    "microservices": [[-1],[-1],[3],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.25,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.2,
+    "threshold": 0.45,
+    "microservices": [[-1],[-1],[3],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.25,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.2,
+    "threshold": 0.5,
+    "microservices": [[-1],[-1],[3],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.25,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.2,
+    "threshold": 0.55,
+    "microservices": [[-1],[-1],[3],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.25,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.2,
+    "threshold": 0.6,
+    "microservices": [[-1],[-1],[3],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.25,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.2,
+    "threshold": 0.65,
+    "microservices": [[-1],[-1],[3],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.25,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.2,
+    "threshold": 0.7,
+    "microservices": [[-1],[-1],[3],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.25,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.2,
+    "threshold": 0.75,
+    "microservices": [[-1],[-1],[3],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.25,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.2,
+    "threshold": 0.8,
+    "microservices": [[-1],[-1],[3],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.25,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.2,
+    "threshold": 0.85,
+    "microservices": [[-1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0,
+    "ICP": 0,
+    "IFN": 0,
+    "NED": 1
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.2,
+    "threshold": 0.9,
+    "microservices": [[-1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0,
+    "ICP": 0,
+    "IFN": 0,
+    "NED": 1
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.2,
+    "threshold": 0.95,
+    "microservices": [[-1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0,
+    "ICP": 0,
+    "IFN": 0,
+    "NED": 1
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.25,
+    "threshold": 0.05,
+    "microservices": [[0,1,2],[0,1],[0,2,3],[0],[0],[1,2],[0,3],[2,3]],
+    "SM": -0.007523148148148143,
+    "ICP": 0.2857142857142857,
+    "IFN": 0.0,
+    "NED": 0.625
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.25,
+    "threshold": 0.1,
+    "microservices": [[-1],[0],[0,2,3],[0],[0],[1,2],[3],[2]],
+    "SM": -0.06944444444444445,
+    "ICP": 0.2857142857142857,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.25,
+    "threshold": 0.15,
+    "microservices": [[-1],[-1],[0,2,3],[0],[0],[2],[3],[2]],
+    "SM": -0.01851851851851851,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.25,
+    "threshold": 0.2,
+    "microservices": [[-1],[-1],[0,2,3],[0],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.25,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.25,
+    "threshold": 0.25,
+    "microservices": [[-1],[-1],[0,2,3],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.25,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.25,
+    "threshold": 0.3,
+    "microservices": [[-1],[-1],[3],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.25,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.25,
+    "threshold": 0.35,
+    "microservices": [[-1],[-1],[3],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.25,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.25,
+    "threshold": 0.4,
+    "microservices": [[-1],[-1],[3],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.25,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.25,
+    "threshold": 0.45,
+    "microservices": [[-1],[-1],[3],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.25,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.25,
+    "threshold": 0.5,
+    "microservices": [[-1],[-1],[3],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.25,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.25,
+    "threshold": 0.55,
+    "microservices": [[-1],[-1],[3],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.25,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.25,
+    "threshold": 0.6,
+    "microservices": [[-1],[-1],[3],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.25,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.25,
+    "threshold": 0.65,
+    "microservices": [[-1],[-1],[3],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.25,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.25,
+    "threshold": 0.7,
+    "microservices": [[-1],[-1],[3],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.25,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.25,
+    "threshold": 0.75,
+    "microservices": [[-1],[-1],[3],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.25,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.25,
+    "threshold": 0.8,
+    "microservices": [[-1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0,
+    "ICP": 0,
+    "IFN": 0,
+    "NED": 1
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.25,
+    "threshold": 0.85,
+    "microservices": [[-1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0,
+    "ICP": 0,
+    "IFN": 0,
+    "NED": 1
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.25,
+    "threshold": 0.9,
+    "microservices": [[-1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0,
+    "ICP": 0,
+    "IFN": 0,
+    "NED": 1
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.25,
+    "threshold": 0.95,
+    "microservices": [[-1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0,
+    "ICP": 0,
+    "IFN": 0,
+    "NED": 1
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.3,
+    "threshold": 0.05,
+    "microservices": [[0,1,2,3],[0,1],[0,2,3],[0],[0],[1,2],[0,3],[2,3]],
+    "SM": -0.005208333333333332,
+    "ICP": 0.2857142857142857,
+    "IFN": 0.0,
+    "NED": 0.6470588235294117
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.3,
+    "threshold": 0.1,
+    "microservices": [[-1],[0],[0,2,3],[0],[0],[1,2],[3],[2]],
+    "SM": -0.09722222222222222,
+    "ICP": 0.2857142857142857,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.3,
+    "threshold": 0.15,
+    "microservices": [[-1],[-1],[0,2,3],[0],[0],[2],[3],[-1]],
+    "SM": -0.006944444444444434,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.3,
+    "threshold": 0.2,
+    "microservices": [[-1],[-1],[0,2,3],[0],[-1],[2],[-1],[-1]],
+    "SM": -0.0625,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.3,
+    "threshold": 0.25,
+    "microservices": [[-1],[-1],[0,2,3],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.25,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.3,
+    "threshold": 0.3,
+    "microservices": [[-1],[-1],[2,3],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.25,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.3,
+    "threshold": 0.35,
+    "microservices": [[-1],[-1],[3],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.25,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.3,
+    "threshold": 0.4,
+    "microservices": [[-1],[-1],[3],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.25,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.3,
+    "threshold": 0.45,
+    "microservices": [[-1],[-1],[3],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.25,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.3,
+    "threshold": 0.5,
+    "microservices": [[-1],[-1],[3],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.25,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.3,
+    "threshold": 0.55,
+    "microservices": [[-1],[-1],[3],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.25,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.3,
+    "threshold": 0.6,
+    "microservices": [[-1],[-1],[3],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.25,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.3,
+    "threshold": 0.65,
+    "microservices": [[-1],[-1],[3],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.25,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.3,
+    "threshold": 0.7,
+    "microservices": [[-1],[-1],[3],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.25,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.3,
+    "threshold": 0.75,
+    "microservices": [[-1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0,
+    "ICP": 0,
+    "IFN": 0,
+    "NED": 1
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.3,
+    "threshold": 0.8,
+    "microservices": [[-1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0,
+    "ICP": 0,
+    "IFN": 0,
+    "NED": 1
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.3,
+    "threshold": 0.85,
+    "microservices": [[-1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0,
+    "ICP": 0,
+    "IFN": 0,
+    "NED": 1
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.3,
+    "threshold": 0.9,
+    "microservices": [[-1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0,
+    "ICP": 0,
+    "IFN": 0,
+    "NED": 1
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.3,
+    "threshold": 0.95,
+    "microservices": [[-1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0,
+    "ICP": 0,
+    "IFN": 0,
+    "NED": 1
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.35,
+    "threshold": 0.05,
+    "microservices": [[0,1,2,3],[0,1],[0,2,3],[0],[0],[1,2],[0,3],[2,3]],
+    "SM": -0.007523148148148143,
+    "ICP": 0.2857142857142857,
+    "IFN": 0.0,
+    "NED": 0.6470588235294117
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.35,
+    "threshold": 0.1,
+    "microservices": [[-1],[0],[0,2,3],[0],[0],[1,2],[3],[2]],
+    "SM": -0.06944444444444445,
+    "ICP": 0.2857142857142857,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.35,
+    "threshold": 0.15,
+    "microservices": [[-1],[-1],[0,2,3],[0],[-1],[2],[3],[-1]],
+    "SM": -0.02083333333333333,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.35,
+    "threshold": 0.2,
+    "microservices": [[-1],[-1],[0,2,3],[0],[-1],[2],[-1],[-1]],
+    "SM": -0.0625,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.35,
+    "threshold": 0.25,
+    "microservices": [[-1],[-1],[0,2,3],[-1],[-1],[2],[-1],[-1]],
+    "SM": -0.10416666666666666,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.35,
+    "threshold": 0.3,
+    "microservices": [[-1],[-1],[2,3],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.25,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.35,
+    "threshold": 0.35,
+    "microservices": [[-1],[-1],[2,3],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.25,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.35,
+    "threshold": 0.4,
+    "microservices": [[-1],[-1],[3],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.25,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.35,
+    "threshold": 0.45,
+    "microservices": [[-1],[-1],[3],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.25,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.35,
+    "threshold": 0.5,
+    "microservices": [[-1],[-1],[3],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.25,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.35,
+    "threshold": 0.55,
+    "microservices": [[-1],[-1],[3],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.25,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.35,
+    "threshold": 0.6,
+    "microservices": [[-1],[-1],[3],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.25,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.35,
+    "threshold": 0.65,
+    "microservices": [[-1],[-1],[3],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.25,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.35,
+    "threshold": 0.7,
+    "microservices": [[-1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0,
+    "ICP": 0,
+    "IFN": 0,
+    "NED": 1
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.35,
+    "threshold": 0.75,
+    "microservices": [[-1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0,
+    "ICP": 0,
+    "IFN": 0,
+    "NED": 1
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.35,
+    "threshold": 0.8,
+    "microservices": [[-1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0,
+    "ICP": 0,
+    "IFN": 0,
+    "NED": 1
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.35,
+    "threshold": 0.85,
+    "microservices": [[-1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0,
+    "ICP": 0,
+    "IFN": 0,
+    "NED": 1
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.35,
+    "threshold": 0.9,
+    "microservices": [[-1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0,
+    "ICP": 0,
+    "IFN": 0,
+    "NED": 1
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.35,
+    "threshold": 0.95,
+    "microservices": [[-1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0,
+    "ICP": 0,
+    "IFN": 0,
+    "NED": 1
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.4,
+    "threshold": 0.05,
+    "microservices": [[1,2,3],[0,1],[0,2,3],[0],[0],[1,2],[3],[2,3]],
+    "SM": -0.005208333333333332,
+    "ICP": 0.2857142857142857,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.4,
+    "threshold": 0.1,
+    "microservices": [[1],[0],[0,2,3],[0],[0],[1,2],[3],[2]],
+    "SM": -0.027777777777777776,
+    "ICP": 0.2857142857142857,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.4,
+    "threshold": 0.15,
+    "microservices": [[-1],[-1],[0,2,3],[0],[-1],[2],[3],[-1]],
+    "SM": -0.02083333333333333,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.4,
+    "threshold": 0.2,
+    "microservices": [[-1],[-1],[0,2,3],[-1],[-1],[2],[-1],[-1]],
+    "SM": -0.10416666666666666,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.4,
+    "threshold": 0.25,
+    "microservices": [[-1],[-1],[2,3],[-1],[-1],[2],[-1],[-1]],
+    "SM": -0.02083333333333333,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.4,
+    "threshold": 0.3,
+    "microservices": [[-1],[-1],[2,3],[-1],[-1],[2],[-1],[-1]],
+    "SM": -0.02083333333333333,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.4,
+    "threshold": 0.35,
+    "microservices": [[-1],[-1],[2,3],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.25,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.4,
+    "threshold": 0.4,
+    "microservices": [[-1],[-1],[2,3],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.25,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.4,
+    "threshold": 0.45,
+    "microservices": [[-1],[-1],[3],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.25,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.4,
+    "threshold": 0.5,
+    "microservices": [[-1],[-1],[3],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.25,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.4,
+    "threshold": 0.55,
+    "microservices": [[-1],[-1],[3],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.25,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.4,
+    "threshold": 0.6,
+    "microservices": [[-1],[-1],[3],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.25,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.4,
+    "threshold": 0.65,
+    "microservices": [[-1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0,
+    "ICP": 0,
+    "IFN": 0,
+    "NED": 1
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.4,
+    "threshold": 0.7,
+    "microservices": [[-1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0,
+    "ICP": 0,
+    "IFN": 0,
+    "NED": 1
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.4,
+    "threshold": 0.75,
+    "microservices": [[-1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0,
+    "ICP": 0,
+    "IFN": 0,
+    "NED": 1
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.4,
+    "threshold": 0.8,
+    "microservices": [[-1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0,
+    "ICP": 0,
+    "IFN": 0,
+    "NED": 1
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.4,
+    "threshold": 0.85,
+    "microservices": [[-1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0,
+    "ICP": 0,
+    "IFN": 0,
+    "NED": 1
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.4,
+    "threshold": 0.9,
+    "microservices": [[-1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0,
+    "ICP": 0,
+    "IFN": 0,
+    "NED": 1
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.4,
+    "threshold": 0.95,
+    "microservices": [[-1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0,
+    "ICP": 0,
+    "IFN": 0,
+    "NED": 1
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.45,
+    "threshold": 0.05,
+    "microservices": [[1,2,3],[0,1],[0,2,3],[0],[0],[1,2],[3],[2,3]],
+    "SM": -0.012152777777777776,
+    "ICP": 0.2857142857142857,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.45,
+    "threshold": 0.1,
+    "microservices": [[1],[0],[0,2,3],[0],[0],[1,2],[3],[2]],
+    "SM": -0.034722222222222224,
+    "ICP": 0.2857142857142857,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.45,
+    "threshold": 0.15,
+    "microservices": [[-1],[-1],[0,2,3],[0],[-1],[2],[3],[-1]],
+    "SM": -0.02083333333333333,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.45,
+    "threshold": 0.2,
+    "microservices": [[-1],[-1],[0,2,3],[-1],[-1],[2],[-1],[-1]],
+    "SM": -0.10416666666666666,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.45,
+    "threshold": 0.25,
+    "microservices": [[-1],[-1],[2,3],[-1],[-1],[2],[-1],[-1]],
+    "SM": -0.02083333333333333,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.45,
+    "threshold": 0.3,
+    "microservices": [[-1],[-1],[2,3],[-1],[-1],[2],[-1],[-1]],
+    "SM": -0.02083333333333333,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.45,
+    "threshold": 0.35,
+    "microservices": [[-1],[-1],[2,3],[-1],[-1],[2],[-1],[-1]],
+    "SM": -0.02083333333333333,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.45,
+    "threshold": 0.4,
+    "microservices": [[-1],[-1],[2,3],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.25,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.45,
+    "threshold": 0.45,
+    "microservices": [[-1],[-1],[2,3],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.25,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.45,
+    "threshold": 0.5,
+    "microservices": [[-1],[-1],[3],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.25,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.45,
+    "threshold": 0.55,
+    "microservices": [[-1],[-1],[3],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.25,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.45,
+    "threshold": 0.6,
+    "microservices": [[-1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0,
+    "ICP": 0,
+    "IFN": 0,
+    "NED": 1
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.45,
+    "threshold": 0.65,
+    "microservices": [[-1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0,
+    "ICP": 0,
+    "IFN": 0,
+    "NED": 1
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.45,
+    "threshold": 0.7,
+    "microservices": [[-1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0,
+    "ICP": 0,
+    "IFN": 0,
+    "NED": 1
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.45,
+    "threshold": 0.75,
+    "microservices": [[-1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0,
+    "ICP": 0,
+    "IFN": 0,
+    "NED": 1
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.45,
+    "threshold": 0.8,
+    "microservices": [[-1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0,
+    "ICP": 0,
+    "IFN": 0,
+    "NED": 1
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.45,
+    "threshold": 0.85,
+    "microservices": [[-1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0,
+    "ICP": 0,
+    "IFN": 0,
+    "NED": 1
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.45,
+    "threshold": 0.9,
+    "microservices": [[-1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0,
+    "ICP": 0,
+    "IFN": 0,
+    "NED": 1
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.45,
+    "threshold": 0.95,
+    "microservices": [[-1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0,
+    "ICP": 0,
+    "IFN": 0,
+    "NED": 1
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.5,
+    "threshold": 0.05,
+    "microservices": [[1,2,3],[0,1],[0,2,3],[0],[0],[1,2],[3],[2,3]],
+    "SM": -0.008680555555555552,
+    "ICP": 0.2857142857142857,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.5,
+    "threshold": 0.1,
+    "microservices": [[1],[0],[0,2,3],[0],[0],[2],[3],[2]],
+    "SM": -0.013888888888888888,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.5,
+    "threshold": 0.15,
+    "microservices": [[-1],[-1],[0,2,3],[0],[-1],[2],[3],[-1]],
+    "SM": -0.02083333333333333,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.5,
+    "threshold": 0.2,
+    "microservices": [[-1],[-1],[0,2,3],[-1],[-1],[2],[-1],[-1]],
+    "SM": -0.10416666666666666,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.5,
+    "threshold": 0.25,
+    "microservices": [[-1],[-1],[2,3],[-1],[-1],[2],[-1],[-1]],
+    "SM": -0.02083333333333333,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.5,
+    "threshold": 0.3,
+    "microservices": [[-1],[-1],[2,3],[-1],[-1],[2],[-1],[-1]],
+    "SM": -0.02083333333333333,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.5,
+    "threshold": 0.35,
+    "microservices": [[-1],[-1],[2,3],[-1],[-1],[2],[-1],[-1]],
+    "SM": -0.02083333333333333,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.5,
+    "threshold": 0.4,
+    "microservices": [[-1],[-1],[2,3],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.25,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.5,
+    "threshold": 0.45,
+    "microservices": [[-1],[-1],[2,3],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.25,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.5,
+    "threshold": 0.5,
+    "microservices": [[-1],[-1],[2,3],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.25,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.5,
+    "threshold": 0.55,
+    "microservices": [[-1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0,
+    "ICP": 0,
+    "IFN": 0,
+    "NED": 1
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.5,
+    "threshold": 0.6,
+    "microservices": [[-1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0,
+    "ICP": 0,
+    "IFN": 0,
+    "NED": 1
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.5,
+    "threshold": 0.65,
+    "microservices": [[-1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0,
+    "ICP": 0,
+    "IFN": 0,
+    "NED": 1
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.5,
+    "threshold": 0.7,
+    "microservices": [[-1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0,
+    "ICP": 0,
+    "IFN": 0,
+    "NED": 1
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.5,
+    "threshold": 0.75,
+    "microservices": [[-1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0,
+    "ICP": 0,
+    "IFN": 0,
+    "NED": 1
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.5,
+    "threshold": 0.8,
+    "microservices": [[-1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0,
+    "ICP": 0,
+    "IFN": 0,
+    "NED": 1
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.5,
+    "threshold": 0.85,
+    "microservices": [[-1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0,
+    "ICP": 0,
+    "IFN": 0,
+    "NED": 1
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.5,
+    "threshold": 0.9,
+    "microservices": [[-1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0,
+    "ICP": 0,
+    "IFN": 0,
+    "NED": 1
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.5,
+    "threshold": 0.95,
+    "microservices": [[-1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0,
+    "ICP": 0,
+    "IFN": 0,
+    "NED": 1
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.55,
+    "threshold": 0.05,
+    "microservices": [[1,2,3],[0,1],[0,2,3],[0],[0],[1,2],[3],[2,3]],
+    "SM": -0.005208333333333332,
+    "ICP": 0.2857142857142857,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.55,
+    "threshold": 0.1,
+    "microservices": [[1],[-1],[0,2,3],[0],[0],[2],[3],[-1]],
+    "SM": -0.006944444444444434,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.55,
+    "threshold": 0.15,
+    "microservices": [[-1],[-1],[0,2,3],[0],[-1],[2],[3],[-1]],
+    "SM": -0.02083333333333333,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.55,
+    "threshold": 0.2,
+    "microservices": [[-1],[-1],[0,2,3],[-1],[-1],[2],[-1],[-1]],
+    "SM": -0.10416666666666666,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.55,
+    "threshold": 0.25,
+    "microservices": [[-1],[-1],[2,3],[-1],[-1],[2],[-1],[-1]],
+    "SM": -0.02083333333333333,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.55,
+    "threshold": 0.3,
+    "microservices": [[-1],[-1],[2,3],[-1],[-1],[2],[-1],[-1]],
+    "SM": -0.02083333333333333,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.55,
+    "threshold": 0.35,
+    "microservices": [[-1],[-1],[2,3],[-1],[-1],[2],[-1],[-1]],
+    "SM": -0.02083333333333333,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.55,
+    "threshold": 0.4,
+    "microservices": [[-1],[-1],[2,3],[-1],[-1],[2],[-1],[-1]],
+    "SM": -0.02083333333333333,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.55,
+    "threshold": 0.45,
+    "microservices": [[-1],[-1],[2],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.3333333333333333,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.55,
+    "threshold": 0.5,
+    "microservices": [[-1],[-1],[2],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.3333333333333333,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.55,
+    "threshold": 0.55,
+    "microservices": [[-1],[-1],[2],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.3333333333333333,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.55,
+    "threshold": 0.6,
+    "microservices": [[-1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0,
+    "ICP": 0,
+    "IFN": 0,
+    "NED": 1
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.55,
+    "threshold": 0.65,
+    "microservices": [[-1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0,
+    "ICP": 0,
+    "IFN": 0,
+    "NED": 1
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.55,
+    "threshold": 0.7,
+    "microservices": [[-1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0,
+    "ICP": 0,
+    "IFN": 0,
+    "NED": 1
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.55,
+    "threshold": 0.75,
+    "microservices": [[-1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0,
+    "ICP": 0,
+    "IFN": 0,
+    "NED": 1
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.55,
+    "threshold": 0.8,
+    "microservices": [[-1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0,
+    "ICP": 0,
+    "IFN": 0,
+    "NED": 1
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.55,
+    "threshold": 0.85,
+    "microservices": [[-1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0,
+    "ICP": 0,
+    "IFN": 0,
+    "NED": 1
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.55,
+    "threshold": 0.9,
+    "microservices": [[-1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0,
+    "ICP": 0,
+    "IFN": 0,
+    "NED": 1
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.55,
+    "threshold": 0.95,
+    "microservices": [[-1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0,
+    "ICP": 0,
+    "IFN": 0,
+    "NED": 1
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.6,
+    "threshold": 0.05,
+    "microservices": [[1,2,3],[0],[0,2,3],[0],[0],[1,2],[3],[2,3]],
+    "SM": -0.015625,
+    "ICP": 0.2857142857142857,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.6,
+    "threshold": 0.1,
+    "microservices": [[1,3],[-1],[0,2,3],[0],[-1],[2],[3],[-1]],
+    "SM": -0.006944444444444434,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.6,
+    "threshold": 0.15,
+    "microservices": [[1],[-1],[0,2,3],[-1],[-1],[2],[3],[-1]],
+    "SM": -0.0625,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.6,
+    "threshold": 0.2,
+    "microservices": [[-1],[-1],[2,3],[-1],[-1],[2],[-1],[-1]],
+    "SM": -0.02083333333333333,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.6,
+    "threshold": 0.25,
+    "microservices": [[-1],[-1],[2,3],[-1],[-1],[2],[-1],[-1]],
+    "SM": -0.02083333333333333,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.6,
+    "threshold": 0.3,
+    "microservices": [[-1],[-1],[2,3],[-1],[-1],[2],[-1],[-1]],
+    "SM": -0.02083333333333333,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.6,
+    "threshold": 0.35,
+    "microservices": [[-1],[-1],[2,3],[-1],[-1],[2],[-1],[-1]],
+    "SM": -0.02083333333333333,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.6,
+    "threshold": 0.4,
+    "microservices": [[-1],[-1],[2,3],[-1],[-1],[2],[-1],[-1]],
+    "SM": -0.02083333333333333,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.6,
+    "threshold": 0.45,
+    "microservices": [[-1],[-1],[2],[-1],[-1],[2],[-1],[-1]],
+    "SM": 0.08333333333333333,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.6,
+    "threshold": 0.5,
+    "microservices": [[-1],[-1],[2],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.3333333333333333,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.6,
+    "threshold": 0.55,
+    "microservices": [[-1],[-1],[2],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.3333333333333333,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.6,
+    "threshold": 0.6,
+    "microservices": [[-1],[-1],[2],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.3333333333333333,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.6,
+    "threshold": 0.65,
+    "microservices": [[-1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0,
+    "ICP": 0,
+    "IFN": 0,
+    "NED": 1
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.6,
+    "threshold": 0.7,
+    "microservices": [[-1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0,
+    "ICP": 0,
+    "IFN": 0,
+    "NED": 1
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.6,
+    "threshold": 0.75,
+    "microservices": [[-1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0,
+    "ICP": 0,
+    "IFN": 0,
+    "NED": 1
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.6,
+    "threshold": 0.8,
+    "microservices": [[-1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0,
+    "ICP": 0,
+    "IFN": 0,
+    "NED": 1
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.6,
+    "threshold": 0.85,
+    "microservices": [[-1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0,
+    "ICP": 0,
+    "IFN": 0,
+    "NED": 1
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.6,
+    "threshold": 0.9,
+    "microservices": [[-1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0,
+    "ICP": 0,
+    "IFN": 0,
+    "NED": 1
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.6,
+    "threshold": 0.95,
+    "microservices": [[-1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0,
+    "ICP": 0,
+    "IFN": 0,
+    "NED": 1
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.65,
+    "threshold": 0.05,
+    "microservices": [[1,3],[0],[0,2,3],[0],[0],[1,2],[3],[2,3]],
+    "SM": -0.013888888888888888,
+    "ICP": 0.2857142857142857,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.65,
+    "threshold": 0.1,
+    "microservices": [[1,3],[-1],[0,2,3],[0],[-1],[2],[3],[-1]],
+    "SM": -0.006944444444444434,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.65,
+    "threshold": 0.15,
+    "microservices": [[1],[-1],[0,2,3],[-1],[-1],[2],[3],[-1]],
+    "SM": -0.0625,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.65,
+    "threshold": 0.2,
+    "microservices": [[-1],[-1],[2,3],[-1],[-1],[2],[-1],[-1]],
+    "SM": -0.02083333333333333,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.65,
+    "threshold": 0.25,
+    "microservices": [[-1],[-1],[2,3],[-1],[-1],[2],[-1],[-1]],
+    "SM": -0.02083333333333333,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.65,
+    "threshold": 0.3,
+    "microservices": [[-1],[-1],[2,3],[-1],[-1],[2],[-1],[-1]],
+    "SM": -0.02083333333333333,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.65,
+    "threshold": 0.35,
+    "microservices": [[-1],[-1],[2,3],[-1],[-1],[2],[-1],[-1]],
+    "SM": -0.02083333333333333,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.65,
+    "threshold": 0.4,
+    "microservices": [[-1],[-1],[2],[-1],[-1],[2],[-1],[-1]],
+    "SM": 0.08333333333333333,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.65,
+    "threshold": 0.45,
+    "microservices": [[-1],[-1],[2],[-1],[-1],[2],[-1],[-1]],
+    "SM": 0.08333333333333333,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.65,
+    "threshold": 0.5,
+    "microservices": [[-1],[-1],[2],[-1],[-1],[2],[-1],[-1]],
+    "SM": 0.08333333333333333,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.65,
+    "threshold": 0.55,
+    "microservices": [[-1],[-1],[2],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.3333333333333333,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.65,
+    "threshold": 0.6,
+    "microservices": [[-1],[-1],[2],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.3333333333333333,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.65,
+    "threshold": 0.65,
+    "microservices": [[-1],[-1],[2],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.3333333333333333,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.65,
+    "threshold": 0.7,
+    "microservices": [[-1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0,
+    "ICP": 0,
+    "IFN": 0,
+    "NED": 1
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.65,
+    "threshold": 0.75,
+    "microservices": [[-1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0,
+    "ICP": 0,
+    "IFN": 0,
+    "NED": 1
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.65,
+    "threshold": 0.8,
+    "microservices": [[-1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0,
+    "ICP": 0,
+    "IFN": 0,
+    "NED": 1
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.65,
+    "threshold": 0.85,
+    "microservices": [[-1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0,
+    "ICP": 0,
+    "IFN": 0,
+    "NED": 1
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.65,
+    "threshold": 0.9,
+    "microservices": [[-1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0,
+    "ICP": 0,
+    "IFN": 0,
+    "NED": 1
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.65,
+    "threshold": 0.95,
+    "microservices": [[-1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0,
+    "ICP": 0,
+    "IFN": 0,
+    "NED": 1
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.7,
+    "threshold": 0.05,
+    "microservices": [[1,3],[0],[0,2,3],[0],[0],[1,2],[3],[2,3]],
+    "SM": -0.013888888888888888,
+    "ICP": 0.2857142857142857,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.7,
+    "threshold": 0.1,
+    "microservices": [[1,3],[-1],[0,2,3],[0],[-1],[2],[3],[3]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.7,
+    "threshold": 0.15,
+    "microservices": [[1],[-1],[0,2,3],[-1],[-1],[2],[3],[-1]],
+    "SM": -0.0625,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.7,
+    "threshold": 0.2,
+    "microservices": [[-1],[-1],[2,3],[-1],[-1],[2],[-1],[-1]],
+    "SM": -0.02083333333333333,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.7,
+    "threshold": 0.25,
+    "microservices": [[-1],[-1],[2,3],[-1],[-1],[2],[-1],[-1]],
+    "SM": -0.02083333333333333,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.7,
+    "threshold": 0.3,
+    "microservices": [[-1],[-1],[2,3],[-1],[-1],[2],[-1],[-1]],
+    "SM": -0.02083333333333333,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.7,
+    "threshold": 0.35,
+    "microservices": [[-1],[-1],[2],[-1],[-1],[2],[-1],[-1]],
+    "SM": 0.08333333333333333,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.7,
+    "threshold": 0.4,
+    "microservices": [[-1],[-1],[2],[-1],[-1],[2],[-1],[-1]],
+    "SM": 0.08333333333333333,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.7,
+    "threshold": 0.45,
+    "microservices": [[-1],[-1],[2],[-1],[-1],[2],[-1],[-1]],
+    "SM": 0.08333333333333333,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.7,
+    "threshold": 0.5,
+    "microservices": [[-1],[-1],[2],[-1],[-1],[2],[-1],[-1]],
+    "SM": 0.08333333333333333,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.7,
+    "threshold": 0.55,
+    "microservices": [[-1],[-1],[2],[-1],[-1],[2],[-1],[-1]],
+    "SM": 0.08333333333333333,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.7,
+    "threshold": 0.6,
+    "microservices": [[-1],[-1],[2],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.3333333333333333,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.7,
+    "threshold": 0.65,
+    "microservices": [[-1],[-1],[2],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.3333333333333333,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.7,
+    "threshold": 0.7,
+    "microservices": [[-1],[-1],[2],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.3333333333333333,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.7,
+    "threshold": 0.75,
+    "microservices": [[-1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0,
+    "ICP": 0,
+    "IFN": 0,
+    "NED": 1
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.7,
+    "threshold": 0.8,
+    "microservices": [[-1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0,
+    "ICP": 0,
+    "IFN": 0,
+    "NED": 1
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.7,
+    "threshold": 0.85,
+    "microservices": [[-1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0,
+    "ICP": 0,
+    "IFN": 0,
+    "NED": 1
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.7,
+    "threshold": 0.9,
+    "microservices": [[-1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0,
+    "ICP": 0,
+    "IFN": 0,
+    "NED": 1
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.7,
+    "threshold": 0.95,
+    "microservices": [[-1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0,
+    "ICP": 0,
+    "IFN": 0,
+    "NED": 1
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.75,
+    "threshold": 0.05,
+    "microservices": [[1,3],[0],[0,2,3],[0],[0],[2],[3],[2,3]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.75,
+    "threshold": 0.1,
+    "microservices": [[1,3],[-1],[0,2,3],[0],[-1],[2],[3],[3]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.75,
+    "threshold": 0.15,
+    "microservices": [[1],[-1],[2,3],[-1],[-1],[2],[3],[-1]],
+    "SM": 0.020833333333333336,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.75,
+    "threshold": 0.2,
+    "microservices": [[-1],[-1],[2,3],[-1],[-1],[2],[-1],[-1]],
+    "SM": -0.02083333333333333,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.75,
+    "threshold": 0.25,
+    "microservices": [[-1],[-1],[2,3],[-1],[-1],[2],[-1],[-1]],
+    "SM": -0.02083333333333333,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.75,
+    "threshold": 0.3,
+    "microservices": [[-1],[-1],[2],[-1],[-1],[2],[-1],[-1]],
+    "SM": 0.08333333333333333,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.75,
+    "threshold": 0.35,
+    "microservices": [[-1],[-1],[2],[-1],[-1],[2],[-1],[-1]],
+    "SM": 0.08333333333333333,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.75,
+    "threshold": 0.4,
+    "microservices": [[-1],[-1],[2],[-1],[-1],[2],[-1],[-1]],
+    "SM": 0.08333333333333333,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.75,
+    "threshold": 0.45,
+    "microservices": [[-1],[-1],[2],[-1],[-1],[2],[-1],[-1]],
+    "SM": 0.08333333333333333,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.75,
+    "threshold": 0.5,
+    "microservices": [[-1],[-1],[2],[-1],[-1],[2],[-1],[-1]],
+    "SM": 0.08333333333333333,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.75,
+    "threshold": 0.55,
+    "microservices": [[-1],[-1],[2],[-1],[-1],[2],[-1],[-1]],
+    "SM": 0.08333333333333333,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.75,
+    "threshold": 0.6,
+    "microservices": [[-1],[-1],[2],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.3333333333333333,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.75,
+    "threshold": 0.65,
+    "microservices": [[-1],[-1],[2],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.3333333333333333,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.75,
+    "threshold": 0.7,
+    "microservices": [[-1],[-1],[2],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.3333333333333333,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.75,
+    "threshold": 0.75,
+    "microservices": [[-1],[-1],[2],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.3333333333333333,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.75,
+    "threshold": 0.8,
+    "microservices": [[-1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0,
+    "ICP": 0,
+    "IFN": 0,
+    "NED": 1
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.75,
+    "threshold": 0.85,
+    "microservices": [[-1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0,
+    "ICP": 0,
+    "IFN": 0,
+    "NED": 1
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.75,
+    "threshold": 0.9,
+    "microservices": [[-1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0,
+    "ICP": 0,
+    "IFN": 0,
+    "NED": 1
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.75,
+    "threshold": 0.95,
+    "microservices": [[-1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0,
+    "ICP": 0,
+    "IFN": 0,
+    "NED": 1
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.8,
+    "threshold": 0.05,
+    "microservices": [[1,3],[0],[0,2,3],[0],[-1],[2],[3],[3]],
+    "SM": 0.013888888888888895,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.8,
+    "threshold": 0.1,
+    "microservices": [[1,3],[-1],[0,2,3],[-1],[-1],[2],[3],[3]],
+    "SM": -0.04166666666666667,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.8,
+    "threshold": 0.15,
+    "microservices": [[1],[-1],[2,3],[-1],[-1],[2],[-1],[-1]],
+    "SM": -0.02083333333333333,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.8,
+    "threshold": 0.2,
+    "microservices": [[1],[-1],[2],[-1],[-1],[2],[-1],[-1]],
+    "SM": 0.08333333333333333,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.8,
+    "threshold": 0.25,
+    "microservices": [[-1],[-1],[2],[-1],[-1],[2],[-1],[-1]],
+    "SM": 0.08333333333333333,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.8,
+    "threshold": 0.3,
+    "microservices": [[-1],[-1],[2],[-1],[-1],[2],[-1],[-1]],
+    "SM": 0.08333333333333333,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.8,
+    "threshold": 0.35,
+    "microservices": [[-1],[-1],[2],[-1],[-1],[2],[-1],[-1]],
+    "SM": 0.08333333333333333,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.8,
+    "threshold": 0.4,
+    "microservices": [[-1],[-1],[2],[-1],[-1],[2],[-1],[-1]],
+    "SM": 0.08333333333333333,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.8,
+    "threshold": 0.45,
+    "microservices": [[-1],[-1],[2],[-1],[-1],[2],[-1],[-1]],
+    "SM": 0.08333333333333333,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.8,
+    "threshold": 0.5,
+    "microservices": [[-1],[-1],[2],[-1],[-1],[2],[-1],[-1]],
+    "SM": 0.08333333333333333,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.8,
+    "threshold": 0.55,
+    "microservices": [[-1],[-1],[2],[-1],[-1],[2],[-1],[-1]],
+    "SM": 0.08333333333333333,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.8,
+    "threshold": 0.6,
+    "microservices": [[-1],[-1],[2],[-1],[-1],[2],[-1],[-1]],
+    "SM": 0.08333333333333333,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.8,
+    "threshold": 0.65,
+    "microservices": [[-1],[-1],[2],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.3333333333333333,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.8,
+    "threshold": 0.7,
+    "microservices": [[-1],[-1],[2],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.3333333333333333,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.8,
+    "threshold": 0.75,
+    "microservices": [[-1],[-1],[2],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.3333333333333333,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.8,
+    "threshold": 0.8,
+    "microservices": [[-1],[-1],[2],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.3333333333333333,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.8,
+    "threshold": 0.85,
+    "microservices": [[-1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0,
+    "ICP": 0,
+    "IFN": 0,
+    "NED": 1
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.8,
+    "threshold": 0.9,
+    "microservices": [[-1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0,
+    "ICP": 0,
+    "IFN": 0,
+    "NED": 1
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.8,
+    "threshold": 0.95,
+    "microservices": [[-1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0,
+    "ICP": 0,
+    "IFN": 0,
+    "NED": 1
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.85,
+    "threshold": 0.05,
+    "microservices": [[1,3],[0],[0,2,3],[0],[-1],[2],[3],[3]],
+    "SM": 0.013888888888888895,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.85,
+    "threshold": 0.1,
+    "microservices": [[1,3],[-1],[0,2,3],[-1],[-1],[2],[3],[3]],
+    "SM": -0.04166666666666667,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.85,
+    "threshold": 0.15,
+    "microservices": [[1,3],[-1],[2,3],[-1],[-1],[2],[-1],[-1]],
+    "SM": 0.020833333333333336,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.85,
+    "threshold": 0.2,
+    "microservices": [[1],[-1],[2],[-1],[-1],[2],[-1],[-1]],
+    "SM": 0.08333333333333333,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.85,
+    "threshold": 0.25,
+    "microservices": [[-1],[-1],[2],[-1],[-1],[2],[-1],[-1]],
+    "SM": 0.08333333333333333,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.85,
+    "threshold": 0.3,
+    "microservices": [[-1],[-1],[2],[-1],[-1],[2],[-1],[-1]],
+    "SM": 0.08333333333333333,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.85,
+    "threshold": 0.35,
+    "microservices": [[-1],[-1],[2],[-1],[-1],[2],[-1],[-1]],
+    "SM": 0.08333333333333333,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.85,
+    "threshold": 0.4,
+    "microservices": [[-1],[-1],[2],[-1],[-1],[2],[-1],[-1]],
+    "SM": 0.08333333333333333,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.85,
+    "threshold": 0.45,
+    "microservices": [[-1],[-1],[2],[-1],[-1],[2],[-1],[-1]],
+    "SM": 0.08333333333333333,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.85,
+    "threshold": 0.5,
+    "microservices": [[-1],[-1],[2],[-1],[-1],[2],[-1],[-1]],
+    "SM": 0.08333333333333333,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.85,
+    "threshold": 0.55,
+    "microservices": [[-1],[-1],[2],[-1],[-1],[2],[-1],[-1]],
+    "SM": 0.08333333333333333,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.85,
+    "threshold": 0.6,
+    "microservices": [[-1],[-1],[2],[-1],[-1],[2],[-1],[-1]],
+    "SM": 0.08333333333333333,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.85,
+    "threshold": 0.65,
+    "microservices": [[-1],[-1],[2],[-1],[-1],[2],[-1],[-1]],
+    "SM": 0.08333333333333333,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.85,
+    "threshold": 0.7,
+    "microservices": [[-1],[-1],[2],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.3333333333333333,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.85,
+    "threshold": 0.75,
+    "microservices": [[-1],[-1],[2],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.3333333333333333,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.85,
+    "threshold": 0.8,
+    "microservices": [[-1],[-1],[2],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.3333333333333333,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.85,
+    "threshold": 0.85,
+    "microservices": [[-1],[-1],[2],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.3333333333333333,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.85,
+    "threshold": 0.9,
+    "microservices": [[-1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0,
+    "ICP": 0,
+    "IFN": 0,
+    "NED": 1
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.85,
+    "threshold": 0.95,
+    "microservices": [[-1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0,
+    "ICP": 0,
+    "IFN": 0,
+    "NED": 1
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.9,
+    "threshold": 0.05,
+    "microservices": [[1,3],[-1],[0,2,3],[0],[-1],[2],[3],[3]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.9,
+    "threshold": 0.1,
+    "microservices": [[1,3],[-1],[0,2],[-1],[-1],[2],[3],[3]],
+    "SM": -0.02083333333333333,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.9,
+    "threshold": 0.15,
+    "microservices": [[1,3],[-1],[2],[-1],[-1],[2],[-1],[-1]],
+    "SM": 0.0625,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.9,
+    "threshold": 0.2,
+    "microservices": [[1],[-1],[2],[-1],[-1],[2],[-1],[-1]],
+    "SM": 0.08333333333333333,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.9,
+    "threshold": 0.25,
+    "microservices": [[-1],[-1],[2],[-1],[-1],[2],[-1],[-1]],
+    "SM": 0.08333333333333333,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.9,
+    "threshold": 0.3,
+    "microservices": [[-1],[-1],[2],[-1],[-1],[2],[-1],[-1]],
+    "SM": 0.08333333333333333,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.9,
+    "threshold": 0.35,
+    "microservices": [[-1],[-1],[2],[-1],[-1],[2],[-1],[-1]],
+    "SM": 0.08333333333333333,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.9,
+    "threshold": 0.4,
+    "microservices": [[-1],[-1],[2],[-1],[-1],[2],[-1],[-1]],
+    "SM": 0.08333333333333333,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.9,
+    "threshold": 0.45,
+    "microservices": [[-1],[-1],[2],[-1],[-1],[2],[-1],[-1]],
+    "SM": 0.08333333333333333,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.9,
+    "threshold": 0.5,
+    "microservices": [[-1],[-1],[2],[-1],[-1],[2],[-1],[-1]],
+    "SM": 0.08333333333333333,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.9,
+    "threshold": 0.55,
+    "microservices": [[-1],[-1],[2],[-1],[-1],[2],[-1],[-1]],
+    "SM": 0.08333333333333333,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.9,
+    "threshold": 0.6,
+    "microservices": [[-1],[-1],[2],[-1],[-1],[2],[-1],[-1]],
+    "SM": 0.08333333333333333,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.9,
+    "threshold": 0.65,
+    "microservices": [[-1],[-1],[2],[-1],[-1],[2],[-1],[-1]],
+    "SM": 0.08333333333333333,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.9,
+    "threshold": 0.7,
+    "microservices": [[-1],[-1],[2],[-1],[-1],[2],[-1],[-1]],
+    "SM": 0.08333333333333333,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.9,
+    "threshold": 0.75,
+    "microservices": [[-1],[-1],[2],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.3333333333333333,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.9,
+    "threshold": 0.8,
+    "microservices": [[-1],[-1],[2],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.3333333333333333,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.9,
+    "threshold": 0.85,
+    "microservices": [[-1],[-1],[2],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.3333333333333333,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.9,
+    "threshold": 0.9,
+    "microservices": [[-1],[-1],[2],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.3333333333333333,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.9,
+    "threshold": 0.95,
+    "microservices": [[-1],[-1],[-1],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0,
+    "ICP": 0,
+    "IFN": 0,
+    "NED": 1
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.95,
+    "threshold": 0.05,
+    "microservices": [[1,3],[-1],[0,2,3],[0],[-1],[2],[1,3],[3]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.95,
+    "threshold": 0.1,
+    "microservices": [[1,3],[-1],[2],[-1],[-1],[2],[3],[3]],
+    "SM": 0.0625,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.95,
+    "threshold": 0.15,
+    "microservices": [[1,3],[-1],[2],[-1],[-1],[2],[-1],[-1]],
+    "SM": 0.0625,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.95,
+    "threshold": 0.2,
+    "microservices": [[1],[-1],[2],[-1],[-1],[2],[-1],[-1]],
+    "SM": 0.08333333333333333,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.95,
+    "threshold": 0.25,
+    "microservices": [[-1],[-1],[2],[-1],[-1],[2],[-1],[-1]],
+    "SM": 0.08333333333333333,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.95,
+    "threshold": 0.3,
+    "microservices": [[-1],[-1],[2],[-1],[-1],[2],[-1],[-1]],
+    "SM": 0.08333333333333333,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.95,
+    "threshold": 0.35,
+    "microservices": [[-1],[-1],[2],[-1],[-1],[2],[-1],[-1]],
+    "SM": 0.08333333333333333,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.95,
+    "threshold": 0.4,
+    "microservices": [[-1],[-1],[2],[-1],[-1],[2],[-1],[-1]],
+    "SM": 0.08333333333333333,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.95,
+    "threshold": 0.45,
+    "microservices": [[-1],[-1],[2],[-1],[-1],[2],[-1],[-1]],
+    "SM": 0.08333333333333333,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.95,
+    "threshold": 0.5,
+    "microservices": [[-1],[-1],[2],[-1],[-1],[2],[-1],[-1]],
+    "SM": 0.08333333333333333,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.95,
+    "threshold": 0.55,
+    "microservices": [[-1],[-1],[2],[-1],[-1],[2],[-1],[-1]],
+    "SM": 0.08333333333333333,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.95,
+    "threshold": 0.6,
+    "microservices": [[-1],[-1],[2],[-1],[-1],[2],[-1],[-1]],
+    "SM": 0.08333333333333333,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.95,
+    "threshold": 0.65,
+    "microservices": [[-1],[-1],[2],[-1],[-1],[2],[-1],[-1]],
+    "SM": 0.08333333333333333,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.95,
+    "threshold": 0.7,
+    "microservices": [[-1],[-1],[2],[-1],[-1],[2],[-1],[-1]],
+    "SM": 0.08333333333333333,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.95,
+    "threshold": 0.75,
+    "microservices": [[-1],[-1],[2],[-1],[-1],[2],[-1],[-1]],
+    "SM": 0.08333333333333333,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.95,
+    "threshold": 0.8,
+    "microservices": [[-1],[-1],[2],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.3333333333333333,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.95,
+    "threshold": 0.85,
+    "microservices": [[-1],[-1],[2],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.3333333333333333,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.95,
+    "threshold": 0.9,
+    "microservices": [[-1],[-1],[2],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.3333333333333333,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 0.95,
+    "threshold": 0.95,
+    "microservices": [[-1],[-1],[2],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.3333333333333333,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 1.0,
+    "threshold": 0.05,
+    "microservices": [[1,3],[-1],[0,2],[-1],[-1],[2],[1,3],[3]],
+    "SM": -0.02083333333333333,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 1.0,
+    "threshold": 0.1,
+    "microservices": [[1,3],[-1],[2],[-1],[-1],[2],[3],[3]],
+    "SM": 0.0625,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 1.0,
+    "threshold": 0.15,
+    "microservices": [[1,3],[-1],[2],[-1],[-1],[2],[-1],[-1]],
+    "SM": 0.0625,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 1.0,
+    "threshold": 0.2,
+    "microservices": [[1],[-1],[2],[-1],[-1],[2],[-1],[-1]],
+    "SM": 0.08333333333333333,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 1.0,
+    "threshold": 0.25,
+    "microservices": [[1],[-1],[2],[-1],[-1],[2],[-1],[-1]],
+    "SM": 0.08333333333333333,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 1.0,
+    "threshold": 0.3,
+    "microservices": [[-1],[-1],[2],[-1],[-1],[2],[-1],[-1]],
+    "SM": 0.08333333333333333,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 1.0,
+    "threshold": 0.35,
+    "microservices": [[-1],[-1],[2],[-1],[-1],[2],[-1],[-1]],
+    "SM": 0.08333333333333333,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 1.0,
+    "threshold": 0.4,
+    "microservices": [[-1],[-1],[2],[-1],[-1],[2],[-1],[-1]],
+    "SM": 0.08333333333333333,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 1.0,
+    "threshold": 0.45,
+    "microservices": [[-1],[-1],[2],[-1],[-1],[2],[-1],[-1]],
+    "SM": 0.08333333333333333,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 1.0,
+    "threshold": 0.5,
+    "microservices": [[-1],[-1],[2],[-1],[-1],[2],[-1],[-1]],
+    "SM": 0.08333333333333333,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 1.0,
+    "threshold": 0.55,
+    "microservices": [[-1],[-1],[2],[-1],[-1],[2],[-1],[-1]],
+    "SM": 0.08333333333333333,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 1.0,
+    "threshold": 0.6,
+    "microservices": [[-1],[-1],[2],[-1],[-1],[2],[-1],[-1]],
+    "SM": 0.08333333333333333,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 1.0,
+    "threshold": 0.65,
+    "microservices": [[-1],[-1],[2],[-1],[-1],[2],[-1],[-1]],
+    "SM": 0.08333333333333333,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 1.0,
+    "threshold": 0.7,
+    "microservices": [[-1],[-1],[2],[-1],[-1],[2],[-1],[-1]],
+    "SM": 0.08333333333333333,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 1.0,
+    "threshold": 0.75,
+    "microservices": [[-1],[-1],[2],[-1],[-1],[2],[-1],[-1]],
+    "SM": 0.08333333333333333,
+    "ICP": 0,
+    "IFN": 0.0,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 1.0,
+    "threshold": 0.8,
+    "microservices": [[-1],[-1],[2],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.3333333333333333,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 1.0,
+    "threshold": 0.85,
+    "microservices": [[-1],[-1],[2],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.3333333333333333,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 1.0,
+    "threshold": 0.9,
+    "microservices": [[-1],[-1],[2],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.3333333333333333,
+    "NED": 1.0
+  },
+  {
+    "n_clusters": 4,
+    "alpha": 1.0,
+    "threshold": 0.95,
+    "microservices": [[-1],[-1],[2],[-1],[-1],[-1],[-1],[-1]],
+    "SM": 0.0,
+    "ICP": 0,
+    "IFN": 0.3333333333333333,
+    "NED": 1.0
+  }
+]
