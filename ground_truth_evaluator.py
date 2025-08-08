@@ -61,6 +61,10 @@ for i, directory in enumerate(true_ms_dirs):
     print(f"\ranalyzing microservices... {int(100*(i+1)/len(true_ms_dirs))}%", end="", flush=True)
 print(f"\ranalyzing microservices... 100%", flush=True)
 
+# debug
+# print(*true_ms_classnames, sep="\n")
+# debug
+
 print("merging source files...", end=" ", flush=True)
 file_path = os.path.join(base_dir, f".data/{project_dir_name}/OneFileSource.java")
 merge_java_files(args.project_directory, file_path)
@@ -68,7 +72,7 @@ print("done!")
 
 print("parsing the code...", end=" ", flush=True)
 json_path = os.path.join(base_dir, f".data/{project_dir_name}/classes.json")
-subprocess.run(['java', '-cp', libs, os.path.join(base_dir, 'Mo2oM/JavaParser/Parser.java'), f".data/{project_dir_name}/OneFileSource.java", json_path]) 
+subprocess.run(['java', '-cp', libs, os.path.join(base_dir, 'Mo2oM/JavaParser/Parser.java'), f".data/{project_dir_name}/OneFileSource.java", json_path])
 with open(json_path, "rt") as classes_file:
     classes_info = json.load(classes_file)
 print("done!")
@@ -84,6 +88,7 @@ for clss in classes_info:
 print("done!")
 
 class_names = list(classes_info)
+print("class_names:", class_names)
 true_microservices = [{-1} for _ in classes_info]
 for i, ms in enumerate(true_ms_classnames):
     for clss in ms:
