@@ -6,6 +6,4 @@ scikit-fuzzy
 nltk
 torch
 transformers
-networkx
 seaborn
-adjustText
