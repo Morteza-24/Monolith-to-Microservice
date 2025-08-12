@@ -14,6 +14,10 @@
 
 - [x] conduct extensive experiments -->
 
+# Monolithic to Overlapping Microservices (Mo2oM)
+
+Official implementation for the paper "[Extracting Overlapping Microservices from Monolithic Code via Deep Semantic Embeddings and Graph Neural Network-Based Soft Clustering](https://arxiv.org/abs/2508.07486)"
+
 # How to Use
 
 First, make sure you have Java installed and the `java` command is available:
