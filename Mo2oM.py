@@ -5,7 +5,6 @@ from os import makedirs, walk, path, pathsep
 from subprocess import run
 from json import load, dump
 import shutil
-import multiprocessing as mp
 
 parser = ArgumentParser(
     prog='python Mo2oM.py',
@@ -147,5 +146,4 @@ def main():
             dump(output, output_file, indent=2)
 
 if __name__ == "__main__":
-    mp.freeze_support()
     main()
