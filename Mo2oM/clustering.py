@@ -33,7 +33,7 @@ def overlapping_community_detection(A, X, K, threshold, membership_only=False):
     stochastic_loss = True  # whether to use stochastic or full-batch training
     batch_size = 20000      # batch size (only for stochastic training)
 
-    sampler = nocd.sampler.get_edge_sampler(A, batch_size, batch_size, num_workers=2)
+    sampler = nocd.sampler.get_edge_sampler(A, batch_size, batch_size, num_workers=2, device=device)
     gnn = nocd.nn.GCN(x_norm.shape[1], hidden_sizes, K, dropout=dropout, batch_norm=batch_norm).to(device)
     adj_norm = gnn.normalize_adj(A)
     decoder = nocd.nn.BerpoDecoder(A.shape[0], A.nnz, balance_loss=balance_loss)
