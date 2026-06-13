@@ -133,81 +133,83 @@ if len(args.alpha) == 2:
     alpha = [round(_, 3) for _ in np.arange(args.alpha[0], args.alpha[1]+0.01, 0.05)]
 else:
     alpha = args.alpha[0]
-clusters, classes_info = Mo2oM(args.file_path, n_clusters, thresholds, alpha, args.use_tf_idf)
-class_names = list(classes_info)
-if args.project_directory:
-    true_microservices = [{-1} for _ in classes_info]
-    for i, ms in enumerate(true_ms_classnames):
-        for clss in ms:
-            true_microservices[class_names.index(clss)].add(i)
-            if -1 in true_microservices[class_names.index(clss)]:
-                true_microservices[class_names.index(clss)].discard(-1)
-if n_clusters == "Scanniello":
-    n_clusters = list(np.arange(2, (len(classes_info)//2)+2, 2))
-for i in range(len(_listify(n_clusters))):
-    for j in range(len(_listify(alpha))):
-        for k in range(len(_listify(thresholds))):
-            cases = [isinstance(n_clusters, int), isinstance(alpha, (int, float)), isinstance(thresholds, (int, str))]
-            match cases:
-                case [True, True, True]:
-                    this_clusters = clusters
-                case [True, True, False]:
-                    this_clusters = clusters[k]
-                case [True, False, True]:
-                    this_clusters = clusters[j]
-                case [False, True, True]:
-                    this_clusters = clusters[i]
-                case [True, False, False]:
-                    this_clusters = clusters[j][k]
-                case [False, True, False]:
-                    this_clusters = clusters[i][k]
-                case [False, False, True]:
-                    this_clusters = clusters[i][j]
-                case [False, False, False]:
-                    this_clusters = clusters[i][j][k]
-            output = {"n_clusters": n_clusters if isinstance(n_clusters, int) else int(_listify(n_clusters)[i]),
-                      "alpha": alpha if isinstance(alpha, (int, float)) else float(_listify(alpha)[j]),
-                      "threshold": thresholds if isinstance(thresholds, str) else float(_listify(thresholds)[k]),
-                      "microservices": [[int(_i) for _i in _] for _ in this_clusters]}
-            if args.evaluation_measure:
-                for measure in args.evaluation_measure:
-                    if measure in ["SM", "IFN", "ICP"]:
-                        output[measure] = measures[measure](output["microservices"], classes_info)
-                    elif measure == "Precision":
-                        output[measure] = measures[measure](output["microservices"], true_microservices)
-                    elif measure == "SR":
-                        for k_sr in args.k:
-                            output[measure+"@"+str(k_sr)] = measures[measure](output["microservices"], true_microservices, k_sr)
-                    else:
-                        output[measure] = measures[measure](output["microservices"])
-            outputs.append(output)
 
-tmp_output_file = "tmp_" + args.output_file.split("/")[-1] 
-with open(tmp_output_file, "w") as output_file:
-    dump(outputs, output_file, indent=2)
+if __name__ == "__main__":
+    clusters, classes_info = Mo2oM(args.file_path, n_clusters, thresholds, alpha, args.use_tf_idf)
+    class_names = list(classes_info)
+    if args.project_directory:
+        true_microservices = [{-1} for _ in classes_info]
+        for i, ms in enumerate(true_ms_classnames):
+            for clss in ms:
+                true_microservices[class_names.index(clss)].add(i)
+                if -1 in true_microservices[class_names.index(clss)]:
+                    true_microservices[class_names.index(clss)].discard(-1)
+    if n_clusters == "Scanniello":
+        n_clusters = list(np.arange(2, (len(classes_info)//2)+2, 2))
+    for i in range(len(_listify(n_clusters))):
+        for j in range(len(_listify(alpha))):
+            for k in range(len(_listify(thresholds))):
+                cases = [isinstance(n_clusters, int), isinstance(alpha, (int, float)), isinstance(thresholds, (int, str))]
+                match cases:
+                    case [True, True, True]:
+                        this_clusters = clusters
+                    case [True, True, False]:
+                        this_clusters = clusters[k]
+                    case [True, False, True]:
+                        this_clusters = clusters[j]
+                    case [False, True, True]:
+                        this_clusters = clusters[i]
+                    case [True, False, False]:
+                        this_clusters = clusters[j][k]
+                    case [False, True, False]:
+                        this_clusters = clusters[i][k]
+                    case [False, False, True]:
+                        this_clusters = clusters[i][j]
+                    case [False, False, False]:
+                        this_clusters = clusters[i][j][k]
+                output = {"n_clusters": n_clusters if isinstance(n_clusters, int) else int(_listify(n_clusters)[i]),
+                          "alpha": alpha if isinstance(alpha, (int, float)) else float(_listify(alpha)[j]),
+                          "threshold": thresholds if isinstance(thresholds, str) else float(_listify(thresholds)[k]),
+                          "microservices": [[int(_i) for _i in _] for _ in this_clusters]}
+                if args.evaluation_measure:
+                    for measure in args.evaluation_measure:
+                        if measure in ["SM", "IFN", "ICP"]:
+                            output[measure] = measures[measure](output["microservices"], classes_info)
+                        elif measure == "Precision":
+                            output[measure] = measures[measure](output["microservices"], true_microservices)
+                        elif measure == "SR":
+                            for k_sr in args.k:
+                                output[measure+"@"+str(k_sr)] = measures[measure](output["microservices"], true_microservices, k_sr)
+                        else:
+                            output[measure] = measures[measure](output["microservices"])
+                outputs.append(output)
 
-in_ms = False
-inn_ms = False
-with (open(tmp_output_file, "rt") as in_f,
-      open(args.output_file, "wt") as out_f):
-    for line in in_f.readlines():
-        if line.endswith("[\n"):
+    tmp_output_file = "tmp_" + args.output_file.split("/")[-1] 
+    with open(tmp_output_file, "w") as output_file:
+        dump(outputs, output_file, indent=2)
+
+    in_ms = False
+    inn_ms = False
+    with (open(tmp_output_file, "rt") as in_f,
+          open(args.output_file, "wt") as out_f):
+        for line in in_f.readlines():
+            if line.endswith("[\n"):
+                if in_ms:
+                    inn_ms = True
+                elif "microservices" in line:
+                    in_ms = True
+                    out_f.write(line[:-1])
+                    continue
+            elif line.endswith("],\n") or line.endswith("]\n"):
+                if inn_ms:
+                    inn_ms = False
+                else:
+                    in_ms = False
+                    out_f.write(line.lstrip())
+                    continue
             if in_ms:
-                inn_ms = True
-            elif "microservices" in line:
-                in_ms = True
-                out_f.write(line[:-1])
-                continue
-        elif line.endswith("],\n") or line.endswith("]\n"):
-            if inn_ms:
-                inn_ms = False
+                out_f.write(line.strip())
             else:
-                in_ms = False
-                out_f.write(line.lstrip())
-                continue
-        if in_ms:
-            out_f.write(line.strip())
-        else:
-            out_f.write(line)
+                out_f.write(line)
 
-run(["rm", tmp_output_file])
+    run(["rm", tmp_output_file])
